@@ -3,9 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background: hsla(0, 0%, 100%, 1);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,17 +15,35 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: var(--background);
+}
+
+@layer components {
+  .btn {
+    @apply text-white bg-blue-500;
+  }
+
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 100vh;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  .hero {
+    background: url(../../public/assets/images/hero.png) no-repeat;
   }
 }
