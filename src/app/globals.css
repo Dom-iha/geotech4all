@@ -4,18 +4,26 @@
 
 :root {
   --background: hsla(0, 0%, 100%, 1);
+  --spacing: clamp();
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base {
+  body {
+    background: var(--background);
+    font-family: montserrat, sans-serif;
   }
 }
 
-body {
-  background: var(--background);
+@layer utilities {
+  .hero {
+    background: url(../../public/assets/images/hero.png) no-repeat;
+  }
+  .community {
+    background: url(../../public/assets/images/cityscape.png) no-repeat;
+  }
+  .spacing {
+    padding: var(--spacing);
+  }
 }
 
 @layer components {
@@ -35,15 +43,5 @@ body {
   }
   ::-webkit-scrollbar-track {
     background: #f1f1f1;
-  }
-
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-  .hero {
-    background: url(../../public/assets/images/hero.png) no-repeat;
   }
 }
