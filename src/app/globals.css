@@ -21,6 +21,12 @@
   .community {
     background: url(../../public/assets/images/cityscape.png) no-repeat;
   }
+  .news-hero {
+    background: url(../../public/assets/images/reforestation.png) no-repeat;
+  }
+  .internship {
+    background: url(../../public/assets/images/internship.png) no-repeat;
+  }
   .spacing {
     padding: var(--spacing);
   }
@@ -32,7 +38,7 @@
   }
 
   ::-webkit-scrollbar {
-    width: 12px;
+    width: 0.625rem;
   }
   ::-webkit-scrollbar-thumb {
     background-color: #888;

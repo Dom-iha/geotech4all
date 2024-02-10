@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import quarry from '../../public/assets/images/quarry.png';
 import product from '../../public/assets/images/product.png';
 import training from '../../public/assets/images/training.png';
+import Link from 'next/link';
 
 export default function Home() {
   // const router = useRouter();
@@ -17,8 +18,8 @@ export default function Home() {
             Empowering individuals and communities through
             accessible, impactful, and innovative geoscience solutions.
           </p>
-          <button
-            type='button'
+          <Link
+            href='/about'
             className='cursor-pointer relative group overflow-hidden border-2 px-10 py-2 border-main w-fit rounded-md'
           >
             <span className='uppercase tracking-widest font-medium text-accent text-lg relative z-10 group-hover:text-main duration-500'>
@@ -28,7 +29,7 @@ export default function Home() {
             <span className='absolute top-0 left-0 w-full bg-main duration-500 group-hover:translate-x-full h-full'></span>
             <span className='absolute top-0 left-0 w-full bg-main duration-500 delay-300 group-hover:-translate-y-full h-full'></span>
             <span className='absolute delay-300 top-0 left-0 w-full bg-main duration-500 group-hover:translate-y-full h-full'></span>
-          </button>
+          </Link>
         </div>
       </section>
       <section className='px-24 py-14'>
@@ -68,10 +69,7 @@ export default function Home() {
               <span className='uppercase tracking-widest font-medium text-main text-lg relative z-10 group-hover:text-accent duration-500'>
                 Read More
               </span>
-              <span className='absolute top-0 left-0 w-full bg-accent duration-500 group-hover:-translate-x-full h-full'></span>
-              <span className='absolute top-0 left-0 w-full bg-accent duration-500 group-hover:translate-x-full h-full'></span>
-              <span className='absolute top-0 left-0 w-full bg-accent duration-500 delay-300 group-hover:-translate-y-full h-full'></span>
-              <span className='absolute delay-300 top-0 left-0 w-full bg-accent duration-500 group-hover:translate-y-full h-full'></span>
+              <span className='absolute top-0 left-0 w-full bg-accent duration-300 group-hover:translate-x-full h-full'></span>
             </button>
           </article>
           <div>
@@ -168,9 +166,12 @@ export default function Home() {
             <p className='text-4xl font-semibold'>Starting Date:</p>
             <button
               type='button'
-              className='w-fit rounded-md px-8 py-2.5 bg-accent text-main border-2 hover:border-accent hover:bg-main hover:text-accent transition duration-300'
+              className='cursor-pointer relative group overflow-hidden border-2 px-8 py-2 border-accent w-fit rounded-md'
             >
-              Register
+              <span className='tracking-widest font-medium text-main text-lg relative z-10 group-hover:text-accent duration-500'>
+                Register
+              </span>
+              <span className='absolute top-0 left-0 w-full bg-accent duration-300 group-hover:translate-x-full h-full'></span>
             </button>
           </div>
         </div>
