@@ -20,6 +20,9 @@ const Gallery: React.FC = () => {
             <span className='absolute delay-300 top-0 left-0 w-full bg-accent duration-500 group-hover:translate-y-full h-full'></span>
           </button>
         </div>
+        <div>
+          
+        </div>
       </section>
     </>
   );

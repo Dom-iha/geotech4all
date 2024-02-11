@@ -17,16 +17,11 @@ const Navbar: React.FC = () => {
       </Link>
       <div>
         <Link href='/'>
-          <Image src={logo} alt='geotech4all logo' className=' w-[180px]' />
+          <Image src={logo} alt='geotech4all logo' className='w-[150px]' />
         </Link>
       </div>
       <nav className='relative ml-auto flex items-center'>
         <ul className='flex justify-evenly md:gap-14 text-lg font-medium'>
-          {/* <li className={`relative after:absolute after:bg-accent after:h-0.5 after:w-full after:bottom-0 after:left-0 after:scale-x-0 after:origin-right hover:after:scale-x-100 hover:after:origin-left ${pathname === '/' && 'after:scale-x-100'} transition duration after:transition after:duration-300`}>
-            <Link href='/' className='outline-2 focus-visible:outline-dashed uppercase text-sm font-medium'>
-              home
-            </Link>
-          </li> */}
           <li className={`relative after:absolute after:bg-accent after:h-0.5 after:w-full after:bottom-0 after:left-0 after:scale-x-0 after:origin-right hover:after:scale-x-100 hover:after:origin-left ${pathname === '/services' && 'after:scale-x-100'} transition  after:transition after:duration-300`}>
             <Link href='/services' className='outline-2 focus-visible:outline-dashed uppercase text-sm font-medium'>
               services

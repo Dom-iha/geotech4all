@@ -7,7 +7,7 @@ import Footer from '@/components/Footer';
 const montserrat = Montserrat({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Geotech4all',
+  title: 'Geotech4All',
   description:
     'A community that specializes in everything geoscience. News, articles, webinars, conferences, podcasts etc.',
 };

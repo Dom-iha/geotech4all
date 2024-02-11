@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-import footer_logo from '../../public/assets/icons/Geotech4All-white.png';
+import footer_logo from '../../public/assets/icons/logo-white.png';
 import facebook from '../../public/assets/icons/facebook.svg';
 import instagram from '../../public/assets/icons/instagram.svg';
 import twitter from '../../public/assets/icons/twitter.svg';

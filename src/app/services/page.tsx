@@ -10,7 +10,7 @@ const Services: React.FC = () => {
       <section className='px-24 py-14'>
         <div className='flex flex-col gap-10 justify-center items-center'>
           <h1 className='text-8xl text-center font-bold'>
-            Solutions for your geotechnical needs under one roof
+            Tailor-made solutions for your geoscience needs
           </h1>
           <p className='text-center mt-4 text-2xl max-w-[900px]'>
             From large enterprises to student projects – we help the community
@@ -37,13 +37,16 @@ const Services: React.FC = () => {
             <h3 className='text-2xl font-semibold'>Geological Services</h3>
             <p className='text-xl'>
               From spatial analysis and Geochemical plots to production of
-              various kinds of maps a complete solution.
+              various kinds of maps, a complete solution.
             </p>
             <button
               type='button'
-              className='w-fit rounded-md py-3 px-20 bg-accent text-main border-2 hover:border-accent hover:bg-main hover:text-accent transition duration-300'
+              className='cursor-pointer relative group overflow-hidden border-2 px-10 py-2 border-accent w-fit rounded-md'
             >
-              I need this
+              <span className='uppercase font-medium text-main text-lg relative z-10 group-hover:text-accent duration-500'>
+                I need this
+              </span>
+              <span className='absolute top-0 left-0 w-full bg-accent duration-300 group-hover:translate-x-full h-full'></span>
             </button>
           </li>
 
@@ -57,9 +60,12 @@ const Services: React.FC = () => {
             </p>
             <button
               type='button'
-              className='w-fit rounded-md py-3 px-20 bg-accent text-main border-2 hover:border-accent hover:bg-main hover:text-accent transition duration-300'
+              className='cursor-pointer relative group overflow-hidden border-2 px-10 py-2 border-accent w-fit rounded-md'
             >
-              I need this
+              <span className='uppercase font-medium text-main text-lg relative z-10 group-hover:text-accent duration-500'>
+                I need this
+              </span>
+              <span className='absolute top-0 left-0 w-full bg-accent duration-300 group-hover:translate-x-full h-full'></span>
             </button>
           </li>
           <li className='grid gap-8'>
@@ -70,9 +76,12 @@ const Services: React.FC = () => {
             </p>
             <button
               type='button'
-              className='w-fit rounded-md py-3 px-20 bg-accent text-main border-2 hover:border-accent hover:bg-main hover:text-accent transition duration-300'
+              className='cursor-pointer relative group overflow-hidden border-2 px-10 py-2 border-accent w-fit rounded-md'
             >
-              I need this
+              <span className='uppercase font-medium text-main text-lg relative z-10 group-hover:text-accent duration-500'>
+                I need this
+              </span>
+              <span className='absolute top-0 left-0 w-full bg-accent duration-300 group-hover:translate-x-full h-full'></span>
             </button>
           </li>
           <li className='grid gap-8'>
@@ -83,9 +92,12 @@ const Services: React.FC = () => {
             </p>
             <button
               type='button'
-              className='w-fit rounded-md py-3 px-20 bg-accent text-main border-2 hover:border-accent hover:bg-main hover:text-accent transition duration-300'
+              className='cursor-pointer relative group overflow-hidden border-2 px-10 py-2 border-accent w-fit rounded-md'
             >
-              I need this
+              <span className='uppercase font-medium text-main text-lg relative z-10 group-hover:text-accent duration-500'>
+                I need this
+              </span>
+              <span className='absolute top-0 left-0 w-full bg-accent duration-300 group-hover:translate-x-full h-full'></span>
             </button>
           </li>
         </ul>
