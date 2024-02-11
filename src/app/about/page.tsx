@@ -7,7 +7,7 @@ import Link from 'next/link';
 function About() {
   return (
     <>
-      <section className='px-24 py-14'>
+      <section className='px-6 md:px-8 lg:px-24 py-14'>
         <div className='flex flex-col gap-10 justify-center items-center'>
           <h1 className='text-8xl text-center font-bold mt-3'>About Us</h1>
           <p className='text-center mt-4 text-2xl max-w-[900px] font-medium'>
@@ -27,7 +27,7 @@ function About() {
           </Link>
         </div>
       </section>
-      <section id='mission' className='px-24 py-14'>
+      <section id='mission' className='px-6 md:px-8 lg:px-24 py-14'>
         <div className='flex gap-8 justify-between'>
           <div className='flex flex-col justify-center'>
             <p className='font-bold text-4xl mb-5'>Our Mission</p>
@@ -50,7 +50,7 @@ function About() {
         </div>
       </section>
       {/* People section */}
-      <section className='px-24 py-14'>
+      <section className='px-6 md:px-8 lg:px-24 py-14'>
         <h2 className='font-bold text-4xl mb-5'>Meet the team</h2>
         <article className='flex flex-col gap-8'>
           <div className='flex'>

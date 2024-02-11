@@ -10,16 +10,16 @@ import Link from 'next/link';
 function Geohub() {
   return (
     <>
-      <section className='px-24 py-2'>
-        <div className='news-hero h-[37.5rem] relative rounded-md after:absolute after:top-0 after:-z-10 after:w-full after:h-full after:rounded-md after:bg-accent/90 '>
-          <p className='pt-6 ml-[50px] font-medium text-lg text-main'>
+      <section className='px-6 md:px-8 lg:px-24 py-2'>
+        <div className='news-hero min-h-screen relative rounded-md after:absolute after:top-0 after:-z-10 after:w-full after:h-full after:rounded-md after:bg-accent/90 '>
+          <p className='pt-6 ml-8 lg:ml-10 font-medium text-lg text-main'>
             News Flash
           </p>
-          <div className='max-w-[609px] ml-[50px] pt-[226px] '>
-            <h1 className='text-main text-5xl font-bold mb-3'>
+          <div className='max-w-[609px] max-lg:p-8 lg:ml-[50px] lg:pt-[226px] '>
+            <h1 className='text-main text-2xl lg:text-5xl font-bold mb-3'>
               Lorem ipsum dolor sit amet consectetur.
             </h1>
-            <p className='max-w-[575px] text-main text-2xl mb-6'>
+            <p className='max-w-[575px] text-main text-lg lg:text-2xl mb-6'>
               Lorem ipsum dolor sit amet consectetur. Eu nisl turpis dui
               vehicula duis sollicitudin.
             </p>
@@ -27,7 +27,7 @@ function Geohub() {
               type='button'
               className='cursor-pointer relative group overflow-hidden border-2 px-10 py-2 border-main w-fit rounded-md'
             >
-              <span className='uppercase tracking-widest font-medium text-accent text-lg relative z-10 group-hover:text-main duration-500'>
+              <span className='uppercase tracking-widest font-medium text-accent lg:text-lg relative z-10 group-hover:text-main duration-500'>
                 Read More
               </span>
               <span className='absolute top-0 left-0 w-full bg-main duration-500 group-hover:-translate-x-full h-full'></span>
@@ -39,10 +39,10 @@ function Geohub() {
         </div>
       </section>
       {/* Headlines section */}
-      <section className='px-24 py-14'>
+      <section className='px-6 md:px-8 lg:px-24 py-14'>
         <h2 className='font-bold text-4xl mb-5'>Headlines</h2>
-        <ul className='grid grid-cols-[repeat(auto-fill,_minmax(30rem,_1fr))] gap-8'>
-          <li className='flex gap-4 max-w-[600px]'>
+        <ul className='grid grid-cols-[repeat(auto-fill,_minmax(20rem,_1fr))] gap-8'>
+          <li className='flex max-md:flex-col gap-4 w-fit'>
             <Image
               src={reporter}
               alt='Close up on reporter taking an interview'
@@ -63,7 +63,7 @@ function Geohub() {
               </button>
             </div>
           </li>
-          <li className='flex gap-4 max-w-[600px]'>
+          <li className='flex max-md:flex-col gap-4 w-fit'>
             <Image
               src={reporter}
               alt='Close up on reporter taking an interview'
@@ -84,28 +84,7 @@ function Geohub() {
               </button>
             </div>
           </li>
-          <li className='flex gap-4 max-w-[600px]'>
-            <Image
-              src={reporter}
-              alt='Close up on reporter taking an interview'
-            />
-            <div className='flex flex-col gap-2'>
-              <p className='font-bold text-xl'>
-                Lorem ipsum dolor sit amet consectetur.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur. Nunc molestie phasellus
-                integer id risus est egestas.
-              </p>
-              <button
-                type='button'
-                className='w-full rounded-md p-3 bg-accent text-main border-2 hover:border-accent hover:bg-main hover:text-accent transition duration-300'
-              >
-                Full Story
-              </button>
-            </div>
-          </li>
-          <li className='flex gap-4 max-w-[600px]'>
+          <li className='flex max-md:flex-col gap-4 w-fit'>
             <Image
               src={reporter}
               alt='Close up on reporter taking an interview'
@@ -129,7 +108,7 @@ function Geohub() {
         </ul>
       </section>
       {/* Articles section */}
-      <section className='px-24 py-14'>
+      <section className='px-6 md:px-8 lg:px-24 py-14'>
         <h2 className='font-bold text-4xl mb-5'>Articles</h2>
         <ul className='grid grid-cols-[repeat(auto-fill,_minmax(20rem,_1fr))] gap-8'>
           <li className='shadow-md w-fit rounded-md'>
@@ -227,10 +206,10 @@ function Geohub() {
         </ul>
       </section>
       {/* Events slider section */}
-      <section className='px-24 py-14'>
+      <section className='px-6 md:px-8 lg:px-24 py-14'>
         <h2 className='font-bold text-4xl mb-5'>Events</h2>
         <div>
-          <ul className='flex gap-8'>
+          <ul className='flex gap-8 flex-wrap'>
             <li className='flex gap-4 w-[590px]'>
               <Image
                 src={events}
@@ -275,11 +254,11 @@ function Geohub() {
         </div>
       </section>
       {/* Opportunities advert */}
-      <section className='px-24 py-14'>
+      <section className='px-6 md:px-8 lg:px-24 py-14'>
         <h1 className='text-4xl font-bold mb-8'>Internship</h1>
         <div className='internship h-[25rem] relative rounded-md after:absolute after:top-0 after:-z-10 after:w-full after:h-full after:rounded-md after:bg-accent/90 '>
           <div className='grid place-items-center content-center h-full'>
-            <p className='max-w-[575px] text-main text-center text-2xl mb-6'>
+            <p className='max-w-[575px] text-main text-center lg:text-2xl mb-6'>
               Looking for an internship position in a geoscience firm? Check
               firms you can apply to as a prospective intern
             </p>
@@ -287,7 +266,7 @@ function Geohub() {
               type='button'
               className='cursor-pointer relative group overflow-hidden border-2 px-8 py-2 border-main w-fit rounded-md'
             >
-              <span className='tracking-widest font-medium text-accent text-lg relative z-10 group-hover:text-main duration-500'>
+              <span className='tracking-widest font-medium text-accent lg:text-lg relative z-10 group-hover:text-main duration-500'>
                 View Opportunities
               </span>
               <span className='absolute top-0 left-0 w-full bg-main duration-300 group-hover:translate-x-full h-full'></span>

@@ -11,10 +11,10 @@ export default function Home() {
 
   return (
     <>
-      <section className='hero flex items-center min-h-[44.3125rem] text-main'>
-        <div className='grid gap-8 ml-[108px] max-w-[686px]'>
-          <h1 className='text-6xl font-bold mb'>Geoscience For All!</h1>
-          <p className='font-medium text-3xl max-w-[654px]'>
+      <section className='hero flex items-center min-h-screen text-main'>
+        <div className='grid gap-4 lg:gap-8 lg:ml-[108px] max-sm:p-6 max-md:p-8 max-w-[686px]'>
+          <h1 className='text-3xl lg:text-6xl font-bold mb'>Geoscience For All!</h1>
+          <p className='font-medium text-lg lg:text-3xl lg:max-w-[654px]'>
             Empowering individuals and communities through
             accessible, impactful, and innovative geoscience solutions.
           </p>
@@ -22,7 +22,7 @@ export default function Home() {
             href='/about'
             className='cursor-pointer relative group overflow-hidden border-2 px-10 py-2 border-main w-fit rounded-md'
           >
-            <span className='uppercase tracking-widest font-medium text-accent text-lg relative z-10 group-hover:text-main duration-500'>
+            <span className='uppercase tracking-widest font-medium text-accent lg:text-lg relative z-10 group-hover:text-main duration-500'>
               Learn How
             </span>
             <span className='absolute top-0 left-0 w-full bg-main duration-500 group-hover:-translate-x-full h-full'></span>
@@ -32,18 +32,18 @@ export default function Home() {
           </Link>
         </div>
       </section>
-      <section className='px-24 py-14'>
-        <h2 className='font-bold text-[40px] mb-[42px]'>News Flash</h2>
-        <div className='flex gap-32'>
-          <article className='flex flex-col gap-8'>
+      <section className='px-6 md:px-8 lg:px-24 py-14'>
+        <h2 className='font-bold text-2xl lg:text-4xl mb-[42px]'>News Flash</h2>
+        <div className='flex flex-col gap-8 md:flex-row lg:gap-32'>
+          <article className='flex flex-col gap-8 max-lg:order-2'>
             <div>
               <div className='pl-4 relative'>
-                <h3 className=' text-4xl font-bold mb-2.5 before:absolute before:bg-accent before:h-full before:w-2 before:top-0 before:left-0'>
+                <h3 className=' text-xl lg:text-4xl font-bold mb-2.5 before:absolute before:bg-accent before:h-full before:w-2 before:top-0 before:left-0'>
                   Lorem ipsum dolor sit amet consectetur.
                 </h3>
               </div>
               <div className='pl-4'>
-                <p className='text-2xl'>
+                <p className='text-lg lg:text-2xl'>
                   Lorem ipsum dolor sit amet consectetur. Eu nisl turpis dui
                   vehicula duis sollicitudin.
                 </p>
@@ -51,12 +51,12 @@ export default function Home() {
             </div>
             <div>
               <div className='pl-4'>
-                <h3 className=' text-4xl font-bold mb-2.5'>
+                <h3 className='text-xl lg:text-4xl font-bold mb-2.5'>
                   Eu nisl turpis dui vehicula duis sollicitudin.
                 </h3>
               </div>
               <div className='pl-4'>
-                <p className='text-2xl'>
+                <p className='text-lg lg:text-2xl'>
                   Lorem ipsum dolor sit amet consectetur. Eu nisl turpis dui
                   vehicula duis sollicitudin.
                 </p>
@@ -66,7 +66,7 @@ export default function Home() {
               type='button'
               className='cursor-pointer relative group overflow-hidden border-2 px-10 py-2 border-accent w-fit rounded-md'
             >
-              <span className='uppercase tracking-widest font-medium text-main text-lg relative z-10 group-hover:text-accent duration-500'>
+              <span className='uppercase tracking-widest font-medium text-main lg:text-lg relative z-10 group-hover:text-accent duration-500'>
                 Read More
               </span>
               <span className='absolute top-0 left-0 w-full bg-accent duration-300 group-hover:translate-x-full h-full'></span>
@@ -81,18 +81,18 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className='px-24 py-14'>
-        <h2 className='text-4xl font-bold mb-[32px]'>Products</h2>
+      <section className='px-6 md:px-8 lg:px-24 py-14'>
+        <h2 className='text-2xl lg:text-4xl font-bold mb-[32px]'>Products</h2>
         <div>
-          <ul className='flex gap-2 justify-between'>
+          <ul className='flex gap-2 flex-wrap justify-between'>
             <li className='max-w-[334px] text-center'>
               <Image
                 src={product}
                 alt='Old vintage compass and travel instruments on ancient map'
                 className='h-[264px] rounded-md'
               />
-              <p className='font-bold text-3xl mt-2'>Eu nisl turpis dui.</p>
-              <p className='text-[26px]'>
+              <p className='font-bold text-xl lg:text-3xl mt-2'>Eu nisl turpis dui.</p>
+              <p className='text-lg lg:text-2xl'>
                 Lorem ipsum dolor sit amet consectetur.
               </p>
               <button
@@ -108,8 +108,8 @@ export default function Home() {
                 alt='Old vintage compass and travel instruments on ancient map'
                 className='h-[264px] rounded-md'
               />
-              <p className='font-bold text-3xl mt-2'>Eu nisl turpis dui.</p>
-              <p className='text-[26px]'>
+              <p className='font-bold text-xl lg:text-3xl mt-2'>Eu nisl turpis dui.</p>
+              <p className='text-lg lg:text-2xl'>
                 Lorem ipsum dolor sit amet consectetur.
               </p>
               <button
@@ -125,8 +125,8 @@ export default function Home() {
                 alt='Old vintage compass and travel instruments on ancient map'
                 className='h-[264px] rounded-md'
               />
-              <p className='font-bold text-3xl mt-2'>Eu nisl turpis dui.</p>
-              <p className='text-[26px]'>
+              <p className='font-bold text-xl lg:text-3xl mt-2'>Eu nisl turpis dui.</p>
+              <p className='text-lg lg:text-2xl'>
                 Lorem ipsum dolor sit amet consectetur.
               </p>
               <button
@@ -136,6 +136,7 @@ export default function Home() {
                 View
               </button>
             </li>
+            
           </ul>
           <div className='flex justify-center mt-8'>
             <button
@@ -147,28 +148,27 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className='px-24 py-14'>
-        <h2 className='text-4xl font-bold mb-[32px]'>Training Services</h2>
-        <div className='p-4 flex gap-10'>
+      <section className='px-6 md:px-8 lg:px-24 py-14'>
+        <h2 className='text-2xl lg:text-4xl font-bold mb-[32px]'>Training Services</h2>
+        <div className='lg:p-4 flex flex-col lg:flex-row gap-4 lg:gap-10'>
           <Image
             src={training}
             alt='Men looking at tablet medium shot'
-            className='max-w-[565px]'
+            className='max-w-[565px] max-md:h-[264px] max-md:max-w-[320px]'
           />
-          <div className='flex flex-col gap-6'>
-            <h3 className=' text-4xl font-bold'>
-              Eu nisl turpis dui vehicula duis sollicitudin.
+          <div className='flex flex-col gap-3 lg:gap-6'>
+            <h3 className='text-xl lg:text-4xl font-bold'>
+              Learn ArcGis
             </h3>
-            <p className='text-3xl max-w-[478px]'>
-              Lorem ipsum dolor sit amet consectetur. Eu nisl turpis dui
-              vehicula duis sollicitudin.
+            <p className='text-lg lg:text-3xl max-w-[478px]'>
+              Join our next cohort on ArcGis fundamentals
             </p>
-            <p className='text-4xl font-semibold'>Starting Date:</p>
+            <p className='text-md lg:text-3xl font-semibold'>Starts June</p>
             <button
               type='button'
               className='cursor-pointer relative group overflow-hidden border-2 px-8 py-2 border-accent w-fit rounded-md'
             >
-              <span className='tracking-widest font-medium text-main text-lg relative z-10 group-hover:text-accent duration-500'>
+              <span className='tracking-widest font-medium text-main lg:text-lg relative z-10 group-hover:text-accent duration-500'>
                 Register
               </span>
               <span className='absolute top-0 left-0 w-full bg-accent duration-300 group-hover:translate-x-full h-full'></span>
@@ -176,10 +176,10 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className='px-24 py-14'>
-        <div className='community relative rounded-md flex flex-col gap-7 text-center justify-center items-center h-[393px] after:absolute after:top-0 after:-z-10 after:w-full after:h-full after:rounded-md after:bg-accent/90 '>
-          <h3 className='text-main text-4xl font-bold'>Join Our Community</h3>
-          <p className='max-w-[934px] text-main text-2xl'>
+      <section className='px-6 md:px-8 lg:px-24 py-14'>
+        <div className='community relative rounded-md flex flex-col gap-4 lg:gap-7 text-center justify-center items-center h-[393px] after:absolute after:top-0 after:-z-10 after:w-full after:h-full after:rounded-md after:bg-accent/90 '>
+          <h3 className='text-main text-2xl lg:text-4xl font-bold'>Join Our Community</h3>
+          <p className='max-w-[934px] text-main text-lg lg:text-2xl'>
             Lorem ipsum dolor sit amet consectetur. Ut amet sed turpis augue
             blandit. Molestie ut libero eget feugiat enim. Eget risus
             consectetur enim placerat. Egestas ipsum quam vitae netus pulvinar
