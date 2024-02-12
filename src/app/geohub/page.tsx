@@ -40,7 +40,7 @@ function Geohub() {
       </section>
       {/* Headlines section */}
       <section className='px-6 md:px-8 lg:px-24 py-14'>
-        <h2 className='font-bold text-4xl mb-5'>Headlines</h2>
+        <h2 className='font-bold text-2xl lg:text-4xl mb-5'>Headlines</h2>
         <ul className='grid grid-cols-[repeat(auto-fit,_minmax(20rem,_1fr))] gap-8'>
           <li className='flex max-md:flex-col gap-4'>
             <Image
@@ -48,7 +48,7 @@ function Geohub() {
               alt='Close up on reporter taking an interview'
             />
             <div className='flex flex-col gap-2'>
-              <p className='font-bold text-xl'>
+              <p className='font-bold text-lg lg:text-xl'>
                 Lorem ipsum dolor sit amet consectetur.
               </p>
               <p>
@@ -69,7 +69,7 @@ function Geohub() {
               alt='Close up on reporter taking an interview'
             />
             <div className='flex flex-col gap-2'>
-              <p className='font-bold text-xl'>
+              <p className='font-bold text-lg lg:text-xl'>
                 Lorem ipsum dolor sit amet consectetur.
               </p>
               <p>
@@ -88,7 +88,7 @@ function Geohub() {
       </section>
       {/* Articles section */}
       <section className='px-6 md:px-8 lg:px-24 py-14'>
-        <h2 className='font-bold text-4xl mb-5'>Articles</h2>
+        <h2 className='font-bold text-2xl lg:text-4xl mb-5'>Articles</h2>
         <ul className='grid grid-cols-[repeat(auto-fill,_minmax(20rem,_1fr))] gap-8'>
           <li className='shadow-md w-fit rounded-md'>
             <Link href={''} className='flex flex-col gap-4'>
@@ -97,8 +97,8 @@ function Geohub() {
                 alt='Grayscale shot of rock slide'
                 className='rounded-t-md'
               />
-              <div className='flex flex-col gap-2 max-w-[400px] px-6 pb-4'>
-                <p className='font-bold text-xl'>
+              <div className='flex flex-col gap-2 max-w-[400px] px-4 lg:px-6 pb-4'>
+                <p className='font-bold text-lg lg:text-xl'>
                   Lorem ipsum dolor sit amet consectetur...
                 </p>
                 <p>
@@ -120,8 +120,8 @@ function Geohub() {
                 alt='Grayscale shot of rock slide'
                 className='rounded-t-md'
               />
-              <div className='flex flex-col gap-2 max-w-[400px] px-6 pb-4'>
-                <p className='font-bold text-xl'>
+              <div className='flex flex-col gap-2 max-w-[400px] px-4 lg:px-6 pb-4'>
+                <p className='font-bold text-lg lg:text-xl'>
                   Lorem ipsum dolor sit amet consectetur...
                 </p>
                 <p>
@@ -143,8 +143,8 @@ function Geohub() {
                 alt='Grayscale shot of rock slide'
                 className='rounded-t-md'
               />
-              <div className='flex flex-col gap-2 max-w-[400px] px-6 pb-4'>
-                <p className='font-bold text-xl'>
+              <div className='flex flex-col gap-2 max-w-[400px] px-4 lg:px-6 pb-4'>
+                <p className='font-bold text-lg lg:text-xl'>
                   Lorem ipsum dolor sit amet consectetur...
                 </p>
                 <p>
@@ -166,8 +166,8 @@ function Geohub() {
                 alt='Grayscale shot of rock slide'
                 className='rounded-t-md'
               />
-              <div className='flex flex-col gap-2 max-w-[400px] px-6 pb-4'>
-                <p className='font-bold text-xl'>
+              <div className='flex flex-col gap-2 max-w-[400px] px-4 lg:px-6 pb-4'>
+                <p className='font-bold text-lg lg:text-xl'>
                   Lorem ipsum dolor sit amet consectetur...
                 </p>
                 <p>
@@ -186,14 +186,14 @@ function Geohub() {
       </section>
       {/* Events slider section */}
       <section className='px-6 md:px-8 lg:px-24 py-14'>
-        <h2 className='font-bold text-4xl mb-5'>Events</h2>
+        <h2 className='font-bold text-2xl lg:text-4xl mb-5'>Events</h2>
         <div>
           <ul className='flex gap-8 max-lg:flex-wrap'>
-            <li className='flex gap-4 w-[590px]'>
+            <li className='flex flex-col lg:flex-row gap-4 w-[590px]'>
               <Image
                 src={events}
                 alt='Close up on reporter taking an interview'
-                className='rounded-md'
+                className='rounded-md max-lg:w-full'
               />
               <div className='flex flex-col gap-2'>
                 <p className='font-bold text-xl'>Geohub spotlight</p>
@@ -209,11 +209,11 @@ function Geohub() {
                 </button>
               </div>
             </li>
-            <li className='flex gap-4 w-[590px]'>
+            <li className='flex flex-col lg:flex-row gap-4 w-[590px]'>
               <Image
                 src={events}
                 alt='Close up on reporter taking an interview'
-                className='rounded-md'
+                className='rounded-md max-lg:w-full'
               />
               <div className='flex flex-col gap-2'>
                 <p className='font-bold text-xl'>Geohub spotlight</p>

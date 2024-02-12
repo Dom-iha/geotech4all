@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import jerry from '../../../public/assets/images/jerry.png';
-import edna from '../../../public/assets/images/edna.png';
 import gabriel from '../../../public/assets/images/gabriel.png';
 import Link from 'next/link';
 
@@ -26,22 +25,22 @@ function About() {
           </Link>
         </div>
       </section>
-      <section id='mission' className='px-6 md:px-8 lg:px-24 py-14'>
-        <div className='flex max-lg:flex-col gap-8 justify-between'>
+      <section id='mission' className='max-lg:flex flex-col gap-8 px-6 md:px-8 lg:px-24 py-14'>
+        <div className='flex max-lg:flex-col gap-4 lg:gap-8 justify-between'>
           <div className='w-full h-[250px] lg:w-[500px] lg:h-[500px] bg-accent lg:order-2'></div>
           <div className='flex flex-col justify-center'>
-            <p className='font-bold text-4xl mb-5'>Our Mission</p>
-            <p className='max-w-[500px] font-medium text-2xl'>
+            <p className='font-bold text-2xl lg:text-4xl mb-5'>Our Mission</p>
+            <p className='max-w-[500px] font-medium lg:text-2xl'>
               We are driven by the belief that geoscience holds the key to
               understanding our planet, and addressing global challenges.
             </p>
           </div>
         </div>
-        <div className='flex max-lg:flex-col gap-8 justify-between'>
+        <div className='flex max-lg:flex-col gap-4 lg:gap-8 justify-between'>
           <div className='w-full h-[250px] lg:w-[500px] lg:h-[500px] bg-accent'></div>
           <div className='flex flex-col justify-center'>
-            <p className='font-bold text-4xl mb-5'>Our Vision</p>
-            <p className='max-w-[500px] font-medium text-2xl'>
+            <p className='font-bold text-2xl lg:text-4xl mb-5'>Our Vision</p>
+            <p className='max-w-[500px] font-medium lg:text-2xl'>
               To be the leading resource center for everything geoscience from
               knowledge, to practical application and solutions.
             </p>
@@ -50,13 +49,13 @@ function About() {
       </section>
       {/* People section */}
       <section className='px-6 md:px-8 lg:px-24 py-14'>
-        <h2 className='font-bold text-4xl mb-5'>Meet the team</h2>
+        <h2 className='font-bold text-2xl lg:text-4xl mb-5'>Meet the team</h2>
         <article className='flex flex-col gap-8'>
           <div className='flex flex-col lg:flex-row'>
             <Image src={jerry} alt='jeremiah oladipupo' />
-            <div className='p-8 lg:bg-accent lg:text-main lg:p-20 flex flex-col gap-4'>
+            <div className='p-6 md:p-8 lg:bg-accent lg:text-main lg:p-20 flex flex-col gap-4'>
               <div>
-                <h3 className='text-2xl font-bold'>Jeremiah Oladipupo</h3>
+                <h3 className='text-lg lg:text-2xl font-bold'>Jeremiah Oladipupo</h3>
                 <p className='font-bold'>CEO & Founder</p>
               </div>
               <p>
@@ -69,31 +68,14 @@ function About() {
             </div>
           </div>
           <div className='flex flex-col lg:flex-row'>
-            <Image src={edna} alt='jeremiah oladipupo' />
-            <div className='p-8 lg:bg-accent lg:text-main lg:p-20 flex flex-col gap-4 lg:order-1'>
-              <div>
-                <h3 className='text-2xl font-bold'>Edna Osaghele</h3>
-                <p className='font-bold'>Co Founder</p>
-              </div>
-              <p>
-                Co-founder of Geotech4All, is a skilled professional
-                specializing in engineering geology. With expertise in data
-                acquisition, processing and report writing, Edna brings valuable
-                insight into the team.. Her commitment to advancing geospatial
-                solutions is pivotal in Geotech4All’s mission of making
-                geospatial technology available to everyone.
-              </p>
-            </div>
-          </div>
-          <div className='flex flex-col lg:flex-row'>
             <Image src={gabriel} alt='Gabriel Bahago' />
-            <div className='p-8 lg:bg-accent lg:text-main lg:p-20 flex flex-col gap-4'>
+            <div className='p-6 md:p-8 lg:bg-accent lg:text-main lg:p-20 flex flex-col gap-4 lg:order-1'>
               <div>
-                <h3 className='text-2xl font-bold'>Gabriel Bahago</h3>
+                <h3 className='text-lg lg:text-2xl font-bold'>Gabriel Bahago</h3>
                 <p className='font-bold'>Co Founder</p>
               </div>
               <p>
-                Co-founder of Geotech4All, is a visionary leader with deep
+              Co-founder of Geotech4All, is a visionary leader with deep
                 understanding of geospatial technologies. His expertise spans
                 GIS, remote sensing and environmental modeling. Committed to
                 making geospatial knowledge available, Gabriel plays a key role

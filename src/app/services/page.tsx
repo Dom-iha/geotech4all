@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import geolab from '../../../public/assets/icons/geolab.svg';
+import geohub from '../../../public/assets/icons/geohub.jpg';
 import geoconsult from '../../../public/assets/icons/geoconsult.svg';
 import researchHub from '../../../public/assets/icons/researchHub.svg';
 import breccias from '../../../public/assets/icons/breccias.svg';
@@ -32,7 +33,7 @@ const Services: React.FC = () => {
       </section>
       <section className='px-6 md:px-8 lg:px-24 py-14'>
         <h2 className='text-3xl lg:text-5xl font-bold mb-16'>What we offer</h2>
-        <ul className='grid gap-8 lg:gap-32 mt-5 grid-cols-[repeat(auto-fill,_minmax(20rem,_1fr))]'>
+        <ul className='grid gap-8 lg:gap-32 mt-5 grid-cols-[repeat(auto-fit,_minmax(16rem,_1fr))]'>
           <li className='grid gap-4 lg:gap-8'>
             <h3 className='text-xl lg:text-2xl font-semibold'>
               Geological Services
@@ -53,7 +54,7 @@ const Services: React.FC = () => {
           </li>
           <li className='grid gap-4 lg:gap-8'>
             <h3 className='text-xl lg:text-2xl font-semibold'>
-              Project Writing Assistance
+              Project Writing
             </h3>
             <p className='lg:text-xl'>
               From spatial analysis and Geochemical plots to production of
@@ -101,52 +102,32 @@ const Services: React.FC = () => {
               <span className='absolute top-0 left-0 w-full bg-accent duration-300 group-hover:translate-x-full h-full'></span>
             </button>
           </li>
+          <li className='grid gap-4 lg:gap-8'>
+            <h3 className='text-xl lg:text-2xl font-semibold'>Equipments</h3>
+            <p className='lg:text-xl'>
+              Upskill your geoscience knowledge with any of our online
+              geoscience software training.
+            </p>
+            <button
+              type='button'
+              className='cursor-pointer relative group overflow-hidden border-2 px-10 py-2 border-accent w-fit rounded-md'
+            >
+              <span className='uppercase font-medium text-main lg:text-lg relative z-10 group-hover:text-accent duration-500'>
+                I need this
+              </span>
+              <span className='absolute top-0 left-0 w-full bg-accent duration-300 group-hover:translate-x-full h-full'></span>
+            </button>
+          </li>
         </ul>
       </section>
       <section className='px-6 md:px-8 lg:px-24 py-14'>
         <div>
-          <h3 className='text-3xl lg:text-6xl font-bold mb-20'>Our Partners</h3>
-          <ul className='grid grid-cols-2 gap-20'>
-            <li>
-              <Image src={geolab} alt='partners log' />
-            </li>
-            <li>
-              <Image src={geoconsult} alt='partners log' />
-            </li>
-            <li>
-              <Image src={researchHub} alt='partners log' />
-            </li>
-            <li>
-              <Image src={breccias} alt='partners log' />
-            </li>
-          </ul>
-        </div>
-      </section>
-      <section className='px-6 md:px-8 lg:px-24 py-14 bg-accent'>
-        <div className='flex flex-col gap-8 max-w-[600px] mx-auto'>
-          <p className='text-main text-center text-xl font-semibold'>
-            Stay up to date with what we&apos;re doing. Signup to our newsletter for
-            blog posts and service updates
-          </p>
-          <form className='flex gap-4 justify-center'>
-            <label htmlFor='email' className='sr-only'>
-              Email
-            </label>
-            <input
-              id='email'
-              name='email'
-              type='email'
-              placeholder='Enter your email address'
-              autoComplete='off'
-              className='px-4 w-full rounded-md outline-main outline-offset-4 outline-2 focus:outline-dashed'
-            />
-            <button
-              type='button'
-              className='w-fit rounded-md py-3 px-4 bg-accent text-main border-2 hover:border-accent hover:bg-main hover:text-accent transition duration-300'
-            >
-              Subscribe
-            </button>
-          </form>
+          <h3 className='text-2xl lg:text-6xl font-bold mb-20'>Proudly sponsored by</h3>
+          <div className='grid grid-cols-2 gap-20'>
+            <div>
+              <Image src={geohub} alt='partners log' />
+            </div>
+          </div>
         </div>
       </section>
     </>
