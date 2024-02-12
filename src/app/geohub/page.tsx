@@ -11,11 +11,11 @@ function Geohub() {
   return (
     <>
       <section className='px-6 md:px-8 lg:px-24 py-2'>
-        <div className='news-hero min-h-screen relative rounded-md after:absolute after:top-0 after:-z-10 after:w-full after:h-full after:rounded-md after:bg-accent/90 '>
+        <div className='news-hero  relative rounded-md after:absolute after:top-0 after:-z-10 after:w-full after:h-full after:rounded-md after:bg-accent/90 '>
           <p className='pt-6 ml-8 lg:ml-10 font-medium text-lg text-main'>
             News Flash
           </p>
-          <div className='max-w-[609px] max-lg:p-8 lg:ml-[50px] lg:pt-[226px] '>
+          <div className='max-w-[609px] max-lg:p-8 lg:ml-[50px] lg:pt-[226px] lg:pb-8'>
             <h1 className='text-main text-2xl lg:text-5xl font-bold mb-3'>
               Lorem ipsum dolor sit amet consectetur.
             </h1>
@@ -41,29 +41,8 @@ function Geohub() {
       {/* Headlines section */}
       <section className='px-6 md:px-8 lg:px-24 py-14'>
         <h2 className='font-bold text-4xl mb-5'>Headlines</h2>
-        <ul className='grid grid-cols-[repeat(auto-fill,_minmax(20rem,_1fr))] gap-8'>
-          <li className='flex max-md:flex-col gap-4 w-fit'>
-            <Image
-              src={reporter}
-              alt='Close up on reporter taking an interview'
-            />
-            <div className='flex flex-col gap-2'>
-              <p className='font-bold text-xl'>
-                Lorem ipsum dolor sit amet consectetur.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur. Nunc molestie phasellus
-                integer id risus est egestas.
-              </p>
-              <button
-                type='button'
-                className='w-full rounded-md p-3 bg-accent text-main border-2 hover:border-accent hover:bg-main hover:text-accent transition duration-300'
-              >
-                Full Story
-              </button>
-            </div>
-          </li>
-          <li className='flex max-md:flex-col gap-4 w-fit'>
+        <ul className='grid grid-cols-[repeat(auto-fit,_minmax(20rem,_1fr))] gap-8'>
+          <li className='flex max-md:flex-col gap-4'>
             <Image
               src={reporter}
               alt='Close up on reporter taking an interview'
@@ -209,7 +188,7 @@ function Geohub() {
       <section className='px-6 md:px-8 lg:px-24 py-14'>
         <h2 className='font-bold text-4xl mb-5'>Events</h2>
         <div>
-          <ul className='flex gap-8 flex-wrap'>
+          <ul className='flex gap-8 max-lg:flex-wrap'>
             <li className='flex gap-4 w-[590px]'>
               <Image
                 src={events}

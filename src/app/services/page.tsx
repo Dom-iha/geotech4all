@@ -125,8 +125,8 @@ const Services: React.FC = () => {
       <section className='px-6 md:px-8 lg:px-24 py-14 bg-accent'>
         <div className='flex flex-col gap-8 max-w-[600px] mx-auto'>
           <p className='text-main text-center text-xl font-semibold'>
-            Stay up to date with what we&apos;re doing. Sign Up for newsletters,
-            blog posts and services updates
+            Stay up to date with what we&apos;re doing. Signup to our newsletter for
+            blog posts and service updates
           </p>
           <form className='flex gap-4 justify-center'>
             <label htmlFor='email' className='sr-only'>

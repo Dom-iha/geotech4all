@@ -9,10 +9,9 @@ function About() {
     <>
       <section className='px-6 md:px-8 lg:px-24 py-14'>
         <div className='flex flex-col gap-10 justify-center items-center'>
-          <h1 className='text-8xl text-center font-bold mt-3'>About Us</h1>
-          <p className='text-center mt-4 text-2xl max-w-[900px] font-medium'>
+          <h1 className='text-3xl lg:text-8xl text-center font-bold mt-3'>
             Redefining Geology with Technology.
-          </p>
+          </h1>
           <Link
             href='#mission'
             className='cursor-pointer relative group overflow-hidden border-2 px-10 py-3 border-accent w-fit rounded-md'
@@ -28,7 +27,8 @@ function About() {
         </div>
       </section>
       <section id='mission' className='px-6 md:px-8 lg:px-24 py-14'>
-        <div className='flex gap-8 justify-between'>
+        <div className='flex max-lg:flex-col gap-8 justify-between'>
+          <div className='w-full h-[250px] lg:w-[500px] lg:h-[500px] bg-accent lg:order-2'></div>
           <div className='flex flex-col justify-center'>
             <p className='font-bold text-4xl mb-5'>Our Mission</p>
             <p className='max-w-[500px] font-medium text-2xl'>
@@ -36,10 +36,9 @@ function About() {
               understanding our planet, and addressing global challenges.
             </p>
           </div>
-          <div className='w-[500px] h-[500px] bg-accent'></div>
         </div>
-        <div className='flex gap-8 justify-between'>
-          <div className='w-[500px] h-[500px] bg-accent'></div>
+        <div className='flex max-lg:flex-col gap-8 justify-between'>
+          <div className='w-full h-[250px] lg:w-[500px] lg:h-[500px] bg-accent'></div>
           <div className='flex flex-col justify-center'>
             <p className='font-bold text-4xl mb-5'>Our Vision</p>
             <p className='max-w-[500px] font-medium text-2xl'>
@@ -53,9 +52,9 @@ function About() {
       <section className='px-6 md:px-8 lg:px-24 py-14'>
         <h2 className='font-bold text-4xl mb-5'>Meet the team</h2>
         <article className='flex flex-col gap-8'>
-          <div className='flex'>
+          <div className='flex flex-col lg:flex-row'>
             <Image src={jerry} alt='jeremiah oladipupo' />
-            <div className='bg-accent text-main p-20 flex flex-col gap-4'>
+            <div className='p-8 lg:bg-accent lg:text-main lg:p-20 flex flex-col gap-4'>
               <div>
                 <h3 className='text-2xl font-bold'>Jeremiah Oladipupo</h3>
                 <p className='font-bold'>CEO & Founder</p>
@@ -69,8 +68,9 @@ function About() {
               </p>
             </div>
           </div>
-          <div className='flex gap-'>
-            <div className='bg-accent text-main p-20 flex flex-col gap-4'>
+          <div className='flex flex-col lg:flex-row'>
+            <Image src={edna} alt='jeremiah oladipupo' />
+            <div className='p-8 lg:bg-accent lg:text-main lg:p-20 flex flex-col gap-4 lg:order-1'>
               <div>
                 <h3 className='text-2xl font-bold'>Edna Osaghele</h3>
                 <p className='font-bold'>Co Founder</p>
@@ -84,11 +84,10 @@ function About() {
                 geospatial technology available to everyone.
               </p>
             </div>
-            <Image src={edna} alt='edna osaghele' className='' />
           </div>
-          <div className='flex gap-'>
-            <Image src={gabriel} alt='gabriel bahago' />
-            <div className='bg-accent text-main p-20 flex flex-col gap-4'>
+          <div className='flex flex-col lg:flex-row'>
+            <Image src={gabriel} alt='Gabriel Bahago' />
+            <div className='p-8 lg:bg-accent lg:text-main lg:p-20 flex flex-col gap-4'>
               <div>
                 <h3 className='text-2xl font-bold'>Gabriel Bahago</h3>
                 <p className='font-bold'>Co Founder</p>

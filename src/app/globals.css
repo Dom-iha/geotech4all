@@ -10,11 +10,40 @@
   --spacing: clamp();
 }
 
+@keyframes grow {
+	from {
+		transform: scale(0.8);
+		opacity: .8;
+	}
+	to {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     background: var(--background);
     font-family: montserrat, sans-serif;
   }
+  body:has(button[aria-expanded='true']){
+    overflow: hidden;
+  }
+
 }
 
 @layer utilities {
@@ -25,7 +54,9 @@
     background: url(../../public/assets/images/cityscape.png) no-repeat;
   }
   .news-hero {
-    background: url(../../public/assets/images/reforestation.png) no-repeat;
+    background: url(../../public/assets/images/reforestation.png) no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
   }
   .internship {
     background: url(../../public/assets/images/internship.png) no-repeat;
@@ -33,6 +64,9 @@
   .spacing {
     padding: var(--spacing);
   }
+  /* .no-scroll {
+    overflow: hidden;
+  } */
 }
 
 @layer components {

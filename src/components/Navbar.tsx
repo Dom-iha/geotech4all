@@ -1,6 +1,7 @@
 'use client';
 import Image from 'next/image';
-import logo from '../../public/assets/icons/logo-black.png';
+import dark_logo from '../../public/assets/icons/logo-black.png';
+// import white_logo from '../../public/assets/icons/logo-white.jpg';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
@@ -10,27 +11,36 @@ const Navbar: React.FC = () => {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const toggleMenu = () => {
-    setIsOpen(prevState => !prevState)
-  }
+    setIsOpen((prevState) => !prevState);
+  };
+
+  // let logo = isOpen ? white_logo : dark_logo;
+
   return (
-    <header className='grid grid-cols-[auto,_auto] md:flex justify-between items-center bg-white shadow-sm py-4 px-4 md:px-8 lg:px-24 max-w-[90rem] mx-auto'>
+    <header className='grid grid-cols-[auto,_auto] md:flex justify-between items-center bg-white shadow-sm py-4 px-6 md:px-8 lg:px-24 max-w-[90rem] mx-auto'>
       <Link
         href='#main-content'
         className='fixed top-2 z-10  p-4 bg-accent text-main outline-main outline-2 focus-visible:outline-dashed -translate-y-20 focus-visible:translate-y-0 transition'
       >
         Skip to Main Content
       </Link>
-      <div>
+      <div className=''>
         <Link href='/'>
-          <Image src={logo} alt='geotech4all logo' className='w-[150px]' />
+          <Image src={dark_logo} alt='geotech4all logo' className='w-[150px]' />
         </Link>
       </div>
-      <MobileToggle isOpen={isOpen} toggleMenu={toggleMenu}/>
+      <MobileToggle isOpen={isOpen} toggleMenu={toggleMenu} />
       <nav>
-        <ul id='navbar-menu' className={`max-md:min-h-screen flex flex-col gap-6 min-w-full py-20 px-8 max-md:absolute top-0 z-20 text-main bg-accent/90 backdrop-blur-sm ${isOpen ? 'left-0' : '-left-full'} md:flex-row md:justify-evenly md:gap-10 md:bg-transparent md:text-accent md:p-0 text-lg font-medium transition duration-300`} >
+        <ul
+          id='navbar-menu'
+          className={`max-md:min-h-screen flex flex-col gap-6 min-w-full py-20 px-8 max-md:absolute top-0 z-20 text-main bg-accent/90 backdrop-blur-md ${
+            isOpen ? 'left-0' : '-left-full'
+          } md:flex-row md:justify-evenly md:gap-10 md:bg-transparent md:text-accent md:p-0 text-lg font-medium transition duration-300`}
+        >
           <li
-            className={`relative after:absolute after:bg-main after:w-1 after:h-full after:-left-2 after:top-0 after:scale-y-0 after:origin-bottom md:after:bg-accent md:after:h-0.5 md:after:w-full md:after:bottom-0 md:after:left-0 md:after:scale-x-0 md:after:origin-right md:hover:after:scale-x-100 md:hover:after:origin-left ${ 
-              pathname === '/services' && 'after:scale-y-100 md:after:scale-x-100'
+            className={`link ${isOpen ? 'animate-in' : 'animate-out'} relative after:absolute after:bg-main after:w-1 after:h-full after:-left-2 after:top-0 after:scale-y-0 after:origin-bottom md:after:bg-accent md:after:h-0.5 md:after:w-full md:after:top-auto md:after:bottom-0 md:after:left-0 md:after:scale-y-100 md:after:scale-x-0 md:after:origin-right md:hover:after:scale-x-100 md:hover:after:origin-left ${
+              pathname === '/services' &&
+              'after:scale-y-100 md:after:scale-x-100'
             } transition  after:transition after:duration-300`}
           >
             <Link
@@ -41,7 +51,7 @@ const Navbar: React.FC = () => {
             </Link>
           </li>
           <li
-            className={`relative after:absolute after:bg-main after:w-1 after:h-full after:-left-2 after:top-0 after:scale-y-0 after:origin-bottom md:after:bg-accent md:after:h-0.5 md:after:w-full md:after:bottom-0 md:after:left-0 md:after:scale-x-0 md:after:origin-right md:hover:after:scale-x-100 md:hover:after:origin-left ${ 
+            className={`${isOpen ? 'animate-in' : 'animate-out'} relative after:absolute after:bg-main after:w-1 after:h-full after:-left-2 after:top-0 after:scale-y-0 after:origin-bottom md:after:bg-accent md:after:h-0.5 md:after:w-full md:after:top-auto md:after:bottom-0 md:after:left-0 md:after:scale-y-100 md:after:scale-x-0 md:after:origin-right md:hover:after:scale-x-100 md:hover:after:origin-left ${
               pathname === '/geohub' && 'after:scale-y-100 md:after:scale-x-100'
             } transition  after:transition after:duration-300`}
           >
@@ -53,8 +63,9 @@ const Navbar: React.FC = () => {
             </Link>
           </li>
           <li
-            className={`relative after:absolute after:bg-main after:w-1 after:h-full after:-left-2 after:top-0 after:scale-y-0 after:origin-bottom md:after:bg-accent md:after:h-0.5 md:after:w-full md:after:bottom-0 md:after:left-0 md:after:scale-x-0 md:after:origin-right md:hover:after:scale-x-100 md:hover:after:origin-left ${ 
-              pathname === '/gallery' && 'after:scale-y-100 md:after:scale-x-100'
+            className={`${isOpen ? 'animate-in' : 'animate-out'} relative after:absolute after:bg-main after:w-1 after:h-full after:-left-2 after:top-0 after:scale-y-0 after:origin-bottom md:after:bg-accent md:after:h-0.5 md:after:w-full md:after:top-auto md:after:bottom-0 md:after:left-0 md:after:scale-y-100 md:after:scale-x-0 md:after:origin-right md:hover:after:scale-x-100 md:hover:after:origin-left ${
+              pathname === '/gallery' &&
+              'after:scale-y-100 md:after:scale-x-100'
             } transition  after:transition after:duration-300`}
           >
             <Link
@@ -65,9 +76,9 @@ const Navbar: React.FC = () => {
             </Link>
           </li>
           <li
-           className={`relative after:absolute after:bg-main after:w-1 after:h-full after:-left-2 after:top-0 after:scale-y-0 after:origin-bottom md:after:bg-accent md:after:h-0.5 md:after:w-full md:after:bottom-0 md:after:left-0 md:after:scale-x-0 md:after:origin-right md:hover:after:scale-x-100 md:hover:after:origin-left ${ 
-            pathname === '/about' && 'after:scale-y-100 md:after:scale-x-100'
-          } transition  after:transition after:duration-300`}
+            className={`${isOpen ? 'animate-in' : 'animate-out'} relative after:absolute after:bg-main after:w-1 after:h-full after:-left-2 after:top-0 after:scale-y-0 after:origin-bottom md:after:bg-accent md:after:h-0.5 md:after:w-full md:after:top-auto md:after:bottom-0 md:after:left-0 md:after:scale-y-100 md:after:scale-x-0 md:after:origin-right md:hover:after:scale-x-100 md:hover:after:origin-left ${
+              pathname === '/about' && 'after:scale-y-100 md:after:scale-x-100'
+            } transition  after:transition after:duration-300`}
           >
             <Link
               href='/about'
