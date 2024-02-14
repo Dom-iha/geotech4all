@@ -25,6 +25,9 @@ const config: Config = {
       animation: {
         fade: 'fade .6s forwards',
         in: 'in .6s forwards',
+        in2: 'in .8s forwards',
+        in3: 'in 1s forwards',
+        in4: 'in 1.2s forwards',
         out: 'out .6s forwards',
       },
       //   screens: {

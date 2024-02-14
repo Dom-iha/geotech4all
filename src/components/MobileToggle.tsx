@@ -24,11 +24,11 @@ function MobileToggle({ isOpen, toggleMenu }: MenuProps) {
     <button
       type='button'
       aria-expanded={isOpen}
-      aria-controls='navbar-manu'
+      aria-controls='navbar-menu'
       onClick={toggleMenu}
       className='md:hidden h-fit max-md:flex flex-col gap-1 items-end z-50 outline-2 focus-visible:outline-dashed outline-offset-2'
     >
-      <span className='sr-only'>Toggle mobile menu</span>
+      <span className='sr-only'>Toggle navigation menu</span>
       <span
         className='top-bar h-0.5 w-7 bg-accent transition duration-500'
         aria-hidden='true'

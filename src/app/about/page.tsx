@@ -6,11 +6,14 @@ import Link from 'next/link';
 function About() {
   return (
     <>
-      <section className='px-6 md:px-8 lg:px-24 py-14'>
-        <div className='flex flex-col gap-10 justify-center items-center'>
+      <section className='px-6 md:px-8 lg:px-24 min-h-[85vh] grid place-items-center'>
+        <div className='flex flex-col gap-6 lg:gap-10 justify-center items-center h-full'>
           <h1 className='text-3xl lg:text-8xl text-center font-bold mt-3'>
-            Redefining Geology with Technology.
+            Everything Geoscience
           </h1>
+          <p className='text-center mt-4 text-xl lg:text-2xl max-w-[900px]'>
+            Your go-to resource center for everything geoscience. We are a team of geoscientists and tech enthusiasts committed to making geoscience knowledge and tools accessible to everyone.
+          </p>
           <Link
             href='#mission'
             className='cursor-pointer relative group overflow-hidden border-2 px-10 py-3 border-accent w-fit rounded-md'
@@ -69,7 +72,7 @@ function About() {
           </div>
           <div className='flex flex-col lg:flex-row'>
             <Image src={gabriel} alt='Gabriel Bahago' />
-            <div className='p-6 md:p-8 lg:bg-accent lg:text-main lg:p-20 flex flex-col gap-4 lg:order-1'>
+            <div className='p-6 md:p-8 lg:bg-accent lg:text-main lg:p-20 flex flex-col gap-4'>
               <div>
                 <h3 className='text-lg lg:text-2xl font-bold'>Gabriel Bahago</h3>
                 <p className='font-bold'>Co Founder</p>

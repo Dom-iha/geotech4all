@@ -1,15 +1,11 @@
 import Image from 'next/image';
-import geolab from '../../../public/assets/icons/geolab.svg';
 import geohub from '../../../public/assets/icons/geohub.jpg';
-import geoconsult from '../../../public/assets/icons/geoconsult.svg';
-import researchHub from '../../../public/assets/icons/researchHub.svg';
-import breccias from '../../../public/assets/icons/breccias.svg';
 
 const Services: React.FC = () => {
   return (
     <>
-      <section className='px-6 md:px-8 lg:px-24 py-14'>
-        <div className='flex flex-col gap-10 justify-center items-center'>
+      <section className='px-6 md:px-8 lg:px-24 py-10 min-h-[85vh] grid place-items-center'>
+        <div className='flex flex-col gap-6 lg:gap-10 justify-center items-center'>
           <h1 className='text-4xl lg:text-8xl text-center font-bold'>
             Tailor-made solutions for your geoscience needs
           </h1>

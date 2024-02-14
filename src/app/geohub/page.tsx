@@ -1,10 +1,12 @@
 import Image from 'next/image';
 import reporter from '../../../public/assets/images/reporter.png';
 import events from '../../../public/assets/images/events.png';
-import rock from '../../../public/assets/images/rock.png';
-import girl from '../../../public/assets/images/girl.png';
-import concrete from '../../../public/assets/images/concrete.png';
-import hands from '../../../public/assets/images/hands.png';
+import darwin from '../../../public/assets/images/darwin.png';
+import catastrophism from '../../../public/assets/images/catastrophism.png';
+import fauna from '../../../public/assets/images/fauna.png';
+import keytopast from '../../../public/assets/images/keytopast.png';
+import africa from '../../../public/assets/images/africa.png';
+import geotextile from '../../../public/assets/images/geotextile.png';
 import Link from 'next/link';
 
 function Geohub() {
@@ -15,13 +17,12 @@ function Geohub() {
           <p className='pt-6 ml-8 lg:ml-10 font-medium text-lg text-main'>
             News Flash
           </p>
-          <div className='max-w-[609px] max-lg:p-8 lg:ml-[50px] lg:pt-[226px] lg:pb-8'>
+          <div className='flex flex-col justify-end max-w-[609px] max-lg:p-8 lg:ml-[50px] lg:pb-8 h-[80vh]'>
             <h1 className='text-main text-2xl lg:text-5xl font-bold mb-3'>
-              Lorem ipsum dolor sit amet consectetur.
+              2023 Nigeria Infrastructural Budget: A Comparative Analysis
             </h1>
             <p className='max-w-[575px] text-main text-lg lg:text-2xl mb-6'>
-              Lorem ipsum dolor sit amet consectetur. Eu nisl turpis dui
-              vehicula duis sollicitudin.
+            Nigeria&amp;s 2023 budget, recently approved by the federal government, allocates a significant portion to infrastructure development...
             </p>
             <button
               type='button'
@@ -93,18 +94,17 @@ function Geohub() {
           <li className='shadow-md w-fit rounded-md'>
             <Link href={''} className='flex flex-col gap-4'>
               <Image
-                src={rock}
+                src={darwin}
                 alt='Grayscale shot of rock slide'
                 className='rounded-t-md'
               />
               <div className='flex flex-col gap-2 max-w-[400px] px-4 lg:px-6 pb-4'>
                 <p className='font-bold text-lg lg:text-xl'>
-                  Lorem ipsum dolor sit amet consectetur...
+                Evolution: What if Darwin’s was wrong?
                 </p>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur. Magna arcu neque
-                  convallis diam senectus purus odio aliquet pretium. In
-                  adipiscing dui in diam vitae id est id nunc...
+                  The difference between right and wrong is a function of perspective.
+                  Now, what do you think an agnostic would tell you about God and the exact origin of life? 
                 </p>
                 <div className='flex justify-between'>
                   <p className='mt-8 text-sm font-bold'>Geotech4all</p>
@@ -116,18 +116,16 @@ function Geohub() {
           <li className='shadow-md w-fit rounded-md'>
             <Link href={''} className='flex flex-col gap-4'>
               <Image
-                src={girl}
+                src={catastrophism}
                 alt='Grayscale shot of rock slide'
                 className='rounded-t-md'
               />
               <div className='flex flex-col gap-2 max-w-[400px] px-4 lg:px-6 pb-4'>
                 <p className='font-bold text-lg lg:text-xl'>
-                  Lorem ipsum dolor sit amet consectetur...
+                  CATASTROPHISM: Plant, Animal, and Human
                 </p>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur. Magna arcu neque
-                  convallis diam senectus purus odio aliquet pretium. In
-                  adipiscing dui in diam vitae id est id nunc...
+                  At the onset of the quest of humans to know more about the earth. Many ideas, theories, and philosophies have sprung up to explain the origin of the earth...
                 </p>
                 <div className='flex justify-between'>
                   <p className='mt-8 text-sm font-bold'>Geotech4all</p>
@@ -139,18 +137,16 @@ function Geohub() {
           <li className='shadow-md w-fit rounded-md'>
             <Link href={''} className='flex flex-col gap-4'>
               <Image
-                src={concrete}
+                src={fauna}
                 alt='Grayscale shot of rock slide'
                 className='rounded-t-md'
               />
               <div className='flex flex-col gap-2 max-w-[400px] px-4 lg:px-6 pb-4'>
                 <p className='font-bold text-lg lg:text-xl'>
-                  Lorem ipsum dolor sit amet consectetur...
+                  Beyond Faunal succession: What&amp;s life Morphing to?
                 </p>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur. Magna arcu neque
-                  convallis diam senectus purus odio aliquet pretium. In
-                  adipiscing dui in diam vitae id est id nunc...
+                  As species become complex up the strata, so does generation become more complex with increasing knowledge and technological advancement...
                 </p>
                 <div className='flex justify-between'>
                   <p className='mt-8 text-sm font-bold'>Geotech4all</p>
@@ -162,18 +158,59 @@ function Geohub() {
           <li className='shadow-md w-fit rounded-md'>
             <Link href={''} className='flex flex-col gap-4'>
               <Image
-                src={hands}
+                src={keytopast}
                 alt='Grayscale shot of rock slide'
                 className='rounded-t-md'
               />
               <div className='flex flex-col gap-2 max-w-[400px] px-4 lg:px-6 pb-4'>
                 <p className='font-bold text-lg lg:text-xl'>
-                  Lorem ipsum dolor sit amet consectetur...
+                  The Present is the Key to the Past. What is the Key to the future?
                 </p>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur. Magna arcu neque
-                  convallis diam senectus purus odio aliquet pretium. In
-                  adipiscing dui in diam vitae id est id nunc...
+                  The past was the present. The present was the future. And the future is the present.
+                  Let&amp;s view Charles Lyell and James Hutton Earth principle through...
+                </p>
+                <div className='flex justify-between'>
+                  <p className='mt-8 text-sm font-bold'>Geotech4all</p>
+                  <p className='mt-8 text-sm font-bold'>July 2nd, 2024</p>
+                </div>
+              </div>
+            </Link>
+          </li>
+          <li className='shadow-md w-fit rounded-md'>
+            <Link href={''} className='flex flex-col gap-4'>
+              <Image
+                src={africa}
+                alt='Grayscale shot of rock slide'
+                className='rounded-t-md'
+              />
+              <div className='flex flex-col gap-2 max-w-[400px] px-4 lg:px-6 pb-4'>
+                <p className='font-bold text-lg lg:text-xl'>
+                  AFRICA VS THE WORLD: THE BATTLE FOR POWER AND...
+                </p>
+                <p>
+                  Africa is the world&amp;s second-largest continent, covering approximately 30 million square kilometers and comprising 54 countries. Africa is home to a diverse range of...
+                </p>
+                <div className='flex justify-between'>
+                  <p className='mt-8 text-sm font-bold'>Geotech4all</p>
+                  <p className='mt-8 text-sm font-bold'>July 2nd, 2024</p>
+                </div>
+              </div>
+            </Link>
+          </li>
+          <li className='shadow-md w-fit rounded-md'>
+            <Link href={''} className='flex flex-col gap-4'>
+              <Image
+                src={geotextile}
+                alt='Grayscale shot of rock slide'
+                className='rounded-t-md'
+              />
+              <div className='flex flex-col gap-2 max-w-[400px] px-4 lg:px-6 pb-4'>
+                <p className='font-bold text-lg lg:text-xl'>
+                  Importance of geotextile in geotechnical industry
+                </p>
+                <p>
+                  Geotextile is a synthetic fabric made of polypropylene, polyethylene or a combination of both that is used in various geotechnical applications. The...
                 </p>
                 <div className='flex justify-between'>
                   <p className='mt-8 text-sm font-bold'>Geotech4all</p>

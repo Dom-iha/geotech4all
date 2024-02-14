@@ -20,22 +20,22 @@ const Footer: React.FC = () => {
           <p className='font-semibold lg:text-xl mb-2 lg:mb-4'>Quick links</p>
           <ul className='flex flex-col gap-2.5 max-lg:text-sm'>
             <li>
-              <Link href='#' className='hover:underline'>
+              <Link href='/services' className='hover:underline'>
                 Services
               </Link>
             </li>
             <li>
-              <Link href='#' className='hover:underline'>
+              <Link href='/geohub' className='hover:underline'>
                 Geohub
               </Link>
             </li>
             <li>
-              <Link href='#' className='hover:underline'>
+              <Link href='/geohub' className='hover:underline'>
                 Blog
               </Link>
             </li>
             <li>
-              <Link href='#' className='hover:underline'>
+              <Link href='/gallery' className='hover:underline'>
                 Gallery
               </Link>
             </li>
@@ -62,10 +62,20 @@ const Footer: React.FC = () => {
           <p className='font-semibold lg:text-xl mb-2 lg:mb-4'>Contact Us</p>
           <ul className='flex flex-col gap-2.5 max-lg:text-sm'>
             <li>
-              <Link href='mailto:geotech4all@gmail.com'>Email</Link>
+              <Link
+                href='mailto:geotech4all@gmail.com'
+                className='hover:underline'
+              >
+                Email
+              </Link>
             </li>
             <li>
-              <Link href='mailto:geotech4all@gmail.com'>Call</Link>
+              <Link
+                href='mailto:geotech4all@gmail.com'
+                className='hover:underline'
+              >
+                Call
+              </Link>
             </li>
           </ul>
         </div>
@@ -73,21 +83,29 @@ const Footer: React.FC = () => {
           <p className='font-semibold lg:text-xl mb-2 lg:mb-4'>Follow Us</p>
           <ul className='flex gap-5 max-lg:text-sm'>
             <li>
-              <Link href='https://facebook.com/Geotech4all' target='blank'>
+              <Link
+                aria-label='Visit our Facebook page'
+                href='https://facebook.com/Geotech4all'
+                target='blank'
+              >
                 <Facebook aria-hidden='true' />
-                <span className='sr-only'>link to our facebook page</span>
               </Link>
             </li>
             <li>
-              <Link href='https://x.com/Geotech4All' target='blank'>
+              <Link
+                aria-label='Visit our Twitter page'
+                href='https://x.com/Geotech4All'
+                target='blank'
+              >
                 <Twitter aria-hidden='true' />
-                <span className='sr-only'>link to our twitter page</span>
               </Link>
             </li>
             <li>
-              <Link href='https://www.linkedin.com/company/geotech4all'>
+              <Link
+                aria-label='Visit our LinkedIn page'
+                href='https://www.linkedin.com/company/geotech4all'
+              >
                 <Linkedin aria-hidden='true' />
-                <span className='sr-only'>link to our linkedin page</span>
               </Link>
             </li>
           </ul>

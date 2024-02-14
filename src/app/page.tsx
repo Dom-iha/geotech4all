@@ -14,7 +14,7 @@ export default function Home() {
       <section className='hero flex items-center min-h-screen text-main'>
         <div className='grid gap-4 lg:gap-8 lg:ml-[108px] max-sm:p-6 max-md:p-8 max-w-[686px]'>
           <h1 className='text-3xl lg:text-6xl font-bold mb'>
-            Geoscience For All!
+            Geoscience For All
           </h1>
           <p className='font-medium text-lg lg:text-3xl lg:max-w-[654px]'>
             Empowering individuals and communities through
@@ -71,20 +71,19 @@ export default function Home() {
             <div>
               <div className='pl-4 relative'>
                 <h3 className='text-lg lg:text-4xl font-bold mb-2.5 before:absolute before:bg-accent before:h-full before:w-2 before:top-0 before:left-0'>
-                  Lorem ipsum dolor sit amet consectetur.
+                  2024 Nigeria Infrastructural Budget: A Comparative Analysis
                 </h3>
               </div>
               <div className='pl-4'>
                 <p className='lg:text-2xl'>
-                  Lorem ipsum dolor sit amet consectetur. Eu nisl turpis dui
-                  vehicula duis sollicitudin.
+                  Nigeria&amp;s 2024 budget, recently approved by the federal government, allocates a significant portion to infrastructure development...
                 </p>
               </div>
             </div>
             <div>
               <div className='pl-4'>
                 <h3 className='text-lg lg:text-4xl font-bold mb-2.5'>
-                  Eu nisl turpis dui vehicula duis sollicitudin.
+                  Pilgangoora Lithium Mine Ousts Greenbushes as...
                 </h3>
               </div>
               <div className='pl-4'>
