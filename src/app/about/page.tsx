@@ -15,7 +15,7 @@ function About() {
             Your go-to resource center for everything geoscience. We are a team of geoscientists and tech enthusiasts committed to making geoscience knowledge and tools accessible to everyone.
           </p>
           <Link
-            href='#mission'
+            href='#info'
             className='cursor-pointer relative group overflow-hidden border-2 px-10 py-3 border-accent w-fit rounded-md'
           >
             <span className='uppercase tracking-widest font-medium text-main text-lg relative z-10 group-hover:text-accent duration-500'>
@@ -28,7 +28,33 @@ function About() {
           </Link>
         </div>
       </section>
-      <section id='mission' className='max-lg:flex flex-col gap-8 px-6 md:px-8 lg:px-24 py-14'>
+      <section id='info' className='p-6 md:px-8 lg:px-24 min-h-[85vh]'>
+        <div className='flex flex-col gap-4 lg:gap-6 h-full'>
+          <h2 className='text-2xl lg:text-4xl font-bold mt-4'>
+            About Geotech4all
+          </h2>
+          <p className='mt-4 text-xl lg:text-2xl max-w-[800px]'>
+            Geotech4All is a budding geoscience conglomerate that offers tailor-made services and intuitive solutions to both industry and academia.
+          </p>
+          <p className='mt-4 text-xl lg:text-2xl max-w-[800px]'>
+            Geotech4All is an umbrella name for series of sister company working together to bring geoscience into relevance. 
+          </p>
+          <div>
+            <p className='mt-4 text-xl lg:text-2xl max-w-[900px]'>
+              Geotech4All sub groups: 
+            </p>
+            <ul className='pl-6 list-disc lg:text-xl'>
+              <li>Geo-journalism</li>
+              <li>GeoHub</li>
+              <li>GeoLab</li>
+              <li>GeoConsult</li>
+              <li>ResearchHub</li>
+              <li>Breccias</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section className='max-lg:flex flex-col gap-8 px-6 md:px-8 lg:px-24 py-14'>
         <div className='flex max-lg:flex-col gap-4 lg:gap-8 justify-between'>
           <div className='w-full h-[250px] lg:w-[500px] lg:h-[500px] bg-accent lg:order-2'></div>
           <div className='flex flex-col justify-center'>

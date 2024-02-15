@@ -1,13 +1,8 @@
 import Image from 'next/image';
 import reporter from '../../../public/assets/images/reporter.png';
 import events from '../../../public/assets/images/events.png';
-import darwin from '../../../public/assets/images/darwin.png';
-import catastrophism from '../../../public/assets/images/catastrophism.png';
-import fauna from '../../../public/assets/images/fauna.png';
-import keytopast from '../../../public/assets/images/keytopast.png';
-import africa from '../../../public/assets/images/africa.png';
-import geotextile from '../../../public/assets/images/geotextile.png';
-import Link from 'next/link';
+import data from '../../../public/data/data.json';
+import ArticleCard from '@/components/ui/ArticleCard';
 
 function Geohub() {
   return (
@@ -91,134 +86,17 @@ function Geohub() {
       <section className='px-6 md:px-8 lg:px-24 py-14'>
         <h2 className='font-bold text-2xl lg:text-4xl mb-5'>Articles</h2>
         <ul className='grid grid-cols-[repeat(auto-fill,_minmax(20rem,_1fr))] gap-8'>
-          <li className='shadow-md w-fit rounded-md'>
-            <Link href={''} className='flex flex-col gap-4'>
-              <Image
-                src={darwin}
-                alt='Grayscale shot of rock slide'
-                className='rounded-t-md'
-              />
-              <div className='flex flex-col gap-2 max-w-[400px] px-4 lg:px-6 pb-4'>
-                <p className='font-bold text-lg lg:text-xl'>
-                Evolution: What if Darwin’s was wrong?
-                </p>
-                <p>
-                  The difference between right and wrong is a function of perspective.
-                  Now, what do you think an agnostic would tell you about God and the exact origin of life? 
-                </p>
-                <div className='flex justify-between'>
-                  <p className='mt-8 text-sm font-bold'>Geotech4all</p>
-                  <p className='mt-8 text-sm font-bold'>July 2nd, 2024</p>
-                </div>
-              </div>
-            </Link>
-          </li>
-          <li className='shadow-md w-fit rounded-md'>
-            <Link href={''} className='flex flex-col gap-4'>
-              <Image
-                src={catastrophism}
-                alt='Grayscale shot of rock slide'
-                className='rounded-t-md'
-              />
-              <div className='flex flex-col gap-2 max-w-[400px] px-4 lg:px-6 pb-4'>
-                <p className='font-bold text-lg lg:text-xl'>
-                  CATASTROPHISM: Plant, Animal, and Human
-                </p>
-                <p>
-                  At the onset of the quest of humans to know more about the earth. Many ideas, theories, and philosophies have sprung up to explain the origin of the earth...
-                </p>
-                <div className='flex justify-between'>
-                  <p className='mt-8 text-sm font-bold'>Geotech4all</p>
-                  <p className='mt-8 text-sm font-bold'>July 2nd, 2024</p>
-                </div>
-              </div>
-            </Link>
-          </li>
-          <li className='shadow-md w-fit rounded-md'>
-            <Link href={''} className='flex flex-col gap-4'>
-              <Image
-                src={fauna}
-                alt='Grayscale shot of rock slide'
-                className='rounded-t-md'
-              />
-              <div className='flex flex-col gap-2 max-w-[400px] px-4 lg:px-6 pb-4'>
-                <p className='font-bold text-lg lg:text-xl'>
-                  Beyond Faunal succession: What&amp;s life Morphing to?
-                </p>
-                <p>
-                  As species become complex up the strata, so does generation become more complex with increasing knowledge and technological advancement...
-                </p>
-                <div className='flex justify-between'>
-                  <p className='mt-8 text-sm font-bold'>Geotech4all</p>
-                  <p className='mt-8 text-sm font-bold'>July 2nd, 2024</p>
-                </div>
-              </div>
-            </Link>
-          </li>
-          <li className='shadow-md w-fit rounded-md'>
-            <Link href={''} className='flex flex-col gap-4'>
-              <Image
-                src={keytopast}
-                alt='Grayscale shot of rock slide'
-                className='rounded-t-md'
-              />
-              <div className='flex flex-col gap-2 max-w-[400px] px-4 lg:px-6 pb-4'>
-                <p className='font-bold text-lg lg:text-xl'>
-                  The Present is the Key to the Past. What is the Key to the future?
-                </p>
-                <p>
-                  The past was the present. The present was the future. And the future is the present.
-                  Let&amp;s view Charles Lyell and James Hutton Earth principle through...
-                </p>
-                <div className='flex justify-between'>
-                  <p className='mt-8 text-sm font-bold'>Geotech4all</p>
-                  <p className='mt-8 text-sm font-bold'>July 2nd, 2024</p>
-                </div>
-              </div>
-            </Link>
-          </li>
-          <li className='shadow-md w-fit rounded-md'>
-            <Link href={''} className='flex flex-col gap-4'>
-              <Image
-                src={africa}
-                alt='Grayscale shot of rock slide'
-                className='rounded-t-md'
-              />
-              <div className='flex flex-col gap-2 max-w-[400px] px-4 lg:px-6 pb-4'>
-                <p className='font-bold text-lg lg:text-xl'>
-                  AFRICA VS THE WORLD: THE BATTLE FOR POWER AND...
-                </p>
-                <p>
-                  Africa is the world&amp;s second-largest continent, covering approximately 30 million square kilometers and comprising 54 countries. Africa is home to a diverse range of...
-                </p>
-                <div className='flex justify-between'>
-                  <p className='mt-8 text-sm font-bold'>Geotech4all</p>
-                  <p className='mt-8 text-sm font-bold'>July 2nd, 2024</p>
-                </div>
-              </div>
-            </Link>
-          </li>
-          <li className='shadow-md w-fit rounded-md'>
-            <Link href={''} className='flex flex-col gap-4'>
-              <Image
-                src={geotextile}
-                alt='Grayscale shot of rock slide'
-                className='rounded-t-md'
-              />
-              <div className='flex flex-col gap-2 max-w-[400px] px-4 lg:px-6 pb-4'>
-                <p className='font-bold text-lg lg:text-xl'>
-                  Importance of geotextile in geotechnical industry
-                </p>
-                <p>
-                  Geotextile is a synthetic fabric made of polypropylene, polyethylene or a combination of both that is used in various geotechnical applications. The...
-                </p>
-                <div className='flex justify-between'>
-                  <p className='mt-8 text-sm font-bold'>Geotech4all</p>
-                  <p className='mt-8 text-sm font-bold'>July 2nd, 2024</p>
-                </div>
-              </div>
-            </Link>
-          </li>
+          {data.articles.map((article) => (
+            <ArticleCard 
+              key={article.id}
+              id={article.id}
+              title={article.title}
+              content={article.content}
+              createdAt={article.createdAt}
+              cover={article.cover}
+              author={article.author}
+            />
+          ))}
         </ul>
       </section>
       {/* Events slider section */}

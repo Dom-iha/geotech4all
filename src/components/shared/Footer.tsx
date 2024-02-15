@@ -1,9 +1,9 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import footer_logo from '../../public/assets/icons/footer-logo.png';
-import { Facebook, Linkedin, Twitter } from './Icons';
-import Newsletter from './Newsletter';
+import footer_logo from '../../../public/assets/icons/footer-logo.png';
+import { Facebook, Linkedin, Twitter } from '../Icons';
+import Newsletter from '../Newsletter';
 
 const Footer: React.FC = () => {
   return (

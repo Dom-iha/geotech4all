@@ -76,7 +76,7 @@ export default function Home() {
               </div>
               <div className='pl-4'>
                 <p className='lg:text-2xl'>
-                  Nigeria&amp;s 2024 budget, recently approved by the federal government, allocates a significant portion to infrastructure development...
+                  Nigeria&apos;s 2024 budget, recently approved by the federal government, allocates a significant portion to infrastructure development...
                 </p>
               </div>
             </div>

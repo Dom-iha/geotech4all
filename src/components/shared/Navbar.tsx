@@ -1,11 +1,11 @@
 'use client';
 import Image from 'next/image';
-import dark_logo from '../../public/assets/icons/logo-black.png';
+import dark_logo from '../../../public/assets/icons/logo-black.png';
 // import white_logo from '../../public/assets/icons/logo-white.png';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import MobileToggle from './MobileToggle';
+import MobileToggle from '../MobileToggle';
 
 const Navbar: React.FC = () => {
   const pathname = usePathname();
@@ -27,7 +27,11 @@ const Navbar: React.FC = () => {
       <header className='grid grid-cols-[auto,_auto] md:flex justify-between items-center bg-white shadow-sm py-4 px-6 md:px-8 lg:px-24 max-w-[90rem] mx-auto'>
         <div className=''>
           <Link href='/'>
-            <Image src={dark_logo} alt='geotech4all logo' className='w-[150px]' />
+            <Image
+              src={dark_logo}
+              alt='geotech4all logo'
+              className='w-[150px]'
+            />
           </Link>
         </div>
         <MobileToggle isOpen={isOpen} toggleMenu={toggleMenu} />
@@ -39,7 +43,9 @@ const Navbar: React.FC = () => {
             } md:flex-row md:justify-evenly md:gap-10 md:bg-transparent md:text-accent md:p-0 text-lg font-medium transition duration-300`}
           >
             <li
-              className={`link ${isOpen && 'max-md:animate-in'} relative after:absolute after:bg-main after:w-1 after:h-full after:-left-2 after:top-0 after:scale-y-0 after:origin-bottom md:after:bg-accent md:after:h-0.5 md:after:w-full md:after:top-auto md:after:bottom-0 md:after:left-0 md:after:scale-y-100 md:after:scale-x-0 md:after:origin-right md:hover:after:scale-x-100 md:hover:after:origin-left ${
+              className={`link ${
+                isOpen && 'max-md:animate-in'
+              } relative after:absolute after:bg-main after:w-1 after:h-full after:-left-2 after:top-0 after:scale-y-0 after:origin-bottom md:after:bg-accent md:after:h-0.5 md:after:w-full md:after:top-auto md:after:bottom-0 md:after:left-0 md:after:scale-y-100 md:after:scale-x-0 md:after:origin-right md:hover:after:scale-x-100 md:hover:after:origin-left ${
                 pathname === '/services' &&
                 'after:scale-y-100 md:after:scale-x-100'
               } transition  after:transition after:duration-300`}
@@ -52,8 +58,11 @@ const Navbar: React.FC = () => {
               </Link>
             </li>
             <li
-              className={`${isOpen && 'max-md:animate-in2'} relative after:absolute after:bg-main after:w-1 after:h-full after:-left-2 after:top-0 after:scale-y-0 after:origin-bottom md:after:bg-accent md:after:h-0.5 md:after:w-full md:after:top-auto md:after:bottom-0 md:after:left-0 md:after:scale-y-100 md:after:scale-x-0 md:after:origin-right md:hover:after:scale-x-100 md:hover:after:origin-left ${
-                pathname === '/geohub' && 'after:scale-y-100 md:after:scale-x-100'
+              className={`${
+                isOpen && 'max-md:animate-in2'
+              } relative after:absolute after:bg-main after:w-1 after:h-full after:-left-2 after:top-0 after:scale-y-0 after:origin-bottom md:after:bg-accent md:after:h-0.5 md:after:w-full md:after:top-auto md:after:bottom-0 md:after:left-0 md:after:scale-y-100 md:after:scale-x-0 md:after:origin-right md:hover:after:scale-x-100 md:hover:after:origin-left ${
+                pathname.includes('/geohub') &&
+                'after:scale-y-100 md:after:scale-x-100'
               } transition  after:transition after:duration-300`}
             >
               <Link
@@ -64,7 +73,9 @@ const Navbar: React.FC = () => {
               </Link>
             </li>
             <li
-              className={`${isOpen && 'max-md:animate-in3'} relative after:absolute after:bg-main after:w-1 after:h-full after:-left-2 after:top-0 after:scale-y-0 after:origin-bottom md:after:bg-accent md:after:h-0.5 md:after:w-full md:after:top-auto md:after:bottom-0 md:after:left-0 md:after:scale-y-100 md:after:scale-x-0 md:after:origin-right md:hover:after:scale-x-100 md:hover:after:origin-left ${
+              className={`${
+                isOpen && 'max-md:animate-in3'
+              } relative after:absolute after:bg-main after:w-1 after:h-full after:-left-2 after:top-0 after:scale-y-0 after:origin-bottom md:after:bg-accent md:after:h-0.5 md:after:w-full md:after:top-auto md:after:bottom-0 md:after:left-0 md:after:scale-y-100 md:after:scale-x-0 md:after:origin-right md:hover:after:scale-x-100 md:hover:after:origin-left ${
                 pathname === '/gallery' &&
                 'after:scale-y-100 md:after:scale-x-100'
               } transition  after:transition after:duration-300`}
@@ -77,8 +88,11 @@ const Navbar: React.FC = () => {
               </Link>
             </li>
             <li
-              className={`${isOpen && 'max-md:animate-in4'} relative after:absolute after:bg-main after:w-1 after:h-full after:-left-2 after:top-0 after:scale-y-0 after:origin-bottom md:after:bg-accent md:after:h-0.5 md:after:w-full md:after:top-auto md:after:bottom-0 md:after:left-0 md:after:scale-y-100 md:after:scale-x-0 md:after:origin-right md:hover:after:scale-x-100 md:hover:after:origin-left ${
-                pathname === '/about' && 'after:scale-y-100 md:after:scale-x-100'
+              className={`${
+                isOpen && 'max-md:animate-in4'
+              } relative after:absolute after:bg-main after:w-1 after:h-full after:-left-2 after:top-0 after:scale-y-0 after:origin-bottom md:after:bg-accent md:after:h-0.5 md:after:w-full md:after:top-auto md:after:bottom-0 md:after:left-0 md:after:scale-y-100 md:after:scale-x-0 md:after:origin-right md:hover:after:scale-x-100 md:hover:after:origin-left ${
+                pathname === '/about' &&
+                'after:scale-y-100 md:after:scale-x-100'
               } transition  after:transition after:duration-300`}
             >
               <Link
