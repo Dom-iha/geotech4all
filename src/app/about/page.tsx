@@ -37,7 +37,7 @@ function About() {
             Geotech4All is a budding geoscience conglomerate that offers tailor-made services and intuitive solutions to both industry and academia.
           </p>
           <p className='mt-4 text-xl lg:text-2xl max-w-[800px]'>
-            Geotech4All is an umbrella name for series of sister company working together to bring geoscience into relevance. 
+            Geotech4All is an umbrella name for a series of sister company working together to bring geoscience into relevance. 
           </p>
           <div>
             <p className='mt-4 text-xl lg:text-2xl max-w-[900px]'>

@@ -5,7 +5,7 @@
          "title": "Evolution: What if Darwin’s was wrong?",
          "author": "Geotech4all",
          "createdAt": "July 2nd, 2024",
-         "cover": "../../../public/assets/images/darwin.png",
+         "cover": "/assets/images/darwin.png",
          "content": "The difference between right and wrong is a function of perspective. Now, what do you think an agnostic would tell you about God and the exact origin of life?"
       },
       {
@@ -13,7 +13,7 @@
          "title": "CATASTROPHISM: Plant, Animal, and Human",
          "author": "Geotech4all",
          "createdAt": "July 2nd, 2024",
-         "cover": "../../../public/assets/images/catastrophism.png",
+         "cover": "/assets/images/catastrophism.png",
          "content": "At the onset of the quest of humans to know more about the earth. Many ideas, theories, and philosophies have sprung up to explain the origin of the earth..."
       },
       {
@@ -21,7 +21,7 @@
          "title": "Beyond Faunal succession: What's life Morphing to?",
          "author": "Geotech4all",
          "createdAt": "July 2nd, 2024",
-         "cover": "../../../public/assets/images/fauna.png",
+         "cover": "/assets/images/fauna.png",
          "content": "As species become complex up the strata, so does generation become more complex with increasing knowledge and technological advancement..."
       },
       {
@@ -29,7 +29,7 @@
          "title": "The Present is the Key to the Past. What is the Key to the future?",
          "author": "Geotech4all",
          "createdAt": "July 2nd, 2024",
-         "cover": "../../../public/assets/images/keytopast.png",
+         "cover": "/assets/images/keytopast.png",
          "content": "The past was the present. The present was the future. And the future is the present. Let's view Charles Lyell and James Hutton Earth principle through..."
       },
       {
@@ -37,7 +37,7 @@
          "title": "AFRICA VS THE WORLD: THE BATTLE FOR POWER AND...",
          "author": "Geotech4all",
          "createdAt": "July 2nd, 2024",
-         "cover": "../../../public/assets/images/africa.png",
+         "cover": "/assets/images/africa.png",
          "content": "Africa is the world's second-largest continent, covering approximately 30 million square kilometers and comprising 54 countries. Africa is home to a diverse range of..."
       },
       {
@@ -45,7 +45,7 @@
          "title": "Importance of geotextile in geotechnical industry",
          "author": "Geotech4all",
          "createdAt": "July 2nd, 2024",
-         "cover": "../../../public/assets/images/geotextile.png",
+         "cover": "/assets/images/geotextile.png",
          "content": "Geotextile is a synthetic fabric made of polypropylene, polyethylene or a combination of both that is used in various geotechnical applications. The..."
       }
    ],

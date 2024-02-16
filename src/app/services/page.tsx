@@ -35,8 +35,9 @@ const Services: React.FC = () => {
               Geological Services
             </h3>
             <p className='lg:text-xl'>
-              From spatial analysis and Geochemical plots to production of
-              various kinds of maps, a complete solution.
+              Our geological services encompass a wide range of expertise
+              including geological mapping, mineral exploration, and site
+              characterization.
             </p>
             <button
               type='button'
@@ -53,8 +54,9 @@ const Services: React.FC = () => {
               Project Writing
             </h3>
             <p className='lg:text-xl'>
-              From spatial analysis and Geochemical plots to production of
-              various kinds of maps, a complete solution.
+              Our project writing services offer professional assistance in
+              preparing high-quality project proposals, reports and research
+              papers.
             </p>
             <button
               type='button'
@@ -69,8 +71,9 @@ const Services: React.FC = () => {
           <li className='grid gap-4 lg:gap-8'>
             <h3 className='text-xl lg:text-2xl font-semibold'>Field Mapping</h3>
             <p className='lg:text-xl'>
-              From spatial analysis and Geochemical plots to production of
-              various kinds of maps, a complete solution.
+              Our field mapping services combine fieldwork expertise with
+              advanced mapping technologies to facilitate accurate geological
+              surveys.
             </p>
             <button
               type='button'
@@ -83,10 +86,11 @@ const Services: React.FC = () => {
             </button>
           </li>
           <li className='grid gap-4 lg:gap-8'>
-            <h3 className='text-xl lg:text-2xl font-semibold'>Training</h3>
+            <h3 className='text-xl lg:text-2xl font-semibold'>
+              Software Training
+            </h3>
             <p className='lg:text-xl'>
-              Upskill your geoscience knowledge with any of our online
-              geoscience software training.
+              Our software training programs provide hands-on instruction in popular geological software incliding ArcGis, Petrel and Surfer.
             </p>
             <button
               type='button'
@@ -99,10 +103,29 @@ const Services: React.FC = () => {
             </button>
           </li>
           <li className='grid gap-4 lg:gap-8'>
-            <h3 className='text-xl lg:text-2xl font-semibold'>Equipments</h3>
+            <h3 className='text-xl lg:text-2xl font-semibold'>Equipment sales</h3>
             <p className='lg:text-xl'>
-              Upskill your geoscience knowledge with any of our online
-              geoscience software training.
+              We offer a comprehensive selection of high quality geological
+              equipments to support fieldwork, research, and
+              exploration activities.
+            </p>
+            <button
+              type='button'
+              className='cursor-pointer relative group overflow-hidden border-2 px-10 py-2 border-accent w-fit rounded-md'
+            >
+              <span className='uppercase font-medium text-main lg:text-lg relative z-10 group-hover:text-accent duration-500'>
+                I need this
+              </span>
+              <span className='absolute top-0 left-0 w-full bg-accent duration-300 group-hover:translate-x-full h-full'></span>
+            </button>
+          </li>
+          <li className='grid gap-4 lg:gap-8'>
+            <h3 className='text-xl lg:text-2xl font-semibold'>
+              Geopysical survey
+            </h3>
+            <p className='lg:text-xl'>
+              Our geophysical survey services utilize state-of-the-art equipment
+              to conduct non-invasive subsurface investigations
             </p>
             <button
               type='button'
@@ -118,10 +141,12 @@ const Services: React.FC = () => {
       </section>
       <section className='px-6 md:px-8 lg:px-24 py-14'>
         <div>
-          <h3 className='text-2xl lg:text-6xl font-bold mb-20'>Proudly sponsored by</h3>
+          <h3 className='text-2xl lg:text-6xl font-bold mb-20'>
+            Proudly sponsored by
+          </h3>
           <div className='grid grid-cols-2 gap-20'>
             <div>
-              <Image src={geohub} alt='partners log' />
+              <Image src={geohub} alt='partners log' className='w-[200px]'/>
             </div>
           </div>
         </div>

@@ -11,7 +11,7 @@ interface relatedProps {
 function Related(props: relatedProps) {
   return (
     <li className='w-fit flex gap-10'>
-      <Link href={`./geohub/${props.id}`} className='flex flex-col gap-4'>
+      <Link href={`./${props.id}`} className='flex flex-col gap-4'>
         <Image
           src={img}
           alt='Grayscale shot of rock slide'

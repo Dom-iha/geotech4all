@@ -17,7 +17,7 @@ function Geohub() {
               2023 Nigeria Infrastructural Budget: A Comparative Analysis
             </h1>
             <p className='max-w-[575px] text-main text-lg lg:text-2xl mb-6'>
-            Nigeria&amp;s 2023 budget, recently approved by the federal government, allocates a significant portion to infrastructure development...
+            Nigeria&apos;s 2023 budget, recently approved by the federal government, allocates a significant portion to infrastructure development...
             </p>
             <button
               type='button'
