@@ -3,7 +3,7 @@ import data from '../../../../public/data/data.json';
 import img from '../../../../public/assets/images/cityscape.png';
 import Related from '@/components/ui/Related';
 
-interface cc {
+interface Article {
   id: string;
   title: string;
   author: string;
@@ -11,16 +11,20 @@ interface cc {
   cover: string;
   content: string;
 }
+
 function page({ params }: { params: { articleId: string } }) {
-  const articleToShow = data.articles.find(
+
+  const articleToShow: Article | undefined = data.articles.find(
     (article) => article.id === params.articleId
   );
+
+  const coverSrc = articleToShow?.cover || '';
 
   return (
     <>
       <article className='max-w-screen-md mx-auto py-6 px-4 lg:px-8 flex flex-col gap-8 lg:gap-10'>
         <Image
-          src={articleToShow?.cover}
+          src={coverSrc}
           alt=''
           className='w-full'
           width={500}
