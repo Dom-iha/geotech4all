@@ -11,6 +11,7 @@ const config: Config = {
       colors: {
         main: 'hsl(0, 0%, 100%)',
         accent: 'hsl(0, 0%, 0%)',
+        error: 'hsl(354, 84%, 57%)',
       },
       keyframes: {
         in: {
@@ -30,16 +31,16 @@ const config: Config = {
         in4: 'in 1.2s forwards',
         out: 'out .6s forwards',
       },
-      //   screens: {
-      //     xsm: '23.4375em',
-      //     sm: '26.5625em',
-      //     md: '48em',
-      //     lg: '64em',
-      //     xl: '80em',
-      //     xxl: '90em',
-      //     'max-md': { max: '47.98em' },
-      //     'max-sm': { max: '26.5em' },
-      //  },
+        screens: {
+          // xsm: '23.4375em',
+          // sm: '26.5625em',
+          // md: '48em',
+          // lg: '64em',
+          // xl: '80em',
+          // xxl: '90em',
+          // 'max-md': { max: '47.98em' },
+          // 'max-sm': { max: '26.5em' },
+       },
     },
   },
   plugins: [],

@@ -11,12 +11,12 @@ function Newsletter() {
         blog posts and service updates
       </p>
       <form className='flex flex-col lg:flex-row gap-4 justify-center'>
-        <label htmlFor='email' className='sr-only'>
+        <label htmlFor='emailaddress' className='sr-only'>
           Email
         </label>
         <input
-          id='email'
-          name='email'
+          id='emailaddress'
+          name='emailaddress'
           type='email'
           placeholder='Enter your email address'
           autoComplete='off'

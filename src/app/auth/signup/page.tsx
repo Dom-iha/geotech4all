@@ -1,8 +1,10 @@
 'use client';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import React, { useContext, useState, useEffect } from 'react';
 
 function SignUp() {
+  const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
@@ -18,6 +20,7 @@ function SignUp() {
   const [emailTouched, setEmailTouched] = useState(false);
 
   const [formIsValid, setFormIsValid] = useState(false);
+  const [confirmPasswordValue, setConfirmPasswordValue] = useState('');
   const [userInput, setUserInput] = useState({
     email: '',
     password: '',
@@ -25,11 +28,9 @@ function SignUp() {
     firstname: '',
   });
 
-  //   const router = useRouter();
-
   const signup = async () => {
     try {
-      const response = await fetch('', {
+      const response = await fetch('http://localhost:5000/auth/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -40,38 +41,39 @@ function SignUp() {
       if (response.ok) {
         console.log(data);
         setSuccess(true);
-        //   router.push('/login'); // Redirect to login page
+        router.push('/auth/login');
       }
     } catch (error) {
       console.error('Error:', error);
     }
   };
 
-  //   const handleChange = (event: React.FormEvent) => {
-  //     const { name, value } = event.target;
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
 
-  //     if (name === 'firstname') {
-  //       setUserInput((prevState) => ({
-  //         ...prevState,
-  //         firstname: value,
-  //       }));
-  //     } else if (name === 'lastname') {
-  //       setUserInput((prevState) => ({
-  //         ...prevState,
-  //         lastname: value,
-  //       }));
-  //     } else if (name === 'email') {
-  //       setUserInput((prevState) => ({
-  //         ...prevState,
-  //         email: value,
-  //       }));
-  //     } else {
-  //       setUserInput((prevState) => ({
-  //         ...prevState,
-  //         password: value,
-  //       }));
-  //     }
-  //   };
+    if (name === 'firstname') {
+      setUserInput((prevState) => ({
+        ...prevState,
+        firstname: value,
+      }));
+    } else if (name === 'lastname') {
+      setUserInput((prevState) => ({
+        ...prevState,
+        lastname: value,
+      }));
+    } else if (name === 'email') {
+      setUserInput((prevState) => ({
+        ...prevState,
+        email: value,
+      }));
+    } else {
+      setUserInput((prevState) => ({
+        ...prevState,
+        password: value,
+      }));
+    }
+  };
+
   useEffect(() => {
     if (
       firstNameIsValid &&
@@ -91,17 +93,16 @@ function SignUp() {
     passwordIsValid,
     passwordMatch,
   ]);
-  const [confirmValue, setConfirmValue] = useState('');
 
-  //   const checkMatch = (event: React.FormEvent) => {
-  //     const value = event.target.value;
-  //     setConfirmValue(value);
-  //     if (value === userInput.password) {
-  //       setPasswordMatch(true);
-  //     } else {
-  //       setPasswordMatch(false);
-  //     }
-  //   };
+  const checkPasswordMatch = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+    setConfirmPasswordValue(value);
+    if (value === userInput.password) {
+      setPasswordMatch(true);
+    } else {
+      setPasswordMatch(false);
+    }
+  };
 
   const firstNameBlurHandler = () => {
     setFirstNameTouched(true);
@@ -162,21 +163,23 @@ function SignUp() {
   // fix loigc
   const handleSignup = async (event: React.FormEvent) => {
     event.preventDefault();
-    if (formIsValid) {
-      setLoading(true);
-      try {
-        await signup();
-        setLoading(false); // Set loading to false after signup attempt
-      } catch (error) {
-        setLoading(false); // Set loading to false if there was an error
-        console.error('Error during signup:', error);
-      }
+    if (!formIsValid) {
+      console.log('not vallid')
+      return;
+    }
+    setLoading(true);
+    try {
+      await signup();
+      setLoading(false); // Set loading to false after signup attempt
+    } catch (error) {
+      setLoading(false); // Set loading to false if there was an error
+      console.error('Error during signup:', error);
     }
   };
 
   return (
     <>
-      <div className='max-w-[425px] mx-auto p-4 lg:p-7 flex flex-col gap-6'>
+      <div className='max-w-[425px] mx-auto p-6 lg:p-7 flex flex-col gap-6'>
         <div className='my-7'>
           <h1 className='font-bold text-4xl'>Sign up</h1>
           <small>create a new account</small>
@@ -186,17 +189,37 @@ function SignUp() {
           <div className='relative'>
             <input
               type='text'
-              id='name'
-              name='name'
+              id='firstname'
+              name='firstname'
               autoComplete='off'
-              placeholder='Enter your full name'
-              className='peer placeholder:text-transparent border-accent border-2 py-3 pl-3 pr-10 w-full'
+              placeholder='Enter your first name'
+              value={userInput.firstname}
+              onChange={handleChange}
+              className='peer placeholder:text-transparent border-accent border-2 focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-dashed py-3 pl-3 pr-10 w-full'
             />
             <label
-              htmlFor='name'
+              htmlFor='firstname'
               className='absolute px-1 text-sm left-4 -translate-y-2.5 peer-placeholder-shown:translate-y-4 peer-placeholder-shown:text-base peer-placeholder-shown:px-0 bg-main transition'
             >
-              Name
+              Firstname
+            </label>
+          </div>
+          <div className='relative'>
+            <input
+              type='text'
+              id='lastname'
+              name='lastname'
+              autoComplete='off'
+              placeholder='Enter your last name'
+              value={userInput.lastname}
+              onChange={handleChange}
+              className='peer placeholder:text-transparent border-accent border-2 focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-dashed py-3 pl-3 pr-10 w-full'
+            />
+            <label
+              htmlFor='lastname'
+              className='absolute px-1 text-sm left-4 -translate-y-2.5 peer-placeholder-shown:translate-y-4 peer-placeholder-shown:text-base peer-placeholder-shown:px-0 bg-main transition'
+            >
+              Lastname
             </label>
           </div>
           <div className='relative'>
@@ -206,7 +229,9 @@ function SignUp() {
               name='email'
               autoComplete='off'
               placeholder='Enter your email address'
-              className='peer placeholder:text-transparent border-accent border-2 py-3 pl-3 pr-10 w-full'
+              value={userInput.email}
+              onChange={handleChange}
+              className='peer placeholder:text-transparent border-accent border-2 focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-dashed py-3 pl-3 pr-10 w-full'
             />
             <label
               htmlFor='email'
@@ -222,7 +247,9 @@ function SignUp() {
               name='password'
               autoComplete='off'
               placeholder='Enter your password'
-              className='peer placeholder:text-transparent border-accent border-2 py-3 pl-3 pr-10 w-full'
+              value={userInput.password}
+              onChange={handleChange}
+              className='peer placeholder:text-transparent border-accent border-2 focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-dashed py-3 pl-3 pr-10 w-full'
             />
             <label
               htmlFor='password'
@@ -238,7 +265,8 @@ function SignUp() {
               name='confirm'
               autoComplete='off'
               placeholder='Confirm your password'
-              className='peer placeholder:text-transparent border-accent border-2 py-3 pl-3 pr-10 w-full'
+              onChange={(e) => setConfirmPasswordValue(e.target.value)}
+              className='peer placeholder:text-transparent border-accent border-2 focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-dashed py-3 pl-3 pr-10 w-full'
             />
             <label
               htmlFor='confirm'
@@ -248,7 +276,7 @@ function SignUp() {
             </label>
           </div>
           <button
-            type='button'
+            type='submit'
             disabled={loading}
             className='bg-accent text-main p-4 rounded-md'
           >
@@ -261,7 +289,7 @@ function SignUp() {
         <div>
           <button
             type='button'
-            className='option p-3 border-2 border-accent rounded-md w-full'
+            className='option p-3 border-2 focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-dashed border-accent rounded-md w-full'
           >
             Google
           </button>

@@ -1,13 +1,11 @@
 'use client';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
 import quarry from '../../public/assets/images/quarry.png';
 import product from '../../public/assets/images/product.png';
 import training from '../../public/assets/images/training.png';
 import Link from 'next/link';
 
 export default function Home() {
-  // const router = useRouter();
 
   return (
     <>
@@ -58,7 +56,7 @@ export default function Home() {
               <span className='tracking-widest font-medium text-main lg:text-lg relative z-10 group-hover:text-accent duration-500'>
                 Register
               </span>
-              <span className='absolute top-0 left-0 w-full bg-accent duration-300 group-hover:translate-x-full h-full'></span>
+              <span className='absolute top-0 left-0 w-full h-full bg-accent origin-left group-hover:origin-right group-hover:scale-x-0 transition duration-300'></span>
             </button>
           </div>
         </div>
@@ -76,7 +74,9 @@ export default function Home() {
               </div>
               <div className='pl-4'>
                 <p className='lg:text-2xl'>
-                  Nigeria&apos;s 2024 budget, recently approved by the federal government, allocates a significant portion to infrastructure development...
+                  Nigeria&apos;s 2024 budget, recently approved by the federal
+                  government, allocates a significant portion to infrastructure
+                  development...
                 </p>
               </div>
             </div>
@@ -100,7 +100,7 @@ export default function Home() {
               <span className='uppercase tracking-widest font-medium text-main lg:text-lg relative z-10 group-hover:text-accent duration-500'>
                 Read More
               </span>
-              <span className='absolute top-0 left-0 w-full bg-accent duration-300 group-hover:translate-x-full h-full'></span>
+              <span className='absolute top-0 left-0 w-full h-full bg-accent origin-left group-hover:origin-right group-hover:scale-x-0 transition duration-300'></span>
             </Link>
           </article>
           <div>

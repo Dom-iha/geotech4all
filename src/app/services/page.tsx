@@ -10,8 +10,8 @@ const Services: React.FC = () => {
             Tailor-made solutions for your geoscience needs
           </h1>
           <p className='text-center mt-4 text-xl lg:text-2xl max-w-[900px]'>
-            From large enterprises to student projects – we help the community
-            solve geo problems.
+            From large enterprises to academia – we help the community solve geo
+            problems.
           </p>
           <button
             type='button'
@@ -46,7 +46,7 @@ const Services: React.FC = () => {
               <span className='uppercase font-medium text-main lg:text-lg relative z-10 group-hover:text-accent duration-500'>
                 I need this
               </span>
-              <span className='absolute top-0 left-0 w-full bg-accent duration-300 group-hover:translate-x-full h-full'></span>
+              <span className='absolute top-0 left-0 w-full h-full bg-accent origin-left group-hover:origin-right group-hover:scale-x-0 transition duration-300'></span>
             </button>
           </li>
           <li className='grid gap-4 lg:gap-8'>
@@ -65,7 +65,7 @@ const Services: React.FC = () => {
               <span className='uppercase font-medium text-main lg:text-lg relative z-10 group-hover:text-accent duration-500'>
                 I need this
               </span>
-              <span className='absolute top-0 left-0 w-full bg-accent duration-300 group-hover:translate-x-full h-full'></span>
+              <span className='absolute top-0 left-0 w-full h-full bg-accent origin-left group-hover:origin-right group-hover:scale-x-0 transition duration-300'></span>
             </button>
           </li>
           <li className='grid gap-4 lg:gap-8'>
@@ -82,7 +82,7 @@ const Services: React.FC = () => {
               <span className='uppercase font-medium text-main lg:text-lg relative z-10 group-hover:text-accent duration-500'>
                 I need this
               </span>
-              <span className='absolute top-0 left-0 w-full bg-accent duration-300 group-hover:translate-x-full h-full'></span>
+              <span className='absolute top-0 left-0 w-full h-full bg-accent origin-left group-hover:origin-right group-hover:scale-x-0 transition duration-300'></span>
             </button>
           </li>
           <li className='grid gap-4 lg:gap-8'>
@@ -90,7 +90,8 @@ const Services: React.FC = () => {
               Software Training
             </h3>
             <p className='lg:text-xl'>
-              Our software training programs provide hands-on instruction in popular geological software incliding ArcGis, Petrel and Surfer.
+              Our software training programs provide hands-on instruction in
+              popular geological software incliding ArcGis, Petrel and Surfer.
             </p>
             <button
               type='button'
@@ -99,15 +100,17 @@ const Services: React.FC = () => {
               <span className='uppercase font-medium text-main lg:text-lg relative z-10 group-hover:text-accent duration-500'>
                 I need this
               </span>
-              <span className='absolute top-0 left-0 w-full bg-accent duration-300 group-hover:translate-x-full h-full'></span>
+              <span className='absolute top-0 left-0 w-full h-full bg-accent origin-left group-hover:origin-right group-hover:scale-x-0 transition duration-300'></span>
             </button>
           </li>
           <li className='grid gap-4 lg:gap-8'>
-            <h3 className='text-xl lg:text-2xl font-semibold'>Equipment sales</h3>
+            <h3 className='text-xl lg:text-2xl font-semibold'>
+              Equipment sales
+            </h3>
             <p className='lg:text-xl'>
               We offer a comprehensive selection of high quality geological
-              equipments to support fieldwork, research, and
-              exploration activities.
+              equipments to support fieldwork, research, and exploration
+              activities.
             </p>
             <button
               type='button'
@@ -116,7 +119,7 @@ const Services: React.FC = () => {
               <span className='uppercase font-medium text-main lg:text-lg relative z-10 group-hover:text-accent duration-500'>
                 I need this
               </span>
-              <span className='absolute top-0 left-0 w-full bg-accent duration-300 group-hover:translate-x-full h-full'></span>
+              <span className='absolute top-0 left-0 w-full h-full bg-accent origin-left group-hover:origin-right group-hover:scale-x-0 transition duration-300'></span>
             </button>
           </li>
           <li className='grid gap-4 lg:gap-8'>
@@ -134,7 +137,7 @@ const Services: React.FC = () => {
               <span className='uppercase font-medium text-main lg:text-lg relative z-10 group-hover:text-accent duration-500'>
                 I need this
               </span>
-              <span className='absolute top-0 left-0 w-full bg-accent duration-300 group-hover:translate-x-full h-full'></span>
+              <span className='absolute top-0 left-0 w-full h-full bg-accent origin-left group-hover:origin-right group-hover:scale-x-0 transition duration-300'></span>
             </button>
           </li>
         </ul>
@@ -146,7 +149,7 @@ const Services: React.FC = () => {
           </h3>
           <div className='grid grid-cols-2 gap-20'>
             <div>
-              <Image src={geohub} alt='partners log' className='w-[200px]'/>
+              <Image src={geohub} alt='partners log' className='w-[200px]' />
             </div>
           </div>
         </div>

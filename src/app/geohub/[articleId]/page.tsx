@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import data from '../../../../public/data/data.json';
-import img from '../../../../public/assets/images/cityscape.png';
 import Related from '@/components/ui/Related';
 
 interface Article {
