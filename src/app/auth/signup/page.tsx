@@ -1,4 +1,5 @@
 'use client';
+import PasswordToggle from '@/components/ui/PasswordToggle';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { useContext, useState, useEffect } from 'react';
@@ -8,11 +9,12 @@ function SignUp() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
-  const [firstNameIsValid, setFirstNameIsValid] = useState(true);
-  const [lastNameIsValid, setLastNameIsValid] = useState(true);
-  const [passwordIsValid, setPasswordIsValid] = useState(true);
+  const [firstNameIsValid, setFirstNameIsValid] = useState(false);
+  const [lastNameIsValid, setLastNameIsValid] = useState(false);
+  const [passwordIsValid, setPasswordIsValid] = useState(false);
+  const [emailIsValid, setEmailIsValid] = useState(false);
+
   const [passwordMatch, setPasswordMatch] = useState(true);
-  const [emailIsValid, setEmailIsValid] = useState(true);
 
   const [firstNameTouched, setFirstNameTouched] = useState(false);
   const [lastNameTouched, setLastNameTouched] = useState(false);
@@ -28,7 +30,11 @@ function SignUp() {
     firstname: '',
   });
 
+  const [showPassword, setShowPassword] = useState(false);
+  const selectedType = showPassword ? 'text' : 'password';
+
   const signup = async () => {
+    setLoading(true);
     try {
       const response = await fetch('http://localhost:5000/auth/signup', {
         method: 'POST',
@@ -45,6 +51,8 @@ function SignUp() {
       }
     } catch (error) {
       console.error('Error:', error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -94,40 +102,28 @@ function SignUp() {
     passwordMatch,
   ]);
 
-  const checkPasswordMatch = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value;
-    setConfirmPasswordValue(value);
-    if (value === userInput.password) {
+  // fix logic 
+  const checkPasswordMatch = () => {
+    console.log(passwordMatch)
+    if (confirmPasswordValue === userInput.password) {
       setPasswordMatch(true);
     } else {
       setPasswordMatch(false);
-    }
-  };
 
-  const firstNameBlurHandler = () => {
-    setFirstNameTouched(true);
-  };
-  const lastNameBlurHandler = () => {
-    setLastNameTouched(true);
-  };
-  const emailBlurHandler = () => {
-    setEmailTouched(true);
-  };
-  const passwordBlurHandler = () => {
-    setPasswordTouched(true);
+    }
   };
 
   useEffect(() => {
     if (firstNameTouched && userInput.firstname.trim() === '') {
       setFirstNameIsValid(false);
-    } else {
+    } else if (firstNameTouched && userInput.firstname.trim() !== '') {
       setFirstNameIsValid(true);
       setFirstNameTouched(false);
     }
 
     if (lastNameTouched && userInput.lastname.trim() === '') {
       setLastNameIsValid(false);
-    } else {
+    } else if (lastNameTouched && userInput.lastname.trim() !== '') {
       setLastNameIsValid(true);
       setLastNameTouched(false);
     }
@@ -138,14 +134,14 @@ function SignUp() {
       !userInput.email.includes('@')
     ) {
       setEmailIsValid(false);
-    } else {
+    } else if (emailTouched && userInput.email.includes('@')) {
       setEmailIsValid(true);
       setEmailTouched(false);
     }
 
     if (passwordTouched && userInput.password.trim() === '') {
       setPasswordIsValid(false);
-    } else {
+    } else if (passwordTouched && userInput.password.length >= 8) {
       setPasswordIsValid(true);
       setPasswordTouched(false);
     }
@@ -160,21 +156,16 @@ function SignUp() {
     userInput.password,
   ]);
 
-  // fix loigc
   const handleSignup = async (event: React.FormEvent) => {
     event.preventDefault();
+
+    checkPasswordMatch();
+
     if (!formIsValid) {
-      console.log('not vallid')
+      console.log('invalid fields');
       return;
     }
-    setLoading(true);
-    try {
-      await signup();
-      setLoading(false); // Set loading to false after signup attempt
-    } catch (error) {
-      setLoading(false); // Set loading to false if there was an error
-      console.error('Error during signup:', error);
-    }
+    await signup();
   };
 
   return (
@@ -195,6 +186,7 @@ function SignUp() {
               placeholder='Enter your first name'
               value={userInput.firstname}
               onChange={handleChange}
+              onBlur={() => setFirstNameTouched(true)}
               className='peer placeholder:text-transparent border-accent border-2 focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-dashed py-3 pl-3 pr-10 w-full'
             />
             <label
@@ -213,6 +205,7 @@ function SignUp() {
               placeholder='Enter your last name'
               value={userInput.lastname}
               onChange={handleChange}
+              onBlur={() => setLastNameTouched(true)}
               className='peer placeholder:text-transparent border-accent border-2 focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-dashed py-3 pl-3 pr-10 w-full'
             />
             <label
@@ -231,6 +224,7 @@ function SignUp() {
               placeholder='Enter your email address'
               value={userInput.email}
               onChange={handleChange}
+              onBlur={() => setEmailTouched(true)}
               className='peer placeholder:text-transparent border-accent border-2 focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-dashed py-3 pl-3 pr-10 w-full'
             />
             <label
@@ -242,13 +236,14 @@ function SignUp() {
           </div>
           <div className='relative'>
             <input
-              type='password'
+              type={selectedType}
               id='password'
               name='password'
               autoComplete='off'
               placeholder='Enter your password'
               value={userInput.password}
               onChange={handleChange}
+              onBlur={() => setPasswordTouched(true)}
               className='peer placeholder:text-transparent border-accent border-2 focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-dashed py-3 pl-3 pr-10 w-full'
             />
             <label
@@ -257,10 +252,14 @@ function SignUp() {
             >
               Password
             </label>
+            <PasswordToggle
+              setShowPassword={setShowPassword}
+              showPassword={showPassword}
+            />
           </div>
           <div className='relative'>
             <input
-              type='password'
+              type={selectedType}
               id='confirm'
               name='confirm'
               autoComplete='off'
@@ -274,11 +273,15 @@ function SignUp() {
             >
               Confirm Password
             </label>
+            <PasswordToggle
+              setShowPassword={setShowPassword}
+              showPassword={showPassword}
+            />
           </div>
           <button
             type='submit'
             disabled={loading}
-            className='bg-accent text-main p-4 rounded-md'
+            className='bg-accent text-main p-4 rounded-md hover:shadow-xl focus-visible:outline-offset-4 focus-visible:outline-dashed focus-visible:outline-accent focus-visible:outline-2 transition duration-300'
           >
             {loading ? 'Creating account' : 'Sign up'}
           </button>
@@ -289,14 +292,17 @@ function SignUp() {
         <div>
           <button
             type='button'
-            className='option p-3 border-2 focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-dashed border-accent rounded-md w-full'
+            className='option p-3 border focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-dashed border-accent rounded-md w-full hover:bg-accent/10 transition duration-300'
           >
             Google
           </button>
         </div>
         <div className='text-sm flex gap-1 justify-center'>
           <p>Have an account?</p>
-          <Link href='/auth/login' className='underline font-bold'>
+          <Link
+            href='/auth/login'
+            className='underline font-bold focus-visible:outline-dashed focus-visible:outline-2'
+          >
             Login
           </Link>
         </div>

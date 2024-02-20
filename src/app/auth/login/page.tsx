@@ -1,4 +1,5 @@
 'use client';
+import PasswordToggle from '@/components/ui/PasswordToggle';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { useContext, useState, useEffect } from 'react';
@@ -8,8 +9,8 @@ function Login() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
-  const [passwordIsValid, setPasswordIsValid] = useState(true);
-  const [emailIsValid, setEmailIsValid] = useState(true);
+  const [passwordIsValid, setPasswordIsValid] = useState(false);
+  const [emailIsValid, setEmailIsValid] = useState(false);
 
   const [passwordTouched, setPasswordTouched] = useState(false);
   const [emailTouched, setEmailTouched] = useState(false);
@@ -20,8 +21,11 @@ function Login() {
     password: '',
   });
 
+  const [showPassword, setShowPassword] = useState(false);
+  const selectedType = showPassword ? 'text' : 'password';
 
   const Login = async () => {
+    setLoading(true);
     try {
       const response = await fetch('http://localhost:5000/auth/login', {
         method: 'POST',
@@ -38,6 +42,8 @@ function Login() {
       }
     } catch (error) {
       console.error('Error:', error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -64,13 +70,6 @@ function Login() {
     return () => {};
   }, [emailIsValid, passwordIsValid]);
 
-  const emailBlurHandler = () => {
-    setEmailTouched(true);
-  };
-  const passwordBlurHandler = () => {
-    setPasswordTouched(true);
-  };
-
   useEffect(() => {
     if (
       emailTouched &&
@@ -78,14 +77,14 @@ function Login() {
       !userInput.email.includes('@')
     ) {
       setEmailIsValid(false);
-    } else {
+    } else if (emailTouched && userInput.email.includes('@')) {
       setEmailIsValid(true);
       setEmailTouched(false);
     }
 
     if (passwordTouched && userInput.password.trim() === '') {
       setPasswordIsValid(false);
-    } else {
+    } else if (passwordTouched && userInput.password.trim() !== '') {
       setPasswordIsValid(true);
       setPasswordTouched(false);
     }
@@ -94,17 +93,12 @@ function Login() {
   // fix loigc
   const handleLogin = async (event: React.FormEvent) => {
     event.preventDefault();
+
     if (!formIsValid) {
+      console.log('invalid fields');
       return;
     }
-    setLoading(true);
-    try {
-      await Login();
-      setLoading(false); // Set loading to false after Login attempt
-    } catch (error) {
-      setLoading(false); // Set loading to false if there was an error
-      console.error('Error during Login:', error);
-    }
+    await Login();
   };
 
   return (
@@ -125,6 +119,7 @@ function Login() {
               placeholder='Enter your email address'
               value={userInput.email}
               onChange={handleChange}
+              onBlur={() => setEmailTouched(true)}
               className='peer placeholder:text-transparent border-accent border-2 focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-dashed py-3 pl-3 pr-10 w-full'
             />
             <label
@@ -136,13 +131,14 @@ function Login() {
           </div>
           <div className='relative'>
             <input
-              type='password'
+              type={selectedType}
               id='password'
               name='password'
               autoComplete='off'
               placeholder='Enter your password'
               value={userInput.password}
               onChange={handleChange}
+              onBlur={() => setPasswordTouched(true)}
               className='peer placeholder:text-transparent border-accent border-2 focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-dashed py-3 pl-3 pr-10 w-full'
             />
             <label
@@ -151,11 +147,15 @@ function Login() {
             >
               Password
             </label>
+            <PasswordToggle
+              setShowPassword={setShowPassword}
+              showPassword={showPassword}
+            />
           </div>
           <button
             type='submit'
             disabled={loading}
-            className='bg-accent text-main p-4 rounded-md'
+            className='bg-accent text-main p-4 rounded-md hover:shadow-xl focus-visible:outline-offset-4 focus-visible:outline-dashed focus-visible:outline-accent focus-visible:outline-2 transition duration-300'
           >
             {loading ? 'Logging in' : 'Login'}
           </button>
@@ -166,14 +166,17 @@ function Login() {
         <div>
           <button
             type='button'
-            className='option p-3 border-2 focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-dashed border-accent rounded-md w-full'
+            className='option p-3 border focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-dashed border-accent rounded-md w-full hover:bg-accent/10 transition duration-300'
           >
             Google
           </button>
         </div>
         <div className='text-sm flex gap-1 justify-center'>
           <p>New user?</p>
-          <Link href='/auth/signup' className='underline font-bold'>
+          <Link
+            href='/auth/signup'
+            className='underline font-bold focus-visible:outline-dashed focus-visible:outline-2'
+          >
             Create account
           </Link>
         </div>
