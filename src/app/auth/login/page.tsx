@@ -120,6 +120,7 @@ function Login() {
               value={userInput.email}
               onChange={handleChange}
               onBlur={() => setEmailTouched(true)}
+              aria-describedby='email-error'
               className='peer placeholder:text-transparent border-accent border-2 focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-dashed py-3 pl-3 pr-10 w-full'
             />
             <label
@@ -128,6 +129,7 @@ function Login() {
             >
               Email
             </label>
+            {/* <p id='email-error' aria-live='polite'>An email is required</p> */}
           </div>
           <div className='relative'>
             <input
@@ -139,6 +141,7 @@ function Login() {
               value={userInput.password}
               onChange={handleChange}
               onBlur={() => setPasswordTouched(true)}
+              aria-describedby='password-error'
               className='peer placeholder:text-transparent border-accent border-2 focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-dashed py-3 pl-3 pr-10 w-full'
             />
             <label
