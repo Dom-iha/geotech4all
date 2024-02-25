@@ -9,26 +9,27 @@ export default function Home() {
 
   return (
     <>
-      <section className='hero flex items-center min-h-screen text-main'>
-        <div className='grid gap-4 lg:gap-8 lg:ml-[108px] max-sm:p-6 max-md:p-8 max-w-[686px]'>
-          <h1 className='text-3xl lg:text-6xl font-bold mb'>
+      <section className='hero relative flex items-center min-h-screen text-main'>
+        <div className='fade absolute w-full h-full bg-gradient-to-'></div>
+        <div className='z-10 grid gap-4 lg:gap-8 lg:ml-[108px] max-sm:p-6 max-md:p-8 max-w-[686px]'>
+          <h1 className='text-3xl lg:text-6xl font-bold text-accent'>
             Geoscience For All
           </h1>
-          <p className='font-medium text-lg lg:text-3xl lg:max-w-[654px]'>
+          <p className='font-medium text-lg lg:text-3xl lg:max-w-[654px] text-accent'>
             Empowering individuals and communities through
             accessible, impactful, and innovative geoscience solutions.
           </p>
           <Link
             href='/about'
-            className='cursor-pointer relative group overflow-hidden border-2 px-10 py-2 border-main w-fit rounded-md'
+            className='cursor-pointer relative group overflow-hidden border-2 px-10 py-2 border-accent w-fit rounded-md'
           >
-            <span className='uppercase tracking-widest font-medium text-accent lg:text-lg relative z-10 group-hover:text-main duration-500'>
+            <span className='uppercase tracking-widest font-medium text-main lg:text-lg relative z-10 group-hover:text-accent duration-500'>
               Learn How
             </span>
-            <span className='absolute top-0 left-0 w-full bg-main duration-500 group-hover:-translate-x-full h-full'></span>
-            <span className='absolute top-0 left-0 w-full bg-main duration-500 group-hover:translate-x-full h-full'></span>
-            <span className='absolute top-0 left-0 w-full bg-main duration-500 delay-300 group-hover:-translate-y-full h-full'></span>
-            <span className='absolute delay-300 top-0 left-0 w-full bg-main duration-500 group-hover:translate-y-full h-full'></span>
+            <span className='absolute top-0 left-0 w-full bg-accent duration-500 group-hover:-translate-x-full h-full'></span>
+            <span className='absolute top-0 left-0 w-full bg-accent duration-500 group-hover:translate-x-full h-full'></span>
+            <span className='absolute top-0 left-0 w-full bg-accent duration-500 delay-300 group-hover:-translate-y-full h-full'></span>
+            <span className='absolute delay-300 top-0 left-0 w-full bg-accent duration-500 group-hover:translate-y-full h-full'></span>
           </Link>
         </div>
       </section>

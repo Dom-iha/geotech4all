@@ -1,11 +1,13 @@
 'use client';
 import PasswordToggle from '@/components/ui/PasswordToggle';
+import AuthContext from '@/context/AuthContext';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { useContext, useState, useEffect } from 'react';
 
 function Login() {
   const router = useRouter();
+  const { authenticate } = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
@@ -38,6 +40,7 @@ function Login() {
       if (response.ok) {
         console.log(data);
         setSuccess(true);
+        authenticate(data);
         router.push('/admin');
       }
     } catch (error) {

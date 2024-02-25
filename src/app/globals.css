@@ -11,14 +11,14 @@
 }
 
 @keyframes grow {
-	from {
-		transform: scale(0.8);
-		opacity: .8;
-	}
-	to {
-		transform: scale(1);
-		opacity: 1;
-	}
+  from {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 @keyframes slide-in {
@@ -40,21 +40,30 @@
     background: var(--background);
     font-family: montserrat, sans-serif;
   }
-  body:has(button[aria-expanded='true']){
+  body:has(button[aria-expanded='true']) {
     overflow: hidden;
   }
-
 }
 
 @layer utilities {
   .hero {
-    background: url(../../public/assets/images/hero.png) no-repeat;
+    background-image: linear-gradient(
+    to left,
+    hsla(0, 0%, 100%, 0),
+    white 50%
+  ), url(../../public/assets/images/street-map.svg);
+  background-position-x: right;
+  background-repeat: no-repeat;
+
+    /* background: url(../../public/assets/images/street-map.svg) no-repeat right; */
+    /* background-image: radial-gradient(circle, hsla(0, 0%, 100%, 0) 0, #fff 65%); */
   }
   .community {
     background: url(../../public/assets/images/cityscape.png) no-repeat;
   }
   .news-hero {
-    background: url(../../public/assets/images/reforestation.png) no-repeat center;
+    background: url(../../public/assets/images/reforestation.png) no-repeat
+      center;
     background-size: cover;
     background-attachment: fixed;
   }
