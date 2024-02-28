@@ -1,17 +1,28 @@
 'use client';
 import { useState } from 'react';
 import TextEditor from '@/components/ui/TextEditor';
-
+interface ArticeType {
+  title: string;
+  excerpt: string;
+  image: string | File;
+}
 function CreateBlog() {
   const [loading, setLoading] = useState(false);
   const [view, setView] = useState('write');
   const [error, setError] = useState<boolean | null>(null);
   const [success, setSuccess] = useState<boolean | null>(null);
   const [value, setValue] = useState();
-  const [articleData, setArticleData] = useState({
+  const [articleData, setArticleData] = useState<ArticeType>({
     title: '',
     excerpt: '',
+    image: '',
   });
+
+  const formData = new FormData();
+  formData.append('title', articleData.title);
+  formData.append('excerpt', articleData.excerpt);
+  formData.append('image', articleData.image);
+  formData.append('content', value!); // remove this. value is actually undefined by default
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -29,6 +40,18 @@ function CreateBlog() {
     }
   };
 
+  const handleImage = (files: FileList | null) => {
+    if (files && files[0]) {
+      const selectedFile = files[0];
+      console.log('Selected file:', selectedFile);
+
+      setArticleData((prevState) => ({
+        ...prevState,
+        image: selectedFile,
+      }));
+    }
+  };
+
   const handleEditorContentChange = (content: any) => {
     setValue(content);
   };
@@ -39,9 +62,9 @@ function CreateBlog() {
       const response = await fetch('http://localhost:5000', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'multipart/form-data',
         },
-        body: JSON.stringify(articleData),
+        body: formData,
       });
       if (response.ok) {
         console.log('Published');
@@ -65,31 +88,42 @@ function CreateBlog() {
       <div className='max-w-[800px] mx-auto bg-main shadow-md p-4 lg:p-8 '>
         <section>
           <div className='flex flex-wrap max-md:justify-between lg:gap-8 mb-4 lg:mb-10'>
-            <button type='button' onClick={() => setView('write')} className={`${view === 'write' ? ' bg-accent text-main' : 'bg-gray-50'} w-24 px-4 py-2 shadow-md rounded-sm transition duration-200 outline-offset-2 focus-visible:outline-dashed focus-visible:outline-1`}>
+            <button
+              type='button'
+              onClick={() => setView('write')}
+              className={`${view === 'write' ? ' bg-accent text-main' : 'bg-gray-50'} w-24 px-4 py-2 shadow-md rounded-sm transition duration-200 outline-offset-2 focus-visible:outline-dashed focus-visible:outline-1`}
+            >
               Write
             </button>
-            <button type='button' onClick={() => setView('preview')} className={`${view === 'preview' ? ' bg-accent text-main' : 'bg-gray-50'} w-24  px-4 py-2 shadow-md rounded-sm transition duration-200 outline-offset-2 focus-visible:outline-dashed focus-visible:outline-1`}>
+            <button 
+              type='button' 
+              onClick={() => setView('preview')} 
+              className={`${view === 'preview' ? ' bg-accent text-main' : 'bg-gray-50'} w-24  px-4 py-2 shadow-md rounded-sm transition duration-200 outline-offset-2 focus-visible:outline-dashed focus-visible:outline-1`}
+            >
               Preview
             </button>
           </div>
-          <h1 className='text-center font-bold text-xl lg:text-3xl mb-5'>{view === 'write' ? 'New Post' : 'Preview'}</h1>
+          <h1 className='text-center font-bold text-xl lg:text-3xl mb-5'>
+            {view === 'write' ? 'New Post' : 'Preview'}
+          </h1>
         </section>
         {view === 'write' ? (
           <div className='w-full'>
             <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
               <div>
-                <label htmlFor='cover' className='block mb-2'>
+                <label htmlFor='cover' className='block mb-2 uppercase'>
                   Cover image
                 </label>
                 <input
                   type='file'
                   id='cover'
                   name='cover'
+                  onChange={(e) => handleImage(e.target.files)}
                   className='w-full py-16 pl-16 lg:pl-60 rounded h-40 border-accent border hover:cursor-pointer focus-visible:border-transparent focus-visible:outline-dashed'
                 />
               </div>
               <div className='mb-4'>
-                <label htmlFor='title' className='block mb-2'>
+                <label htmlFor='title' className='block mb-2 uppercase'>
                   Title
                 </label>
                 <input
@@ -104,7 +138,7 @@ function CreateBlog() {
                 />
               </div>
               <div className='mb-4'>
-                <label htmlFor='excerpt' className='block mb-2'>
+                <label htmlFor='excerpt' className='block mb-2 uppercase'>
                   Excerpt
                 </label>
                 <input
@@ -119,7 +153,7 @@ function CreateBlog() {
                 />
               </div>
               <div className='mb-4'>
-                <label htmlFor='content' className='block mb-2'>
+                <label htmlFor='content' className='block mb-2 uppercase'>
                   Content
                 </label>
                 <TextEditor

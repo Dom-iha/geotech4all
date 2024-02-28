@@ -47,16 +47,10 @@
 
 @layer utilities {
   .hero {
-    background-image: linear-gradient(
-    to left,
-    hsla(0, 0%, 100%, 0),
-    white 50%
-  ), url(../../public/assets/images/street-map.svg);
-  background-position-x: right;
-  background-repeat: no-repeat;
-
-    /* background: url(../../public/assets/images/street-map.svg) no-repeat right; */
-    /* background-image: radial-gradient(circle, hsla(0, 0%, 100%, 0) 0, #fff 65%); */
+    background-image: linear-gradient(to left, hsla(0, 0%, 100%, 0), white 50%),
+      url(../../public/assets/images/street-map.svg);
+    background-position-x: right;
+    background-repeat: no-repeat;
   }
   .community {
     background: url(../../public/assets/images/cityscape.png) no-repeat;
@@ -76,6 +70,9 @@
   /* .no-scroll {
     overflow: hidden;
   } */
+  .article-container ul {
+    list-style: disc;
+  }
 }
 
 @layer components {
