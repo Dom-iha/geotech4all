@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# GEOTECH4ALL
 
-## Getting Started
+![desktop preview](./public/assets/images/preview.png)
 
-First, run the development server:
+## Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+A community that specializes in everything geoscience. News, articles, webinars, conferences, podcasts etc.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Table of contents
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- [The challenge](#the-challenge)
+- [Links](#links)
+- [Built with](#built-with)
+- [Continued development](#continued-development)
+- [Author](#author)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### The challenge
 
-## Learn More
+Users should be able to:
 
-To learn more about Next.js, take a look at the following resources:
+- View the optimal layout for each of the website's pages depending on their device's screen size.
+- See hover states for all interactive elements on the page.
+- Recieve email notifications for new articles when they signup to the newsletter.
+- Signup for services they seek and get a follow up email.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Writers should be able to:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Signup to the platform.
+- Create and pulish well formatted articles.
+- Publish headlines, trending stories or news within the geoscience space.
 
-## Deploy on Vercel
+### Links
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [Demo](https://geotech4all.vercel.app)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Built with
+
+- [Next.js](https://nextjs.org/docs)
+- [Typescript](https://typescriptlang.org)
+- [TailwindCSS](https://tailwindcss.com/docs)
+
+### Continued development
+
+- Complete the UI and populate it with actual content.
+- Write logic to cycle through headlines.
+- I will also be working on the generalserver functionalities.
+
+## Author
+
+- Twitter - [Taqib](https://twitter.com/_Mihaq)
+- Linkedin - [Taqib](https://www.linkedin.com/in/taqib-ibrahim)
