@@ -15,22 +15,23 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
   
   
   useEffect(() => {
-    const checkAuth = () => {
-      // i'm going to change this and use next cookies
-      if (adminPages && !token) {
-        return redirect('/auth/login');
-      } 
-    };
-    
+    setAuthenticated(state.authenticated);
+    setUser(state.user);
+  }, [state]);
+
+  useEffect(() => {
     const storedPass = localStorage.getItem('PASS');
     if (storedPass) {
       const pass = JSON.parse(storedPass);
-      // setAuthenticated(true);
+      setAuthenticated(true);
       setToken(pass.token);
     } 
+  }, []);
 
-    checkAuth();
-  }, [token]);
+  // i'm going to change this and use next cookies
+  if (adminPages && !authenticated) {
+    redirect('/auth/login');
+  } 
 
   const authenticate = (userDetails: User) => {
     dispatch({ type: 'LOGIN', payload: userDetails });
