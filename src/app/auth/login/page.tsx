@@ -4,12 +4,12 @@ import AuthContext from '@/context/AuthContext';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { useContext, useState, useEffect } from 'react';
+import { toast } from 'sonner';
 
 function Login() {
   const router = useRouter();
   const { authenticate } = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
 
   const [passwordIsValid, setPasswordIsValid] = useState(false);
   const [emailIsValid, setEmailIsValid] = useState(false);
@@ -27,9 +27,10 @@ function Login() {
   const selectedType = showPassword ? 'text' : 'password';
 
   const Login = async () => {
+    const url = process.env.NEXT_PUBLIC_API_URL;
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:5000/auth/login', {
+      const response = await fetch(url + 'login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -39,8 +40,10 @@ function Login() {
       const data = await response.json();
       if (response.ok) {
         console.log(data);
-        setSuccess(true);
         authenticate(data);
+        toast.success('Welcome back!', {
+          style: { border: '1px solid hsl(147, 86%, 57%)' },
+        });
         router.push('/admin');
       }
     } catch (error) {
@@ -75,9 +78,9 @@ function Login() {
 
   useEffect(() => {
     if (
-      emailTouched &&
-      userInput.email.trim() === '' &&
-      !userInput.email.includes('@') ||
+      (emailTouched &&
+        userInput.email.trim() === '' &&
+        !userInput.email.includes('@')) ||
       !userInput.email.includes('.com')
     ) {
       setEmailIsValid(false);
@@ -115,11 +118,15 @@ function Login() {
 
         <form className='flex flex-col gap-8' onSubmit={handleLogin}>
           <div className='relative'>
-            {!emailIsValid && emailTouched && 
-              <p id='email-error' aria-live='polite' className='absolute -top-6 right-0 text-right text-error text-sm'>
+            {!emailIsValid && emailTouched && (
+              <p
+                id='email-error'
+                aria-live='polite'
+                className='absolute -top-6 right-0 text-right text-error text-sm'
+              >
                 Please enter a valid email
               </p>
-            }
+            )}
             <input
               type='email'
               id='email'
@@ -130,7 +137,11 @@ function Login() {
               onChange={handleChange}
               onBlur={() => setEmailTouched(true)}
               aria-describedby='email-error'
-              className={`${!emailIsValid && emailTouched ? 'border-error focus-visible:outline-error' : 'border-accent'} peer placeholder:text-transparent  border-2 focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-dashed py-3 pl-3 pr-10 w-full`}
+              className={`${
+                !emailIsValid && emailTouched
+                  ? 'border-error focus-visible:outline-error'
+                  : 'border-accent'
+              } peer placeholder:text-transparent  border-2 focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-dashed py-3 pl-3 pr-10 w-full`}
             />
             <label
               htmlFor='email'
@@ -140,9 +151,15 @@ function Login() {
             </label>
           </div>
           <div className='relative'>
-            {!passwordIsValid && passwordTouched && 
-              <p id='password-error' aria-live='polite' className='absolute -top-6 right-0 text-right text-error text-sm'>Please enter your password</p>
-            }
+            {!passwordIsValid && passwordTouched && (
+              <p
+                id='password-error'
+                aria-live='polite'
+                className='absolute -top-6 right-0 text-right text-error text-sm'
+              >
+                Please enter your password
+              </p>
+            )}
             <input
               type={selectedType}
               id='password'
@@ -153,7 +170,11 @@ function Login() {
               onChange={handleChange}
               onBlur={() => setPasswordTouched(true)}
               aria-describedby='password-error'
-              className={`${!passwordIsValid && passwordTouched ? 'border-error focus-visible:outline-error' : 'border-accent'} peer placeholder:text-transparent  border-2 focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-dashed py-3 pl-3 pr-10 w-full`}
+              className={`${
+                !passwordIsValid && passwordTouched
+                  ? 'border-error focus-visible:outline-error'
+                  : 'border-accent'
+              } peer placeholder:text-transparent  border-2 focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-dashed py-3 pl-3 pr-10 w-full`}
             />
             <label
               htmlFor='password'
@@ -169,6 +190,7 @@ function Login() {
           <button
             type='submit'
             disabled={loading}
+            // aria-disabled={loading}
             className='bg-accent mt-4 text-main p-4 rounded-md hover:shadow-xl focus-visible:outline-offset-4 focus-visible:outline-dashed focus-visible:outline-accent focus-visible:outline-2 transition duration-300'
           >
             {loading ? 'Logging in' : 'Login'}

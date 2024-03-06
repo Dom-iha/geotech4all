@@ -4,8 +4,9 @@ import dark_logo from '../../../public/assets/icons/logo-black.png';
 // import white_logo from '../../public/assets/icons/logo-white.png';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import MobileToggle from '../MobileToggle';
+import AuthContext from '@/context/AuthContext';
 
 const AdminNav: React.FC = () => {
   const pathname = usePathname();
@@ -13,6 +14,7 @@ const AdminNav: React.FC = () => {
   const toggleMenu = () => {
     setIsOpen((prevState) => !prevState);
   };
+  const { logout } = useContext(AuthContext);
 
   // let logo = isOpen ? white_logo : dark_logo;
   const adminpages = pathname.includes('/admin');
@@ -87,6 +89,19 @@ const AdminNav: React.FC = () => {
               >
                 profile
               </Link>
+            </li>
+            <li
+              className={`${
+                isOpen && 'max-md:animate-in3'
+              } relative after:absolute after:bg-main after:w-1 after:h-full after:-left-2 after:top-0 after:scale-y-0 after:origin-bottom md:after:bg-accent md:after:h-0.5 md:after:w-full md:after:top-auto md:after:bottom-0 md:after:left-0 md:after:scale-y-100 md:after:scale-x-0 md:after:origin-right md:hover:after:scale-x-100 md:hover:after:origin-left transition  after:transition after:duration-300`}
+            >
+              <button
+                type='button'
+                onClick={() => logout()}
+                className='outline-2 focus-visible:outline-dashed uppercase text-sm font-medium'
+              >
+                logout
+              </button>
             </li>
           </ul>
         </nav>

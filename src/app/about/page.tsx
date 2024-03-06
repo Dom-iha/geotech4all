@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import jerry from '../../../public/assets/images/jerry.png';
 import gabriel from '../../../public/assets/images/gabriel.png';
+import edna from '../../../public/assets/images/edna.png';
 import Link from 'next/link';
 
 function About() {
@@ -12,7 +13,9 @@ function About() {
             Everything Geoscience
           </h1>
           <p className='text-center mt-4 text-xl lg:text-2xl max-w-[900px]'>
-            Your go-to resource center for everything geoscience. We are a team of geoscientists and tech enthusiasts committed to making geoscience knowledge and tools accessible to everyone.
+            Your go-to resource center for everything geoscience. We are a team
+            of geoscientists and tech enthusiasts committed to making geoscience
+            knowledge and tools accessible to everyone.
           </p>
           <Link
             href='#info'
@@ -34,12 +37,15 @@ function About() {
             About Geotech4all
           </h2>
           <p className='mt-4 text-xl lg:text-2xl max-w-[800px]'>
-            Geotech4All is a budding geoscience conglomerate that offers tailor-made services and intuitive solutions to both industry and academia.
+            Geotech4All is a budding geoscience conglomerate that offers
+            tailor-made services and intuitive solutions to both industry and
+            academia.
           </p>
           <p className='mt-4 text-xl lg:text-2xl max-w-[800px]'>
-            Geotech4All is an umbrella name for a series of sister company working together to bring geoscience into relevance. 
+            Geotech4All is an umbrella name for a series of sister company
+            working together to bring geoscience into relevance.
           </p>
-          <div>
+          {/* <div>
             <p className='mt-4 text-xl lg:text-2xl max-w-[900px]'>
               Geotech4All sub groups: 
             </p>
@@ -51,7 +57,7 @@ function About() {
               <li>ResearchHub</li>
               <li>Breccias</li>
             </ul>
-          </div>
+          </div> */}
         </div>
       </section>
       <section className='max-lg:flex flex-col gap-8 px-6 md:px-8 lg:px-24 py-14'>
@@ -84,7 +90,9 @@ function About() {
             <Image src={jerry} alt='jeremiah oladipupo' />
             <div className='p-6 md:p-8 lg:bg-accent lg:text-main lg:p-20 flex flex-col gap-4'>
               <div>
-                <h3 className='text-lg lg:text-2xl font-bold'>Jeremiah Oladipupo</h3>
+                <h3 className='text-lg lg:text-2xl font-bold'>
+                  Jeremiah Oladipupo
+                </h3>
                 <p className='font-bold'>CEO & Founder</p>
               </div>
               <p>
@@ -97,14 +105,33 @@ function About() {
             </div>
           </div>
           <div className='flex flex-col lg:flex-row'>
-            <Image src={gabriel} alt='Gabriel Bahago' />
+            <Image src={edna} alt='enda osaghele' />
             <div className='p-6 md:p-8 lg:bg-accent lg:text-main lg:p-20 flex flex-col gap-4'>
               <div>
-                <h3 className='text-lg lg:text-2xl font-bold'>Gabriel Bahago</h3>
+                <h3 className='text-lg lg:text-2xl font-bold'>Edna Osagehle</h3>
                 <p className='font-bold'>Co Founder</p>
               </div>
               <p>
-              Co-founder of Geotech4All, is a visionary leader with deep
+                Co-founder of Geotech4All, is a skilled professional
+                specializing in engineering geology. With expertise in data
+                acquisition, processing and report writing, Edna brings valuable
+                insight into the team.. Her commitment to advancing geospatial
+                solutions is pivotal in Geotech4All’s mission of making
+                geospatial technology available to everyone.
+              </p>
+            </div>
+          </div>
+          <div className='flex flex-col lg:flex-row'>
+            <Image src={gabriel} alt='Gabriel Bahago' />
+            <div className='p-6 md:p-8 lg:bg-accent lg:text-main lg:p-20 flex flex-col gap-4'>
+              <div>
+                <h3 className='text-lg lg:text-2xl font-bold'>
+                  Gabriel Bahago
+                </h3>
+                <p className='font-bold'>Co Founder</p>
+              </div>
+              <p>
+                Co-founder of Geotech4All, is a visionary leader with deep
                 understanding of geospatial technologies. His expertise spans
                 GIS, remote sensing and environmental modeling. Committed to
                 making geospatial knowledge available, Gabriel plays a key role

@@ -105,6 +105,21 @@ const MainNav: React.FC = () => {
                     about
                   </Link>
                 </li>
+                <li
+                  className={`${
+                    isOpen && 'max-md:animate-in4'
+                  } relative after:absolute after:bg-main after:w-1 after:h-full after:-left-2 after:top-0 after:scale-y-0 after:origin-bottom md:after:bg-accent md:after:h-0.5 md:after:w-full md:after:top-auto md:after:bottom-0 md:after:left-0 md:after:scale-y-100 md:after:scale-x-0 md:after:origin-right md:hover:after:scale-x-100 md:hover:after:origin-left ${
+                    pathname === '/admin' &&
+                    'after:scale-y-100 md:after:scale-x-100'
+                  } transition  after:transition after:duration-300`}
+                >
+                  <Link
+                    href='/admin'
+                    className='outline-2 focus-visible:outline-dashed uppercase text-sm font-medium'
+                  >
+                    staff
+                  </Link>
+                </li>
               </ul>
             </nav>
           </header>

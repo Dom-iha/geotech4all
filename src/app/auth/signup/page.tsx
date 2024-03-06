@@ -3,6 +3,7 @@ import PasswordToggle from '@/components/ui/PasswordToggle';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { useContext, useState, useEffect } from 'react';
+import { toast } from 'sonner';
 
 function SignUp() {
   const router = useRouter();
@@ -34,9 +35,10 @@ function SignUp() {
   const selectedType = showPassword ? 'text' : 'password';
 
   const signup = async () => {
+    const url = process.env.NEXT_PUBLIC_API_URL
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:5000/auth/signup', {
+      const response = await fetch(url + 'signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -46,11 +48,16 @@ function SignUp() {
       const data = await response.json();
       if (response.ok) {
         console.log(data);
-        setSuccess(true);
+        toast.success('Signup successful!', {
+          style: { border: '1px solid hsl(147, 86%, 57%)' },
+        });
         router.push('/auth/login');
       }
     } catch (error) {
       console.error('Error:', error);
+      toast.error('Signup failed please try again!', {
+        style: { border: '1px solid hsl(354, 84%, 57%)' },
+      });
     } finally {
       setLoading(false);
     }
@@ -166,7 +173,7 @@ function SignUp() {
   const handleSignup = async (event: React.FormEvent) => {
     event.preventDefault();
 
-    console.log(formIsValid)
+    // console.log(formIsValid)
 
     if (!formIsValid) {
       console.log('invalid fields');

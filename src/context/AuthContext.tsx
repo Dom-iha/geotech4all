@@ -6,8 +6,10 @@ export const INITIAL_STATE = {
 };
 
 const AuthContext = createContext<AuthContextValues>({
-  authenticated: false,
   user: null,
+  token: null,
+  authenticated: false,
+  logout : () => {},
   authenticate: () => {},
 });
 

@@ -1,32 +1,53 @@
-import { useState, useReducer, useEffect } from 'react';
+import { useState, useReducer, useEffect, useLayoutEffect } from 'react';
 import AuthContext, { INITIAL_STATE } from './AuthContext';
 import AuthReducer from './AuthReducer';
+import { usePathname, redirect } from 'next/navigation';
 
 function AuthProvider({ children }: { children: React.ReactNode }) {
-  
   const [state, dispatch] = useReducer(AuthReducer, INITIAL_STATE);
-  const [authenticated, setauthenticated] = useState(false);
-  const [user, setUser] = useState(null);
+  const [authenticated, setAuthenticated] = useState(false);
+  const [user, setUser] = useState<User | null>(null);
+  const [token, setToken] = useState<string | null>(null);
+
+  const pathname = usePathname();
+  const adminPages = pathname.includes('/admin');
+
+  
   
   useEffect(() => {
-    const storedUser = localStorage.getItem('USER');
-    const possibleUser = storedUser ? JSON.parse(storedUser) : '';
-    setUser(possibleUser)
-  }, [])
+    const checkAuth = () => {
+      // i'm going to change this and use next cookies
+      if (adminPages && !token) {
+        return redirect('/auth/login');
+      } 
+    };
+    
+    const storedPass = localStorage.getItem('PASS');
+    if (storedPass) {
+      const pass = JSON.parse(storedPass);
+      // setAuthenticated(true);
+      setToken(pass.token);
+    } 
+
+    checkAuth();
+  }, [token]);
 
   const authenticate = (userDetails: User) => {
     dispatch({ type: 'LOGIN', payload: userDetails });
   };
-
-  const logout = (userData: UserData) => {
-    dispatch({ type: 'LOGOUT', payload: userData });
+  
+  const logout = () => {
+    dispatch({ type: 'LOGOUT' });
   };
 
   const authValues = {
     authenticated,
     user,
     authenticate,
+    logout,
+    token,
   };
+
   return (
     <AuthContext.Provider value={authValues}>{children}</AuthContext.Provider>
   );

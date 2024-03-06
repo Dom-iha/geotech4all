@@ -1,16 +1,13 @@
 'use client';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import TextEditor from '@/components/ui/TextEditor';
-interface ArticeType {
-  title: string;
-  excerpt: string;
-  image: string | File;
-}
+import AuthContext from '@/context/AuthContext';
+
 function CreateBlog() {
+  const { token } = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
   const [view, setView] = useState('write');
   const [error, setError] = useState<boolean | null>(null);
-  const [success, setSuccess] = useState<boolean | null>(null);
   const [value, setValue] = useState();
   const [articleData, setArticleData] = useState<ArticeType>({
     title: '',
@@ -58,17 +55,19 @@ function CreateBlog() {
 
   const publish = async () => {
     setLoading(true);
+  const url = process.env.NEXT_PUBLIC_API_URL || '';
+
     try {
-      const response = await fetch('http://localhost:5000', {
+      const response = await fetch(url, {
         method: 'POST',
         headers: {
           'Content-Type': 'multipart/form-data',
+          Authorization: 'Bearer ' + token,
         },
         body: formData,
       });
       if (response.ok) {
         console.log('Published');
-        setSuccess(true);
       }
     } catch (error) {
       console.error(error);
@@ -91,14 +90,18 @@ function CreateBlog() {
             <button
               type='button'
               onClick={() => setView('write')}
-              className={`${view === 'write' ? ' bg-accent text-main' : 'bg-gray-50'} w-24 px-4 py-2 shadow-md rounded-sm transition duration-200 outline-offset-2 focus-visible:outline-dashed focus-visible:outline-1`}
+              className={`${
+                view === 'write' ? ' bg-accent text-main' : 'bg-gray-50'
+              } w-24 px-4 py-2 shadow-md rounded-sm transition duration-200 outline-offset-2 focus-visible:outline-dashed focus-visible:outline-1`}
             >
               Write
             </button>
-            <button 
-              type='button' 
-              onClick={() => setView('preview')} 
-              className={`${view === 'preview' ? ' bg-accent text-main' : 'bg-gray-50'} w-24  px-4 py-2 shadow-md rounded-sm transition duration-200 outline-offset-2 focus-visible:outline-dashed focus-visible:outline-1`}
+            <button
+              type='button'
+              onClick={() => setView('preview')}
+              className={`${
+                view === 'preview' ? ' bg-accent text-main' : 'bg-gray-50'
+              } w-24  px-4 py-2 shadow-md rounded-sm transition duration-200 outline-offset-2 focus-visible:outline-dashed focus-visible:outline-1`}
             >
               Preview
             </button>
@@ -174,7 +177,7 @@ function CreateBlog() {
             <h2 className='text-4xl font-bold mb-8'>{articleData.title}</h2>
             <p>{articleData.excerpt}</p>
             {/* Tailwind removes list styles by default and it affects the article preview (FIX THIS) */}
-            <div dangerouslySetInnerHTML={{__html: value ? value : ''}}/>
+            <div dangerouslySetInnerHTML={{ __html: value ? value : '' }} />
           </div>
         )}
       </div>

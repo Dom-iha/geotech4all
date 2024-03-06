@@ -78,15 +78,15 @@ const Footer: React.FC = () => {
                     href='mailto:geotech4all@gmail.com'
                     className='hover:underline'
                   >
-                    Email
+                    Email Us
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href='mailto:geotech4all@gmail.com'
+                    href='tel:+2348165789103'
                     className='hover:underline'
                   >
-                    Call
+                    Call Us
                   </Link>
                 </li>
               </ul>

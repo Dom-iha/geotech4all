@@ -2,13 +2,16 @@ interface MenuProps {
   toggleMenu: () => void;
   isOpen: boolean;
 }
-
+interface ArticeType {
+  title: string;
+  excerpt: string;
+  image: string | File;
+}
 interface User {
-  firstname: string;
-  lastname: string;
+  name: string;
   email: string;
-  avatar: string;
-  token: string;
+  avatar?: string;
+  role: string;
 }
 
 interface UserData {
@@ -19,9 +22,11 @@ interface UserData {
 }
 
 interface AuthContextValues {
+  token: string | null;
   authenticated: boolean;
   user: User | null;
   authenticate: (userDetails: User) => void;
+  logout: () => void;
 }
 
 // Type definitions for reducer function
