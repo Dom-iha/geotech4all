@@ -35,10 +35,12 @@ function SignUp() {
   const selectedType = showPassword ? 'text' : 'password';
 
   const signup = async () => {
-    const url = process.env.NEXT_PUBLIC_API_URL
+    const url = process.env.NEXT_PUBLIC_API_URL;
+    const endpoint = process.env.NEXT_PUBLIC_SIGNUP_ENDPOINT as string;
+
     setLoading(true);
     try {
-      const response = await fetch(url + 'signup', {
+      const response = await fetch(url + endpoint, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -28,9 +28,10 @@ function Login() {
 
   const Login = async () => {
     const url = process.env.NEXT_PUBLIC_API_URL;
+    const endpoint = process.env.NEXT_PUBLIC_LOGIN_ENDPOINT as string;
     setLoading(true);
     try {
-      const response = await fetch(url + 'login', {
+      const response = await fetch(url + endpoint, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
