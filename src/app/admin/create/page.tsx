@@ -14,6 +14,7 @@ function CreateBlog() {
     excerpt: '',
     image: '',
   });
+  const [imageName, setImageName] = useState('');
 
   const formData = new FormData();
   formData.append('title', articleData.title);
@@ -42,6 +43,8 @@ function CreateBlog() {
       const selectedFile = files[0];
       console.log('Selected file:', selectedFile);
 
+      setImageName(selectedFile.name);
+
       setArticleData((prevState) => ({
         ...prevState,
         image: selectedFile,
@@ -55,7 +58,7 @@ function CreateBlog() {
 
   const publish = async () => {
     setLoading(true);
-  const url = process.env.NEXT_PUBLIC_API_URL || '';
+    const url = process.env.NEXT_PUBLIC_API_URL || '';
 
     try {
       const response = await fetch(url, {
@@ -114,16 +117,19 @@ function CreateBlog() {
           <div className='w-full'>
             <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
               <div>
-                <label htmlFor='cover' className='block mb-2 uppercase'>
-                  Cover image
-                </label>
                 <input
                   type='file'
-                  id='cover'
+                  id='cover-image'
                   name='cover'
                   onChange={(e) => handleImage(e.target.files)}
-                  className='w-full py-16 pl-16 lg:pl-60 rounded h-40 border-accent border hover:cursor-pointer focus-visible:border-transparent focus-visible:outline-dashed'
+                  className='sr-only peer'
                 />
+                <label
+                  htmlFor='cover-image'
+                  className='grid place-content-center w-full min-h-40 mb-5 border-accent border hover:cursor-pointer peer-focus-visible:border-transparent peer-focus-visible:outline-dashed peer-focus-visible:outline-1'
+                >
+                  <span>{imageName ? imageName : 'Cover image'}</span>
+                </label>
               </div>
               <div className='mb-4'>
                 <label htmlFor='title' className='block mb-2 uppercase'>
