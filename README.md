@@ -1,4 +1,4 @@
-# ![geotech for all](./public/assets/images/logo.png)
+# ![geotech for all](./public/assets/images/logo.jpg)
 
 ## Overview
 
