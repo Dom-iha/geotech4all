@@ -3,12 +3,10 @@ import Image from 'next/image';
 import quarry from '../../public/assets/images/quarry.png';
 import training from '../../public/assets/images/training.png';
 import Link from 'next/link';
-import { useState } from 'react';
 import Testimonial from '@/components/testimonial';
 import data from '@/data/data.json';
 
 export default function Home() {
-  const [Testimonials, setTestimonials] = useState(new Array(3).fill({}));
 
   return (
     <>
