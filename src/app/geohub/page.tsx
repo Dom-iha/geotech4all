@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import reporter from '../../../public/assets/images/reporter.png';
 import events from '../../../public/assets/images/events.png';
-import data from '../../../public/data/data.json';
+import data from '@/data/data.json';
 import ArticleCard from '@/components/ui/ArticleCard';
 
 function Geohub() {
@@ -105,7 +105,7 @@ function Geohub() {
           className='cursor-pointer relative group overflow-hidden border-2 px-8 py-2 border-accent w-fit rounded-md self-center mt-10'
         >
           <span className='tracking-widest font-medium text-main lg:text-lg relative z-10 group-hover:text-accent duration-500'>
-            Load more
+            View All
           </span>
           <span className='absolute top-0 left-0 w-full h-full bg-accent origin-left group-hover:origin-right group-hover:scale-x-0 transition duration-300'></span>
         </button>

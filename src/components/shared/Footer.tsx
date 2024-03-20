@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
       {!authPages && !adminPages &&(
         <footer className='max-w-[90rem] mx-auto bg-accent px-8 lg:px-24 py-16 text-main'>
           <Newsletter />
-          <div className='footer grid grid-cols-[repeat(auto-fit,_minmax(180px,_1fr))] gap-4'>
+          <div className='footer grid grid-cols-[repeat(auto-fit,_minmax(180px,_1fr))] gap-8'>
             <div className='flex flex-col justify-between max-sm:items-center'>
               <Link href='#'>
                 <Image src={footer_logo} alt='logo' className='max-w-[150px]' />
