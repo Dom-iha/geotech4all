@@ -1,17 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import img from '../../../public/assets/images/fauna.png'
 
-interface articleProps {
-   id:string;
-   title: string;
-   content: string;
-   cover: string;
-   createdAt: string;
-   author: string;
-}
-
-function ArticleCard(props: articleProps) {
+function ArticleCard(props: ArticleProps) {
   return (
     <li className='shadow-md w-fit rounded-md bg-main'>
       <Link href={`./geohub/${props.id}`} className='flex flex-col gap-4 h-full'>

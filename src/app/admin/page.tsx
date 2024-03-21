@@ -1,6 +1,6 @@
 'use client';
 import ArticleCard from '@/components/ui/ArticleCard';
-import data from '../../../public/data/data.json';
+import data from '@/data/data.json';
 
 
 function Dashboard() {

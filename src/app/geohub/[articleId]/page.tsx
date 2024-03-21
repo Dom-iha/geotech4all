@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import data from '../../../../public/data/data.json';
+import data from '@/data/data.json';
 import Related from '@/components/ui/Related';
 
 interface Article {

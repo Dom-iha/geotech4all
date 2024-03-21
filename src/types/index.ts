@@ -7,6 +7,14 @@ interface ArticeType {
   excerpt: string;
   image: string | File;
 }
+interface ArticleProps {
+  id:string;
+  title: string;
+  content: string;
+  cover: string;
+  createdAt: string;
+  author: string;
+}
 interface User {
   name: string;
   email: string;
