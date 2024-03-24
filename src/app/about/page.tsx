@@ -31,33 +31,26 @@ function About() {
           </Link>
         </div>
       </section>
-      <section id='info' className='p-6 md:px-8 lg:px-24 min-h-[85vh]'>
+      <section
+        id='info'
+        className='p-6 md:px-8 lg:px-24 flex flex-col md:flex-row gap-6 justify-between'
+      >
         <div className='flex flex-col gap-4 lg:gap-6 h-full'>
-          <h2 className='text-2xl lg:text-4xl font-bold mt-4'>
-            About Geotech4all
-          </h2>
-          <p className='mt-4 text-xl lg:text-2xl max-w-[800px]'>
-            Geotech4All is a budding geoscience conglomerate that offers
-            tailor-made services and intuitive solutions to both industry and
-            academia.
+          <h2 className='text-2xl lg:text-4xl font-bold mt-4'>The Problem</h2>
+          <p className='mt-4 text-xl lg:text-2xl max-w-[50ch]'>
+            The geoscience industry is plagued by a lack of access to knowledge
+            & tools, and a shortage of skilled professionals. This has led to a
+            gap in the industry, and a lack of innovation in the field.
           </p>
-          <p className='mt-4 text-xl lg:text-2xl max-w-[800px]'>
-            Geotech4All is an umbrella name for a series of sister company
-            working together to bring geoscience into relevance.
+        </div>
+        <div className='flex flex-col gap-4 lg:gap-6 h-full'>
+          <h2 className='text-2xl lg:text-4xl font-bold mt-4'>Our Approach</h2>
+          <p className='mt-4 text-xl lg:text-2xl max-w-[50ch] '>
+            We are on a mission to bridge the gap in the geoscience industry by
+            providing access to knowledge, tools and resources. Our goal is to
+            empower individuals and organizations with the skills and tools they
+            need to succeed in the geoscience industry.
           </p>
-          {/* <div>
-            <p className='mt-4 text-xl lg:text-2xl max-w-[900px]'>
-              Geotech4All sub groups: 
-            </p>
-            <ul className='pl-6 list-disc lg:text-xl'>
-              <li>Geo-journalism</li>
-              <li>GeoHub</li>
-              <li>GeoLab</li>
-              <li>GeoConsult</li>
-              <li>ResearchHub</li>
-              <li>Breccias</li>
-            </ul>
-          </div> */}
         </div>
       </section>
       <section className='max-lg:flex flex-col gap-8 px-6 md:px-8 lg:px-24 py-14'>
