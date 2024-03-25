@@ -57,12 +57,12 @@ const Footer: React.FC = () => {
               </p>
               <ul className='flex flex-col gap-2.5 max-lg:text-sm'>
                 <li>
-                  <Link href='#' className='hover:underline'>
+                  <Link href='/terms' className='hover:underline'>
                     Terms
                   </Link>
                 </li>
                 <li>
-                  <Link href='#' className='hover:underline'>
+                  <Link href='/privacy' className='hover:underline'>
                     Privacy Policy
                   </Link>
                 </li>
