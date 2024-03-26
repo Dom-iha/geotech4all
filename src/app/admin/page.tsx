@@ -1,10 +1,7 @@
-'use client';
 import ArticleCard from '@/components/ui/ArticleCard';
 import data from '@/data/data.json';
 
-
 function Dashboard() {
-
   return (
     <div className='min-h-[92vh] grid bg-gray-50'>
       <section className='px-6 md:px-8 lg:px-24 py-14 flex flex-col gap-10'>
