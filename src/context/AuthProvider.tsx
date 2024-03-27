@@ -1,3 +1,4 @@
+'use client'
 import { useState, useReducer, useEffect, useLayoutEffect } from 'react';
 import AuthContext, { INITIAL_STATE } from './AuthContext';
 import AuthReducer from './AuthReducer';
