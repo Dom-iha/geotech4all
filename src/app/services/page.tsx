@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import geohub from '../../../public/assets/icons/geohub.jpg';
+import Link from 'next/link';
 
 const Services: React.FC = () => {
   return (
@@ -13,8 +14,8 @@ const Services: React.FC = () => {
             From large enterprises to academia – we help the community solve geo
             problems.
           </p>
-          <button
-            type='button'
+          <Link
+            href='#services'
             className='cursor-pointer relative group overflow-hidden border-2 px-10 py-3 border-accent w-fit rounded-md'
           >
             <span className='uppercase tracking-widest font-medium text-main lg:text-lg relative z-10 group-hover:text-accent duration-500'>
@@ -24,11 +25,11 @@ const Services: React.FC = () => {
             <span className='absolute top-0 left-0 w-full bg-accent duration-500 group-hover:translate-x-full h-full'></span>
             <span className='absolute top-0 left-0 w-full bg-accent duration-500 delay-300 group-hover:-translate-y-full h-full'></span>
             <span className='absolute delay-300 top-0 left-0 w-full bg-accent duration-500 group-hover:translate-y-full h-full'></span>
-          </button>
+          </Link>
         </div>
       </section>
-      <section className='px-6 md:px-8 lg:px-24 py-14'>
-        <h2 className='text-3xl lg:text-5xl font-bold mb-16'>What we offer</h2>
+      <section id='services' className='px-6 md:px-8 lg:px-24 py-14'>
+        <h2 className='text-3xl lg:text-5xl font-bold mb-16'>Our Services</h2>
         <ul className='grid gap-8 lg:gap-32 mt-5 grid-cols-[repeat(auto-fit,_minmax(16rem,_1fr))]'>
           <li className='grid gap-4 lg:gap-8'>
             <h3 className='text-xl lg:text-2xl font-semibold'>
@@ -143,10 +144,68 @@ const Services: React.FC = () => {
         </ul>
       </section>
       <section className='px-6 md:px-8 lg:px-24 py-14'>
+        <h2 className='text-3xl lg:text-5xl font-bold mb-16'>Products</h2>
+        <ul className='grid gap-8 lg:gap-32 mt-5 grid-cols-[repeat(auto-fit,_minmax(16rem,_1fr))]'>
+          <li className='grid gap-4 lg:gap-8'>
+            <h3 className='text-xl lg:text-2xl font-semibold'>
+              Geological Services
+            </h3>
+            <p className='lg:text-xl'>
+              Our geological services encompass a wide range of expertise
+              including geological mapping, mineral exploration, and site
+              characterization.
+            </p>
+            <button
+              type='button'
+              className='cursor-pointer relative group overflow-hidden border-2 px-10 py-2 border-accent w-fit rounded-md'
+            >
+              <span className='uppercase font-medium text-main lg:text-lg relative z-10 group-hover:text-accent duration-500'>
+                Details
+              </span>
+              <span className='absolute top-0 left-0 w-full h-full bg-accent origin-left group-hover:origin-right group-hover:scale-x-0 transition duration-300'></span>
+            </button>
+          </li>
+          <li className='grid gap-4 lg:gap-8'>
+            <h3 className='text-xl lg:text-2xl font-semibold'>
+              Project Writing
+            </h3>
+            <p className='lg:text-xl'>
+              Our project writing services offer professional assistance in
+              preparing high-quality project proposals, reports and research
+              papers.
+            </p>
+            <button
+              type='button'
+              className='cursor-pointer relative group overflow-hidden border-2 px-10 py-2 border-accent w-fit rounded-md'
+            >
+              <span className='uppercase font-medium text-main lg:text-lg relative z-10 group-hover:text-accent duration-500'>
+                Details
+              </span>
+              <span className='absolute top-0 left-0 w-full h-full bg-accent origin-left group-hover:origin-right group-hover:scale-x-0 transition duration-300'></span>
+            </button>
+          </li>
+          <li className='grid gap-4 lg:gap-8'>
+            <h3 className='text-xl lg:text-2xl font-semibold'>Field Mapping</h3>
+            <p className='lg:text-xl'>
+              Our field mapping services combine fieldwork expertise with
+              advanced mapping technologies to facilitate accurate geological
+              surveys.
+            </p>
+            <button
+              type='button'
+              className='cursor-pointer relative group overflow-hidden border-2 px-10 py-2 border-accent w-fit rounded-md'
+            >
+              <span className='uppercase font-medium text-main lg:text-lg relative z-10 group-hover:text-accent duration-500'>
+                Details
+              </span>
+              <span className='absolute top-0 left-0 w-full h-full bg-accent origin-left group-hover:origin-right group-hover:scale-x-0 transition duration-300'></span>
+            </button>
+          </li>
+        </ul>
+      </section>
+      <section className='px-6 md:px-8 lg:px-24 py-14'>
         <div>
-          <h3 className='text-2xl lg:text-6xl font-bold mb-20'>
-            Proudly sponsored by
-          </h3>
+          <h3 className='text-2xl lg:text-6xl font-bold mb-20'>Sponsored by</h3>
           <div className='grid grid-cols-2 gap-20'>
             <div>
               <Image src={geohub} alt='partners log' className='w-[200px]' />

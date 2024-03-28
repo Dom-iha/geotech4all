@@ -30,6 +30,7 @@ const config: Config = {
         in2: 'in .8s forwards',
         in3: 'in 1s forwards',
         in4: 'in 1.2s forwards',
+        in5: 'in 1.4s forwards',
         out: 'out .6s forwards',
       },
       screens: {

@@ -121,11 +121,11 @@ export default function Home() {
       <section className='bg-accent min-h-[300px] px-6 md:px-8 lg:px-24 py-10 flex'>
         <article className='flex flex-wrap justify-between items-center min-w-full'>
           <div className='text-main text-center'>
-            <p className='font-bold text-2xl md:text-3xl lg:text-6xl'>300+</p>
+            <p className='font-bold text-2xl md:text-3xl lg:text-6xl'>30+</p>
             <p className='font-medium'>Students Taught</p>
           </div>
           <div className='text-main text-center'>
-            <p className='font-bold text-2xl md:text-3xl lg:text-6xl'>500+</p>
+            <p className='font-bold text-2xl md:text-3xl lg:text-6xl'>100+</p>
             <p className='font-medium'>Maps Produced</p>
           </div>
           <div className='text-main text-center'>

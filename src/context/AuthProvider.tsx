@@ -1,5 +1,5 @@
 'use client'
-import { useState, useReducer, useEffect, useLayoutEffect } from 'react';
+import { useState, useReducer, useEffect } from 'react';
 import AuthContext, { INITIAL_STATE } from './AuthContext';
 import AuthReducer from './AuthReducer';
 import { usePathname, redirect } from 'next/navigation';
