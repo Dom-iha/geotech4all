@@ -9,12 +9,13 @@ import { usePathname } from 'next/navigation';
 const Footer: React.FC = () => {
   const pathname = usePathname();
 
-  const authPages = pathname.includes('/auth');
+  const authPages = pathname.includes('/sign-up') || pathname.includes('/sign-in');
+
   const adminPages = pathname.includes('/admin');
 
   return (
     <>
-      {!authPages && !adminPages &&(
+      {!authPages && !adminPages && (
         <footer className='max-w-[90rem] mx-auto bg-accent px-8 lg:px-24 py-16 text-main'>
           <Newsletter />
           <div className='footer grid grid-cols-[repeat(auto-fit,_minmax(180px,_1fr))] gap-8'>
@@ -47,6 +48,11 @@ const Footer: React.FC = () => {
                 <li>
                   <Link href='/gallery' className='hover:underline'>
                     Gallery
+                  </Link>
+                </li>
+                <li>
+                  <Link href='/admin' className='hover:underline'>
+                    Staff
                   </Link>
                 </li>
               </ul>
@@ -82,10 +88,7 @@ const Footer: React.FC = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href='tel:+2348165789103'
-                    className='hover:underline'
-                  >
+                  <Link href='tel:+2348165789103' className='hover:underline'>
                     Call Us
                   </Link>
                 </li>

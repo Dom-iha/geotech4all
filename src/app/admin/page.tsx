@@ -1,7 +1,18 @@
 import ArticleCard from '@/components/ui/ArticleCard';
 import data from '@/data/data.json';
+import { auth, currentUser } from '@clerk/nextjs';
+import { toast } from 'sonner';
 
-function Dashboard() {
+async function Dashboard() {
+  const { userId } = auth();
+  const user = await currentUser();
+
+  // if (userId || user) {
+  //   toast.success('Signup successful!', {
+  //     style: { border: '1px solid hsl(147, 86%, 57%)' },
+  //   });
+  // }
+
   return (
     <div className='min-h-[92vh] grid bg-gray-50'>
       <section className='px-6 md:px-8 lg:px-24 py-14 flex flex-col gap-10'>
