@@ -41,15 +41,12 @@ function MobileToggle({ isOpen, toggleMenu }: MenuProps) {
   return (
     <button
       type='button'
-      // aria-label={`${isOpen ? 'Hide' : 'Show'} navigation menu`}
+      aria-label={`${isOpen ? 'Hide' : 'Show'} navigation menu`}
       aria-expanded={isOpen}
       aria-controls='navbar-menu'
       onClick={toggleMenu}
       className='md:hidden h-fit max-md:flex flex-col gap-1.5 items-end z-50 outline-2 focus-visible:outline-dashed outline-offset-2'
     >
-      <span className='sr-only'>
-        {isOpen ? 'Hide' : 'Show'} navigation menu
-      </span>
       <span
         className={`top-bar h-0.5 w-7 bg-accent transition duration-500 ${isOpen && 'translate-y-1 rotate-45 bg-main'}`}
         aria-hidden='true'

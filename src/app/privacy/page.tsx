@@ -1,4 +1,9 @@
 import { Lock } from '@/components/Icons';
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy'
+}
 
 function Privacy() {
   return (

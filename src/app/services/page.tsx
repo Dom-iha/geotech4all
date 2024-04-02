@@ -1,7 +1,11 @@
 import Image from 'next/image';
 import geohub from '../../../public/assets/icons/geohub.jpg';
 import Link from 'next/link';
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: 'Services'
+}
 const Services: React.FC = () => {
   return (
     <>

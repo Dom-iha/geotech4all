@@ -1,8 +1,13 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import jerry from '../../../public/assets/images/jerry.png';
 import gabriel from '../../../public/assets/images/gabriel.png';
 import edna from '../../../public/assets/images/edna.png';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'About'
+}
 
 function About() {
   return (

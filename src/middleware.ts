@@ -7,7 +7,9 @@ export default authMiddleware({
   publicRoutes: [
     '/',
     '/services',
+    '/services/[service]',
     '/geohub',
+    '/geohub/[articleId]',
     '/gallery',
     '/about',
     '/terms',
