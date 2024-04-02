@@ -1,8 +1,10 @@
 import React from 'react'
 
-function Service() {
+function Service({params}: any) {
+  const serviceName = params.service;
+
   return (
-    <div>page</div>
+    <div className='grid min-h-screen place-items-center'>{serviceName}</div>
   )
 }
 

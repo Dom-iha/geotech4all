@@ -1,7 +1,11 @@
 import Image from 'next/image';
 import geohub from '../../../public/assets/icons/geohub.jpg';
 import Link from 'next/link';
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: 'Services'
+}
 const Services: React.FC = () => {
   return (
     <>
@@ -40,15 +44,15 @@ const Services: React.FC = () => {
               including geological mapping, mineral exploration, and site
               characterization.
             </p>
-            <button
-              type='button'
+            <Link
+              href={`/service/geological-services`}
               className='cursor-pointer relative group overflow-hidden border-2 px-10 py-2 border-accent w-fit rounded-md'
             >
               <span className='uppercase font-medium text-main lg:text-lg relative z-10 group-hover:text-accent duration-500'>
                 I need this
               </span>
               <span className='absolute top-0 left-0 w-full h-full bg-accent origin-left group-hover:origin-right group-hover:scale-x-0 transition duration-300'></span>
-            </button>
+            </Link>
           </li>
           <li className='grid gap-4 lg:gap-8'>
             <h3 className='text-xl lg:text-2xl font-semibold'>

@@ -3,6 +3,11 @@ import reporter from '../../../public/assets/images/reporter.png';
 import events from '../../../public/assets/images/events.png';
 import data from '@/data/data.json';
 import ArticleCard from '@/components/ui/ArticleCard';
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: 'Geohub'
+}
 
 function Geohub() {
   return (

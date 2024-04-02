@@ -47,10 +47,16 @@
 
 @layer utilities {
   .hero {
-    background-image: linear-gradient(to left, hsla(0, 0%, 100%, 0), white 50%),
+    background-image: linear-gradient(to left, hsla(0, 0%, 100%, 0), hsl(0 0% 100%) 50%),
       url(../../public/assets/images/street-map.svg);
     background-position-x: right;
     background-repeat: no-repeat;
+  }
+  @media screen and (width <= 48em) {
+    .hero {
+      background-image: linear-gradient(to left, hsla(0, 0%, 100%, 0), hsl(0 0% 100% / .9) 40%),
+        url(../../public/assets/images/street-map.svg);
+    }
   }
   .community {
     background: url(../../public/assets/images/cityscape.png) no-repeat;
@@ -67,25 +73,12 @@
   .spacing {
     padding: var(--spacing);
   }
-  /* .no-scroll {
-    overflow: hidden;
-  } */
   .article-container ul {
     list-style: disc;
   }
 }
 
 @layer components {
-  button[aria-expanded='true'] .top-bar {
-    @apply translate-y-1 rotate-45 bg-main;
-  }
-  button[aria-expanded='true'] .mid-bar {
-    @apply hidden;
-  }
-  button[aria-expanded='true'] .bottom-bar {
-    @apply -translate-y-1 -rotate-45 bg-main;
-  }
-
   ::-webkit-scrollbar {
     width: 0.625rem;
   }

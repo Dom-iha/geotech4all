@@ -6,11 +6,15 @@ import Providers from './providers';
 import { Toaster } from 'sonner';
 import Navbar from '@/components/shared/Navbar';
 import Footer from '@/components/shared/Footer';
+import { Analytics } from '@vercel/analytics/react';
 
 const montserrat = Montserrat({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Geotech4All',
+  title: {
+    default: 'Geotech4All',
+    template: '%s - Geotech4All',
+  },
   description:
     'A community that specializes in everything geoscience. News, articles, webinars, conferences, podcasts etc.',
 };
@@ -23,6 +27,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang='en'>
+        <Analytics />
         <body className={montserrat.className}>
           <Toaster />
           <Navbar />

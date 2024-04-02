@@ -1,12 +1,13 @@
-import React from 'react';
-
 function Newsletter() {
+  
   const subscribe = (event: React.FormEvent) => {
     event.preventDefault();
   };
+
+
   return (
     <div className='flex flex-col gap-8 pb-20 max-w-2xl mx-auto'>
-      <p className='text-main text-center text-xl font-semibold'>
+      <p className='text-main text-center text-xl font-medium'>
         Stay up to date with what we&apos;re doing. Signup to our newsletter for
         blog posts and service updates
       </p>
@@ -20,11 +21,11 @@ function Newsletter() {
           type='email'
           placeholder='Enter your email address'
           autoComplete='off'
-          className='text-accent p-3 w-full rounded-md outline-main outline-offset-4 outline-2 focus:outline-dashed'
+          className='text-accent p-3 w-full rounded-md outline-main outline-offset-2 outline-2 focus:outline-dashed'
         />
         <button
           type='button'
-          className='rounded-md py-2.5 px-4 bg-main text-accent border-2 hover:border-main hover:bg-accent hover:text-main transition duration-300'
+          className='rounded-md py-2.5 px-4 bg-main text-accent border-2 hover:border-main hover:bg-accent hover:text-main transition duration-300 outline-main outline-offset-2 outline-2 focus:outline-dashed'
           onClick={subscribe}
         >
           Subscribe

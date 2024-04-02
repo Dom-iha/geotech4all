@@ -1,4 +1,3 @@
-'use client';
 import Image from 'next/image';
 import dark_logo from '../../../public/assets/icons/logo-black.png';
 import Link from 'next/link';

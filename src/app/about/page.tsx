@@ -1,8 +1,13 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import jerry from '../../../public/assets/images/jerry.png';
 import gabriel from '../../../public/assets/images/gabriel.png';
 import edna from '../../../public/assets/images/edna.png';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'About'
+}
 
 function About() {
   return (
@@ -55,7 +60,7 @@ function About() {
       </section>
       <section className='max-lg:flex flex-col gap-8 px-6 md:px-8 lg:px-24 py-14'>
         <div className='flex max-lg:flex-col gap-4 lg:gap-8 justify-between'>
-          <div className='w-full h-[250px] lg:w-[500px] lg:h-[500px] bg-accent lg:order-2'></div>
+          <div className='w-full h-[250px] lg:w-[500px] lg:h-[400px] bg-accent lg:order-2'></div>
           <div className='flex flex-col justify-center'>
             <p className='font-bold text-2xl lg:text-4xl mb-5'>Our Mission</p>
             <p className='max-w-[500px] font-medium lg:text-2xl'>
@@ -65,7 +70,7 @@ function About() {
           </div>
         </div>
         <div className='flex max-lg:flex-col gap-4 lg:gap-8 justify-between'>
-          <div className='w-full h-[250px] lg:w-[500px] lg:h-[500px] bg-accent'></div>
+          <div className='w-full h-[250px] lg:w-[500px] lg:h-[400px] bg-accent'></div>
           <div className='flex flex-col justify-center'>
             <p className='font-bold text-2xl lg:text-4xl mb-5'>Our Vision</p>
             <p className='max-w-[500px] font-medium lg:text-2xl'>
