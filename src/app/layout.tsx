@@ -4,8 +4,9 @@ import { Montserrat } from 'next/font/google';
 import './globals.css';
 import Providers from './providers';
 import { Toaster } from 'sonner';
-import Navbar from '@/components/shared/Navbar';
-import Footer from '@/components/shared/Footer';
+import Navbar from '@/components/shared/navbar';
+import Footer from '@/components/shared/footer';
+import { motion, AnimatePresence, easeIn } from 'framer-motion';
 
 const montserrat = Montserrat({ subsets: ['latin'] });
 

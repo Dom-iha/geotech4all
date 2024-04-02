@@ -5,14 +5,20 @@ import training from '../../public/assets/images/training.png';
 import Link from 'next/link';
 import Testimonial from '@/components/testimonial';
 import data from '@/data/data.json';
+import { motion } from 'framer-motion';
 
 export default function Home() {
-
   return (
     <>
       <section className='hero relative flex items-center min-h-screen text-main'>
         <div className='fade absolute w-full h-full bg-gradient-to-'></div>
-        <div className='z-10 grid gap-4 lg:gap-8 lg:ml-[108px] max-sm:p-6 max-md:p-8 max-w-[686px]'>
+        <motion.div
+          initial={{ opacity: 0, translateX: -100 }}
+          whileInView={{ opacity: 1 , translateX: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+          className='z-10 grid gap-4 lg:gap-8 p-6 md:p-8 lg:pl-24 lg:pr-0 max-w-[686px]'
+        >
           <h1 className='text-3xl lg:text-6xl font-bold text-accent'>
             Geoscience For All
           </h1>
@@ -32,7 +38,7 @@ export default function Home() {
             <span className='absolute top-0 left-0 w-full bg-accent duration-500 delay-300 group-hover:-translate-y-full h-full'></span>
             <span className='absolute delay-300 top-0 left-0 w-full bg-accent duration-500 group-hover:translate-y-full h-full'></span>
           </Link>
-        </div>
+        </motion.div>
       </section>
       {/* Training advert */}
       <section className='px-6 md:px-8 lg:px-24 py-14'>

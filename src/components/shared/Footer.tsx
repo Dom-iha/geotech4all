@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import footer_logo from '../../../public/assets/icons/footer-logo.png';
 import { Facebook, Linkedin, Twitter } from '../Icons';
-import Newsletter from './Newsletter';
+import Newsletter from './newsletter';
 import { usePathname } from 'next/navigation';
 
 const Footer: React.FC = () => {
@@ -126,7 +126,7 @@ const Footer: React.FC = () => {
               </ul>
             </div>
             <p className='text-[10px] mt-3 lg:hidden'>
-              &#169; Geotech4all 2024
+              &#169; {new Date().getFullYear()} Geotech4all
             </p>
           </div>
         </footer>
