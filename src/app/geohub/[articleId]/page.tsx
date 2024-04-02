@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import data from '@/data/data.json';
-import Related from '@/components/ui/related';
+import Related from '@/components/ui/Related';
 
 interface Article {
   id: string;
