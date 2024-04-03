@@ -11,6 +11,7 @@ const config: Config = {
       colors: {
         main: 'hsl(0, 0%, 100%)',
         accent: 'hsl(0, 0%, 0%)',
+        alt: 'hsl(220, 14%, 96%)',
         error: 'hsl(354, 84%, 57%)',
         success: 'hsl(147, 86%, 57%)',
       },

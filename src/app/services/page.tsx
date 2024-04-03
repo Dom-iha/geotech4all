@@ -33,7 +33,7 @@ const Services: React.FC = () => {
         </div>
       </section>
       <section id='services' className='px-6 md:px-8 lg:px-24 py-14'>
-        <h2 className='text-3xl lg:text-5xl font-bold mb-16'>Our Services</h2>
+        <h2 className='text-2xl lg:text-4xl font-bold mb-16'>Our Services</h2>
         <ul className='grid gap-8 lg:gap-32 mt-5 grid-cols-[repeat(auto-fit,_minmax(16rem,_1fr))]'>
           <li className='grid gap-4 lg:gap-8'>
             <h3 className='text-xl lg:text-2xl font-semibold'>
@@ -148,7 +148,7 @@ const Services: React.FC = () => {
         </ul>
       </section>
       <section className='px-6 md:px-8 lg:px-24 py-14'>
-        <h2 className='text-3xl lg:text-5xl font-bold mb-16'>Products</h2>
+        <h2 className='text-2xl lg:text-4xl font-bold mb-16'>Products</h2>
         <ul className='grid gap-8 lg:gap-32 mt-5 grid-cols-[repeat(auto-fit,_minmax(16rem,_1fr))]'>
           <li className='grid gap-4 lg:gap-8'>
             <h3 className='text-xl lg:text-2xl font-semibold'>
@@ -209,10 +209,10 @@ const Services: React.FC = () => {
       </section>
       <section className='px-6 md:px-8 lg:px-24 py-14'>
         <div>
-          <h3 className='text-2xl lg:text-6xl font-bold mb-20'>Sponsored by</h3>
+          <h3 className='text-2xl lg:text-4xl font-bold mb-10'>Powered by</h3>
           <div className='grid grid-cols-2 gap-20'>
             <div>
-              <Image src={geohub} alt='partners log' className='w-[200px]' />
+              <Image src={geohub} alt='partners log' className='w-[150px]' />
             </div>
           </div>
         </div>
