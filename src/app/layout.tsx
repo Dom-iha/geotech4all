@@ -7,16 +7,38 @@ import { Toaster } from 'sonner';
 import Navbar from '@/components/shared/Navbar';
 import Footer from '@/components/shared/Footer';
 import { Analytics } from '@vercel/analytics/react';
+import { siteConfig } from './config/site';
 
 const montserrat = Montserrat({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: {
-    default: 'Geotech4All',
-    template: '%s - Geotech4All',
+    default: siteConfig.title,
+    template: `%s - ${siteConfig.title}`,
   },
-  description:
-    'A community that specializes in everything geoscience. News, articles, webinars, conferences, podcasts etc.',
+  metadataBase: new URL(siteConfig.url),
+  description: siteConfig.description,
+  keywords: [
+    "Next.js",
+    "Geology",
+    "Geophysics",
+    "University",
+  ],
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: siteConfig.url,
+    title: siteConfig.title,
+    description: siteConfig.description,
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: siteConfig.title,
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

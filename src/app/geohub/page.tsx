@@ -3,11 +3,11 @@ import reporter from '../../../public/assets/images/reporter.png';
 import events from '../../../public/assets/images/events.png';
 import data from '@/data/data.json';
 import ArticleCard from '@/components/ui/ArticleCard';
-import { Metadata } from "next";
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Geohub'
-}
+  title: 'Geohub',
+};
 
 function Geohub() {
   return (
@@ -44,11 +44,14 @@ function Geohub() {
       {/* Headlines section */}
       <section className='px-6 md:px-8 lg:px-24 py-14'>
         <h2 className='font-bold text-2xl lg:text-4xl mb-5'>Headlines</h2>
-        <ul className='grid grid-cols-[repeat(auto-fit,_minmax(15rem,_1fr))] gap-8'>
-          <li className='flex max-lg:flex-col gap-4'>
+        <ul className='grid grid-cols-[repeat(auto-fit,_minmax(300px,_1fr))] gap-8'>
+          <li className='flex max-lg:flex-col gap-4 shadow-md bg-alt p-4 rounded-md'>
             <Image
               src={reporter}
               alt='Close up on reporter taking an interview'
+              width={295}
+              height={206}
+              className='rounded-md'
             />
             <div className='flex flex-col gap-2'>
               <p className='font-bold text-lg lg:text-xl'>
@@ -60,16 +63,19 @@ function Geohub() {
               </p>
               <button
                 type='button'
-                className='w-full rounded-md p-3 bg-accent text-main border-2 hover:border-accent hover:bg-main hover:text-accent transition duration-300'
+                className='w-full mt-auto relative text-main hover:text-accent transition-colors duration-200 border-2 px-8 py-2 border-accent rounded-md self-center after:absolute after:w-full after:h-full after:left-0 after:top-0 after:bg-accent after:scale-x-100 after:origin-right hover:after:scale-x-0 hover:after:origin-left after:transition after:duration-300'
               >
-                Full Story
+                <span className='relative z-10'>Full Story</span>
               </button>
             </div>
           </li>
-          <li className='flex max-lg:flex-col gap-4'>
+          <li className='flex max-lg:flex-col gap-4 shadow-md bg-alt p-4 rounded-md'>
             <Image
               src={reporter}
               alt='Close up on reporter taking an interview'
+              width={295}
+              height={206}
+              className='rounded-md'
             />
             <div className='flex flex-col gap-2'>
               <p className='font-bold text-lg lg:text-xl'>
@@ -81,16 +87,16 @@ function Geohub() {
               </p>
               <button
                 type='button'
-                className='w-full rounded-md p-3 bg-accent text-main border-2 hover:border-accent hover:bg-main hover:text-accent transition duration-300'
+                className='w-full mt-auto relative text-main hover:text-accent transition-colors duration-200 border-2 px-8 py-2 border-accent rounded-md self-center after:absolute after:w-full after:h-full after:left-0 after:top-0 after:bg-accent after:scale-x-100 after:origin-right hover:after:scale-x-0 hover:after:origin-left after:transition after:duration-300'
               >
-                Full Story
+                <span className='relative z-10'>Full Story</span>
               </button>
             </div>
           </li>
         </ul>
       </section>
       {/* Articles section */}
-      <section className='px-6 md:px-8 lg:px-24 py-14 bg-gray-100 flex flex-col gap-10'>
+      <section className='px-6 md:px-8 lg:px-24 py-14 bg-alt flex flex-col gap-10'>
         <h2 className='font-bold text-2xl lg:text-4xl lg:mb-5'>Articles</h2>
         <ul className='grid grid-cols-[repeat(auto-fill,_minmax(20rem,_1fr))] gap-8 justify-center'>
           {data.articles.map((article) => (
@@ -107,12 +113,9 @@ function Geohub() {
         </ul>
         <button
           type='button'
-          className='cursor-pointer relative group overflow-hidden border-2 px-8 py-2 border-accent w-fit rounded-md self-center mt-10'
+          className='cursor-pointer relative text-main hover:text-accent transition-colors duration-200 border-2 px-8 py-2 border-accent rounded-md self-center mt-10 after:absolute after:w-full after:h-full after:left-0 after:top-0 after:bg-accent after:scale-x-100 after:origin-right hover:after:scale-x-0 hover:after:origin-left after:transition after:duration-300'
         >
-          <span className='tracking-widest font-medium text-main lg:text-lg relative z-10 group-hover:text-accent duration-500'>
-            View All
-          </span>
-          <span className='absolute top-0 left-0 w-full h-full bg-accent origin-left group-hover:origin-right group-hover:scale-x-0 transition duration-300'></span>
+          <span className='relative z-10'>View All</span>
         </button>
       </section>
       {/* Events slider section */}
@@ -134,7 +137,7 @@ function Geohub() {
                 </p>
                 <button
                   type='button'
-                  className='w-full rounded-md p-3 bg-accent text-main border-2 hover:border-accent hover:bg-main hover:text-accent transition duration-300'
+                  className='mt-auto w-full rounded-md p-3 bg-accent text-main border-2 hover:border-accent hover:bg-main hover:text-accent transition duration-300'
                 >
                   Set Reminder
                 </button>
@@ -154,7 +157,7 @@ function Geohub() {
                 </p>
                 <button
                   type='button'
-                  className='w-full rounded-md p-3 bg-accent text-main border-2 hover:border-accent hover:bg-main hover:text-accent transition duration-300'
+                  className='mt-auto w-full rounded-md p-3 bg-accent text-main border-2 hover:border-accent hover:bg-main hover:text-accent transition duration-300'
                 >
                   Set Reminder
                 </button>

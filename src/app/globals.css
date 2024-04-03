@@ -7,6 +7,7 @@
   /* --primary: ; */
   /* --secondary: ; */
   --accent: hsl(0 0% 0%);
+  --alt: hsl(220, 14%, 96%);
   --spacing: clamp();
 }
 
@@ -54,7 +55,7 @@
   }
   @media screen and (width <= 48em) {
     .hero {
-      background-image: linear-gradient(to left, hsla(0, 0%, 100%, 0), hsl(0 0% 100% / .9) 40%),
+      background-image: linear-gradient(to left, hsla(0, 0%, 100%, 0), hsl(0 0% 100%) 40%),
         url(../../public/assets/images/street-map.svg);
     }
   }
