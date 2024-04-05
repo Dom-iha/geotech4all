@@ -1,9 +1,9 @@
 'use client';
 import { usePathname } from 'next/navigation';
-import AdminNav from './AdminNav';
-import MainNav from './MainNav';
+import AdminNav from './admin-nav';
+import MainNav from './main-nav';
 
-const Navbar: React.FC = () => {
+const Navigation: React.FC = () => {
   const pathname = usePathname();
 
   const adminPages = pathname.includes('/admin');
@@ -11,4 +11,4 @@ const Navbar: React.FC = () => {
   return <>{adminPages ? <AdminNav /> : <MainNav />}</>;
 };
 
-export default Navbar;
+export default Navigation;

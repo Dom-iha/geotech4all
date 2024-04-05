@@ -3,8 +3,8 @@ import dark_logo from '../../../public/assets/icons/logo-black.png';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import MobileToggle from '../MobileToggle';
 import { UserButton } from '@clerk/nextjs';
+import Hamburger from '../ui/hamburger';
 
 const AdminNav: React.FC = () => {
   const pathname = usePathname();
@@ -32,7 +32,7 @@ const AdminNav: React.FC = () => {
             />
           </Link>
         </div>
-        <MobileToggle isOpen={isOpen} toggleMenu={toggleMenu} />
+        <Hamburger isOpen={isOpen} toggleMenu={toggleMenu} />
         <nav>
           <ul
             id='navbar-menu'

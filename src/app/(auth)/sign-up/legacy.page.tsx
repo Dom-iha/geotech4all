@@ -1,5 +1,5 @@
 'use client';
-import PasswordToggle from '@/components/ui/PasswordToggle';
+import PasswordToggle from '@/components/ui/password-toggle';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { useContext, useState, useEffect } from 'react';
@@ -15,7 +15,6 @@ function SignUp() {
   const [passwordIsValid, setPasswordIsValid] = useState(false);
   const [emailIsValid, setEmailIsValid] = useState(false);
 
-  
   const [firstNameTouched, setFirstNameTouched] = useState(false);
   const [lastNameTouched, setLastNameTouched] = useState(false);
   const [passwordTouched, setPasswordTouched] = useState(false);
@@ -29,7 +28,7 @@ function SignUp() {
     lastname: '',
     firstname: '',
   });
-  
+
   const [passwordMatch, setPasswordMatch] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
   const selectedType = showPassword ? 'text' : 'password';
@@ -101,7 +100,7 @@ function SignUp() {
     ) {
       setFormIsValid(true);
     } else {
-      setFormIsValid(false)
+      setFormIsValid(false);
     }
 
     return () => {};
@@ -113,13 +112,13 @@ function SignUp() {
     passwordMatch,
   ]);
 
-  // fix logic: 
-  // password match only works if the confirm field changes so 
+  // fix logic:
+  // password match only works if the confirm field changes so
   // currently when it matches and user goes back to change the password the confirm
-  // fields's error message is not fired as it is not aware user changed password  
+  // fields's error message is not fired as it is not aware user changed password
   const checkPasswordMatch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
-    setConfirmPasswordValue(value); 
+    setConfirmPasswordValue(value);
 
     if (value !== userInput.password) {
       setPasswordMatch(false);
@@ -144,9 +143,9 @@ function SignUp() {
     }
 
     if (
-      emailTouched &&
-      userInput.email.trim() === '' &&
-      !userInput.email.includes('@') ||
+      (emailTouched &&
+        userInput.email.trim() === '' &&
+        !userInput.email.includes('@')) ||
       !userInput.email.includes('.com')
     ) {
       setEmailIsValid(false);
@@ -194,9 +193,15 @@ function SignUp() {
 
         <form className='flex flex-col gap-8' onSubmit={handleSignup}>
           <div className='relative'>
-            {!firstNameIsValid && firstNameTouched && 
-              <p id='firstname-error' aria-live='polite' className='absolute -top-6 right-0 text-right text-error text-sm'>Please enter your firstname</p>
-            }
+            {!firstNameIsValid && firstNameTouched && (
+              <p
+                id='firstname-error'
+                aria-live='polite'
+                className='absolute -top-6 right-0 text-right text-error text-sm'
+              >
+                Please enter your firstname
+              </p>
+            )}
             <input
               type='text'
               id='firstname'
@@ -207,7 +212,11 @@ function SignUp() {
               onChange={handleChange}
               aria-describedby='firstname-error'
               onBlur={() => setFirstNameTouched(true)}
-              className={`${!firstNameIsValid && firstNameTouched ? 'border-error focus-visible:outline-error' : 'border-accent'} peer placeholder:text-transparent  border-2 focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-dashed py-3 pl-3 pr-10 w-full`}
+              className={`${
+                !firstNameIsValid && firstNameTouched
+                  ? 'border-error focus-visible:outline-error'
+                  : 'border-accent'
+              } peer placeholder:text-transparent  border-2 focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-dashed py-3 pl-3 pr-10 w-full`}
             />
             <label
               htmlFor='firstname'
@@ -217,9 +226,15 @@ function SignUp() {
             </label>
           </div>
           <div className='relative'>
-            {!lastNameIsValid && lastNameTouched && 
-              <p id='lastname-error' aria-live='polite' className='absolute -top-6 right-0 text-right text-error text-sm'>Please enter your lastname</p>
-            }
+            {!lastNameIsValid && lastNameTouched && (
+              <p
+                id='lastname-error'
+                aria-live='polite'
+                className='absolute -top-6 right-0 text-right text-error text-sm'
+              >
+                Please enter your lastname
+              </p>
+            )}
             <input
               type='text'
               id='lastname'
@@ -230,7 +245,11 @@ function SignUp() {
               onChange={handleChange}
               aria-describedby='lastname-error'
               onBlur={() => setLastNameTouched(true)}
-              className={`${!lastNameIsValid && lastNameTouched ? 'border-error focus-visible:outline-error' : 'border-accent'} peer placeholder:text-transparent  border-2 focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-dashed py-3 pl-3 pr-10 w-full`}
+              className={`${
+                !lastNameIsValid && lastNameTouched
+                  ? 'border-error focus-visible:outline-error'
+                  : 'border-accent'
+              } peer placeholder:text-transparent  border-2 focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-dashed py-3 pl-3 pr-10 w-full`}
             />
             <label
               htmlFor='lastname'
@@ -240,9 +259,15 @@ function SignUp() {
             </label>
           </div>
           <div className='relative'>
-            {!emailIsValid && emailTouched && 
-              <p id='email-error' aria-live='polite' className='absolute -top-6 right-0 text-right text-error text-sm'>Please enter a valid email</p>
-            }
+            {!emailIsValid && emailTouched && (
+              <p
+                id='email-error'
+                aria-live='polite'
+                className='absolute -top-6 right-0 text-right text-error text-sm'
+              >
+                Please enter a valid email
+              </p>
+            )}
             <input
               type='email'
               id='email'
@@ -253,7 +278,11 @@ function SignUp() {
               onChange={handleChange}
               aria-describedby='email-error'
               onBlur={() => setEmailTouched(true)}
-              className={`${!emailIsValid && emailTouched ? 'border-error focus-visible:outline-error' : 'border-accent'} peer placeholder:text-transparent  border-2 focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-dashed py-3 pl-3 pr-10 w-full`}
+              className={`${
+                !emailIsValid && emailTouched
+                  ? 'border-error focus-visible:outline-error'
+                  : 'border-accent'
+              } peer placeholder:text-transparent  border-2 focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-dashed py-3 pl-3 pr-10 w-full`}
             />
             <label
               htmlFor='email'
@@ -263,9 +292,17 @@ function SignUp() {
             </label>
           </div>
           <div className='relative'>
-            {!passwordIsValid && passwordTouched && 
-              <p id='password-error' aria-live='polite' className='absolute -top-6 right-0 text-right text-error text-sm'>{userInput.password === ''? 'Please enter your password' : 'Password too short'}</p>
-            }
+            {!passwordIsValid && passwordTouched && (
+              <p
+                id='password-error'
+                aria-live='polite'
+                className='absolute -top-6 right-0 text-right text-error text-sm'
+              >
+                {userInput.password === ''
+                  ? 'Please enter your password'
+                  : 'Password too short'}
+              </p>
+            )}
             <input
               type={selectedType}
               id='password'
@@ -276,7 +313,11 @@ function SignUp() {
               onChange={handleChange}
               aria-describedby='password-error'
               onBlur={() => setPasswordTouched(true)}
-              className={`${!passwordIsValid && passwordTouched ? 'border-error focus-visible:outline-error' : 'border-accent'} peer placeholder:text-transparent  border-2 focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-dashed py-3 pl-3 pr-10 w-full`}
+              className={`${
+                !passwordIsValid && passwordTouched
+                  ? 'border-error focus-visible:outline-error'
+                  : 'border-accent'
+              } peer placeholder:text-transparent  border-2 focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-dashed py-3 pl-3 pr-10 w-full`}
             />
             <label
               htmlFor='password'
@@ -290,9 +331,15 @@ function SignUp() {
             />
           </div>
           <div className='relative'>
-            {!passwordMatch && 
-              <p id='password-mismatch' aria-live='polite' className='absolute -top-6 right-0 text-right text-error text-sm'>Password mismatch</p>
-            }
+            {!passwordMatch && (
+              <p
+                id='password-mismatch'
+                aria-live='polite'
+                className='absolute -top-6 right-0 text-right text-error text-sm'
+              >
+                Password mismatch
+              </p>
+            )}
             <input
               type={selectedType}
               id='confirm'
@@ -301,7 +348,11 @@ function SignUp() {
               placeholder='Confirm your password'
               aria-labelledby='password-mismatch'
               onChange={checkPasswordMatch}
-              className={`${!passwordMatch ? 'border-error focus-visible:outline-error' : 'border-accent'} peer placeholder:text-transparent  border-2 focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-dashed py-3 pl-3 pr-10 w-full`}
+              className={`${
+                !passwordMatch
+                  ? 'border-error focus-visible:outline-error'
+                  : 'border-accent'
+              } peer placeholder:text-transparent  border-2 focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-dashed py-3 pl-3 pr-10 w-full`}
             />
             <label
               htmlFor='confirm'

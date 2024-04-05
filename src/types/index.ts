@@ -10,6 +10,7 @@ interface ArticeType {
 interface ArticleProps {
   id:string;
   title: string;
+  urlTitle: string;
   content: string;
   cover: string;
   createdAt: string;

@@ -1,5 +1,5 @@
 'use client';
-import PasswordToggle from '@/components/ui/PasswordToggle';
+import PasswordToggle from '@/components/ui/password-toggle';
 import AuthContext from '@/context/AuthContext';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
