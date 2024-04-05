@@ -1,5 +1,5 @@
-import ArticleCard from '@/components/ui/ArticleCard';
 import data from '@/data/data.json';
+import Article from '@/components/cards/article';
 import { auth, currentUser } from '@clerk/nextjs';
 import { toast } from 'sonner';
 
@@ -19,10 +19,11 @@ async function Dashboard() {
         <h1 className='font-bold text-2xl lg:text-4xl lg:mb-5'>Dashboard</h1>
         <ul className='grid grid-cols-[repeat(auto-fill,_minmax(20rem,_1fr))] gap-8 justify-center'>
           {data.articles.map((article) => (
-            <ArticleCard
+            <Article
               key={article.id}
               id={article.id}
               title={article.title}
+              urlTitle={article.urlTitle}
               content={article.content}
               createdAt={article.createdAt}
               cover={article.cover}

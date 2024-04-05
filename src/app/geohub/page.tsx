@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Headline from '@/components/cards/headline';
 import Article from '@/components/cards/article';
 import Event from '@/components/cards/event';
+import { ArrowRightIcon } from '@radix-ui/react-icons';
 
 export const metadata: Metadata = {
   title: 'Geosciencehub',
@@ -73,15 +74,18 @@ function Geohub() {
           ))}
         </ul>
         <Link
-          href='/geohub/blog'
-          className='cursor-pointer relative text-main hover:text-accent transition-colors duration-200 border-2 px-8 py-2 border-accent rounded-md self-center mt-10 after:absolute after:w-full after:h-full after:left-0 after:top-0 after:bg-accent after:scale-x-100 after:origin-right hover:after:scale-x-0 hover:after:origin-left after:transition after:duration-300'
+          href={`/geohub/blog`}
+          className='mx-auto w-fit p-2 flex items-center justify-center font-semibold rounded-md gap-2 bg-accent text-main min-w-[8rem] hover:gap-4 focus-visible:gap-4 focus-visible:outline-accent outline-offset-1 outline-1 focus-visible:outline-dashed transition-all duration-300'
         >
-          <span className='relative z-10'>View All</span>
+          View All
+          <ArrowRightIcon aria-hidden='true' />
         </Link>
       </section>
       {/* Events slider section */}
       <section id='events' className='px-6 md:px-8 lg:px-24 py-14'>
-        <h2 className='font-bold text-center text-xl lg:text-3xl mb-5'>Events</h2>
+        <h2 className='font-bold text-center text-xl lg:text-3xl mb-5'>
+          Events
+        </h2>
         <div>
           <ul className='flex gap-8 max-lg:flex-wrap justify-center'>
             {data.events.map((event) => (
@@ -108,13 +112,11 @@ function Geohub() {
               firms you can apply to as a prospective intern
             </p>
             <Link
-              href='/geohub/opportunities'
-              className='cursor-pointer relative group overflow-hidden border-2 px-8 py-2 border-main w-fit rounded-md'
+              href={`/geohub/blog`}
+              className=' w-fit p-2 flex items-center justify-center font-semibold rounded-md gap-2 bg-main text-accent min-w-[8rem] hover:gap-4 focus-visible:gap-4 focus-visible:outline-accent outline-offset-1 outline-1 focus-visible:outline-dashed transition-all duration-300'
             >
-              <span className='tracking-widest font-medium text-accent lg:text-lg relative z-10 group-hover:text-main duration-500'>
-                View Opportunities
-              </span>
-              <span className='absolute top-0 left-0 w-full bg-main duration-300 group-hover:translate-x-full h-full'></span>
+              View
+              <ArrowRightIcon aria-hidden='true' />
             </Link>
           </div>
         </div>
