@@ -1,7 +1,7 @@
 'use client';
 import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { nanoid } from 'nanoid';
-import { Arrow, Cancel, Search } from '../Icons';
+import { Cancel, Search } from '../Icons';
 import data from '@/data/data.json';
 import { ChevronDownIcon, ChevronRightIcon } from '@radix-ui/react-icons';
 
