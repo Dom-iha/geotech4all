@@ -1,6 +1,6 @@
 'use client';
 import { useContext, useState } from 'react';
-import TextEditor from '@/components/ui/TextEditor';
+import TextEditor from '@/components/ui/text-editor';
 import AuthContext from '@/context/AuthContext';
 
 function CreateBlog() {

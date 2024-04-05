@@ -3,7 +3,7 @@ import Image from 'next/image';
 import quarry from '../../public/assets/images/quarry.png';
 import training from '../../public/assets/images/training.png';
 import Link from 'next/link';
-import Testimonial from '@/components/testimonial';
+import Testimonial from '@/components/cards/testimonial';
 import data from '@/data/data.json';
 import { motion } from 'framer-motion';
 
@@ -13,8 +13,8 @@ export default function Home() {
       <section className='hero relative flex items-center min-h-screen text-main'>
         <div className='fade absolute w-full h-full bg-gradient-to-'></div>
         <motion.div
-          initial={{ opacity: 0, translateX: -100 }}
-          whileInView={{ opacity: 1 , translateX: 0 }}
+          initial={{ opacity: 0, translateX: -90 }}
+          whileInView={{ opacity: 1, translateX: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
           className='z-10 grid gap-4 lg:gap-8 p-6 md:p-8 lg:pl-24 lg:pr-0 max-w-[686px]'

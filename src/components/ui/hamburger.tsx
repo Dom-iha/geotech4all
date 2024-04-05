@@ -1,7 +1,7 @@
 import { usePathname } from 'next/navigation';
 import { useEffect } from 'react';
 
-function MobileToggle({ isOpen, toggleMenu }: MenuProps) {
+function Hamburger({ isOpen, toggleMenu }: MenuProps) {
   const pathname = usePathname();
 
   useEffect(() => {
@@ -63,4 +63,4 @@ function MobileToggle({ isOpen, toggleMenu }: MenuProps) {
   );
 }
 
-export default MobileToggle;
+export default Hamburger;

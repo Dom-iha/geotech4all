@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import geohub from '../../../public/assets/icons/geohub.jpg';
 import Link from 'next/link';
-import { Metadata } from "next";
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Services'
-}
+  title: 'Services',
+};
 const Services: React.FC = () => {
   return (
     <>
@@ -171,7 +171,7 @@ const Services: React.FC = () => {
           </li>
           <li className='grid gap-4 lg:gap-8'>
             <h3 className='text-xl lg:text-2xl font-semibold'>
-              Project Writing
+              Research Assistance
             </h3>
             <p className='lg:text-xl'>
               Our project writing services offer professional assistance in

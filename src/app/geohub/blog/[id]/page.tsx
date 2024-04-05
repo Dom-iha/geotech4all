@@ -1,19 +1,22 @@
 import Image from 'next/image';
 import data from '@/data/data.json';
-import Related from '@/components/ui/Related';
+import Related from '@/components/cards/related';
 
 interface Article {
   id: string;
   title: string;
+  urlTitle: string;
   author: string;
   createdAt: string;
   cover: string;
   content: string;
 }
 
-function page({ params }: { params: { articleId: string } }) {
+function page({ params }: { params: { id: string } }) {
+  const properId = params.id.replace(/-/g, ' ');
+
   const articleToShow: Article | undefined = data.articles.find(
-    (article) => article.id === params.articleId
+    (article) => article.urlTitle === properId
   );
 
   const coverSrc = articleToShow?.cover || '';
@@ -80,37 +83,41 @@ function page({ params }: { params: { articleId: string } }) {
               humans can simply forfeit the past and focus on how to take hold
               of what is more important - To live happily and joyfully while we
               roam in this gated wall - Our body - and to find an eternal rest
-              for our peace-seeking soul. One question you might ask yourself
-              is, What advantage will the knowledge of the origin of humans add
-              to my life? and then to the world? I leave that to your answer.
-              The major challenge with humans is our inability to put under foot
-              our curiosity engine - The mind - An engine that is constantly
-              being ignited by our doubts and our innate godlike quest -
-              Sovereignty! This can be said to be the drive of young Charles
-              Darwin, who in his early twenties was constantly not satisfied by
-              the thoughts and ideas purported at that time. Having grown amid
-              Christian beliefs and even attended schools with such teachings,
-              he hated their views owing to the fact, he was surrounded by
-              prominent researchers and scientists who were mostly freethinkers
-              and non-conformists. A favorable environment that set the pace for
-              his prominence in the scientific field. Having failed as a medical
-              student. He set on a cruise voyage with Robert Fitzroy to collect
-              fossils across America in their circumnavigation journey. As a
-              young guy with a free-roaming mind who wants a resting place. He
-              got seasick and bitten by insects in the evil forests up North.
-              Even though the journey looks boring and lonely picking fossils
-              across the oceans. His curiosity engine was set loose as he began
-              observing the similarities in the fossils he collected. A huge
-              question that opts into the thought wheel was, Why would some
-              animals go extinct? That question provided enough energy to spur
-              up his idea on evolution. Before that, He had read Charles
-              Lyell&apos;s book on the Principles of Geology which provided the
-              basis for his acceptance of the theory of Gradualism or
-              Uniformitarianism as it is popularly known. Having observed
-              hundreds of fossils over 20 years. He came up with his
-              revolutionary theory of Evolution - On the origin of species by
-              Natural selection A widely accepted thought by the scientific
-              world.
+              for our peace-seeking soul.
+            </p>
+            <p className='mb-5'>
+              One question you might ask yourself is, What advantage will the
+              knowledge of the origin of humans add to my life? and then to the
+              world? I leave that to your answer. The major challenge with
+              humans is our inability to put under foot our curiosity engine -
+              The mind - An engine that is constantly being ignited by our
+              doubts and our innate godlike quest - Sovereignty! This can be
+              said to be the drive of young Charles Darwin, who in his early
+              twenties was constantly not satisfied by the thoughts and ideas
+              purported at that time. Having grown amid Christian beliefs and
+              even attended schools with such teachings, he hated their views
+              owing to the fact, he was surrounded by prominent researchers and
+              scientists who were mostly freethinkers and non-conformists.
+            </p>
+            <p className='mb-5'>
+              A favorable environment that set the pace for his prominence in
+              the scientific field. Having failed as a medical student. He set
+              on a cruise voyage with Robert Fitzroy to collect fossils across
+              America in their circumnavigation journey. As a young guy with a
+              free-roaming mind who wants a resting place. He got seasick and
+              bitten by insects in the evil forests up North. Even though the
+              journey looks boring and lonely picking fossils across the oceans.
+              His curiosity engine was set loose as he began observing the
+              similarities in the fossils he collected. A huge question that
+              opts into the thought wheel was, Why would some animals go
+              extinct? That question provided enough energy to spur up his idea
+              on evolution. Before that, He had read Charles Lyell&apos;s book
+              on the Principles of Geology which provided the basis for his
+              acceptance of the theory of Gradualism or Uniformitarianism as it
+              is popularly known. Having observed hundreds of fossils over 20
+              years. He came up with his revolutionary theory of Evolution - On
+              the origin of species by Natural selection A widely accepted
+              thought by the scientific world.
             </p>
             <p className='mb-5'>Here is a simple summary of his theory:</p>
             <ul className='list-disc pl-5 mb-5'>
@@ -128,7 +135,7 @@ function page({ params }: { params: { articleId: string } }) {
                 environment than others
               </li>
             </ul>
-            <p>
+            <p className='mb-5'>
               From the following observations, he made two deduction 1. All
               living organisms are constantly involved in a struggle for
               survival 2. In a population, those that tend to survive and
@@ -148,19 +155,22 @@ function page({ params }: { params: { articleId: string } }) {
               found some tangible facts to stamp his name in the scientific
               world. But where did the argument of human origin come from in all
               of these theories? I did beseech you to take a little time to
-              re-read all of his observations and deductions again. It saddens
-              me that many who tend to argue about the origin of humans with an
-              agnostic like Darwin were only looking through a lens that Darwin
-              wasn&apos;t looking through. There are two sides to this. The
-              Agnostic view and the Religious view. We would take up the lens of
-              this perspective and look through Darwin&apos;s observations. I
-              leave you to have background knowledge of his observations and
-              deductions before we conclude. What if Darwin&apos;s was wrong?
-              The next part of this article will shield light on those views.
-              Maybe by then, you will. come to the true understanding that we,
-              humans, are as limited as the perspective through which we view
-              life. Watch out for Part two!
+              re-read all of his observations and deductions again.
             </p>
+            <p className='mb-5'>
+              It saddens me that many who tend to argue about the origin of
+              humans with an agnostic like Darwin were only looking through a
+              lens that Darwin wasn&apos;t looking through. There are two sides
+              to this. The Agnostic view and the Religious view. We would take
+              up the lens of this perspective and look through Darwin&apos;s
+              observations. I leave you to have background knowledge of his
+              observations and deductions before we conclude. What if
+              Darwin&apos;s was wrong? The next part of this article will shield
+              light on those views. Maybe by then, you will. come to the true
+              understanding that we, humans, are as limited as the perspective
+              through which we view life.
+            </p>
+            <p className='mb-5'>Watch out for Part two!</p>
           </div>
           <div>
             <h3 className='font-bold text-lg lg:text-xl'>Last Updated</h3>
@@ -169,9 +179,11 @@ function page({ params }: { params: { articleId: string } }) {
         </article>
       </div>
       <section className='max-w-screen-md mx-auto pt-6 pb-14 px-4 lg:px-8 flex flex-col gap-8 lg:gap-10'>
-        <h3 className='text-2xl font-bold'>Related posts from Geotech4All</h3>
+        <h3 className='text-2xl font-bold'>
+          Other posts from {articleToShow?.author}
+        </h3>
         <ul className='grid grid-cols-[repeat(auto-fill,_minmax(10rem,_1fr))] gap-8'>
-          {data.articles.map((article) => (
+          {data.articles.slice(0, 3).map((article) => (
             <Related
               key={article.id}
               id={article.id}

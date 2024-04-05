@@ -3,58 +3,74 @@
     {
       "id": "whcgduaurhhcjbzmngf2840r9",
       "title": "Evolution: What if Darwin’s was wrong?",
+      "urlTitle": "Evolution What if Darwin’s was wrong?",
+      "category": "General",
       "author": "Geotech4all",
-      "createdAt": "July 2nd, 2024",
+      "createdAt": "July 2, 2024",
       "cover": "/assets/images/darwin.png",
       "content": "The difference between right and wrong is a function of perspective. Now, what do you think an agnostic would tell you about God and the exact origin of life?"
     },
     {
       "id": "y4368r87fgu3946280fygyucg4",
       "title": "CATASTROPHISM: Plant, Animal, and Human",
+      "urlTitle": "Catastrophism Plant Animal and Human",
+      "category": "Geophysics",
       "author": "Geotech4all",
-      "createdAt": "July 2nd, 2024",
+      "createdAt": "July 2, 2024",
       "cover": "/assets/images/catastrophism.png",
       "content": "At the onset of the quest of humans to know more about the earth. Many ideas, theories, and philosophies have sprung up to explain the origin of the earth..."
     },
     {
       "id": "g2735082rdydyt9286edcsv286weW",
       "title": "Beyond Faunal succession: What's life Morphing to?",
+      "urlTitle": "Beyond Faunal succession What's life Morphing to?",
+      "category": "Biology",
       "author": "Geotech4all",
-      "createdAt": "July 2nd, 2024",
+      "createdAt": "July 2, 2024",
       "cover": "/assets/images/fauna.png",
       "content": "As species become complex up the strata, so does generation become more complex with increasing knowledge and technological advancement..."
     },
     {
       "id": "GSUS675s63egdwye9dhGDIGU323D67",
       "title": "The Present is the Key to the Past. What is the Key to the future?",
+      "urlTitle": "The Present is the Key to the Past What is the Key to the future?",
+      "category": "Engineering",
       "author": "Geotech4all",
-      "createdAt": "July 2nd, 2024",
+      "createdAt": "July 2, 2024",
       "cover": "/assets/images/keytopast.png",
       "content": "The past was the present. The present was the future. And the future is the present. Let's view Charles Lyell and James Hutton Earth principle through..."
     },
     {
       "id": "si8yq73d6dguehss978f6dssgd7s8d",
-      "title": "AFRICA VS THE WORLD: The battle for power and...",
+      "title": "AFRICA VS THE WORLD: The battle for power and influence",
+      "urlTitle": "Africa vs The World The battle for power and influence",
+      "category": "Geochemistry",
       "author": "Geotech4all",
-      "createdAt": "July 2nd, 2024",
+      "createdAt": "July 2, 2024",
       "cover": "/assets/images/africa.png",
       "content": "Africa is the world's second-largest continent, covering approximately 30 million square kilometers and comprising 54 countries. Africa is..."
     },
     {
       "id": "fbeo7r820ydu39ddg9t9236td97d9w67",
       "title": "Importance of geotextile in geotechnical industry",
+      "urlTitle": "Importance of geotextile in geotechnical industry",
+      "category": "Paleontology",
       "author": "Geotech4all",
-      "createdAt": "July 2nd, 2024",
+      "createdAt": "July 2, 2024",
       "cover": "/assets/images/geotextile.png",
       "content": "Geotextile is a synthetic fabric made of polypropylene, polyethylene or a combination of both that is used in various geotechnical applications. The..."
     }
   ],
-  "services": [
+  "headlines": [
     {
-      "name": "e.g drilling services",
-      "breif": "short description",
-      "details": "detailed description",
-      "images": "optional"
+      "title": "Geotech4All: The Future of Geosciences",
+      "content": "Geotech4All is a platform that provides resources and training for students and professionals in the geosciences field. Our mission is to empower individuals with the knowledge and skills they need to succeed in their careers. Whether you're a student looking to learn more about geology, geophysics, or geotechnical engineering, or a professional seeking to expand your expertise, Geotech4All has something for you. Join us today and take the first step towards a brighter future in the geosciences.",
+      "cover": "/assets/images/logo.jpg"
+    },
+    {
+      "title": "Geohub: The future Geo training",
+      "content": "Geotech4All is a platform that provides resources and training for students and professionals in the geosciences field. Our mission is to empower individuals with the knowledge and skills they need to succeed in their careers. Whether you're a student looking to learn more about geology, geophysics, or geotechnical engineering, or a professional seeking to expand your expertise, Geotech4All has something for you. Join us today and take the first step towards a brighter future in the geosciences.",
+      "cover": "/assets/images/geohub-logo.jpg"
     }
   ],
   "testimonials": [
@@ -77,7 +93,97 @@
       "image": "optional"
     }
   ],
-  "services":[
-    
+  "services": [
+    {
+      "name": "Gelogical Services",
+      "brief": "Geotechnical engineering is a branch of civil engineering that focuses on the behavior of earth materials. Geotechnical engineers use soil and rock mechanics to design foundations, slopes, and other structures that interact with the ground.",
+      "details": "Geotechnical engineering is a branch of civil engineering that focuses on the behavior of earth materials. Geotechnical engineers use soil and rock mechanics to design foundations, slopes, and other structures that interact with the ground. Geotechnical engineering is an important field of study because it helps ensure the safety and stability of structures built on or in the ground. Geotechnical engineers work on a wide range of projects, including buildings, bridges, dams, tunnels, and highways. They use a variety of tools and techniques to analyze soil and rock properties, such as laboratory testing, field testing, and computer modeling. Geotechnical engineering is a challenging and rewarding field that offers many opportunities for professional growth and development."
+    },
+    {
+      "name": "Software Training",
+      "brief": "Geological engineering is a branch of geology that focuses on the study of the earth's materials and processes. Geological engineers use their knowledge of geology to design and construct structures that interact with the earth, such as tunnels, dams, and mines",
+      "details": "Geological engineering is a branch of geology that focuses on the study of the earth's materials and processes. Geological engineers use their knowledge of geology to design and construct structures that interact with the earth, such as tunnels, dams, and mines. Geological engineering is an important field of study because it helps us understand the earth's history and how it has shaped the landscape we see today. Geological engineers work on a wide range of projects, including environmental remediation, natural hazard assessment, and resource exploration. They use a variety of tools and techniques to collect and analyze data, such as geological maps, borehole logs, and remote sensing imagery. Geological engineering is a challenging and rewarding field that offers many opportunities for professional growth and development."
+    },
+    {
+      "name": "Research Assistance",
+      "brief": "Geotechnical engineering is a branch of civil engineering that focuses on the behavior of earth materials. Geotechnical engineers use soil and rock mechanics to design foundations, slopes, and other structures that interact with the ground.",
+      "details": "Geotechnical engineering is a branch of civil engineering that focuses on the behavior of earth materials. Geotechnical engineers use soil and rock mechanics to design foundations, slopes, and other structures that interact with the ground. Geotechnical engineering is an important field of study because it helps ensure the safety and stability of structures built on or in the ground. Geotechnical engineers work on a wide range of projects, including buildings, bridges, dams, tunnels, and highways. They use a variety of tools and techniques to analyze soil and rock properties, such as laboratory testing, field testing, and computer modeling. Geotechnical engineering is a challenging and rewarding field that offers many opportunities for professional growth and development."
+    },
+    {
+      "name": "Consultancy Services",
+      "brief": "Geological engineering is a branch of geology that focuses on the study of the earth's materials and processes. Geological engineers use their knowledge of geology to design and construct structures that interact with the earth, such as tunnels, dams, and mines",
+      "details": "Geological engineering is a branch of geology that focuses on the study of the earth's materials and processes. Geological engineers use their knowledge of geology to design and construct structures that interact with the earth, such as tunnels, dams, and mines. Geological engineering is an important field of study because it helps us understand the earth's history and how it has shaped the landscape we see today. Geological engineers work on a wide range of projects, including environmental remediation, natural hazard assessment, and resource exploration. They use a variety of tools and techniques to collect and analyze data, such as geological maps, borehole logs, and remote sensing imagery. Geological engineering is a challenging and rewarding field that offers many opportunities for professional growth and development."
+    },
+    {
+      "name": "Training and Workshops",
+      "brief": "Geotechnical engineering is a branch of civil engineering that focuses on the behavior of earth materials. Geotechnical engineers use soil and rock mechanics to design foundations, slopes, and other structures that interact with the ground.",
+      "details": "Geotechnical engineering is a branch of civil engineering that focuses on the behavior of earth materials. Geotechnical engineers use soil and rock mechanics to design foundations, slopes, and other structures that interact with the ground. Geotechnical engineering is an important field of study because it helps ensure the safety and stability of structures built on or in the ground. Geotechnical engineers work on a wide range of projects, including buildings, bridges, dams, tunnels, and highways. They use a variety of tools and techniques to analyze soil and rock properties, such as laboratory testing, field testing, and computer modeling. Geotechnical engineering is a challenging and rewarding field that offers many opportunities for professional growth and development."
+    }
+  ],
+  "products": [
+    {
+      "name": "Geotech4All T-Shirt",
+      "price": "$19.99",
+      "cover": "/assets/images/tshirt.png",
+      "description": "Show your support for Geotech4All with this stylish t-shirt. Made from 100% cotton, this t-shirt is perfect for everyday wear. Available in a range of sizes and colors, this t-shirt is a great way to show your love for geosciences."
+    },
+    {
+      "name": "Geotech4All Mug",
+      "price": "$9.99",
+      "cover": "/assets/images/mug.png",
+      "description": "Start your day off right with a Geotech4All mug. Made from high-quality ceramic, this mug is perfect for enjoying your favorite hot beverage. With a stylish design featuring the Geotech4All logo, this mug is a great addition to any geoscientist's collection."
+    },
+    {
+      "name": "Geotech4All Notebook",
+      "price": "$14.99",
+      "cover": "/assets/images/notebook.png",
+      "description": "Stay organized and stylish with a Geotech4All notebook. Made from high-quality paper, this notebook is perfect for jotting down notes, sketches, and ideas. With a sleek design featuring the Geotech4All logo, this notebook is a must-have for any geoscientist."
+    }
+  ],
+  "events": [
+    {
+      "title": "Geotech4All Conference",
+      "date": "July 2nd, 2024",
+      "time": "9:00 AM - 5:00 PM",
+      "location": "Abuja, Nigeria",
+      "cover": "/assets/images/events.png",
+      "details": "Gathering of geologists, geophysicists, geotechnical engineers, and other professionals in the geosciences field. The conference will feature talks, workshops, and networking opportunities for attendees."
+    },
+    {
+      "title": "Geotech4All Workshop",
+      "date": "July 2nd, 2024",
+      "time": "9:00 AM - 5:00 PM",
+      "location": "Lagos, Nigeria",
+      "cover": "/assets/images/events.png",
+      "details": "Hands-on event where participants will learn about the latest tools and techniques in geotechnical engineering. The workshop will cover topics such as soil testing, foundation design, and slope stability analysis."
+    },
+    {
+      "title": "Geotech4All Webinar",
+      "date": "July 2nd, 2024",
+      "time": "9:00 AM - 5:00 PM",
+      "location": "Online",
+      "cover": "/assets/images/events.png",
+      "details": "Online event that will feature talks and presentations from experts in the geosciences field. Participants will have the opportunity to ask questions and interact with the speakers in real-time."
+    }
+  ],
+  "team": [
+    {
+      "name": "Jeremiah Oladipupo",
+      "role": "CEO & Founder",
+      "image": "/assets/images/jerry.png",
+      "bio": "A visionary geologist and enterpreneur, Jeremiah’s passion for geoscience and community development led him found Geotech4All. With his extensive experience in research, exploration and project management, Jeremiah provides strategic direction and unwavering leadership to the company."
+    },
+    {
+      "name": "Edna Osagehle",
+      "role": "Co Founder",
+      "image": "/assets/images/edna.png",
+      "bio": "Co-founder of Geotech4All, is a skilled professional specializing in engineering geology. With expertise in data acquisition, processing and report writing, Edna brings valuable insight into the team.. Her commitment to advancing geospatial solutions is pivotal in Geotech4All’s mission of making geospatial technology available to everyone."
+    },
+    {
+      "name": "Gabriel Bahago",
+      "role": "Co Founder",
+      "image": "/assets/images/gabriel.png",
+      "bio": "Co-founder of Geotech4All, is a visionary leader with deep understanding of geospatial technologies. His expertise spans GIS, remote sensing and environmental modeling. Committed to making geospatial knowledge available, Gabriel plays a key role in empowering diverse communities through Geotech4All."
+    }
   ]
 }

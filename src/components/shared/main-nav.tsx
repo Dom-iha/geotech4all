@@ -3,7 +3,7 @@ import dark_logo from '../../../public/assets/icons/logo-black.png';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import MobileToggle from '../MobileToggle';
+import Hamburger from '../ui/hamburger';
 
 const MainNav: React.FC = () => {
   const pathname = usePathname();
@@ -34,7 +34,7 @@ const MainNav: React.FC = () => {
                 />
               </Link>
             </div>
-            <MobileToggle isOpen={isOpen} toggleMenu={toggleMenu} />
+            <Hamburger isOpen={isOpen} toggleMenu={toggleMenu} />
             <nav>
               <ul
                 id='navbar-menu'

@@ -4,10 +4,10 @@ import { Montserrat } from 'next/font/google';
 import './globals.css';
 import Providers from './providers';
 import { Toaster } from 'sonner';
-import Navbar from '@/components/shared/Navbar';
-import Footer from '@/components/shared/Footer';
+import Footer from '@/components/shared/main-footer';
 import { Analytics } from '@vercel/analytics/react';
 import { siteConfig } from './config/site';
+import Navigation from '@/components/shared/navigation';
 
 const montserrat = Montserrat({ subsets: ['latin'] });
 
@@ -18,12 +18,7 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL(siteConfig.url),
   description: siteConfig.description,
-  keywords: [
-    "Next.js",
-    "Geology",
-    "Geophysics",
-    "University",
-  ],
+  keywords: ['Next.js', 'Geology', 'Geophysics', 'University'],
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -39,6 +34,11 @@ export const metadata: Metadata = {
       },
     ],
   },
+  icons: {
+    icon: '/favicon.ico',
+    // shortcut: '/favicon-16x16.png',
+    // apple: '/apple-touch-icon.png',
+  },
 };
 
 export default function RootLayout({
@@ -52,7 +52,7 @@ export default function RootLayout({
         <Analytics />
         <body className={montserrat.className}>
           <Toaster />
-          <Navbar />
+          <Navigation />
           <main id='content' className='max-w-[90rem] mx-auto'>
             {children}
           </main>
