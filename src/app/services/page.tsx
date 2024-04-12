@@ -2,6 +2,7 @@ import Image from 'next/image';
 import geohub from '../../../public/assets/icons/geohub.jpg';
 import Link from 'next/link';
 import { Metadata } from 'next';
+import { DoubleArrowDownIcon, ArrowRightIcon } from '@radix-ui/react-icons';
 
 export const metadata: Metadata = {
   title: 'Services',
@@ -19,16 +20,10 @@ const Services: React.FC = () => {
             problems.
           </p>
           <Link
-            href='#services'
-            className='cursor-pointer relative group overflow-hidden border-2 px-10 py-3 border-accent w-fit rounded-md'
+            href='#showcase'
+            className='w-[60px] h-[60px] lg:h-[100px] lg:w-[100px]  grid place-items-center border-accent border-dashed border rounded-full'
           >
-            <span className='uppercase tracking-widest font-medium text-main lg:text-lg relative z-10 group-hover:text-accent duration-500'>
-              What do you need
-            </span>
-            <span className='absolute top-0 left-0 w-full bg-accent duration-500 group-hover:-translate-x-full h-full'></span>
-            <span className='absolute top-0 left-0 w-full bg-accent duration-500 group-hover:translate-x-full h-full'></span>
-            <span className='absolute top-0 left-0 w-full bg-accent duration-500 delay-300 group-hover:-translate-y-full h-full'></span>
-            <span className='absolute delay-300 top-0 left-0 w-full bg-accent duration-500 group-hover:translate-y-full h-full'></span>
+            <DoubleArrowDownIcon className='down-arrow' />
           </Link>
         </div>
       </section>
@@ -45,13 +40,11 @@ const Services: React.FC = () => {
               characterization.
             </p>
             <Link
-              href={`/service/geological-services`}
-              className='cursor-pointer relative group overflow-hidden border-2 px-10 py-2 border-accent w-fit rounded-md'
+              href={`/services/geological-services`}
+              className='w-fit p-2 flex items-center justify-center font-semibold rounded-md gap-2 bg-accent text-main min-w-[8rem] hover:gap-4 focus-visible:gap-4 focus-visible:outline-accent outline-offset-1 outline-1 focus-visible:outline-dashed transition-all duration-300'
             >
-              <span className='uppercase font-medium text-main lg:text-lg relative z-10 group-hover:text-accent duration-500'>
-                I need this
-              </span>
-              <span className='absolute top-0 left-0 w-full h-full bg-accent origin-left group-hover:origin-right group-hover:scale-x-0 transition duration-300'></span>
+              Details
+              <ArrowRightIcon aria-hidden='true' />
             </Link>
           </li>
           <li className='grid gap-4 lg:gap-8'>
@@ -63,15 +56,13 @@ const Services: React.FC = () => {
               preparing high-quality project proposals, reports and research
               papers.
             </p>
-            <button
-              type='button'
-              className='cursor-pointer relative group overflow-hidden border-2 px-10 py-2 border-accent w-fit rounded-md'
+            <Link
+              href={`/services/geological-services`}
+              className='w-fit p-2 flex items-center justify-center font-semibold rounded-md gap-2 bg-accent text-main min-w-[8rem] hover:gap-4 focus-visible:gap-4 focus-visible:outline-accent outline-offset-1 outline-1 focus-visible:outline-dashed transition-all duration-300'
             >
-              <span className='uppercase font-medium text-main lg:text-lg relative z-10 group-hover:text-accent duration-500'>
-                I need this
-              </span>
-              <span className='absolute top-0 left-0 w-full h-full bg-accent origin-left group-hover:origin-right group-hover:scale-x-0 transition duration-300'></span>
-            </button>
+              Details
+              <ArrowRightIcon aria-hidden='true' />
+            </Link>
           </li>
           <li className='grid gap-4 lg:gap-8'>
             <h3 className='text-xl lg:text-2xl font-semibold'>Field Mapping</h3>
@@ -80,15 +71,13 @@ const Services: React.FC = () => {
               advanced mapping technologies to facilitate accurate geological
               surveys.
             </p>
-            <button
-              type='button'
-              className='cursor-pointer relative group overflow-hidden border-2 px-10 py-2 border-accent w-fit rounded-md'
+            <Link
+              href={`/services/geological-services`}
+              className='w-fit p-2 flex items-center justify-center font-semibold rounded-md gap-2 bg-accent text-main min-w-[8rem] hover:gap-4 focus-visible:gap-4 focus-visible:outline-accent outline-offset-1 outline-1 focus-visible:outline-dashed transition-all duration-300'
             >
-              <span className='uppercase font-medium text-main lg:text-lg relative z-10 group-hover:text-accent duration-500'>
-                I need this
-              </span>
-              <span className='absolute top-0 left-0 w-full h-full bg-accent origin-left group-hover:origin-right group-hover:scale-x-0 transition duration-300'></span>
-            </button>
+              Details
+              <ArrowRightIcon aria-hidden='true' />
+            </Link>
           </li>
           <li className='grid gap-4 lg:gap-8'>
             <h3 className='text-xl lg:text-2xl font-semibold'>
@@ -98,15 +87,13 @@ const Services: React.FC = () => {
               Our software training programs provide hands-on instruction in
               popular geological software incliding ArcGis, Petrel and Surfer.
             </p>
-            <button
-              type='button'
-              className='cursor-pointer relative group overflow-hidden border-2 px-10 py-2 border-accent w-fit rounded-md'
+            <Link
+              href={`/services/geological-services`}
+              className='w-fit p-2 flex items-center justify-center font-semibold rounded-md gap-2 bg-accent text-main min-w-[8rem] hover:gap-4 focus-visible:gap-4 focus-visible:outline-accent outline-offset-1 outline-1 focus-visible:outline-dashed transition-all duration-300'
             >
-              <span className='uppercase font-medium text-main lg:text-lg relative z-10 group-hover:text-accent duration-500'>
-                I need this
-              </span>
-              <span className='absolute top-0 left-0 w-full h-full bg-accent origin-left group-hover:origin-right group-hover:scale-x-0 transition duration-300'></span>
-            </button>
+              Details
+              <ArrowRightIcon aria-hidden='true' />
+            </Link>
           </li>
           <li className='grid gap-4 lg:gap-8'>
             <h3 className='text-xl lg:text-2xl font-semibold'>
@@ -117,15 +104,13 @@ const Services: React.FC = () => {
               equipments to support fieldwork, research, and exploration
               activities.
             </p>
-            <button
-              type='button'
-              className='cursor-pointer relative group overflow-hidden border-2 px-10 py-2 border-accent w-fit rounded-md'
+            <Link
+              href={`/services/geological-services`}
+              className='w-fit p-2 flex items-center justify-center font-semibold rounded-md gap-2 bg-accent text-main min-w-[8rem] hover:gap-4 focus-visible:gap-4 focus-visible:outline-accent outline-offset-1 outline-1 focus-visible:outline-dashed transition-all duration-300'
             >
-              <span className='uppercase font-medium text-main lg:text-lg relative z-10 group-hover:text-accent duration-500'>
-                I need this
-              </span>
-              <span className='absolute top-0 left-0 w-full h-full bg-accent origin-left group-hover:origin-right group-hover:scale-x-0 transition duration-300'></span>
-            </button>
+              Details
+              <ArrowRightIcon aria-hidden='true' />
+            </Link>
           </li>
           <li className='grid gap-4 lg:gap-8'>
             <h3 className='text-xl lg:text-2xl font-semibold'>
@@ -135,15 +120,13 @@ const Services: React.FC = () => {
               Our geophysical survey services utilize state-of-the-art equipment
               to conduct non-invasive subsurface investigations
             </p>
-            <button
-              type='button'
-              className='cursor-pointer relative group overflow-hidden border-2 px-10 py-2 border-accent w-fit rounded-md'
+            <Link
+              href={`/services/geological-services`}
+              className='w-fit p-2 flex items-center justify-center font-semibold rounded-md gap-2 bg-accent text-main min-w-[8rem] hover:gap-4 focus-visible:gap-4 focus-visible:outline-accent outline-offset-1 outline-1 focus-visible:outline-dashed transition-all duration-300'
             >
-              <span className='uppercase font-medium text-main lg:text-lg relative z-10 group-hover:text-accent duration-500'>
-                I need this
-              </span>
-              <span className='absolute top-0 left-0 w-full h-full bg-accent origin-left group-hover:origin-right group-hover:scale-x-0 transition duration-300'></span>
-            </button>
+              Details
+              <ArrowRightIcon aria-hidden='true' />
+            </Link>
           </li>
         </ul>
       </section>

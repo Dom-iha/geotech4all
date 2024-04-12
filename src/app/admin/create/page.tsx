@@ -2,6 +2,7 @@
 import { useContext, useState } from 'react';
 import TextEditor from '@/components/ui/text-editor';
 import AuthContext from '@/context/AuthContext';
+import { Upload } from 'lucide-react';
 
 function CreateBlog() {
   const { token } = useContext(AuthContext);
@@ -86,30 +87,10 @@ function CreateBlog() {
   };
 
   return (
-    <div className='min-h-[92vh] bg-gray-50 py-14 px-4'>
+    <div className='min-h-[92vh] py-14 px-4'>
       <div className='max-w-[800px] mx-auto bg-main shadow-md p-4 lg:p-8 '>
         <section>
-          <div className='flex flex-wrap max-md:justify-between lg:gap-8 mb-4 lg:mb-10'>
-            <button
-              type='button'
-              onClick={() => setView('write')}
-              className={`${
-                view === 'write' ? ' bg-accent text-main' : 'bg-gray-50'
-              } w-24 px-4 py-2 shadow-md rounded-sm transition duration-200 outline-offset-2 focus-visible:outline-dashed focus-visible:outline-1`}
-            >
-              Write
-            </button>
-            <button
-              type='button'
-              onClick={() => setView('preview')}
-              className={`${
-                view === 'preview' ? ' bg-accent text-main' : 'bg-gray-50'
-              } w-24  px-4 py-2 shadow-md rounded-sm transition duration-200 outline-offset-2 focus-visible:outline-dashed focus-visible:outline-1`}
-            >
-              Preview
-            </button>
-          </div>
-          <h1 className='text-center font-bold text-xl lg:text-3xl mb-5'>
+          <h1 className='text-center font-bold text-xl lg:text-2xl mb-5'>
             {view === 'write' ? 'New Post' : 'Preview'}
           </h1>
         </section>
@@ -119,16 +100,23 @@ function CreateBlog() {
               <div>
                 <input
                   type='file'
-                  id='cover-image'
+                  id='image'
                   name='cover'
                   onChange={(e) => handleImage(e.target.files)}
                   className='sr-only peer'
                 />
                 <label
-                  htmlFor='cover-image'
-                  className='grid place-content-center w-full min-h-40 mb-5 border-accent border hover:cursor-pointer peer-focus-visible:border-transparent peer-focus-visible:outline-dashed peer-focus-visible:outline-1'
+                  htmlFor='image'
+                  className='grid place-content-center w-full min-h-40 mb-5 border-accent border hover:cursor-pointer hover:border-dashed hover:bg-accent/10 peer-focus-visible:bg-accent/10 transition duration-300'
                 >
-                  <span>{imageName ? imageName : 'Cover image'}</span>
+                  <span className='flex flex-col gap-3 items-center'>
+                    <Upload size={30} />
+                    <span>
+                      {imageName
+                        ? 'Upload - ' + imageName
+                        : 'Select image to upload'}
+                    </span>
+                  </span>
                 </label>
               </div>
               <div className='mb-4'>
@@ -156,7 +144,7 @@ function CreateBlog() {
                   name='excerpt'
                   value={articleData.excerpt}
                   onChange={handleChange}
-                  placeholder='Enter a brief description of your article'
+                  placeholder='Enter a brief description of your article avoid special characters'
                   aria-describedby='excerpt-error'
                   className='placeholder:text-transparent border-accent border focus-visible:border-transparent focus-visible:outline-1 focus-visible:outline-dashed p-3 w-full'
                 />
@@ -172,7 +160,7 @@ function CreateBlog() {
               </div>
               <button
                 type='submit'
-                className='bg-accent text-white p-3 rounded mt-8'
+                className='bg-accent flex gap-2 text-white p-3 rounded mt-8'
               >
                 {loading ? 'Publishing...' : 'Publish'}
               </button>

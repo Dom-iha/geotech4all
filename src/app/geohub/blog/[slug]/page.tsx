@@ -5,18 +5,18 @@ import Related from '@/components/cards/related';
 interface Article {
   id: string;
   title: string;
-  urlTitle: string;
+  excerpt: string;
   author: string;
   createdAt: string;
   cover: string;
   content: string;
 }
 
-function page({ params }: { params: { id: string } }) {
-  const properId = params.id.replace(/-/g, ' ');
+function page({ params }: { params: { slug: string } }) {
+  const revertedSlug = params.slug.replace(/-/g, ' ');
 
   const articleToShow: Article | undefined = data.articles.find(
-    (article) => article.urlTitle === properId
+    (article) => article.excerpt === revertedSlug
   );
 
   const coverSrc = articleToShow?.cover || '';

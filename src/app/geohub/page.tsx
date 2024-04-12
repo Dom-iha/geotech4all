@@ -65,7 +65,7 @@ function Geohub() {
               key={article.id}
               id={article.id}
               title={article.title}
-              urlTitle={article.urlTitle}
+              excerpt={article.excerpt}
               content={article.content}
               createdAt={article.createdAt}
               cover={article.cover}
@@ -112,7 +112,7 @@ function Geohub() {
               firms you can apply to as a prospective intern
             </p>
             <Link
-              href={`/geohub/blog`}
+              href={`/geohub/opportunities`}
               className=' w-fit p-2 flex items-center justify-center font-semibold rounded-md gap-2 bg-main text-accent min-w-[8rem] hover:gap-4 focus-visible:gap-4 focus-visible:outline-accent outline-offset-1 outline-1 focus-visible:outline-dashed transition-all duration-300'
             >
               View

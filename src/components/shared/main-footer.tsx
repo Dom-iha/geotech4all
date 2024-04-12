@@ -88,6 +88,14 @@ const Footer: React.FC = () => {
                     href='mailto:geotech4all@gmail.com'
                     className='hover:underline'
                   >
+                    Equiry
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href='mailto:geotech4all@gmail.com'
+                    className='hover:underline'
+                  >
                     Email
                   </Link>
                 </li>
