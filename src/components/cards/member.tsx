@@ -11,7 +11,12 @@ interface MemberProps {
 function Member(props: MemberProps) {
   return (
     <div className='flex flex-col lg:flex-row rounded-md overflow-hidden'>
-      <Image src={props.image} alt={`${props.image}'s picture`} />
+      <Image
+        width={300}
+        height={300}
+        src={props.image}
+        alt={`${props.image}'s picture`}
+      />
       <div className='p-6 md:p-8 lg:bg-accent lg:text-main lg:p-16 flex flex-col gap-4'>
         <div>
           <h3 className='text-lg lg:text-2xl font-bold'>{props.name}</h3>

@@ -2,8 +2,8 @@
   "articles": [
     {
       "id": "whcgduaurhhcjbzmngf2840r9",
-      "title": "Evolution: What if Darwin’s was wrong?",
-      "urlTitle": "Evolution What if Darwin’s was wrong?",
+      "title": "Evolution: What if Darwin was wrong?",
+      "excerpt": "Evolution What if Darwin was wrong?",
       "category": "General",
       "author": "Geotech4all",
       "createdAt": "July 2, 2024",
@@ -13,7 +13,7 @@
     {
       "id": "y4368r87fgu3946280fygyucg4",
       "title": "CATASTROPHISM: Plant, Animal, and Human",
-      "urlTitle": "Catastrophism Plant Animal and Human",
+      "excerpt": "Catastrophism Plant Animal and Human",
       "category": "Geophysics",
       "author": "Geotech4all",
       "createdAt": "July 2, 2024",
@@ -23,7 +23,7 @@
     {
       "id": "g2735082rdydyt9286edcsv286weW",
       "title": "Beyond Faunal succession: What's life Morphing to?",
-      "urlTitle": "Beyond Faunal succession What's life Morphing to?",
+      "excerpt": "Beyond Faunal succession What's life Morphing to?",
       "category": "Biology",
       "author": "Geotech4all",
       "createdAt": "July 2, 2024",
@@ -33,7 +33,7 @@
     {
       "id": "GSUS675s63egdwye9dhGDIGU323D67",
       "title": "The Present is the Key to the Past. What is the Key to the future?",
-      "urlTitle": "The Present is the Key to the Past What is the Key to the future?",
+      "excerpt": "The Present is the Key to the Past What is the Key to the future?",
       "category": "Engineering",
       "author": "Geotech4all",
       "createdAt": "July 2, 2024",
@@ -43,7 +43,7 @@
     {
       "id": "si8yq73d6dguehss978f6dssgd7s8d",
       "title": "AFRICA VS THE WORLD: The battle for power and influence",
-      "urlTitle": "Africa vs The World The battle for power and influence",
+      "excerpt": "Africa vs The World The battle for power and influence",
       "category": "Geochemistry",
       "author": "Geotech4all",
       "createdAt": "July 2, 2024",
@@ -53,7 +53,7 @@
     {
       "id": "fbeo7r820ydu39ddg9t9236td97d9w67",
       "title": "Importance of geotextile in geotechnical industry",
-      "urlTitle": "Importance of geotextile in geotechnical industry",
+      "excerpt": "Importance of geotextile in geotechnical industry",
       "category": "Paleontology",
       "author": "Geotech4all",
       "createdAt": "July 2, 2024",

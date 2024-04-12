@@ -15,7 +15,7 @@ function page() {
         </h1>
         <p className='text-center mt-4 text-xl lg:text-2xl max-w-[900px]'>
           Thanks for visiting but this page is currently under development. we
-          hope to complete this soon so and can follow our socials to know when
+          hope to complete this soon, you can follow our socials to know when
           we do. for now you can check out our blog using the link below.
         </p>
         <Link

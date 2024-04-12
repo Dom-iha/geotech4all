@@ -28,20 +28,16 @@ export default function Home() {
           </p>
           <Link
             href='/about'
-            className='cursor-pointer relative group overflow-hidden border-2 px-10 py-2 border-accent w-fit rounded-md'
+            className='relative w-fit text-main hover:text-accent transition-colors duration-500 border-2 px-8 py-3 border-accent rounded-md after:absolute after:w-full after:h-full after:left-0 after:top-0 after:bg-accent after:scale-x-100 after:origin-left hover:after:scale-x-0 hover:after:origin-right after:transition after:duration-500'
           >
-            <span className='uppercase tracking-widest font-medium text-main lg:text-lg relative z-10 group-hover:text-accent duration-500'>
-              Learn How
+            <span className='relative z-10 uppercase tracking-widest'>
+              learn how
             </span>
-            <span className='absolute top-0 left-0 w-full bg-accent duration-500 group-hover:-translate-x-full h-full'></span>
-            <span className='absolute top-0 left-0 w-full bg-accent duration-500 group-hover:translate-x-full h-full'></span>
-            <span className='absolute top-0 left-0 w-full bg-accent duration-500 delay-300 group-hover:-translate-y-full h-full'></span>
-            <span className='absolute delay-300 top-0 left-0 w-full bg-accent duration-500 group-hover:translate-y-full h-full'></span>
           </Link>
         </motion.div>
       </section>
       {/* Training advert */}
-      <section className='px-6 md:px-8 lg:px-24 py-14'>
+      {/* <section className='px-6 md:px-8 lg:px-24 py-14'>
         <h2 className='text-2xl lg:text-4xl font-bold mb-[32px]'>
           Training Services
         </h2>
@@ -70,9 +66,9 @@ export default function Home() {
             </button>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* News flash */}
-      <section className='px-6 md:px-8 lg:px-24 py-14'>
+      {/* <section className='px-6 md:px-8 lg:px-24 py-14'>
         <h2 className='font-bold text-2xl lg:text-4xl mb-[42px]'>News Flash</h2>
         <div className='flex flex-col gap-8 md:flex-row lg:gap-32'>
           <article className='flex flex-col gap-8 max-lg:order-2'>
@@ -121,7 +117,7 @@ export default function Home() {
             />
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Stats section */}
       <section className='bg-accent min-h-[300px] px-6 md:px-8 lg:px-24 py-10 flex'>

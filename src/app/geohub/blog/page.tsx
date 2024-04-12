@@ -20,7 +20,7 @@ function page() {
             Learn and read about the latest and greatest innovations, news, and events in geosciences.
           </p>
         </div>
-        <div className='relative'>
+        <div className='relative max-h-[500px]'>
           <Image
             src={`https://images.unsplash.com/photo-1543286386-2e659306cd6c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`}
             alt='hero image'
@@ -42,7 +42,7 @@ function page() {
               key={article.id}
               id={article.id}
               title={article.title}
-              urlTitle={article.urlTitle}
+              excerpt={article.excerpt}
               content={article.content}
               createdAt={article.createdAt}
               cover={article.cover}
