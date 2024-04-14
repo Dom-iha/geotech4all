@@ -1,37 +1,37 @@
 import Image from 'next/image';
-import React from 'react';
+import { ArrowUpRightFromSquare } from 'lucide-react';
 
 interface ProductProps {
   name: string;
-  type: string;
-  details: string;
+  description: string;
   availability: boolean | string;
   cover: string;
 }
 
 function Product(props: ProductProps) {
   return (
-    <li className='relative flex flex-col lg:flex-row gap-4 rounded-3xl h-[400px] overflow-hidden bg-accent'>
+    <li className='grid gap-4 max-w-[350px] rounded-xl shadow-md p-4 bg-alt'>
       <Image
-        src={`https://images.unsplash.com/photo-1554629947-334ff61d85dc?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`}
+        src={props.cover}
         alt={props.name}
-        width={300}
-        height={400}
-        className='object-cover'
+        width={390}
+        height={300}
+        className='rounded-t-lg min-h-[200px] max-h-[250px]'
       />
-      <div className='absolute bottom-2 left-2 pt-10 p-4 h-fit w-full bg-main rounded-2xl flex flex-col gap-2 max-w-[95%]'>
-        <div className='absolute py-2 px-4 bg-main -top-7 left-4 flex flex-col text-center rounded-xl shadow-md'>
-          <p className='text-red-500 font-bold'>{props.availability}</p>
-        </div>
-        <p className='font-semibold text-lg'>{props.name}</p>
-        <p className='text-sm'>{props.details.slice(0, 20)}...</p>
-        <button
-          type='button'
-          className=' w-full rounded-2xl p-2.5 bg-accent text-main border-2 hover:border-accent hover:bg-main hover:text-accent transition duration-300'
-        >
-          View
-        </button>
+      <div className='flex gap-4'>
+        <p className='bg-green-400/20 text-green-500 font-semibold rounded-md p-1.5'>{props.availability}</p>
+        <p></p>
       </div>
+      <h3 className='text-lg lg:text-xl font-semibold'>{props.name}</h3>
+      <button
+        type='button'
+        className='relative w-fit text-main hover:text-accent transition-colors duration-500 border-2 px-8 py-2 border-accent rounded-md after:absolute after:w-full after:h-full after:left-0 after:top-0 after:bg-accent after:scale-x-100 after:origin-left hover:after:scale-x-0 hover:after:origin-right after:transition after:duration-500'
+      >
+        <span className='w-full items-center justify-center relative z-10 uppercase tracking-widest flex gap-2'>
+          get
+          <ArrowUpRightFromSquare size={18} />
+        </span>
+      </button>
     </li>
   );
 }

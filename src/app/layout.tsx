@@ -8,6 +8,7 @@ import Footer from '@/components/shared/main-footer';
 import { Analytics } from '@vercel/analytics/react';
 import { siteConfig } from './config/site';
 import Navigation from '@/components/shared/navigation';
+import BackToTop from '@/components/shared/back-to-top';
 
 const montserrat = Montserrat({ subsets: ['latin'] });
 
@@ -56,6 +57,7 @@ export default function RootLayout({
           <main id='content' className='max-w-[90rem] mx-auto'>
             {children}
           </main>
+          <BackToTop />
           <Footer />
         </body>
       </html>

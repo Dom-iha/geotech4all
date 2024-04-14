@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { DoubleArrowDownIcon } from '@radix-ui/react-icons';
 import data from '@/data/data.json';
 import Member from '@/components/cards/member';
+import mission from '../../../public/assets/images/mission.jpg';
 
 export const metadata: Metadata = {
   title: 'About',
@@ -60,14 +61,14 @@ function About() {
           </div>
         </article>
       </section>
-      <section className='flex flex-col gap-8 px-6 md:px-8 lg:px-24 py-14'>
-        <div className='flex max-lg:flex-col gap-4 lg:gap-8 justify-between'>
-          <div className='relative lg:order-2'>
+      <section className='flex flex-col gap-8 lg:gap-20 px-6 md:px-8 lg:px-24 py-14'>
+        <div className='flex flex-col gap-4 lg:gap-10 justify-between'>
+          <div className='relative w-fit mx-auto'>
             <Image
-              src={`https://images.unsplash.com/photo-1543286386-2e659306cd6c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`}
+              src={mission}
               alt='hero image'
-              width={400}
-              height={500}
+              width={300}
+              height={300}
               className='object-cover rounded-lg relative z-10 shadow-xl bg-fuchsia-500'
             />
             <div
@@ -75,16 +76,16 @@ function About() {
               className='absolute top-3 -left-2.5 rounded-lg border-dashed border-2 border-red-400 w-full h-full'
             ></div>
           </div>
-          <div className='flex flex-col justify-center'>
+          <div className='flex flex-col justify-center text-center'>
             <p className='font-bold text-2xl lg:text-4xl mb-5'>Our Mission</p>
-            <p className='max-w-[500px] font-medium lg:text-2xl'>
+            <p className='max-w-screen-md mx-auto font-medium lg:text-2xl'>
               We are driven by the belief that geoscience holds the key to
               understanding our planet, and addressing global challenges.
             </p>
           </div>
         </div>
-        <div className='flex max-lg:flex-col gap-4 lg:gap-8 justify-between'>
-          <div className='relative'>
+        <div className='flex flex-col gap-4 lg:gap-8 justify-between'>
+          <div className='relative w-fit mx-auto'>
             <Image
               src={`https://images.unsplash.com/photo-1543286386-2e659306cd6c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`}
               alt='hero image'
@@ -97,9 +98,9 @@ function About() {
               className='absolute top-3 -left-2.5 rounded-lg border-dashed border-2 border-red-400 w-full h-full'
             ></div>
           </div>
-          <div className='flex flex-col justify-center'>
+          <div className='flex flex-col justify-center text-center'>
             <p className='font-bold text-2xl lg:text-4xl mb-5'>Our Vision</p>
-            <p className='max-w-[500px] font-medium lg:text-2xl'>
+            <p className='max-w-screen-md mx-auto font-medium lg:text-2xl'>
               To be the leading resource center for everything geoscience from
               knowledge, to practical application and solutions.
             </p>

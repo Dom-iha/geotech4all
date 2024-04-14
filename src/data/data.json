@@ -122,22 +122,36 @@
   ],
   "products": [
     {
+      "name": "Dutch cone penetrometer",
+      "price": "$199.99",
+      "cover": "/assets/images/dcpt.jpg",
+      "description": "The Dutch cone penetrometer is a versatile tool used in geotechnical engineering to measure the strength and compressibility of soil. With a sleek design and durable construction, this cone penetrometer is perfect for fieldwork and laboratory testing. Whether you're a student or a professional, this cone penetrometer is a valuable addition to your geotechnical toolkit.",
+      "availability": "In stock"
+      
+    },
+    {
+      "name": "Stereonet (software)",
+      "price": "$49.99",
+      "cover": "/assets/images/stereonet.jpeg",
+      "description": "Stereonet is a powerful software tool used by geologists and geophysicists to analyze and visualize structural data. With a user-friendly interface and advanced features, Stereonet makes it easy to create and interpret stereonets, rose diagrams, and other structural geology plots. Whether you're a student or a professional, Stereonet is a valuable tool for understanding the geometry and kinematics of geological structures.",
+      "availability": "In stock"
+      
+    },
+    {
+      "name": "Fieldwork kit",
+      "price": "$99.99",
+      "cover": "/assets/images/field-kit.jpg",
+      "description": "The fieldwork kit is a comprehensive set of tools and equipment designed for geologists, geophysicists, and other professionals working in the field. With a range of instruments, including a compass, hand lens, and rock hammer, this kit has everything you need to conduct geological surveys, map outcrops, and collect samples. Whether you're a student or a professional, the fieldwork kit is an essential companion for your next fieldwork expedition.",
+      "availability": "In stock"
+      
+    },
+    {
       "name": "Geotech4All T-Shirt",
       "price": "$19.99",
       "cover": "/assets/images/tshirt.png",
-      "description": "Show your support for Geotech4All with this stylish t-shirt. Made from 100% cotton, this t-shirt is perfect for everyday wear. Available in a range of sizes and colors, this t-shirt is a great way to show your love for geosciences."
-    },
-    {
-      "name": "Geotech4All Mug",
-      "price": "$9.99",
-      "cover": "/assets/images/mug.png",
-      "description": "Start your day off right with a Geotech4All mug. Made from high-quality ceramic, this mug is perfect for enjoying your favorite hot beverage. With a stylish design featuring the Geotech4All logo, this mug is a great addition to any geoscientist's collection."
-    },
-    {
-      "name": "Geotech4All Notebook",
-      "price": "$14.99",
-      "cover": "/assets/images/notebook.png",
-      "description": "Stay organized and stylish with a Geotech4All notebook. Made from high-quality paper, this notebook is perfect for jotting down notes, sketches, and ideas. With a sleek design featuring the Geotech4All logo, this notebook is a must-have for any geoscientist."
+      "description": "Show your support for Geotech4All with this stylish t-shirt. Made from 100% cotton, this t-shirt is perfect for everyday wear. Available in a range of sizes and colors, this t-shirt is a great way to show your love for geosciences.",
+      "availability": "In stock"
+      
     }
   ],
   "events": [

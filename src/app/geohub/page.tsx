@@ -20,10 +20,10 @@ function Geohub() {
           </p>
           <div className='flex flex-col justify-end max-w-[609px] max-lg:p-8 lg:ml-[50px] lg:pb-8'>
             <h1 className='text-main text-2xl lg:text-5xl font-bold mb-3'>
-              2023 Nigeria Infrastructural Budget: A Comparative Analysis
+              2024 Nigeria Infrastructural Budget: A Comparative Analysis
             </h1>
             <p className='max-w-[575px] max-sm:hidden text-main text-lg lg:text-2xl mb-6'>
-              Nigeria&apos;s 2023 budget, recently approved by the federal
+              Nigeria&apos;s 2024 budget, recently approved by the federal
               government, allocates a significant portion to infrastructure
               development...
             </p>
