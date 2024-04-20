@@ -2,12 +2,25 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 import { DoubleArrowDownIcon, ArrowRightIcon } from '@radix-ui/react-icons';
 import Image from 'next/image';
+import ImageSlider from '@/components/ui/image-slider';
+import placeholder from '../../../public/assets/images/placeholder.jpg';
+import training_1 from '../../../public/assets/images/training-1.jpg';
+import training_2 from '../../../public/assets/images/training-2.jpg';
+import training_3 from '../../../public/assets/images/training-3.jpg';
+import training_4 from '../../../public/assets/images/training-4.jpg';
+import meetup_1 from '../../../public/assets/images/meetup-1.jpg';
+import meetup_2 from '../../../public/assets/images/meetup-2.jpg';
+import meetup_3 from '../../../public/assets/images/meetup-3.jpg';
+import meetup_4 from '../../../public/assets/images/meetup-4.jpg';
 
 export const metadata: Metadata = {
   title: 'Gallery',
 };
 
 const Gallery: React.FC = () => {
+  const trainingImages = [training_1, training_2, training_3, training_4];
+  const meetupImages = [meetup_1, meetup_2, meetup_3, meetup_4];
+
   return (
     <>
       <section className='px-6 lg:px-24 min-h-[85vh] grid place-items-center'>
@@ -28,13 +41,7 @@ const Gallery: React.FC = () => {
           <h2 className='font-bold text-2xl lg:text-3xl mb-5'>Trainings</h2>
           <div className='flex max-lg:flex-col gap-8 justify-between'>
             <div className='relative'>
-              <Image
-                src={`https://images.unsplash.com/photo-1543286386-2e659306cd6c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`}
-                alt='hero image'
-                width={400}
-                height={500}
-                className='object-cover rounded-lg relative z-10 shadow-xl bg-fuchsia-500'
-              />
+              <ImageSlider content={trainingImages} />
               <div
                 aria-hidden='true'
                 className='absolute top-3 -left-2.5 rounded-lg border-dashed border-2 border-red-400 w-full h-full'
@@ -61,13 +68,7 @@ const Gallery: React.FC = () => {
           <h2 className='font-bold text-2xl lg:text-3xl mb-5'>Meetups</h2>
           <div className='flex max-lg:flex-col gap-8 justify-between'>
             <div className='relative'>
-              <Image
-                src={`https://images.unsplash.com/photo-1543286386-2e659306cd6c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`}
-                alt='hero image'
-                width={400}
-                height={500}
-                className='object-cover rounded-lg relative z-10 shadow-xl bg-fuchsia-500'
-              />
+              <ImageSlider content={meetupImages} />
               <div
                 aria-hidden='true'
                 className='absolute top-3 -left-2.5 rounded-lg border-dashed border-2 border-red-400 w-full h-full'
@@ -96,7 +97,7 @@ const Gallery: React.FC = () => {
           <div className='flex max-lg:flex-col gap-8 justify-between'>
             <div className='relative'>
               <Image
-                src={`https://images.unsplash.com/photo-1543286386-2e659306cd6c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`}
+                src={placeholder}
                 alt='hero image'
                 width={400}
                 height={500}
