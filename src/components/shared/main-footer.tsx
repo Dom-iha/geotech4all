@@ -6,6 +6,7 @@ import { Facebook, Linkedin, Twitter } from '../Icons';
 import { usePathname } from 'next/navigation';
 import Newsletter from './newsletter-form';
 import { Instagram, Mail, PhoneCall, Youtube } from 'lucide-react';
+import { PaperPlaneIcon } from '@radix-ui/react-icons';
 
 const Footer: React.FC = () => {
   const pathname = usePathname();
@@ -131,6 +132,7 @@ const Footer: React.FC = () => {
                   <Link
                     aria-label='Visit our LinkedIn page'
                     href='https://www.linkedin.com/company/geotech4all'
+                    target='blank'
                   >
                     <Linkedin aria-hidden='true' />
                   </Link>
@@ -139,8 +141,18 @@ const Footer: React.FC = () => {
                   <Link
                     aria-label='Visit our LinkedIn page'
                     href='mailto:geotech4all@gmail.com'
+                    target='blank'
                   >
                     <Instagram aria-hidden='true' />
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    aria-label='Subscribe to our youtube channel'
+                    href='https://youtube.com/geotech4all'
+                    target='blank'
+                  >
+                    <Youtube aria-hidden='true' />
                   </Link>
                 </li>
                 <li>
@@ -148,7 +160,7 @@ const Footer: React.FC = () => {
                     aria-label='Visit our LinkedIn page'
                     href='mailto:geotech4all@gmail.com'
                   >
-                    <Mail aria-hidden='true' />
+                    <PaperPlaneIcon aria-hidden='true' />
                   </Link>
                 </li>
               </ul>

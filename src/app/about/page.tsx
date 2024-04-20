@@ -87,10 +87,10 @@ function About() {
         <div className='flex flex-col gap-4 lg:gap-8 justify-between'>
           <div className='relative w-fit mx-auto'>
             <Image
-              src={`https://images.unsplash.com/photo-1543286386-2e659306cd6c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`}
+              src={mission}
               alt='hero image'
-              width={400}
-              height={500}
+              width={300}
+              height={300}
               className='object-cover rounded-lg relative z-10 shadow-xl bg-fuchsia-500'
             />
             <div

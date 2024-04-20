@@ -17,7 +17,7 @@ function page() {
             our article library.
           </h1>
           <p className='font-medium text-lg lg:text-2xl text-accent'>
-            Learn and read about the latest and greatest innovations, news, and events in geosciences.
+            Read and learn about the latest and greatest innovations, news, and events in geosciences.
           </p>
         </div>
         <div className='relative max-h-[500px]'>

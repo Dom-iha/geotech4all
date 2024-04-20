@@ -33,7 +33,7 @@ function Newsletter() {
   return (
     <div className='flex flex-col gap-8 pb-20 max-w-2xl mx-auto'>
       <p className='text-main text-center text-lg lg:text-xl font-medium'>
-        Signup to our newsletter for blog post and service updates
+        Subscribe to our newsletter for blog post and service updates
       </p>
       <form
         className='flex flex-col lg:flex-row gap-4 justify-center'

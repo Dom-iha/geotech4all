@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Testimonial from '@/components/cards/testimonial';
 import data from '@/data/data.json';
 import { motion } from 'framer-motion';
+import TestimonialSlider from '@/components/ui/testimonial-slider';
 
 export default function Home() {
   return (
@@ -143,16 +144,7 @@ export default function Home() {
           What People Say
         </h2>
         <div>
-          <ul className='grid grid-cols-[repeat(auto-fit,_minmax(18rem,_1fr))] gap-8'>
-            {data.testimonials.map((testimony, index) => (
-              <Testimonial
-                key={index}
-                name={testimony.name}
-                position={testimony.position}
-                message={testimony.message}
-              />
-            ))}
-          </ul>
+          <TestimonialSlider />
         </div>
       </section>
 
