@@ -44,7 +44,7 @@ const Gallery: React.FC = () => {
               <ImageSlider content={trainingImages} />
               <div
                 aria-hidden='true'
-                className='absolute top-3 -left-2.5 rounded-lg border-dashed border-2 border-red-400 w-full h-full'
+                className='absolute top-3 -left-2.5 rounded-lg border-dashed border-2 border-accent w-full h-full'
               ></div>
             </div>
             <div className='flex flex-col gap-5 justify-center'>
@@ -71,7 +71,7 @@ const Gallery: React.FC = () => {
               <ImageSlider content={meetupImages} />
               <div
                 aria-hidden='true'
-                className='absolute top-3 -left-2.5 rounded-lg border-dashed border-2 border-red-400 w-full h-full'
+                className='absolute top-3 -left-2.5 rounded-lg border-dashed border-2 border-accent w-full h-full'
               ></div>
             </div>
             <div className='flex flex-col gap-5 justify-center'>
@@ -96,16 +96,10 @@ const Gallery: React.FC = () => {
           </h2>
           <div className='flex max-lg:flex-col gap-8 justify-between'>
             <div className='relative'>
-              <Image
-                src={placeholder}
-                alt='hero image'
-                width={400}
-                height={500}
-                className='object-cover rounded-lg relative z-10 shadow-xl bg-fuchsia-500'
-              />
+              <ImageSlider content={meetupImages} />
               <div
                 aria-hidden='true'
-                className='absolute top-3 -left-2.5 rounded-lg border-dashed border-2 border-red-400 w-full h-full'
+                className='absolute top-3 -left-2.5 rounded-lg border-dashed border-2 border-accent w-full h-full'
               ></div>
             </div>
             <div className='flex flex-col gap-5 justify-center'>

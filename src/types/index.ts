@@ -1,3 +1,14 @@
+import { ReactElement } from "react";
+
+export interface NavbarLink {
+  route: string;
+  label: string;
+}
+export interface SidebarLink {
+  route: string;
+  label: string;
+  icon: ReactElement | null;
+}
 interface MenuProps {
   toggleMenu: () => void;
   isOpen: boolean;

@@ -44,7 +44,7 @@ function ImageSlider(props: SliderProps) {
   };
 
   return (
-    <div className='w-full min-h-[300px] max-w-[400px] relative z-10'>
+    <div className='w-full min-h-[300px] max-w-[400px] relative z-10 group'>
       <div className='flex w-full overflow-hidden'>
       {props.content.map((image, index) => (
           <div
@@ -67,7 +67,7 @@ function ImageSlider(props: SliderProps) {
         type='button'
         title='previous'
         onClick={showPrevious}
-        className='w-10 h-10 bg-red-400 text-accent rounded-full grid place-content-center absolute top-1/2 -left-6 -translate-y-1/2'
+        className='flex items-center justify-center w-10 h-full rounded-l-md bg-accent/30 opacity-0 group-hover:opacity-100 transition-all duration-300 text-main absolute top-0 left-0'
       >
         <ChevronLeftIcon />
       </button>
@@ -75,7 +75,7 @@ function ImageSlider(props: SliderProps) {
         type='button'
         title='next'
         onClick={showNext}
-        className='w-10 h-10 bg-red-400 text-accent rounded-full grid place-content-center absolute top-1/2 -right-6 -translate-y-1/2'
+        className='flex items-center justify-center w-10 h-full rounded-r-md bg-accent/30 opacity-0 group-hover:opacity-100 transition-all duration-300 text-main absolute top-0 right-0'
       >
         <ChevronRightIcon />
       </button>

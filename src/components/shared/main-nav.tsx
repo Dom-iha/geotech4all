@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import Hamburger from '../ui/hamburger';
+import { navbarLinks } from '@/constants';
 
 const MainNav: React.FC = () => {
   const pathname = usePathname();
@@ -12,7 +13,8 @@ const MainNav: React.FC = () => {
     setIsOpen((prevState) => !prevState);
   };
 
-  const authPages = pathname.includes('/sign-up') || pathname.includes('/sign-in');
+  const authPages =
+    pathname.includes('/sign-up') || pathname.includes('/sign-in');
 
   return (
     <>
@@ -30,7 +32,7 @@ const MainNav: React.FC = () => {
                 <Image
                   src={dark_logo}
                   alt='geotech4all logo'
-                  className='w-[150px]'
+                  className='w-[150px] max-h-[27px]'
                 />
               </Link>
             </div>
@@ -42,81 +44,24 @@ const MainNav: React.FC = () => {
                   isOpen ? 'left-0' : '-left-full'
                 } md:flex-row md:justify-evenly md:gap-10 md:bg-transparent md:text-accent md:p-0 text-lg font-medium transition duration-300`}
               >
-                <li
-                  className={`link ${
-                    isOpen && 'max-md:animate-in'
-                  } relative after:absolute after:bg-main after:w-1 after:h-full after:-left-2 after:top-0 after:scale-y-0 after:origin-bottom md:after:bg-accent md:after:h-0.5 md:after:w-1/2 md:after:top-auto md:after:bottom-0 md:after:left-0 md:after:scale-y-100 md:after:scale-x-0 md:after:origin-right md:hover:after:scale-x-100 md:hover:after:origin-left ${
-                    pathname === '/' &&
-                    'after:scale-y-100 md:after:scale-x-100'
-                  } transition  after:transition after:duration-300`}
-                >
-                  <Link
-                    href='/'
-                    className='outline-2 focus-visible:outline-dashed uppercase text-sm font-medium'
+                {navbarLinks.map((link) => (
+                  <li
+                    key={link.route}
+                    className={`link ${
+                      isOpen && 'max-md:animate-in'
+                    } relative after:absolute after:bg-main after:w-1 after:h-full after:-left-2 after:top-0 after:scale-y-0 after:origin-bottom md:after:bg-accent md:after:h-0.5 md:after:w-1/2 md:after:top-auto md:after:bottom-0 md:after:left-0 md:after:scale-y-100 md:after:scale-x-0 md:after:origin-right md:hover:after:scale-x-100 md:hover:after:origin-left ${
+                      pathname === link.route &&
+                      'after:scale-y-100 md:after:scale-x-100'
+                    } transition  after:transition after:duration-300`}
                   >
-                    home
-                  </Link>
-                </li>
-                <li
-                  className={`link ${
-                    isOpen && 'max-md:animate-in2'
-                  } relative after:absolute after:bg-main after:w-1 after:h-full after:-left-2 after:top-0 after:scale-y-0 after:origin-bottom md:after:bg-accent md:after:h-0.5 md:after:w-1/2 md:after:top-auto md:after:bottom-0 md:after:left-0 md:after:scale-y-100 md:after:scale-x-0 md:after:origin-right md:hover:after:scale-x-100 md:hover:after:origin-left ${
-                    pathname === '/services' &&
-                    'after:scale-y-100 md:after:scale-x-100'
-                  } transition  after:transition after:duration-300`}
-                >
-                  <Link
-                    href='/services'
-                    className='outline-2 focus-visible:outline-dashed uppercase text-sm font-medium'
-                  >
-                    services
-                  </Link>
-                </li>
-                <li
-                  className={`${
-                    isOpen && 'max-md:animate-in3'
-                  } relative after:absolute after:bg-main after:w-1 after:h-full after:-left-2 after:top-0 after:scale-y-0 after:origin-bottom md:after:bg-accent md:after:h-0.5 md:after:w-1/2 md:after:top-auto md:after:bottom-0 md:after:left-0 md:after:scale-y-100 md:after:scale-x-0 md:after:origin-right md:hover:after:scale-x-100 md:hover:after:origin-left ${
-                    pathname.includes('/geohub') &&
-                    'after:scale-y-100 md:after:scale-x-100'
-                  } transition  after:transition after:duration-300`}
-                >
-                  <Link
-                    href='/geohub'
-                    className='outline-2 focus-visible:outline-dashed uppercase text-sm font-medium'
-                  >
-                    geoscienceHub
-                  </Link>
-                </li>
-                <li
-                  className={`${
-                    isOpen && 'max-md:animate-in4'
-                  } relative after:absolute after:bg-main after:w-1 after:h-full after:-left-2 after:top-0 after:scale-y-0 after:origin-bottom md:after:bg-accent md:after:h-0.5 md:after:w-1/2 md:after:top-auto md:after:bottom-0 md:after:left-0 md:after:scale-y-100 md:after:scale-x-0 md:after:origin-right md:hover:after:scale-x-100 md:hover:after:origin-left ${
-                    pathname === '/gallery' &&
-                    'after:scale-y-100 md:after:scale-x-100'
-                  } transition  after:transition after:duration-300`}
-                >
-                  <Link
-                    href='/gallery'
-                    className='outline-2 focus-visible:outline-dashed uppercase text-sm font-medium'
-                  >
-                    gallery
-                  </Link>
-                </li>
-                <li
-                  className={`${
-                    isOpen && 'max-md:animate-in5'
-                  } relative after:absolute after:bg-main after:w-1 after:h-full after:-left-2 after:top-0 after:scale-y-0 after:origin-bottom md:after:bg-accent md:after:h-0.5 md:after:w-1/2 md:after:top-auto md:after:bottom-0 md:after:left-0 md:after:scale-y-100 md:after:scale-x-0 md:after:origin-right md:hover:after:scale-x-100 md:hover:after:origin-left ${
-                    pathname === '/about' &&
-                    'after:scale-y-100 md:after:scale-x-100'
-                  } transition  after:transition after:duration-300`}
-                >
-                  <Link
-                    href='/about'
-                    className='outline-2 focus-visible:outline-dashed uppercase text-sm font-medium'
-                  >
-                    about
-                  </Link>
-                </li>
+                    <Link
+                      href={link.route}
+                      className='outline-2 focus-visible:outline-dashed uppercase text-sm font-medium'
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </nav>
           </header>

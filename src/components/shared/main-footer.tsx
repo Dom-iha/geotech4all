@@ -155,14 +155,14 @@ const Footer: React.FC = () => {
                     <Youtube aria-hidden='true' />
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link
                     aria-label='Visit our LinkedIn page'
                     href='mailto:geotech4all@gmail.com'
                   >
                     <PaperPlaneIcon aria-hidden='true' />
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </div>
             <p className='text-[10px] mt-3 lg:hidden'>
