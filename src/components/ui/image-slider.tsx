@@ -1,7 +1,7 @@
 'use client';
-import { ChevronLeftIcon, ChevronRightIcon } from '@radix-ui/react-icons';
 import { useEffect, useState } from 'react';
 import Image, { StaticImageData } from 'next/image';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface SliderProps{
   content: StaticImageData[],
@@ -67,17 +67,17 @@ function ImageSlider(props: SliderProps) {
         type='button'
         title='previous'
         onClick={showPrevious}
-        className='flex items-center justify-center w-10 h-full rounded-l-md bg-accent/30 opacity-0 group-hover:opacity-100 transition-all duration-300 text-main absolute top-0 left-0'
+        className='flex items-center justify-center w-10 h-10 rounded-md bg-accent/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-main absolute top-[150px] left-0'
       >
-        <ChevronLeftIcon />
+        <ChevronLeft size={25} />
       </button>
       <button
         type='button'
         title='next'
         onClick={showNext}
-        className='flex items-center justify-center w-10 h-full rounded-r-md bg-accent/30 opacity-0 group-hover:opacity-100 transition-all duration-300 text-main absolute top-0 right-0'
+        className='flex items-center justify-center w-10 h-10 rounded-md bg-accent/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-main absolute top-[150px] right-0'
       >
-        <ChevronRightIcon />
+        <ChevronRight size={25} />
       </button>
     </div>
   );

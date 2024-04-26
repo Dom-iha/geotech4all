@@ -13,7 +13,7 @@ interface MenuProps {
   toggleMenu: () => void;
   isOpen: boolean;
 }
-interface ArticeType {
+export interface ArticeType {
   title: string;
   excerpt: string;
   image: string | File;

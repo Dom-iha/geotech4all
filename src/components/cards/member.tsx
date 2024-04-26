@@ -16,6 +16,7 @@ function Member(props: MemberProps) {
         height={300}
         src={props.image}
         alt={`${props.image}'s picture`}
+        className='w-full'
       />
       <div className='p-6 md:p-8 lg:bg-accent lg:text-main lg:p-16 flex flex-col gap-4'>
         <div>

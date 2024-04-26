@@ -3,6 +3,7 @@ import { Edit } from 'lucide-react';
 import Image from 'next/image';
 import data from '@/data/data.json';
 import Post from '@/components/cards/post';
+import Link from 'next/link';
 
 async function Profile() {
   const { userId } = auth();
@@ -21,13 +22,13 @@ async function Profile() {
     <section className='min-h-[calc(100vh-60px)] py-20'>
       <div className='max-w-screen-md mx-auto'>
         <div className='flex flex-col md:flex-row-reverse justify-between pb-4 border-b'>
-          <button
-            type='button'
+          <Link
+            href={'./profile/edit'}
             className='flex gap-2 h-fit px-8 py-3 rounded-md  text-main bg-accent/80 border-2 border-transparent hover:text-accent hover:bg-accent/10 hover:border-accent transition duration-300'
           >
             <Edit />
             <span>Edit Profile</span>
-          </button>
+          </Link>
           <div className='flex gap-6'>
             <Image
               src={user.imageUrl}

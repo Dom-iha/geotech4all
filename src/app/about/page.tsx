@@ -61,8 +61,8 @@ function About() {
           </div>
         </article>
       </section>
-      <section className='flex flex-col gap-8 lg:gap-20 px-6 md:px-8 lg:px-24 py-14'>
-        <div className='flex flex-col gap-4 lg:gap-10 justify-between'>
+      <section className='flex flex-col gap-8 lg:gap-20 px-6 md:px-8 lg:px-14 py-10 max-w-screen-lg mx-auto'>
+        <div className='flex flex-col lg:flex-row gap-10 justify-between'>
           <div className='relative w-fit mx-auto'>
             <Image
               src={mission}
@@ -73,10 +73,10 @@ function About() {
             />
             <div
               aria-hidden='true'
-              className='absolute top-3 -left-2.5 rounded-lg border-dashed border-2 border-red-400 w-full h-full'
+              className='absolute top-3 -left-2.5 rounded-lg border-dashed border-2 border-accent/80 w-full h-full'
             ></div>
           </div>
-          <div className='flex flex-col justify-center text-center'>
+          <div className='flex flex-col justify-center text-center lg:text-left'>
             <p className='font-bold text-2xl lg:text-4xl mb-5'>Our Mission</p>
             <p className='max-w-screen-md mx-auto font-medium lg:text-2xl'>
               We are driven by the belief that geoscience holds the key to
@@ -84,7 +84,14 @@ function About() {
             </p>
           </div>
         </div>
-        <div className='flex flex-col gap-4 lg:gap-8 justify-between'>
+        <div className='flex flex-col-reverse lg:flex-row gap-10 justify-between'>
+          <div className='flex flex-col justify-center text-center lg:text-left'>
+            <p className='font-bold text-2xl lg:text-4xl mb-5'>Our Vision</p>
+            <p className='max-w-screen-md mx-auto font-medium lg:text-2xl'>
+              To be the leading resource center for everything geoscience from
+              knowledge, to practical application and solutions.
+            </p>
+          </div>
           <div className='relative w-fit mx-auto'>
             <Image
               src={mission}
@@ -95,15 +102,8 @@ function About() {
             />
             <div
               aria-hidden='true'
-              className='absolute top-3 -left-2.5 rounded-lg border-dashed border-2 border-red-400 w-full h-full'
+              className='absolute top-3 -left-2.5 rounded-lg border-dashed border-2 border-accent/80 w-full h-full'
             ></div>
-          </div>
-          <div className='flex flex-col justify-center text-center'>
-            <p className='font-bold text-2xl lg:text-4xl mb-5'>Our Vision</p>
-            <p className='max-w-screen-md mx-auto font-medium lg:text-2xl'>
-              To be the leading resource center for everything geoscience from
-              knowledge, to practical application and solutions.
-            </p>
           </div>
         </div>
       </section>

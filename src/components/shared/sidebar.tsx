@@ -1,7 +1,6 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
-
 import SidebarLink from './sidebar-link';
 import { auth, currentUser, UserButton } from '@clerk/nextjs';
 import {
@@ -21,15 +20,8 @@ const Sidebar = () => {
     <aside className='z-20 border-r bg-white transition-all sticky top-[60px] h-full max-h-[calc(100svh-60px)]'>
       <nav className='h-full flex flex-col gap-6 py-6 px-4 justify-between transition-all duration-300'>
         {/* logo & toggle*/}
-        <div
-          className={`relative flex ${
-            expanded ? 'gap-0' : 'flex-col gap-4'
-          } justify-between items-center`}
-        >
-          <Link
-            href='/admin'
-            className='flex text-xl items-center font-bold'
-          >
+        <div className='relative flex justify-between items-center'>
+          <Link href='/admin' className='flex text-xl items-center font-bold'>
             <div className='w-10 h-10 rounded-lg bg-accent/80'></div>
             <span
               className={`overflow-hidden transition-all uppercase ${

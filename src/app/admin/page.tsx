@@ -4,34 +4,19 @@ import  Link  from 'next/link';
 async function Dashboard() {
   // const { userId } = auth();
   // const user = await currentUser();
+  // const placeholderUrl = 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
 
   return (
-    <div className='h-full grid bg-alt w-full'>
-      <section className='px-6 md:px-8 lg:px-24 py-14 gap-10'>
-        <ul className='grid grid-cols-[repeat(auto-fill,_minmax(15rem,_25rem))] gap-8 justify-center w-full max-w-screen-d h-full m-auto'>
-          <li className=' shadow-md rounded-lg bg-main min-h-20 grid place-content-center hover:border-accent hover:border transition duration-300'>
-            <Link href={''} className='p-4'>
-              new article
-            </Link>
-          </li>
-          <li className=' shadow-md rounded-lg bg-main min-h-20 grid place-content-center hover:border-accent hover:border transition duration-300'>
-            <Link href={''} className='p-4'>
-              new event
-            </Link>
-          </li>
-          <li className=' shadow-md rounded-lg bg-main min-h-20 grid place-content-center hover:border-accent hover:border transition duration-300'>
-            <Link href={''} className='p-4'>
-              new opportunity
-            </Link>
-          </li>
-          <li className=' shadow-md rounded-lg bg-main min-h-20 grid place-content-center hover:border-accent hover:border transition duration-300'>
-            <Link href={''} className='p-4'>
-              new headline
-            </Link>
-          </li>
-        </ul>
-      </section>
-    </div>
+    <section className={`h-full`}>
+      <div className='sticky top-[60px] min-h-[40vh] flex items-center justify-center p-5 bg-[100%_50%] bg-[url(https://images.unsplash.com/photo-1631451095765-2c91616fc9e6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)]'>
+        <h1 className='text-main text-2xl lg:text-4xl font-bold text-center'>
+          Welcome
+        </h1>
+      </div>
+      <div className='bg-alt relative p-6 grid place-content-center bg-mainBg min-h-[calc(70vh-60px)]'>
+        some stuff
+      </div>
+    </section>
   );
 }
 
