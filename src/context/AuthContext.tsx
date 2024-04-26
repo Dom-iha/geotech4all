@@ -1,3 +1,4 @@
+import { AuthContextValues } from '@/types';
 import { createContext } from 'react';
 
 export const INITIAL_STATE = {
