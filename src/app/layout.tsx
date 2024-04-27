@@ -6,8 +6,8 @@ import { Toaster } from 'sonner';
 import Footer from '@/components/shared/footer';
 import { Analytics } from '@vercel/analytics/react';
 import { siteConfig } from './config/site';
-import Navigation from '@/components/shared/navigation';
 import BackToTop from '@/components/shared/back-to-top';
+import Navbar from '@/components/shared/navigation';
 
 const montserrat = Montserrat({ subsets: ['latin'] });
 
@@ -52,7 +52,7 @@ export default function RootLayout({
         <Analytics />
         <body className={montserrat.className}>
           <Toaster />
-          <Navigation />
+          <Navbar />
           <main id='content' className='max-w-[90rem] mx-auto'>
             {children}
           </main>
