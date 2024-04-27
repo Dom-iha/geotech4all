@@ -1,6 +1,11 @@
 import { usePathname } from 'next/navigation';
 import { useEffect } from 'react';
 
+interface MenuProps {
+  isOpen: boolean;
+  toggleMenu: () => void;
+}
+
 function Hamburger({ isOpen, toggleMenu }: MenuProps) {
   const pathname = usePathname();
 

@@ -2,7 +2,7 @@
 import PasswordToggle from '@/components/ui/password-toggle';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { toast } from 'sonner';
 
 function SignUp() {

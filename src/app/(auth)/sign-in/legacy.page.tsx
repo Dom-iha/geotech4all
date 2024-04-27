@@ -1,6 +1,5 @@
 'use client';
 import PasswordToggle from '@/components/ui/password-toggle';
-import AuthContext from '@/context/AuthContext';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { useContext, useState, useEffect } from 'react';
@@ -8,7 +7,6 @@ import { toast } from 'sonner';
 
 function Login() {
   const router = useRouter();
-  const { authenticate } = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
 
   const [passwordIsValid, setPasswordIsValid] = useState(false);
@@ -41,7 +39,6 @@ function Login() {
       const data = await response.json();
       if (response.ok) {
         console.log(data);
-        authenticate(data);
         toast.success('Welcome back!', {
           style: { border: '1px solid hsl(147, 86%, 57%)' },
         });

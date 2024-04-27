@@ -85,7 +85,7 @@
   .article-container ul {
     list-style: disc;
   }
-  .down-arrow{
+  .down-arrow {
     animation: fade-down 1000ms linear infinite;
   }
 }

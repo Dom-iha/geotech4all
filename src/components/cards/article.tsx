@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { Timer } from 'lucide-react';
 import { ArrowRightIcon, DotsVerticalIcon } from '@radix-ui/react-icons';
 import logo from '../../../public/favicon.ico';
+import { ArticleProps } from '../../types';
 
 function Article(props: ArticleProps) {
   const slug = props.excerpt.toLowerCase().replace(/\s/g, '-');

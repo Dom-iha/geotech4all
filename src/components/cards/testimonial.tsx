@@ -13,7 +13,7 @@ function Testimonial({
   position: string;
 }) {
   return (
-    <li className='min-w-[300px] lg:min-w-[400px] text-center border border-dashed p-4 flex flex-col gap-4 lg:gap-6 rounded-md'>
+    <div className='min-w-[300px] lg:min-w-[400px] text-center border border-dashed p-4 flex flex-col gap-4 lg:gap-6 rounded-md'>
       <Quote />
       <p className='text-sm lg:text-base text-left'>{message}</p>
       <div className='flex gap-6 items-center'>
@@ -29,7 +29,7 @@ function Testimonial({
           </div>
         </div>
       </div>
-    </li>
+    </div>
   );
 }
 

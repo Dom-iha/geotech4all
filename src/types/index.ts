@@ -1,13 +1,24 @@
+import { ReactElement } from "react";
+
+export interface NavbarLink {
+  route: string;
+  label: string;
+}
+export interface SidebarLink {
+  route: string;
+  label: string;
+  icon: ReactElement | null;
+}
 interface MenuProps {
   toggleMenu: () => void;
   isOpen: boolean;
 }
-interface ArticeType {
+export interface ArticeType {
   title: string;
   excerpt: string;
   image: string | File;
 }
-interface ArticleProps {
+export interface ArticleProps {
   id:string;
   title: string;
   excerpt: string;
@@ -16,21 +27,21 @@ interface ArticleProps {
   createdAt: string;
   author: string;
 }
-interface User {
+export interface User {
   name: string;
   email: string;
   avatar?: string;
   role: string;
 }
 
-interface UserData {
+export interface UserData {
   firstname: string;
   lastname: string;
   email: string;
   password: string;
 }
 
-interface AuthContextValues {
+export interface AuthContextValues {
   token: string | null;
   authenticated: boolean;
   user: User | null;
