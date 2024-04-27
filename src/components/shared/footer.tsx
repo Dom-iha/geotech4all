@@ -5,8 +5,7 @@ import footer_logo from '../../../public/assets/icons/footer-logo.png';
 import { Facebook, Linkedin, Twitter } from '../Icons';
 import { usePathname } from 'next/navigation';
 import Newsletter from './newsletter-form';
-import { Instagram, Mail, PhoneCall, Youtube } from 'lucide-react';
-import { PaperPlaneIcon } from '@radix-ui/react-icons';
+import { Instagram, Mail, Youtube } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const pathname = usePathname();
@@ -54,11 +53,6 @@ const Footer: React.FC = () => {
                     Gallery
                   </Link>
                 </li>
-                <li>
-                  <Link href='/admin' className='hover:underline'>
-                    Staff
-                  </Link>
-                </li>
               </ul>
             </div>
             <div>
@@ -102,7 +96,7 @@ const Footer: React.FC = () => {
                 </li>
                 <li>
                   <Link href='tel:+2348165789103' className='hover:underline'>
-                    Call
+                    whats
                   </Link>
                 </li>
               </ul>

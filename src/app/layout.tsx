@@ -1,10 +1,9 @@
+import './globals.css';
 import type { Metadata } from 'next';
 import { ClerkProvider } from '@clerk/nextjs';
 import { Montserrat } from 'next/font/google';
-import './globals.css';
-import Providers from './providers';
 import { Toaster } from 'sonner';
-import Footer from '@/components/shared/main-footer';
+import Footer from '@/components/shared/footer';
 import { Analytics } from '@vercel/analytics/react';
 import { siteConfig } from './config/site';
 import Navigation from '@/components/shared/navigation';

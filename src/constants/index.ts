@@ -25,28 +25,23 @@ export const navbarLinks: NavbarLink[] = [
 
 export const sidebarLinks: SidebarLink[] = [
   {
-    route: '/',
-    label: 'Home',
+    route: '/admin',
+    label: 'dashboard',
     icon: null,
   },
   {
-    route: '/services',
-    label: 'services',
+    route: '/admin/create',
+    label: 'create',
     icon: null,
   },
   {
-    route: '/geosciencehub',
-    label: 'geosciencehub',
+    route: '/admin/authors',
+    label: 'authors',
     icon: null,
   },
   {
-    route: '/about',
-    label: 'about',
+    route: '/admin/help',
+    label: 'help',
     icon: null,
-  },
-  {
-    route: '/gallery',
-    label: 'gallery',
-    icon: null,
-  },
+  }
 ];
