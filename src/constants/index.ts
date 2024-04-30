@@ -14,6 +14,10 @@ export const navbarLinks: NavbarLink[] = [
     label: 'geosciencehub',
   },
   {
+    route: '/blog',
+    label: 'blog',
+  },
+  {
     route: '/about',
     label: 'about',
   },

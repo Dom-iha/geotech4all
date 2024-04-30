@@ -27,11 +27,11 @@ const config: Config = {
       },
       animation: {
         fade: 'fade .6s forwards',
-        in: 'in .6s forwards',
-        in2: 'in .8s forwards',
-        in3: 'in 1s forwards',
-        in4: 'in 1.2s forwards',
-        in5: 'in 1.4s forwards',
+        'in-1': 'in .6s forwards',
+        'in-2': 'in .8s forwards',
+        'in-3': 'in 1s forwards',
+        'in-4': 'in 1.2s forwards',
+        'in-5': 'in 1.4s forwards',
         out: 'out .6s forwards',
       },
       screens: {

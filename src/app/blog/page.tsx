@@ -3,7 +3,7 @@ import Article from '@/components/cards/article';
 import Filter from '@/components/ui/filter';
 import data from '@/data/data.json';
 import Image from 'next/image';
-import placeholder from '../../../../public/assets/images/placeholder.jpg';
+import placeholder from '../../../public/assets/images/placeholder.jpg';
 
 export const metadata: Metadata = {
   title: 'Blog',
@@ -18,7 +18,8 @@ function page() {
             our article library.
           </h1>
           <p className='font-medium text-lg lg:text-2xl text-accent'>
-            Read and learn about the latest and greatest innovations, news, and events in geosciences.
+            Read and learn about the latest and greatest innovations, news, and
+            events in geosciences.
           </p>
         </div>
         <div className='relative max-h-[500px]'>
@@ -51,7 +52,7 @@ function page() {
             />
           ))}
         </ul> */}
-        
+
         <div className='grid place-content-center w-full min-h-[400px] rounded-lg border-dashed border-2 border-white/40'>
           <div className='flex flex-col gap-4 items-center'>
             <p className='font-semibold text-altTxt'>
