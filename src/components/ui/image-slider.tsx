@@ -49,7 +49,7 @@ function ImageSlider(props: SliderProps) {
       {props.content.map((image, index) => (
           <div
             key={index}
-            className={`w-full h-full min-h-[300px] bg-red-400 rounded-lg aspect-video transition-all duration-300`}
+            className={`w-full h-full min-h-[300px] rounded-lg aspect-video transition-all duration-300`}
             style={{ translate: `${-100 * imageIndex}% ` }}
           >
             <Image

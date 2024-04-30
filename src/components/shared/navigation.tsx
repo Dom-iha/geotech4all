@@ -14,6 +14,8 @@ const Navbar: React.FC = () => {
     setIsOpen((prevState) => !prevState);
   };
 
+ const duration = ['in-1', 'in-2', 'in-3', 'in-4', 'in-5']
+
   return (
     <>
       <Link
@@ -40,11 +42,11 @@ const Navbar: React.FC = () => {
               isOpen ? 'left-0' : '-left-full'
             } md:flex-row md:justify-evenly md:gap-10 md:bg-transparent md:text-accent md:p-0 text-lg font-medium transition duration-300`}
           >
-            {navbarLinks.map((link) => (
+            {navbarLinks.map((link, index) => (
               <li
                 key={link.route}
                 className={`link ${
-                  isOpen && 'max-md:animate-in'
+                  isOpen && `max-md:animate-${duration[index]}`
                 } relative after:absolute after:bg-main after:w-1 after:h-full after:-left-2 after:top-0 after:scale-y-0 after:origin-bottom md:after:bg-accent md:after:h-0.5 md:after:w-1/2 md:after:top-auto md:after:bottom-0 md:after:left-0 md:after:scale-y-100 md:after:scale-x-0 md:after:origin-right md:hover:after:scale-x-100 md:hover:after:origin-left ${
                   pathname === link.route &&
                   'after:scale-y-100 md:after:scale-x-100'

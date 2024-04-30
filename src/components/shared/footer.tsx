@@ -94,11 +94,6 @@ const Footer: React.FC = () => {
                     Email
                   </Link>
                 </li>
-                <li>
-                  <Link href='tel:+2348165789103' className='hover:underline'>
-                    whats
-                  </Link>
-                </li>
               </ul>
             </div>
             <div>
@@ -163,25 +158,13 @@ const Footer: React.FC = () => {
               &#169; {new Date().getFullYear()} Geotech4all
             </p>
           </div>
-          <div className=' w-full p-2 mt-20 '>
-            <ul className='ml-auto flex gap-4 justify-center lg:justify-end text-sm'>
-              <li>
-                <Link
-                  className='hover:underline'
-                  href='mailto:taqib.ibrahim@gmail.com'
-                >
-                  Contribute
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className='hover:underline'
-                  href='mailto:taqib.ibrahim@gmail.com'
-                >
-                  Report Issue
-                </Link>
-              </li>
-            </ul>
+          <div className='w-full p-2 mt-10 lg:mt-20 '>
+            <Link
+              className='block w-fit ml-auto hover:underline text-[10px]'
+              href='mailto:taqib.ibrahim@gmail.com'
+            >
+              Report Issue
+            </Link>
             {/* <small className='flex gap-2 text-[10px]'>Built with <HeartIcon/> by <Link href={'https://www.linkedin.com/taqib-ibrahim'}> Taqib</Link></small> */}
           </div>
         </footer>

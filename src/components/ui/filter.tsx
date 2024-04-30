@@ -46,7 +46,7 @@ function Filter({}: //   setFilterByCategory,
     <div className='flex flex-col gap-6 md:gap-3 lg:flex-row md:justify-center'>
       <label
         htmlFor='search'
-        className='md:w-[470px] bg-alt h-fit flex items-center py-4 px-6 rounded-md shadow-md outline-accent outline-offset-1 outline-2 focus-within:outline-dashed transition duration-300'
+        className='md:w-[470px] bg-alt h-fit flex items-center py-4 px-6 rounded-md border outline-accent outline-offset-1 outline-1 focus-within:outline-dashed transition duration-300'
       >
         <Search aria-hidden='true' />
         <input
@@ -74,7 +74,7 @@ function Filter({}: //   setFilterByCategory,
       <div className='select relative w-fit'>
         <button
           type='button'
-          className='whitespace-nowrap bg-alt w-52 justify-between flex items-center h-fit py-4 px-6 shadow-md rounded-md outline-accent outline-offset-1 outline-2 focus-visible:outline-dashed transition duration-300 stroke-current'
+          className='whitespace-nowrap bg-alt w-52 justify-between flex items-center h-fit py-4 px-6 border rounded-md outline-accent outline-offset-1 outline-2 focus-visible:outline-dashed transition duration-300 stroke-current'
           onClick={() => setExpanded(!expanded)}
         >
           <span>{activeCategory ? activeCategory : 'Filter by category'}</span>
