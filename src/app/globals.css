@@ -4,8 +4,6 @@
 
 :root {
   --background: hsl(0 0% 100%);
-  /* --primary: ; */
-  /* --secondary: ; */
   --accent: hsl(0 0% 0%);
   --alt: hsl(220, 14%, 96%);
   --spacing: clamp();

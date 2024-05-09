@@ -1,0 +1,89 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String        @id @default(auto()) @map("_id") @db.ObjectId
+  name          String?
+  email         String        @unique
+  image         String?
+  events        Event[]
+  articles      Article[]
+  opportunities Opportunity[]
+  Testimonial   Testimonial[]
+
+  @@map("users")
+}
+
+model Category {
+  id       String    @id @default(auto()) @map("_id") @db.ObjectId
+  title    String
+  name     String    @unique
+  articles Article[]
+
+  @@map("categories")
+}
+
+model Article {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  createdAt    DateTime @default(now())
+  slug         String   @unique
+  title        String
+  image        String
+  excerpt      String
+  content      String
+  featured     Boolean  @default(false)
+  views        Int      @default(0)
+  authorId     String   @db.ObjectId
+  categoryName String
+  author       User     @relation(fields: [authorId], references: [id])
+  category     Category @relation(fields: [categoryName], references: [name])
+
+  @@map("articles")
+}
+
+model Event {
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  title    String
+  details  String
+  location String
+  date     String
+  authorId String @db.ObjectId
+  author   User   @relation(fields: [authorId], references: [id])
+
+  @@map("events")
+}
+
+model Opportunity {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  description String
+  position    String
+  company     String
+  authorId    String @db.ObjectId
+  author      User   @relation(fields: [authorId], references: [id])
+
+  @@map("opportunities")
+}
+
+model Testimonial {
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  name     String
+  position String
+  message  String
+  author   User   @relation(fields: [authorId], references: [id])
+  authorId String @db.ObjectId
+
+  @@map("testimonials")
+}

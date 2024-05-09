@@ -34,28 +34,60 @@ export interface User {
   role: string;
 }
 
-export interface UserData {
-  firstname: string;
-  lastname: string;
+export interface Author {
+  id: string;
+  name: string;
   email: string;
-  password: string;
+  emailVerified: boolean | null;
+  image: string;
+  role: string;
+  createdAt: string;
+  updatedAt: string;
+}
+export interface CategoryResponseType {
+  id: string;
+  name: string;
+  title: string;
+}
+export interface ArticleResponseType {
+  id: string;
+  createdAt: string;
+  slug: string;
+  title: string;
+  image: string;
+  excerpt: string;
+  content: string;
+  featured: Boolean;
+  views: string;
+  authorId: string;
+  categoryName: string;
+  author: Author;
 }
 
-export interface AuthContextValues {
-  token: string | null;
-  authenticated: boolean;
-  user: User | null;
-  authenticate: (userDetails: User) => void;
-  logout: () => void;
+export interface TestimonialResponseType {
+  id: string;
+  name: string;
+  message: string;
+  position: string;
+  authorId: string;
+  author: Author;
 }
 
-// Type definitions for reducer function
-type State = {
-  authenticated: boolean;
-  user: User | null;
-};
+export interface EventResponseType {
+  id: string;
+  title: string;
+  details: string;
+  date: string;
+  authorId: string;
+  author: Author;
+}
 
-type Action = {
-  type: string;
-  payload?: any;
-};
+export interface OpportunityResponseType {
+  id: string;
+  title: string;
+  description: string;
+  position: string;
+  company: string;
+  authorId: string;
+  author: Author;
+}

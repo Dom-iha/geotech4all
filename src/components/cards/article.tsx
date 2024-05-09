@@ -32,7 +32,7 @@ function Article(props: ArticleProps) {
           </p>
           <div className='flex justify-between'>
             <Link
-              href={`/geohub/blog/${slug}`}
+              href={`/blog/${slug}`}
               className='w-fit p-2 flex items-center font-semibold gap-2 hover:gap-4 focus-visible:gap-4 focus-visible:outline-accent outline-offset-1 outline-1 focus-visible:outline-dashed transition-all duration-300'
             >
               Read now
