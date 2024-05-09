@@ -118,17 +118,6 @@ function Privacy() {
           security. By using our Service, you acknowledge that you understand
           and agree to assume these risks.
         </p>
-        <strong>Staff:</strong>
-        <p className='font-medium md:text-lg lg:text-xl lg:max-w-screen-lg text-accent'>
-          We implement security measures designed to protect your information
-          from unauthorized access. Your account is protected by your account
-          password and we urge you to take steps to keep your personal
-          information safe by not disclosing your password and by logging out of
-          your account after each use. We further protect your information from
-          potential security breaches by implementing certain technological
-          security measures including encryption, firewalls and secure socket
-          layer technology.
-        </p>
       </section>
       <section className=' grid gap-6 lg:gap-8 p-6 md:px-8 lg:px-24'>
         <h2 className='text-lg md:text-xl lg:text-3xl font-bold text-accent'>

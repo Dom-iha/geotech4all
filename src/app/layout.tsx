@@ -1,6 +1,5 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { ClerkProvider } from '@clerk/nextjs';
 import { Montserrat } from 'next/font/google';
 import { Toaster } from 'sonner';
 import Footer from '@/components/shared/footer';
@@ -47,19 +46,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
-      <html lang='en'>
-        <Analytics />
-        <body className={montserrat.className}>
-          <Toaster />
-          <Navbar />
-          <main id='content' className='max-w-[90rem] mx-auto'>
-            {children}
-          </main>
-          <BackToTop />
-          <Footer />
-        </body>
-      </html>
-    </ClerkProvider>
+    <html lang='en'>
+      <Analytics />
+      <body className={montserrat.className}>
+        <Toaster />
+        <Navbar />
+        <main id='content' className='max-w-[90rem] mx-auto'>
+          {children}
+        </main>
+        <BackToTop />
+        <Footer />
+      </body>
+    </html>
   );
 }

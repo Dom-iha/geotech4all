@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import Article from '@/components/cards/article';
 import Filter from '@/components/ui/filter';
-import data from '@/data/data.json';
 import Image from 'next/image';
 import placeholder from '../../../public/assets/images/placeholder.jpg';
 
