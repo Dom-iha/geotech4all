@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-interface SliderProps{
-  content: StaticImageData[],
+interface SliderProps {
+  content: StaticImageData[];
 }
 
 function ImageSlider(props: SliderProps) {
@@ -21,8 +21,7 @@ function ImageSlider(props: SliderProps) {
     }, 10000);
 
     return () => clearInterval(interval);
-    
-  }, [imageIndex]);
+  }, [imageIndex, props.content.length]);
 
   const showNext = () => {
     if (imageIndex === props.content.length - 1) {
@@ -46,7 +45,7 @@ function ImageSlider(props: SliderProps) {
   return (
     <div className='w-full min-h-[300px] max-w-[400px] relative z-10 group'>
       <div className='flex w-full overflow-hidden'>
-      {props.content.map((image, index) => (
+        {props.content.map((image, index) => (
           <div
             key={index}
             className={`w-full h-full min-h-[300px] rounded-lg aspect-video transition-all duration-300`}
