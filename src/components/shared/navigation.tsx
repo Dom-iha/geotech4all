@@ -46,7 +46,7 @@ const Navbar: React.FC = () => {
               <li
                 key={link.route}
                 className={`link ${
-                  isOpen && `max-md:animate-${duration[index]}`
+                  isOpen && `max-md:animate-in-${duration[index]}`
                 } relative after:absolute after:bg-main after:w-1 after:h-full after:-left-2 after:top-0 after:scale-y-0 after:origin-bottom md:after:bg-accent md:after:h-0.5 md:after:w-1/2 md:after:top-auto md:after:bottom-0 md:after:left-0 md:after:scale-y-100 md:after:scale-x-0 md:after:origin-right md:hover:after:scale-x-100 md:hover:after:origin-left ${
                   pathname === link.route &&
                   'after:scale-y-100 md:after:scale-x-100'

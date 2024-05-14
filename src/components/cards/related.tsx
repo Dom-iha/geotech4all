@@ -1,35 +1,38 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import img from '../../../public/assets/images/geotextile.png'
+import prisma from '@/lib/db';
 
-interface relatedProps {
-   id:string;
-   title: string;
-   cover: string;
-}
+async function Related({
+  authorId,
+  authorName,
+}: {
+  authorId: string;
+  authorName: string | null;
+}) {
+  const relatedArticles = await prisma.article.findMany({
+    where: {
+      authorId: authorId,
+    },
+  });
 
-function Related(props: relatedProps) {
+  if (!relatedArticles) {
+    return null;
+  }
+
   return (
-    <li className='w-fit flex gap-10'>
-      <Link href={`./${props.id}`} className='flex flex-col gap-4'>
-        <Image
-          src={img}
-          alt='Grayscale shot of rock slide'
-        />
-        <div className='flex items-start flex-col gap-2'>
-          <p className='font-bold text-lg lg:text-xl'>{props.title}</p>
-          <button
-              type='button'
-              className='cursor-pointer relative group overflow-hidden border-2 px-10 py-2 border-accent rounded-md'
-            >
-              <span className='font-medium text-main max-md:text-sm relative z-10 group-hover:text-accent duration-500'>
-                Read
-              </span>
-              <span className='absolute top-0 left-0 w-full bg-accent duration-300 group-hover:translate-x-full h-full'></span>
-            </button>
-        </div>
-      </Link>
-    </li>
+    <section className='max-w-screen-md mx-auto pt-6 pb-14 px-4 lg:px-8 flex flex-col gap-8 lg:gap-10'>
+      <h3 className='text-2xl font-medium'>Other posts from {authorName}</h3>
+      <ul className='grid grid-cols-[repeat(auto-fill,_minmax(10rem,_1fr))] gap-8 justify-between'>
+        {relatedArticles.slice(0, 3).map((post) => (
+          <li key={post.id} className='w-fit flex gap-10 border border-dashed'>
+            <Link href={`./${post.slug}`} className='flex flex-col gap-3'>
+              <Image src={post.image} width={220} height={120} alt='' className='rounded-md' />
+              <p className='font-medium hover:underline'>{post.title}</p>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 }
 

@@ -5,12 +5,22 @@ import Headline from '@/components/cards/headline';
 import Article from '@/components/cards/article';
 import Event from '@/components/cards/event';
 import { ArrowRightIcon } from '@radix-ui/react-icons';
+import prisma from '@/lib/db';
 
 export const metadata: Metadata = {
   title: 'Geosciencehub',
 };
 
-function Geohub() {
+const getData = async () => {
+  const articles = await prisma.article.findMany({
+    include: { author: true, category: true },
+  });
+  return articles;
+};
+
+async function Geohub() {
+  const articles = await getData();
+
   return (
     <>
       <section className='px-6 md:px-8 lg:px-24 py-2'>
@@ -59,22 +69,34 @@ function Geohub() {
       {/* Articles section */}
       <section className='px-6 md:px-8 lg:px-24 py-14 flex flex-col gap-10'>
         <h2 className='font-bold text-xl lg:text-3xl lg:mb-5'>Articles</h2>
-        <ul className='grid grid-cols-[repeat(auto-fill,_minmax(20rem,_1fr))] gap-8 justify-center'>
-          {data.articles.slice(0, 3).map((article) => (
-            <Article
-              key={article.id}
-              id={article.id}
-              title={article.title}
-              excerpt={article.excerpt}
-              content={article.content}
-              createdAt={article.createdAt}
-              cover={article.cover}
-              author={article.author}
-            />
-          ))}
-        </ul>
+        {!articles ? (
+          <div className='grid place-content-center w-full min-h-[400px] rounded-lg border-dashed border-2 border-white/40'>
+            <div className='flex flex-col gap-4 items-center'>
+              <p className='font-semibold text-altTxt'>
+                We&apos;re sorry, our library is currently empty.
+              </p>
+            </div>
+          </div>
+        ) : (
+          <ul className='grid grid-cols-[repeat(auto-fill,_minmax(20rem,_1fr))] gap-8 justify-center'>
+            {articles.map((article) => (
+              <Article
+                id={article.id}
+                key={article.id}
+                slug={article.slug}
+                title={article.title}
+                image={article.image}
+                author={article.author}
+                excerpt={article.excerpt}
+                content={article.content}
+                createdAt={article.createdAt}
+                category={article.categoryName}
+              />
+            ))}
+          </ul>
+        )}
         <Link
-          href={`/geohub/blog`}
+          href='/blog'
           className='mx-auto w-fit p-2 flex items-center justify-center font-semibold rounded-md gap-2 bg-accent text-main min-w-[8rem] hover:gap-4 focus-visible:gap-4 focus-visible:outline-accent outline-offset-1 outline-1 focus-visible:outline-dashed transition-all duration-300'
         >
           View All

@@ -1,51 +1,59 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Timer } from 'lucide-react';
-import { ArrowRightIcon, DotsVerticalIcon } from '@radix-ui/react-icons';
-import logo from '../../../public/favicon.ico';
+import { ArrowRightIcon } from '@radix-ui/react-icons';
 import { ArticleProps } from '../../types';
 
-function Article(props: ArticleProps) {
-  const slug = props.excerpt.toLowerCase().replace(/\s/g, '-');
+async function Article(props: ArticleProps) {
+  const shorten = (sentence: string) => {
+    if(sentence.length > 70){
+      return sentence.slice(0, 60) + '...'
+    } else {
+      return sentence;
+    }
+  }
 
   return (
-    <li className='shadow-md w-fit rounded-lg bg-alt'>
-      <div className='flex flex-col gap-4 h-full'>
+    <li className='border border-dashed w-fit rounded-lg'>
+      <div className='flex flex-col gap-2 h-full'>
         <Image
-          src={props.cover}
+          src={props.image}
           alt={props.title}
           className='rounded-t-lg w-full object-cover min-h-[200px] max-h-[200px]'
           width={390}
           height={200}
         />
-        <div className='flex flex-col gap-4 max-w-[400px] p-4 lg:px-6'>
-          <div className='flex justify-between items-center text-sm font-medium'>
-            <p>{props.createdAt}</p>
-            <DotsVerticalIcon aria-hidden='true' />
-            <p className='flex gap-2 items-center'>
-              <Timer strokeWidth={1} /> 10mins
+        <div className='flex flex-col gap-4 justify-between max-w-[400px] p-4 h-full'>
+          <div className='flex flex-col gap-4'>
+            <div className='flex justify-between items-center text-sm font-medium'>
+              <p className='bg-purple-200 text-purple-600 rounded-xl px-2.5 py-1'>
+                {props.category}
+              </p>
+              <p>{new Date(props.createdAt).toDateString().split(' ').slice(1).join(' ')}</p>
+            </div>
+            <p className='font-bold lg:text-lg'>{props.title}</p>
+            <p className='text-sm lg:text-base'>
+              {shorten(props.excerpt)}
             </p>
           </div>
-          <p className='font-bold text-lg'>{props.title}</p>
-          <p className='text-sm lg:text-base'>
-            {props.content.slice(0, 77)}...
-          </p>
           <div className='flex justify-between'>
             <Link
-              href={`/blog/${slug}`}
-              className='w-fit p-2 flex items-center font-semibold gap-2 hover:gap-4 focus-visible:gap-4 focus-visible:outline-accent outline-offset-1 outline-1 focus-visible:outline-dashed transition-all duration-300'
+              href={`/blog/${props.slug}`}
+              className='w-fit p-2 flex items-center font-medium gap-2 hover:gap-3 focus-visible:gap-3 focus-visible:outline-accent outline-offset-1 outline-1 focus-visible:outline-dashed transition-all duration-300'
             >
-              Read now
+              Read
               <ArrowRightIcon aria-hidden='true' />
             </Link>
-            <Image
-              src={logo}
-              alt={`${props.author}'s profile picture`}
-              height={40}
-              width={40}
-              aria-label={props.author}
-              className='rounded-full shadow-sm'
-            />
+
+            <div className='flex gap-3 items-center font-medium text-sm'>
+              <Image
+                src={props.author.image || '/profile.svg'}
+                alt={`${props.author.name}'s profile picture`}
+                height={30}
+                width={30}
+                className='rounded-full shadow-sm'
+              />
+              <p className=''>{props.author.name}</p>
+            </div>
           </div>
         </div>
       </div>

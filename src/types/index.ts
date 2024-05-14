@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import { ReactElement } from 'react';
 
 export interface NavbarLink {
   route: string;
@@ -13,36 +13,30 @@ interface MenuProps {
   toggleMenu: () => void;
   isOpen: boolean;
 }
-export interface ArticeType {
-  title: string;
-  excerpt: string;
-  image: string | File;
-}
+
 export interface ArticleProps {
-  id:string;
+  id: string;
   title: string;
   excerpt: string;
+  slug: string;
   content: string;
-  cover: string;
-  createdAt: string;
-  author: string;
+  image: string;
+  category: string;
+  createdAt: Date;
+  author: User;
 }
 export interface User {
-  name: string;
+  id: string;
+  name: string | null;
   email: string;
-  avatar?: string;
-  role: string;
+  image?: string | null;
 }
 
 export interface Author {
   id: string;
   name: string;
   email: string;
-  emailVerified: boolean | null;
   image: string;
-  role: string;
-  createdAt: string;
-  updatedAt: string;
 }
 export interface CategoryResponseType {
   id: string;
