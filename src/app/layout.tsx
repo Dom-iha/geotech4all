@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL(siteConfig.url),
   description: siteConfig.description,
-  keywords: ['Next.js', 'Geology', 'Geophysics', 'University'],
+  keywords: ['Next.js', 'Geology', 'Geophysics', 'University', 'blog'],
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -33,6 +33,9 @@ export const metadata: Metadata = {
       },
     ],
   },
+  // twitter: {
+  //   images:[siteConfig.ogImage]
+  // },
   icons: {
     icon: '/favicon.ico',
     // shortcut: '/favicon-16x16.png',

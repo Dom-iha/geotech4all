@@ -46,6 +46,7 @@ export interface CategoryResponseType {
 export interface ArticleResponseType {
   id: string;
   createdAt: string;
+  updatedAt: string;
   slug: string;
   title: string;
   image: string;

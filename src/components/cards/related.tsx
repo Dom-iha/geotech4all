@@ -21,7 +21,7 @@ async function Related({
 
   return (
     <section className='max-w-screen-md mx-auto pt-6 pb-14 px-4 lg:px-8 flex flex-col gap-8 lg:gap-10'>
-      <h3 className='text-2xl font-medium'>Other posts from {authorName}</h3>
+      <h3 className='lg:text-2xl '>More from <span className='italic font-medium'>{authorName}</span></h3>
       <ul className='grid grid-cols-[repeat(auto-fill,_minmax(10rem,_1fr))] gap-8 justify-between'>
         {relatedArticles.slice(0, 3).map((post) => (
           <li key={post.id} className='w-fit flex gap-10 border border-dashed'>

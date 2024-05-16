@@ -16,12 +16,16 @@ const getData = async () => {
   return articles;
 };
 
+export const dynamic = 'force-dynamic' // opt out of cache for this route 
+// should probably revalidate after some time instead -TODO
+
 async function page() {
   const articles = await getData();
+  
 
   return (
     <>
-      <section className='px-6 md:px-8 lg:px-24 pt-10 pb-4 lg:py-14 flex max-lg:items-center flex-col-reverse lg:flex-row gap-8 justify-between'>
+      <section className='sticky top-0 px-6 md:px-8 lg:px-24 pt-10 pb-4 lg:py-14 flex max-lg:items-center flex-col-reverse lg:flex-row gap-8 justify-between'>
         <div className='z-10 grid place-content-center gap-4 lg:gap-6 max-w-[600px]'>
           <h1 className='text-2xl md:text-3xl lg:text-4xl font-bold text-accent capitalize'>
             our article library.
@@ -45,7 +49,7 @@ async function page() {
           ></div>
         </div>
       </section>
-      <section className='min-h-screen px-6 md:px-8 lg:px-24 py-10 lg:py-14 flex flex-col gap-10'>
+      <section className='relative bg-main min-h-screen px-6 md:px-8 lg:px-24 py-10 lg:py-14 flex flex-col gap-10'>
         <Filter />
         {!articles ? (
           <div className='grid place-content-center w-full min-h-[400px] rounded-lg border-dashed border-2 border-white/40'>
