@@ -36,14 +36,6 @@ async function Article(props: ArticleProps) {
             </p>
           </div>
           <div className='flex justify-between'>
-            <Link
-              href={`/blog/${props.slug}`}
-              className='w-fit p-2 flex items-center font-medium gap-2 hover:gap-3 focus-visible:gap-3 focus-visible:outline-accent outline-offset-1 outline-1 focus-visible:outline-dashed transition-all duration-300'
-            >
-              Read
-              <ArrowRightIcon aria-hidden='true' />
-            </Link>
-
             <div className='flex gap-3 items-center font-medium text-sm'>
               <Image
                 src={props.author.image || '/profile.svg'}
@@ -54,6 +46,13 @@ async function Article(props: ArticleProps) {
               />
               <p className=''>{props.author.name}</p>
             </div>
+            <Link
+              href={`/blog/${props.slug}`}
+              className='w-fit p-2 flex items-center font-medium gap-2 rounded-md hover:bg-gray-200 focus-visible:outline-accent outline-offset-1 outline-1 focus-visible:outline-dashed transition-all duration-300'
+            >
+              Read
+              <ArrowRightIcon aria-hidden='true' />
+            </Link>
           </div>
         </div>
       </div>

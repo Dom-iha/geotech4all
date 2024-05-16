@@ -1,16 +1,72 @@
 import Image from 'next/image';
-import data from '@/data/data.json';
 import Related from '@/components/cards/related';
 import prisma from '@/lib/db';
+import { Metadata } from 'next';
+import { cache } from 'react';
+import { siteConfig } from '@/app/config/site';
+import { notFound } from 'next/navigation';
 
-async function page({ params }: { params: { slug: string } }) {
-  const { slug } = params;
-  const article = await prisma.article.findUnique({
-    include: { author: true, category: true },
+const getArticle = cache(async (slug: string) => {
+  const article = await prisma.article.update({
     where: {
       slug: slug,
     },
+    include: { author: true },
+    data: {
+      views: {
+        increment: 1,
+      },
+    },
   });
+  return article;
+});
+// above function isn't necessary if you're using fetch() as Next.js caches fetch reqs to the same url by default but since im using prisma it needs to be done manually
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const { slug } = params;
+  const article = await getArticle(slug);
+
+  if (!article) return {};
+
+  return {
+    metadataBase: new URL('https://www.geotech4all.com'),
+    title: article?.title,
+    // keywords: '',
+    openGraph: {
+      type: 'article',
+      url: `https://www.geotech4all.com/blog/${slug}`,
+      title: article.title,
+      description: article.excerpt,
+      siteName: 'Geotech4All',
+      publishedTime: new Date(article.createdAt).toISOString(),
+      authors: [article.author.name || 'Geotech4All'],
+      images: [
+        {
+          url: article.image,
+          width: '1200',
+          height: '630',
+          // alt: ''
+        },
+      ],
+    },
+  };
+}
+
+// generate all possible articles at compilation (SSG)
+export const generateStaticParams = async () => {
+  const articles = await prisma.article.findMany({
+    include: { author: true, category: true },
+  });
+  return articles.map((article) => article.slug);
+};
+
+async function page({ params }: { params: { slug: string } }) {
+  const { slug } = params;
+  const article = await getArticle(slug);
 
   if (!article) {
     return (
@@ -19,24 +75,27 @@ async function page({ params }: { params: { slug: string } }) {
           Ooops! We couldn&apos;t find that post.
         </h1>
       </div>
+      // notFound()
     );
   }
 
+  // need to handle error cases when user loses connection and display fallback ui
+
   return (
     <>
-      <div className='py-16 px-4 flex flex-col gap-4 max-w-screen-md mx-auto'>
+      <article className='py-16 px-4 flex flex-col gap-4 max-w-screen-md mx-auto'>
         <Image
           src={article.image}
           alt={article.title}
-          width={600}
-          height={250}
-          className='w-full max-h-[400px] rounded-md'
+          width={1200}
+          height={630}
+          className='w-full max-h-[400px] rounded-lg'
         />
         <h1 className='text-xl lg:text-3xl font-semibold'>{article.title}</h1>
         <div className='rounded-full w-fit flex justify-center bg-purple-200 text-purple-600 px-4 py-1'>
-          <p>{article.category.name || 'News'}</p>
+          <p>{article.categoryName || 'News'}</p>
         </div>
-        <div className='flex items-center gap-3'>
+        <section className='flex items-center gap-3'>
           <Image
             src={article.author.image || '/profile.svg'}
             alt={''}
@@ -55,14 +114,14 @@ async function page({ params }: { params: { slug: string } }) {
                 .join(' ')}
             </p>
           </div>
-        </div>
-        <article
+        </section>
+        <section
           className='prose lg:prose-xl'
           dangerouslySetInnerHTML={{
             __html: article.content ? article.content : '',
           }}
         />
-      </div>
+      </article>
 
       <Related authorName={article.author.name} authorId={article.authorId} />
     </>
