@@ -18,9 +18,9 @@ async function Article(props: ArticleProps) {
         <Image
           src={props.image}
           alt={props.title}
-          className='rounded-t-lg w-full object-cover min-h-[200px] max-h-[200px]'
-          width={390}
-          height={200}
+          className='rounded-t-lg h-auto w-auto object-cover aspect-video'
+          width={300}
+          height={250}
         />
         <div className='flex flex-col gap-4 justify-between max-w-[400px] p-4 h-full'>
           <div className='flex flex-col gap-4'>
@@ -31,9 +31,9 @@ async function Article(props: ArticleProps) {
               <p>{new Date(props.createdAt).toDateString().split(' ').slice(1).join(' ')}</p>
             </div>
             <p className='font-bold lg:text-lg'>{props.title}</p>
-            <p className='text-sm lg:text-base'>
+            {/* <p className='text-sm lg:text-base'>
               {shorten(props.excerpt)}
-            </p>
+            </p> */}
           </div>
           <div className='flex justify-between'>
             <div className='flex gap-3 items-center font-medium text-sm'>

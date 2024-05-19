@@ -83,7 +83,7 @@ async function page({ params }: { params: { slug: string } }) {
 
   return (
     <>
-      <article className='py-16 px-4 flex flex-col gap-4 max-w-screen-md mx-auto'>
+      <article className='py-16 px-4 flex flex-col gap-5 max-w-screen-md mx-auto'>
         <Image
           src={article.image}
           alt={article.title}
@@ -91,7 +91,7 @@ async function page({ params }: { params: { slug: string } }) {
           height={630}
           className='w-full max-h-[400px] rounded-lg'
         />
-        <h1 className='text-xl lg:text-3xl font-semibold'>{article.title}</h1>
+        <h1 className='font-bold text-xl md:text-2xl lg:text-4xl'>{article.title}</h1>
         <div className='rounded-full w-fit flex justify-center bg-purple-200 text-purple-600 px-4 py-1'>
           <p>{article.categoryName || 'News'}</p>
         </div>
@@ -116,14 +116,14 @@ async function page({ params }: { params: { slug: string } }) {
           </div>
         </section>
         <section
-          className='prose lg:prose-xl'
+          className='prose lg:prose-lg xl:prose-xl'
           dangerouslySetInnerHTML={{
             __html: article.content ? article.content : '',
           }}
         />
       </article>
 
-      <Related authorName={article.author.name} authorId={article.authorId} />
+      <Related authorName={article.author.name} authorId={article.authorId} currentArticle={article.id}/>
     </>
   );
 }

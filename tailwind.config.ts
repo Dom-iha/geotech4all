@@ -14,6 +14,10 @@ const config: Config = {
         alt: 'hsl(220, 14%, 96%)',
         error: 'hsl(354, 84%, 57%)',
         success: 'hsl(147, 86%, 57%)',
+        focus: "hsl(220 6% 69%)",
+        input: "hsl(216 12% 84%)",
+        hover: "hsl(220, 14%, 96%)",
+        selected: "hsl(220 13% 91%)"
       },
       keyframes: {
         in: {
