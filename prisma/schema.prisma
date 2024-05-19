@@ -38,6 +38,7 @@ model Category {
 model Article {
   id           String   @id @default(auto()) @map("_id") @db.ObjectId
   createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
   slug         String   @unique
   title        String
   image        String
@@ -57,8 +58,10 @@ model Event {
   id       String @id @default(auto()) @map("_id") @db.ObjectId
   title    String
   details  String
-  location String
   date     String
+  image    String
+  time     String
+  location String
   authorId String @db.ObjectId
   author   User   @relation(fields: [authorId], references: [id])
 
@@ -69,6 +72,8 @@ model Opportunity {
   id          String @id @default(auto()) @map("_id") @db.ObjectId
   title       String
   description String
+  image       String
+  closed      Boolean @default(false)
   position    String
   company     String
   authorId    String @db.ObjectId

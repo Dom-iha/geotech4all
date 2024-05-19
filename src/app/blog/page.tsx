@@ -60,7 +60,7 @@ async function page() {
             </div>
           </div>
         ) : (
-          <ul className='grid grid-cols-[repeat(auto-fill,_minmax(20rem,_1fr))] gap-8 justify-center'>
+          <ul className='grid grid-cols-[repeat(auto-fill,_minmax(19rem,_1fr))] gap-8 justify-center'>
             {articles.map((article) => (
               <Article
                 key={article.id}
