@@ -1,42 +1,22 @@
-'use client';
 import Image from 'next/image';
-import quarry from '../../public/assets/images/quarry.png';
 import training from '../../public/assets/images/training.png';
-import Link from 'next/link';
-import Testimonial from '@/components/cards/testimonial';
-import data from '@/data/data.json';
-import { motion } from 'framer-motion';
 import TestimonialSlider from '@/components/ui/testimonial-slider';
+import FeaturedSection from '@/components/ui/featured-section';
+import HeroSection from '@/components/ui/hero-section';
+import prisma from '@/lib/db';
+import Link from 'next/link';
+import { ArrowUpRightFromSquareIcon } from 'lucide-react';
 
-export default function Home() {
+export default async function Home() {
+  const articles = await prisma.article.findMany({
+    where: {
+      featured: true,
+    },
+  });
+
   return (
     <>
-      <section className='hero relative flex items-center min-h-screen text-main'>
-        <div className='fade absolute w-full h-full bg-gradient-to-'></div>
-        <motion.div
-          initial={{ opacity: 0, translateX: -90 }}
-          whileInView={{ opacity: 1, translateX: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1 }}
-          className='z-10 grid gap-4 lg:gap-8 p-6 md:p-8 lg:pl-24 lg:pr-0 max-w-[686px]'
-        >
-          <h1 className='text-3xl lg:text-6xl font-bold text-accent'>
-            Geoscience For All
-          </h1>
-          <p className='font-medium text-lg lg:text-3xl lg:max-w-[654px] text-accent'>
-            Empowering individuals and communities through
-            accessible, impactful, and innovative geoscience solutions.
-          </p>
-          <Link
-            href='/about'
-            className='relative w-fit text-main hover:text-accent transition-colors duration-500 border-2 px-8 py-3 border-accent rounded-md after:absolute after:w-full after:h-full after:left-0 after:top-0 after:bg-accent after:scale-x-100 after:origin-left hover:after:scale-x-0 hover:after:origin-right after:transition after:duration-500'
-          >
-            <span className='relative z-10 uppercase tracking-widest'>
-              learn how
-            </span>
-          </Link>
-        </motion.div>
-      </section>
+      <HeroSection />
       {/* Training advert */}
       {/* <section className='px-6 md:px-8 lg:px-24 py-14'>
         <h2 className='text-2xl lg:text-4xl font-bold mb-[32px]'>
@@ -68,58 +48,8 @@ export default function Home() {
           </div>
         </div>
       </section> */}
-      {/* News flash */}
-      {/* <section className='px-6 md:px-8 lg:px-24 py-14'>
-        <h2 className='font-bold text-2xl lg:text-4xl mb-[42px]'>News Flash</h2>
-        <div className='flex flex-col gap-8 md:flex-row lg:gap-32'>
-          <article className='flex flex-col gap-8 max-lg:order-2'>
-            <div>
-              <div className='pl-4 relative'>
-                <h3 className='text-lg lg:text-3xl font-bold mb-2.5 before:absolute before:bg-accent before:h-full before:w-2 before:top-0 before:left-0'>
-                  2024 Nigeria Infrastructural Budget: A Comparative Analysis
-                </h3>
-              </div>
-              <div className='pl-4'>
-                <p className='lg:text-xl'>
-                  Nigeria&apos;s 2024 budget, recently approved by the federal
-                  government, allocates a significant portion to infrastructure
-                  development...
-                </p>
-              </div>
-            </div>
-            <div>
-              <div className='pl-4'>
-                <h3 className='text-lg lg:text-3xl font-bold mb-2.5'>
-                  Pilgangoora Lithium Mine Ousts Greenbushes as...
-                </h3>
-              </div>
-              <div className='pl-4'>
-                <p className='lg:text-xl'>
-                  Lorem ipsum dolor sit amet consectetur. Eu nisl turpis dui
-                  vehicula duis sollicitudin.
-                </p>
-              </div>
-            </div>
-            <Link
-              href='/geohub'
-              className='cursor-pointer relative group overflow-hidden border-2 px-10 py-2 border-accent w-fit rounded-md'
-            >
-              <span className='uppercase tracking-widest font-medium text-main lg:text-lg relative z-10 group-hover:text-accent duration-500'>
-                Read More
-              </span>
-              <span className='absolute top-0 left-0 w-full h-full bg-accent origin-left group-hover:origin-right group-hover:scale-x-0 transition duration-300'></span>
-            </Link>
-          </article>
-          <div>
-            <Image
-              src={quarry}
-              alt='Male worker with bulldozer in sand quarry'
-              className='rounded-md lg:min-w-[400px]'
-            />
-          </div>
-        </div>
-      </section> */}
 
+      <FeaturedSection articles={articles} />
       {/* Stats section */}
       <section className='bg-accent min-h-[300px] px-6 md:px-8 lg:px-24 py-10 flex'>
         <article className='flex flex-wrap justify-between items-center min-w-full'>
@@ -143,27 +73,26 @@ export default function Home() {
         <h2 className='text-2xl lg:text-4xl font-bold my-10 lg:my-20 text-center'>
           What People Say
         </h2>
-        <div>
-          <TestimonialSlider />
-        </div>
+        <TestimonialSlider />
       </section>
 
       {/* Community section */}
       <section className='px-6 md:px-8 lg:px-24 py-14'>
-        <div className='community relative rounded-md flex flex-col gap-4 lg:gap-7 text-center justify-center items-center h-[393px] after:absolute after:top-0 after:-z-10 after:w-full after:h-full after:rounded-md after:bg-accent/90 '>
+        <div className='relative rounded-md flex flex-col gap-4 lg:gap-7 text-center justify-center items-center min-h-96 bg-accent'>
           <h3 className='text-main text-2xl lg:text-4xl font-bold'>
-            Join Our Community
+            Community
           </h3>
-          <p className='max-w-[934px] text-main text-lg lg:text-2xl'>
+          <p className='max-w-prose text-main text-lg lg:text-xl'>
             Join our community of like-minded individuals and professionals to
             share ideas, collaborate on projects, and learn from each other.
           </p>
-          <button
-            type='button'
-            className='w-fit rounded-md px-8 py-2.5 bg-main text-acceent border-2 hover:border-main hover:bg-transparent hover:text-main transition duration-300'
+          <Link
+            href='Link'
+            className='w-fit flex gap-2 items-center rounded-md px-8 py-2.5 bg-main text-acceent border-2 transition duration-300'
           >
             Telegram
-          </button>
+            <ArrowUpRightFromSquareIcon />
+          </Link>
         </div>
       </section>
     </>

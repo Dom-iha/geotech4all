@@ -27,25 +27,35 @@ export const navbarLinks: NavbarLink[] = [
   },
 ];
 
-export const sidebarLinks: SidebarLink[] = [
+export const Services = [
   {
-    route: '/admin',
-    label: 'dashboard',
-    icon: null,
+    name: 'Geological Services',
+    description: 'Our geological services encompass a wide range of expertise including geological mapping, mineral exploration, and site characterization.',
+    route:'geological-services'
   },
   {
-    route: '/admin/create',
-    label: 'create',
-    icon: null,
+    name: 'Project Writing',
+    description: 'Our project writing services offer professional assistance in preparing high-quality project proposals, reports and research papers.',
+    route:'project-writing'
   },
   {
-    route: '/admin/authors',
-    label: 'authors',
-    icon: null,
+    name: 'Field Mapping',
+    description: 'Our field mapping services combine fieldwork expertise with advanced mapping technologies to facilitate accurate geological surveys.',
+    route:'field-mapping'
   },
   {
-    route: '/admin/help',
-    label: 'help',
-    icon: null,
-  }
+    name: 'Software Training',
+    description: 'Our software training programs provide hands-on instruction in popular geological software incliding ArcGis, Petrel and Surfer.',
+    route:'software-training'
+  },
+  {
+    name: 'Equipment sales',
+    description: 'We offer a comprehensive selection of high quality geological equipments to support fieldwork, research, and exploration activities.',
+    route:'equipment-sales'
+  },
+  {
+    name: 'Geopysical survey',
+    description: 'Our geophysical survey services utilize state-of-the-art equipment to conduct non-invasive subsurface investigations.',
+    route:'geophysical-survey'
+  },
 ];

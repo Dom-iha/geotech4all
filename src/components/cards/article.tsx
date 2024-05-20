@@ -1,19 +1,27 @@
+'use client';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRightIcon } from '@radix-ui/react-icons';
 import { ArticleProps } from '../../types';
 
-async function Article(props: ArticleProps) {
+function Article(props: ArticleProps) {
   const shorten = (sentence: string) => {
-    if(sentence.length > 70){
-      return sentence.slice(0, 60) + '...'
+    if (sentence.length > 70) {
+      return sentence.slice(0, 60) + '...';
     } else {
       return sentence;
     }
-  }
+  };
 
   return (
-    <li className='border border-dashed w-fit rounded-lg'>
+    <motion.li
+      layout
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.6 }}
+      className='border border-dashed w-fit rounded-lg'
+    >
       <div className='flex flex-col gap-2 h-full'>
         <Image
           src={props.image}
@@ -28,7 +36,13 @@ async function Article(props: ArticleProps) {
               <p className='bg-purple-200 text-purple-600 rounded-xl px-2.5 py-1'>
                 {props.category}
               </p>
-              <p>{new Date(props.createdAt).toDateString().split(' ').slice(1).join(' ')}</p>
+              <p>
+                {new Date(props.createdAt)
+                  .toDateString()
+                  .split(' ')
+                  .slice(1)
+                  .join(' ')}
+              </p>
             </div>
             <p className='font-bold lg:text-lg'>{props.title}</p>
             {/* <p className='text-sm lg:text-base'>
@@ -56,7 +70,7 @@ async function Article(props: ArticleProps) {
           </div>
         </div>
       </div>
-    </li>
+    </motion.li>
   );
 }
 

@@ -5,6 +5,7 @@ import { Metadata } from 'next';
 import { DoubleArrowDownIcon, ArrowRightIcon } from '@radix-ui/react-icons';
 import data from '@/data/data.json';
 import Product from '@/components/cards/product';
+import ServiceList from './service-list';
 
 export const metadata: Metadata = {
   title: 'Services',
@@ -29,109 +30,9 @@ const Services: React.FC = () => {
           </Link>
         </div>
       </section>
-      <section id='services' className='px-6 md:px-8 lg:px-24 py-14'>
-        <h2 className='text-2xl lg:text-4xl font-bold mb-16'>Our Services</h2>
-        <ul className='grid gap-8 lg:gap-32 mt-5 grid-cols-[repeat(auto-fit,_minmax(16rem,_1fr))]'>
-          <li className='grid gap-4 lg:gap-8'>
-            <h3 className='text-xl lg:text-2xl font-semibold'>
-              Geological Services
-            </h3>
-            <p className='lg:text-xl'>
-              Our geological services encompass a wide range of expertise
-              including geological mapping, mineral exploration, and site
-              characterization.
-            </p>
-            <Link
-              href={`/services/geological-services`}
-              className='w-fit p-2 flex items-center justify-center font-semibold rounded-md gap-2 bg-accent text-main min-w-[8rem] hover:gap-4 focus-visible:gap-4 focus-visible:outline-accent outline-offset-1 outline-1 focus-visible:outline-dashed transition-all duration-300'
-            >
-              Details
-              <ArrowRightIcon aria-hidden='true' />
-            </Link>
-          </li>
-          <li className='grid gap-4 lg:gap-8'>
-            <h3 className='text-xl lg:text-2xl font-semibold'>
-              Project Writing
-            </h3>
-            <p className='lg:text-xl'>
-              Our project writing services offer professional assistance in
-              preparing high-quality project proposals, reports and research
-              papers.
-            </p>
-            <Link
-              href={`/services/project-writing`}
-              className='w-fit p-2 flex items-center justify-center font-semibold rounded-md gap-2 bg-accent text-main min-w-[8rem] hover:gap-4 focus-visible:gap-4 focus-visible:outline-accent outline-offset-1 outline-1 focus-visible:outline-dashed transition-all duration-300'
-            >
-              Details
-              <ArrowRightIcon aria-hidden='true' />
-            </Link>
-          </li>
-          <li className='grid gap-4 lg:gap-8'>
-            <h3 className='text-xl lg:text-2xl font-semibold'>Field Mapping</h3>
-            <p className='lg:text-xl'>
-              Our field mapping services combine fieldwork expertise with
-              advanced mapping technologies to facilitate accurate geological
-              surveys.
-            </p>
-            <Link
-              href={`/services/field-mapping`}
-              className='w-fit p-2 flex items-center justify-center font-semibold rounded-md gap-2 bg-accent text-main min-w-[8rem] hover:gap-4 focus-visible:gap-4 focus-visible:outline-accent outline-offset-1 outline-1 focus-visible:outline-dashed transition-all duration-300'
-            >
-              Details
-              <ArrowRightIcon aria-hidden='true' />
-            </Link>
-          </li>
-          <li className='grid gap-4 lg:gap-8'>
-            <h3 className='text-xl lg:text-2xl font-semibold'>
-              Software Training
-            </h3>
-            <p className='lg:text-xl'>
-              Our software training programs provide hands-on instruction in
-              popular geological software incliding ArcGis, Petrel and Surfer.
-            </p>
-            <Link
-              href={`/services/software-training`}
-              className='w-fit p-2 flex items-center justify-center font-semibold rounded-md gap-2 bg-accent text-main min-w-[8rem] hover:gap-4 focus-visible:gap-4 focus-visible:outline-accent outline-offset-1 outline-1 focus-visible:outline-dashed transition-all duration-300'
-            >
-              Details
-              <ArrowRightIcon aria-hidden='true' />
-            </Link>
-          </li>
-          <li className='grid gap-4 lg:gap-8'>
-            <h3 className='text-xl lg:text-2xl font-semibold'>
-              Equipment sales
-            </h3>
-            <p className='lg:text-xl'>
-              We offer a comprehensive selection of high quality geological
-              equipments to support fieldwork, research, and exploration
-              activities.
-            </p>
-            <Link
-              href={`/services/equipment-sales`}
-              className='w-fit p-2 flex items-center justify-center font-semibold rounded-md gap-2 bg-accent text-main min-w-[8rem] hover:gap-4 focus-visible:gap-4 focus-visible:outline-accent outline-offset-1 outline-1 focus-visible:outline-dashed transition-all duration-300'
-            >
-              Details
-              <ArrowRightIcon aria-hidden='true' />
-            </Link>
-          </li>
-          <li className='grid gap-4 lg:gap-8'>
-            <h3 className='text-xl lg:text-2xl font-semibold'>
-              Geopysical survey
-            </h3>
-            <p className='lg:text-xl'>
-              Our geophysical survey services utilize state-of-the-art equipment
-              to conduct non-invasive subsurface investigations
-            </p>
-            <Link
-              href={`/services/geophysical-survey`}
-              className='w-fit p-2 flex items-center justify-center font-semibold rounded-md gap-2 bg-accent text-main min-w-[8rem] hover:gap-4 focus-visible:gap-4 focus-visible:outline-accent outline-offset-1 outline-1 focus-visible:outline-dashed transition-all duration-300'
-            >
-              Details
-              <ArrowRightIcon aria-hidden='true' />
-            </Link>
-          </li>
-        </ul>
-      </section>
+      
+      <ServiceList />
+
       <section className='px-6 md:px-8 lg:px-24 py-14'>
         <h2 className='text-2xl lg:text-4xl font-bold mb-16'>Products</h2>
         <ul className='grid gap-8 lg:gap-10 mt-5 grid-cols-[repeat(auto-fit,_minmax(16rem,_1fr))]'>

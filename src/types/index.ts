@@ -34,9 +34,9 @@ export interface User {
 
 export interface Author {
   id: string;
-  name: string;
+  name: string | null;
   email: string;
-  image: string;
+  image: string | null;
 }
 export interface CategoryResponseType {
   id: string;
@@ -45,15 +45,15 @@ export interface CategoryResponseType {
 }
 export interface ArticleResponseType {
   id: string;
-  createdAt: string;
-  updatedAt: string;
+  createdAt: Date;
+  updatedAt: Date;
   slug: string;
   title: string;
   image: string;
   excerpt: string;
   content: string;
   featured: Boolean;
-  views: string;
+  views: number;
   authorId: string;
   categoryName: string;
   author: Author;

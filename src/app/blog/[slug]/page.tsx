@@ -5,6 +5,7 @@ import { Metadata } from 'next';
 import { cache } from 'react';
 import { siteConfig } from '@/app/config/site';
 import { notFound } from 'next/navigation';
+import Progressbar from '../progressbar';
 
 const getArticle = cache(async (slug: string) => {
   const article = await prisma.article.update({
@@ -83,6 +84,7 @@ async function page({ params }: { params: { slug: string } }) {
 
   return (
     <>
+      <Progressbar /> {/*currently tracking entire page scroll*/}
       <article className='py-10 lg:py-16 px-4 flex flex-col gap-5 max-w-screen-md mx-auto'>
         <Image
           src={article.image}
@@ -123,7 +125,11 @@ async function page({ params }: { params: { slug: string } }) {
         />
       </article>
 
-      <Related authorName={article.author.name} authorId={article.authorId} currentArticle={article.id}/>
+      <Related
+        authorName={article.author.name}
+        authorId={article.authorId}
+        currentArticle={article.id}
+      />
     </>
   );
 }
