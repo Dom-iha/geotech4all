@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import {motion} from 'framer-motion';
+import Reveal from '../shared/reveal';
 
 interface FeaturedSectionProps {
   id: string;
@@ -59,6 +60,8 @@ function FeaturedSection({ articles }: { articles: FeaturedSectionProps[] }) {
         <ul className='flex flex-col gap-8'>
           {featuredArticles.slice(0, 2).map((featuredArticle, index) => (
             <li key={featuredArticle.id}>
+              <Reveal>
+
               <div className='pl-4 relative'>
                 <Link
                   href={`/blog/${featuredArticles[index].slug}`}
@@ -67,9 +70,12 @@ function FeaturedSection({ articles }: { articles: FeaturedSectionProps[] }) {
                   {featuredArticles[index].title}
                 </Link>
               </div>
-              <p className='lg:mt-2 pl-4 lg:text-xl'>
-                {shorten(featuredArticles[index].excerpt)}
-              </p>
+              </Reveal>
+              <Reveal>
+                <p className='lg:mt-2 pl-4 lg:text-xl'>
+                  {shorten(featuredArticles[index].excerpt)}
+                </p>
+              </Reveal>
             </li>
           ))}
         </ul>

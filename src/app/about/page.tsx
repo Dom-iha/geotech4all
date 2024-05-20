@@ -13,9 +13,9 @@ export const metadata: Metadata = {
 function About() {
   return (
     <>
-      <section className='px-6 md:px-8 lg:px-24 min-h-[85vh] grid place-items-center'>
+      <section className='px-6 md:px-8 min-h-[calc(100vh-60px)] grid place-content-center'>
         <div className='flex flex-col gap-6 lg:gap-10 justify-center items-center h-full'>
-          <h1 className='text-3xl lg:text-8xl text-center font-bold mt-3'>
+          <h1 className='text-2xl md:text-4xl lg:text-6xl text-center font-bold'>
             Everything Geoscience
           </h1>
           <p className='text-center mt-4 text-xl lg:text-2xl max-w-[900px]'>
@@ -25,7 +25,7 @@ function About() {
           </p>
           <Link
             href='#info'
-            className='w-[60px] h-[60px] lg:h-[100px] lg:w-[100px]  grid place-items-center border-accent border-dashed border rounded-full'
+            className='w-10 h-10 md:h-16 md:w-16 lg:w-20 lg:h-20 grid place-items-center border-accent border-dashed border rounded-full'
           >
             <DoubleArrowDownIcon className='down-arrow' />
           </Link>

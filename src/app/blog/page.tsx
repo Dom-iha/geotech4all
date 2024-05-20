@@ -38,9 +38,9 @@ async function page({
   return (
     <>
       <section className='sticky top-0 px-6 md:px-8 lg:px-24 pt-10 pb-4 lg:py-14 flex max-lg:items-center flex-col-reverse lg:flex-row gap-8 justify-between'>
-        <div className='z-10 grid place-content-center gap-4 lg:gap-6 max-w-[600px]'>
-          <h1 className='text-2xl md:text-3xl lg:text-4xl font-bold text-accent capitalize'>
-            our article library.
+        <div className='z-10 grid place-content-center gap-4 lg:gap-6 max-w-prose'>
+          <h1 className='text-2xl md:text-4xl lg:text-6xl font-bold text-accent capitalize'>
+            our article library
           </h1>
           <p className='font-medium text-lg md:text-xl lg:text-2xl text-accent'>
             Read and learn about the latest and greatest innovations, news, and
