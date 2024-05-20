@@ -9,19 +9,30 @@ export const metadata: Metadata = {
   title: 'Blog',
 };
 
-const getData = async () => {
+interface Query {
+  category?: string; // cuz im only accessing category currently | probably has to change when i add search
+}
+
+const getData = async (query: Query) => {
   const articles = await prisma.article.findMany({
-    include: { author: true, category: true },
+    where: query?.category ? { categoryName: query.category } : {},
+    include: { author: true },
   });
   return articles;
 };
 
-export const dynamic = 'force-dynamic' // opt out of cache for this route 
+export const dynamic = 'force-dynamic'; // opt out of cache for this route
 // should probably revalidate after some time instead -TODO
+interface SearchParams {
+  [key: string]: string | string[] | undefined; // https://nextjs.org/docs/app/api-reference/file-conventions/page#searchparams-optional
+}
 
-async function page() {
-  const articles = await getData();
-  
+async function page({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | string[] | undefined };
+}) {
+  const articles = await getData(searchParams);
 
   return (
     <>
@@ -39,28 +50,29 @@ async function page() {
           <Image
             src={placeholder}
             alt='hero image'
-            width={400}
+            width={500}
             height={500}
-            className='object-cover rounded-lg relative z-10 shadow-xl'
+            className='object-cover rounded-lg relative z-10 shadow-xl w-auto height-auto'
           />
           <div
             aria-hidden='true'
-            className='absolute top-3 -left-2.5 rounded-lg border-dashed border-2 border-accent/50 w-full h-full'
+            className='absolute top-3 -left-2.5 rounded-lg border-dashed border-2 border-input w-full h-full'
           ></div>
         </div>
       </section>
-      <section className='relative bg-main min-h-screen px-6 md:px-8 lg:px-24 py-10 lg:py-14 flex flex-col gap-10'>
+      <section className='relative bg-main min-h-screen px-6 md:px-8 lg:px-24 py-10 lg:py-14 flex flex-col gap-10 lg:gap-16'>
+        <h2 className='font-bold text-xl lg:text-4xl capitalize'>{`# ${searchParams.category? searchParams.category : 'all posts'}`}</h2>
         <Filter />
-        {!articles ? (
-          <div className='grid place-content-center w-full min-h-[400px] rounded-lg border-dashed border-2 border-white/40'>
+        {!articles.length ? (
+          <div className='grid place-content-center w-full min-h-[400px] max-w-screen-md mx-auto'>
             <div className='flex flex-col gap-4 items-center'>
-              <p className='font-semibold text-altTxt'>
-                We&apos;re sorry, our library is currently empty.
+              <p className='font-medium lg:text-lg'>
+                Sorry, we couldn&apos;t find any articles.
               </p>
             </div>
           </div>
         ) : (
-          <ul className='grid grid-cols-[repeat(auto-fill,_minmax(19rem,_1fr))] gap-8 justify-center'>
+          <ul className='grid grid-cols-[repeat(auto-fill,_minmax(19rem,_1fr))] gap-8 lg:gap-10 justify-center'>
             {articles.map((article) => (
               <Article
                 key={article.id}

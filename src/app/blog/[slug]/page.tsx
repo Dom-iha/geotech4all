@@ -83,19 +83,19 @@ async function page({ params }: { params: { slug: string } }) {
 
   return (
     <>
-      <article className='py-16 px-4 flex flex-col gap-5 max-w-screen-md mx-auto'>
+      <article className='py-10 lg:py-16 px-4 flex flex-col gap-5 max-w-screen-md mx-auto'>
         <Image
           src={article.image}
           alt={article.title}
-          width={1200}
-          height={630}
-          className='w-full max-h-[400px] rounded-lg'
+          width={768}
+          height={400}
+          className='w-auto h-auto aspect-video rounded-lg'
         />
-        <h1 className='font-bold text-xl md:text-2xl lg:text-4xl'>{article.title}</h1>
+        <h1 className='font-bold text-xl md:text-2xl lg:text-4xl mt-4'>{article.title}</h1>
         <div className='rounded-full w-fit flex justify-center bg-purple-200 text-purple-600 px-4 py-1'>
-          <p>{article.categoryName || 'News'}</p>
+          <p>{article.categoryName}</p>
         </div>
-        <section className='flex items-center gap-3'>
+        <section className='flex items-center gap-3 py-2'>
           <Image
             src={article.author.image || '/profile.svg'}
             alt={''}
@@ -116,7 +116,7 @@ async function page({ params }: { params: { slug: string } }) {
           </div>
         </section>
         <section
-          className='prose lg:prose-lg xl:prose-xl'
+          className='prose prose-base lg:prose-lg xl:prose-xl mt-2 lg:mt-4'
           dangerouslySetInnerHTML={{
             __html: article.content ? article.content : '',
           }}
