@@ -2,30 +2,40 @@
 import Link from 'next/link';
 import { ArrowRightIcon } from '@radix-ui/react-icons';
 import { Services } from '@/constants';
-import { motion } from 'framer-motion';
+import { motion, useInView, useAnimate } from 'framer-motion';
+import { useEffect, useState, useRef } from 'react';
+import Reveal from '@/components/shared/reveal';
 
 function ServiceList() {
+  const ref = useRef<HTMLLIElement | null>(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
     <section id='services' className='px-6 md:px-8 lg:px-24 py-14'>
       <h2 className='text-2xl lg:text-4xl font-bold mb-16'>Our Services</h2>
+
       <motion.ul
         layout
         className='grid gap-8 lg:gap-32 mt-5 grid-cols-[repeat(auto-fit,_minmax(16rem,_1fr))]'
       >
-        {Services.map((service) => (
+        {Services.map((service, index) => (
           <motion.li
-            layout
-            initial={{ opacity: 0.6 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
             key={service.name}
+            variants={{
+              hidden: { opacity: 0, translateY: 50 },
+              visible: { opacity: 1, translateY: 0 },
+            }}
+            initial='hidden'
+            animate={'visible'}
+            transition={{ duration: 0.5, delay: index * 0.5 }}
             className='grid gap-4 lg:gap-8'
           >
             <h3 className='text-xl lg:text-2xl font-semibold'>
               {service.name}
             </h3>
-            <p className='lg:text-xl'>{service.description}</p>
+            <Reveal>
+              <p className='lg:text-xl'>{service.description}</p>
+            </Reveal>
             <Link
               href={`/services/${service.route}`}
               className='w-fit p-2 flex items-center justify-center font-semibold rounded-md gap-2 bg-accent text-main min-w-[8rem] hover:gap-4 focus-visible:gap-4 focus-visible:outline-accent outline-offset-1 outline-1 focus-visible:outline-dashed transition-all duration-300'
