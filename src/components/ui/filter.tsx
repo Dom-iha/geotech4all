@@ -1,22 +1,30 @@
 'use client';
-import { Dispatch, SetStateAction, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { nanoid } from 'nanoid';
 import { Cancel, Search } from '../Icons';
-import data from '@/data/data.json';
-import { ChevronDownIcon, ChevronRightIcon } from '@radix-ui/react-icons';
-import { usePathname, useSearchParams } from 'next/navigation';
+import { ChevronDownIcon } from '@radix-ui/react-icons';
+import { usePathname, useSearchParams, useRouter } from 'next/navigation';
 import { CategoryResponseType } from '@/types';
 import { toast } from 'sonner';
 
 function Filter() {
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
   const [expanded, setExpanded] = useState(false);
   const [categories, setCategories] = useState<CategoryResponseType[]>([]);
   const [searchQuery, setSearchQuery] = useState<string>();
-  const [activeCategory, setActiveCategory] = useState<string>();
+  const [activeCategory, setActiveCategory] = useState<string | null>(
+    searchParams.get('category')
+  );
 
+  const filterCategories = (categoryName: string) => {
+    setActiveCategory(categoryName);
+    setExpanded(false);
+    const params = new URLSearchParams(searchParams.toString());
+    params.set('category', categoryName);
 
-  const clearInput = () => {
-    setSearchQuery('');
+    router.push(pathname + '?' + params.toString(), { scroll: false });
   };
 
   useEffect(() => {
@@ -52,11 +60,11 @@ function Filter() {
   }, []);
 
   return (
-    <div className='flex flex-col gap-6 items-center'>
+    <div className='flex flex-col gap-6 lg:items-center'>
       <div className='flex flex-col gap-6 md:gap-3 lg:flex-row md:justify-center'>
         <label
           htmlFor='search'
-          className='md:w-[470px] h-fit flex items-center py-4 px-6 rounded-md w-full border border-input p-3 placeholder:text-sm placeholder:font-thin placeholder:text-accent/70 focus-within:border-transparent focus-within:outline-focus focus-within:outline-dashed focus-within:outline-1'
+          className='min-w-full h-fit flex items-center py-4 px-6 rounded-md w-full border border-input p-3 placeholder:text-sm placeholder:font-thin placeholder:text-accent/70 focus-within:border-transparent focus-within:outline-focus focus-within:outline-dashed focus-within:outline-1'
         >
           <Search aria-hidden='true' />
           <input
@@ -75,7 +83,7 @@ function Filter() {
             <button
               type='button'
               title='clear input'
-              onClick={() => clearInput()}
+              onClick={() => setSearchQuery('')}
             >
               <Cancel aria-hidden='true' />
             </button>
@@ -84,7 +92,7 @@ function Filter() {
         <div className='select relative w-fit'>
           <button
             type='button'
-            className='whitespace-nowrap w-52 justify-between flex items-center h-fit py-4 px-6 border rounded-md focus-visible:border-transparent focus-visible:outline-focus focus-visible:outline-dashed focus-visible:outline-1 transition duration-300'
+            className='whitespace-nowrap w-52 justify-between flex items-center h-fit py-4 px-6 border border-input rounded-md focus-visible:border-transparent focus-visible:outline-focus focus-visible:outline-dashed focus-visible:outline-1 transition duration-300'
             onClick={() => setExpanded(!expanded)}
           >
             <span>
@@ -99,7 +107,7 @@ function Filter() {
             </span>
           </button>
           <ul
-            className={`px-2 bg-main absolute z-10 transition-all duration-200 w-full right-0 top-[3.8rem] flex flex-col gap-2 shadow-md rounded-md ${
+            className={`overflow-hidden px-2 bg-main border border-input absolute z-10 transition-all duration-200 w-full right-0 top-[4.2rem] flex flex-col gap-2 shadow-sm rounded-md ${
               expanded
                 ? 'max-h-[20rem] py-2 opacity-100'
                 : 'max-h-0 py-0 opacity-0'
@@ -111,10 +119,7 @@ function Filter() {
                   type='button'
                   className='w-full capitalize text-left rounded-md py-1 px-4 hover:bg-hover outline-focus outline-offset-1 outline-1 focus-visible:outline-dashed transition duration-300'
                   tabIndex={!expanded ? -1 : undefined}
-                  onClick={() => {
-                    setActiveCategory(category.name);
-                    setExpanded(false);
-                  }}
+                  onClick={() => filterCategories(category.name)}
                 >
                   {category.name}
                 </button>

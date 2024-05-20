@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
               <p className='font-semibold lg:text-xl mb-2 lg:mb-4'>Resources</p>
               <ul className='flex flex-col gap-2.5 max-lg:text-sm'>
                 <li>
-                  <Link href='/geohub/blog' className='hover:underline'>
+                  <Link href='/blog' className='hover:underline'>
                     Blog
                   </Link>
                 </li>
@@ -68,11 +68,11 @@ const Footer: React.FC = () => {
                     Privacy
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link href='#' className='hover:underline'>
                     Cookies
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </div>
             <div>
