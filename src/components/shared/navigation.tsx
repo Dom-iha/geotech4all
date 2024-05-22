@@ -13,8 +13,7 @@ const Navbar: React.FC = () => {
   const toggleMenu = () => {
     setIsOpen((prevState) => !prevState);
   };
-
- const duration = ['in-1', 'in-2', 'in-3', 'in-4', 'in-5']
+// console.log(pathname.split('/'))
 
   return (
     <>
@@ -24,7 +23,7 @@ const Navbar: React.FC = () => {
       >
         Skip to Main Content
       </Link>
-      <header className='grid grid-cols-[auto,_auto] md:flex justify-between items-center bg-white shadow-sm py-4 px-6 md:px-8 lg:px-24 max-w-[90rem] mx-auto'>
+      <header className='grid grid-cols-[auto,_auto] md:flex justify-between items-center bg-main border-b-hover border-b py-4 px-6 md:px-8 lg:px-20 max-w-[90rem] mx-auto'>
         <div>
           <Link href='/'>
             <Image
@@ -46,7 +45,7 @@ const Navbar: React.FC = () => {
               <li
                 key={link.route}
                 className={`link ${
-                  isOpen && `max-md:animate-in-${duration[index]}`
+                  isOpen && `max-md:animate-in}`
                 } relative after:absolute after:bg-main after:w-1 after:h-full after:-left-2 after:top-0 after:scale-y-0 after:origin-bottom md:after:bg-accent md:after:h-0.5 md:after:w-1/2 md:after:top-auto md:after:bottom-0 md:after:left-0 md:after:scale-y-100 md:after:scale-x-0 md:after:origin-right md:hover:after:scale-x-100 md:hover:after:origin-left ${
                   pathname === link.route &&
                   'after:scale-y-100 md:after:scale-x-100'

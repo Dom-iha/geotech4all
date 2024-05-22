@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
-import { DoubleArrowDownIcon, ArrowRightIcon } from '@radix-ui/react-icons';
+import { ArrowRightIcon } from '@radix-ui/react-icons';
 import Image from 'next/image';
 import ImageSlider from '@/components/ui/image-slider';
 import placeholder from '../../../public/assets/images/placeholder.jpg';
@@ -12,6 +12,7 @@ import meetup_1 from '../../../public/assets/images/meetup-1.jpg';
 import meetup_2 from '../../../public/assets/images/meetup-2.jpg';
 import meetup_3 from '../../../public/assets/images/meetup-3.jpg';
 import meetup_4 from '../../../public/assets/images/meetup-4.jpg';
+import ScrollLink from '@/components/ui/scroll-link';
 
 export const metadata: Metadata = {
   title: 'Gallery',
@@ -28,15 +29,10 @@ const Gallery: React.FC = () => {
           <h1 className='text-2xl md:text-4xl lg:text-6xl text-center font-bold max-w-prose mx-auto'>
             Explore moments from our journey so far
           </h1>
-          <Link
-            href='#showcase'
-            className='w-10 h-10 md:h-16 md:w-16 lg:w-20 lg:h-20 grid place-items-center border-accent border-dashed border rounded-full'
-          >
-            <DoubleArrowDownIcon className='down-arrow' />
-          </Link>
+          <ScrollLink target='showcase' />
         </div>
       </section>
-      <section id='showcase' className='px-6 lg:px-24 py-14 '>
+      <section id='showcase' className='px-6 lg:px-20 py-14 '>
         <div className='pb-5 lg:py-10'>
           <h2 className='font-bold text-2xl lg:text-3xl mb-5'>Trainings</h2>
           <div className='flex max-lg:flex-col gap-8 justify-between'>

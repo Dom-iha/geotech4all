@@ -44,9 +44,9 @@ function ImageSlider(props: SliderProps) {
 
   return (
     <div className='w-full min-h-[300px] max-w-[400px] relative z-10 group'>
-      <div className='flex w-full overflow-hidden'>
+      <ul className='flex w-full overflow-hidden'>
         {props.content.map((image, index) => (
-          <div
+          <li
             key={index}
             className={`w-full h-full min-h-[300px] rounded-lg aspect-video transition-all duration-300`}
             style={{ translate: `${-100 * imageIndex}% ` }}
@@ -59,9 +59,9 @@ function ImageSlider(props: SliderProps) {
               height={300}
               className='object-cover rounded-lg shadow-xl h-auto w-auto'
             />
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
       <button
         type='button'
         title='previous'

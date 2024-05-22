@@ -1,11 +1,11 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { nanoid } from 'nanoid';
-import { Cancel, Search } from '../Icons';
 import { ChevronDownIcon } from '@radix-ui/react-icons';
 import { usePathname, useSearchParams, useRouter } from 'next/navigation';
 import { CategoryResponseType } from '@/types';
 import { toast } from 'sonner';
+import { SearchIcon, X } from 'lucide-react';
 
 function Filter() {
   const router = useRouter();
@@ -65,7 +65,7 @@ function Filter() {
         htmlFor='search'
         className='h-fit max-w-[500px] flex items-center py-4 px-6 rounded-md w-full border border-input p-3 placeholder:text-sm placeholder:font-thin placeholder:text-accent/70 focus-within:border-transparent focus-within:outline-focus focus-within:outline-dashed focus-within:outline-1'
       >
-        <Search aria-hidden='true' />
+        <SearchIcon aria-hidden='true' />
         <input
           id='search'
           type='text'
@@ -84,7 +84,7 @@ function Filter() {
             title='clear input'
             onClick={() => setSearchQuery('')}
           >
-            <Cancel aria-hidden='true' />
+            <X aria-hidden='true' />
           </button>
         )}
       </label>
