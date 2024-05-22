@@ -14,7 +14,7 @@ function Reveal({ children }: { children: React.ReactNode }) {
         }}
         initial='hidden'
         animate={isInView ? 'visible' : 'hidden'}
-        transition={{ duration: 0.5, delay: 0.25 }}
+        transition={{ duration: 0.6, delay: 0.25 }}
       >
         {children}
       </motion.div>
