@@ -10,7 +10,7 @@ function BlogList({ articles }: { articles: ArticleResponseType[] }) {
       className='grid grid-cols-[repeat(auto-fill,_minmax(19rem,_1fr))] gap-8 lg:gap-10 justify-center'
     >
       <AnimatePresence>
-        {articles.toReversed().map((article) => (
+        {articles.map((article) => (
           <Article
             key={article.id}
             id={article.id}

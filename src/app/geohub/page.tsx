@@ -21,34 +21,37 @@ const getData = async () => {
 async function Geohub() {
   const articles = await getData();
 
+  const headline = await prisma.article.findFirst({
+    where: {
+      categoryName: 'Headlines',
+    },
+  });
+  const shorten = (text: string, maxLength: number) => {
+    if (text.length <= maxLength) return text;
+    return text.slice(0, maxLength) + "...";
+  };
+  
   return (
     <>
       <section className='px-6 md:px-8 lg:px-24 py-2'>
         <div className='news-hero flex flex-col justify-between relative rounded-md after:absolute after:top-0 after:-z-10 after:w-full after:h-full after:rounded-md after:bg-accent/90 lg:min-h-[88vh]'>
           <p className='pt-6 ml-8 lg:ml-10 font-medium text-lg text-main'>
-            News Flash
+            Headline
           </p>
           <div className='flex flex-col justify-end max-w-[609px] max-lg:p-8 lg:ml-[50px] lg:pb-8'>
             <h1 className='text-main text-2xl lg:text-5xl font-bold mb-3'>
-              2024 Nigeria Infrastructural Budget: A Comparative Analysis
+              {headline?.title}
             </h1>
             <p className='max-w-[575px] max-sm:hidden text-main text-lg lg:text-2xl mb-6'>
-              Nigeria&apos;s 2024 budget, recently approved by the federal
-              government, allocates a significant portion to infrastructure
-              development...
+              {shorten(headline?.excerpt!, 50)}
             </p>
-            <button
-              type='button'
-              className='cursor-pointer relative group overflow-hidden border-2 px-10 py-2 border-main w-fit rounded-md'
+            <Link
+              href={`/blog/${headline?.slug}`}
+              className='mx-auto w-fit px-2 py-4 flex items-center justify-center font-semibold rounded-md gap-2 bg-main text-accent min-w-[8rem] hover:gap-4 focus-visible:gap-4 focus-visible:outline-main outline-offset-1 outline-1 focus-visible:outline-dashed transition-all duration-300'
             >
-              <span className='uppercase tracking-widest font-medium text-accent lg:text-lg relative z-10 group-hover:text-main duration-500'>
-                Read More
-              </span>
-              <span className='absolute top-0 left-0 w-full bg-main duration-500 group-hover:-translate-x-full h-full'></span>
-              <span className='absolute top-0 left-0 w-full bg-main duration-500 group-hover:translate-x-full h-full'></span>
-              <span className='absolute top-0 left-0 w-full bg-main duration-500 delay-300 group-hover:-translate-y-full h-full'></span>
-              <span className='absolute delay-300 top-0 left-0 w-full bg-main duration-500 group-hover:translate-y-full h-full'></span>
-            </button>
+              Read
+              <ArrowRightIcon aria-hidden='true' />
+            </Link>
           </div>
         </div>
       </section>

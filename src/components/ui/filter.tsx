@@ -110,6 +110,16 @@ function Filter() {
               : '-translate-y-3 invisible opacity-20'
           }`}
         >
+          <li key={nanoid()}>
+            <button
+              type='button'
+              className='w-full capitalize text-left rounded-md py-1 px-4 hover:bg-hover outline-focus outline-offset-1 outline-1 focus-visible:outline-dashed transition duration-300'
+              tabIndex={!expanded ? -1 : undefined}
+              onClick={() => router.push(pathname, { scroll: false })}
+            >
+              all
+            </button>
+          </li>
           {categories.map((category) => (
             <li key={nanoid()}>
               <button
