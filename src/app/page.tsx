@@ -1,6 +1,4 @@
-import Image from 'next/image';
 import training from '../../public/assets/images/training.png';
-import TestimonialSlider from '@/components/ui/testimonial-slider';
 import FeaturedSection from '@/components/ui/featured-section';
 import HeroSection from '@/components/ui/hero-section';
 import prisma from '@/lib/db';
@@ -13,6 +11,10 @@ export default async function Home() {
     where: {
       featured: true,
     },
+    orderBy:{
+      createdAt: 'desc'
+    },
+    take: 2
   });
 
   return (

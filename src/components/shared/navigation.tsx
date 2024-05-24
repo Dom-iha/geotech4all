@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
         <nav>
           <ul
             id='navbar-menu'
-            className={`max-md:min-h-screen flex flex-col gap-6 min-w-full py-20 px-8 max-md:absolute top-0 z-20 text-main bg-accent/90 backdrop-blur-md ${
+            className={`max-md:min-h-screen flex flex-col gap-6 min-w-full py-20 px-8 max-md:absolute top-0 z-50 text-main bg-accent/90 backdrop-blur-md ${
               isOpen ? 'left-0' : '-left-full'
             } md:flex-row md:justify-evenly md:gap-10 md:bg-transparent md:text-accent md:p-0 text-lg font-medium transition duration-300`}
           >
