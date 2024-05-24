@@ -1,5 +1,5 @@
 import TestimonialSlider from './testimonial-slider';
-import TestimonialSliderAlternative from './testimonial-slider-alternative';
+import TestimonialSliderMobile from './testimonial-slider-mobile';
 
 function TestimonialSection() {
   return (
@@ -11,7 +11,7 @@ function TestimonialSection() {
         </p>
       </div>
       <TestimonialSlider />
-      <TestimonialSliderAlternative />
+      <TestimonialSliderMobile />
     </section>
   );
 }

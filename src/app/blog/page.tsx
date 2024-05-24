@@ -1,8 +1,7 @@
 import { Metadata } from 'next';
-import Article from '@/components/cards/article';
 import Filter from '@/components/ui/filter';
 import Image from 'next/image';
-import placeholder from '../../../public/assets/images/placeholder.jpg';
+import placeholder from '../../../public/images/placeholder.jpg';
 import prisma from '@/lib/db';
 import BlogList from './blog-list';
 

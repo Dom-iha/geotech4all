@@ -1,8 +1,8 @@
 import Image from 'next/image';
-import geohub from '../../../public/assets/icons/geohub.jpg';
+import geohub from '../../../public/icons/geohub.jpg';
 import Link from 'next/link';
 import { Metadata } from 'next';
-import { DoubleArrowDownIcon, ArrowRightIcon } from '@radix-ui/react-icons';
+import { DoubleArrowDownIcon } from '@radix-ui/react-icons';
 import data from '@/data/data.json';
 import Product from '@/components/cards/product';
 import ServiceList from './service-list';
@@ -14,17 +14,17 @@ const Services: React.FC = () => {
   return (
     <>
       <section className='px-6 md:px-8 py-10 min-h-[calc(100vh-60px)] grid place-content-center'>
-        <div className='flex flex-col gap-6 lg:gap-10 justify-center items-center'>
+        <div className='flex flex-col gap-4 md:gap-6 lg:gap-10 justify-center items-center'>
           <h1 className='text-2xl md:text-4xl lg:text-6xl text-center font-bold'>
             Tailor-made solutions for your geoscience needs
           </h1>
-          <p className='text-center mt-4 text-xl lg:text-2xl max-w-[900px]'>
+          <p className='text-center lg:mt-4 text-xl lg:text-2xl max-w-[900px]'>
             From enterprises to academia – we help the community solve geo
             problems.
           </p>
           <Link
             href='#services'
-            className='w-10 h-10 md:h-16 md:w-16 lg:w-20 lg:h-20 grid place-items-center border-accent border-dashed border rounded-full'
+            className='h-16 w-16 lg:w-20 lg:h-20 grid place-items-center border-accent border-dashed border rounded-full'
           >
             <DoubleArrowDownIcon className='down-arrow' />
           </Link>

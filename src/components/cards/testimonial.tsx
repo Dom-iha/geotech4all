@@ -1,5 +1,5 @@
 import React from 'react';
-import product from '../../../public/assets/images/product.png';
+import product from '../../../public/images/product.png';
 import Image from 'next/image';
 import { LucideQuote } from 'lucide-react';
 

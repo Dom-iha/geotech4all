@@ -5,7 +5,7 @@ import { motion, useAnimate, useInView, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, User2 } from 'lucide-react';
 import Image from 'next/image';
 
-function TestimonialSliderAlternative() {
+function TestimonialSliderMobile() {
   const [testimonials, setTestimonials] = useState(data.testimonials);
   const scrollerRef = useRef<HTMLUListElement | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -40,7 +40,7 @@ function TestimonialSliderAlternative() {
 
   return (
     <div className='md:hidden w-full relative z-10 flex flex-col gap-4 lg:gap-10 justify-between items-center'>
-      <div className='flex gap-4'>
+      <div className='flex gap-4 mr-auto'>
         <button
           type='button'
           title='previous'
@@ -70,9 +70,9 @@ function TestimonialSliderAlternative() {
           animate='visible'
           transition={{ duration: 0.6, delay: 0.25 }}
           key={crypto.randomUUID()}
-          className={`w-full h-full flex flex-col gap-5 items-center justify-center max-w-prose`}
+          className={`w-full h-full flex flex-col gap-5 max-w-prose`}
         >
-          <p className='font-bold text-center'>
+          <p className='font-medium text-cente'>
             {testimonials[activeIndex].message}
           </p>
           <div className='flex gap-6 items-center'>
@@ -101,4 +101,4 @@ function TestimonialSliderAlternative() {
   );
 }
 
-export default TestimonialSliderAlternative;
+export default TestimonialSliderMobile;

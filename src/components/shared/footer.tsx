@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import footer_logo from '../../../public/assets/icons/footer-logo.png';
+import footer_logo from '../../../public/icons/footer-logo.png';
 import { Facebook, Linkedin, Twitter } from '../Icons';
 import Newsletter from './newsletter-form';
 import { Instagram, Mail, Youtube } from 'lucide-react';
@@ -18,7 +18,7 @@ function footer() {
         </div>
         <div>
           <p className='font-semibold lg:text-xl mb-2 lg:mb-4'>Resources</p>
-          <ul className='flex flex-col gap-2.5 max-lg:text-sm'>
+          <ul className='flex flex-col gap-2.5 lg:gap-5 max-lg:text-sm'>
             <li>
               <Link href='/blog' className='hover:underline'>
                 Blog
@@ -46,7 +46,7 @@ function footer() {
         </div>
         <div>
           <p className='font-semibold lg:text-xl mb-2 lg:mb-4'>Legal </p>
-          <ul className='flex flex-col gap-2.5 max-lg:text-sm'>
+          <ul className='flex flex-col gap-2.5 lg:gap-5 max-lg:text-sm'>
             <li>
               <Link href='/terms' className='hover:underline'>
                 Terms
@@ -66,7 +66,7 @@ function footer() {
         </div>
         <div>
           <p className='font-semibold lg:text-xl mb-2 lg:mb-4'>Contact</p>
-          <ul className='flex flex-col gap-2.5 max-lg:text-sm'>
+          <ul className='flex flex-col gap-2.5 lg:gap-5 max-lg:text-sm'>
             <li>
               <Link
                 href='mailto:geotech4all@gmail.com'
@@ -147,15 +147,14 @@ function footer() {
           &#169; {new Date().getFullYear()} Geotech4all
         </p>
       </div>
-      <div className='w-full p-2 mt-10 lg:mt-20 '>
+      {/* <div className='w-full p-2 mt-10 lg:mt-20 '>
         <Link
           className='block w-fit ml-auto hover:underline text-[10px]'
           href='mailto:taqib.ibrahim@gmail.com'
         >
           Report Issue
         </Link>
-        {/* <small className='flex gap-2 text-[10px]'>Built with <HeartIcon/> by <Link href={'https://www.linkedin.com/taqib-ibrahim'}> Taqib</Link></small> */}
-      </div>
+      </div> */}
     </footer>
   );
 }

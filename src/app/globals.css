@@ -76,7 +76,7 @@
         hsla(0, 0%, 100%, 0),
         hsl(0 0% 100%) 50%
       ),
-      url(../../public/assets/images/street-map.svg);
+      url(../../public/images/street-map.svg);
     background-position-x: right;
     background-repeat: no-repeat;
   }
@@ -87,7 +87,7 @@
           hsla(0, 0%, 100%, 0),
           hsl(0 0% 100%) 40%
         ),
-        url(../../public/assets/images/street-map.svg);
+        url(../../public/images/street-map.svg);
     }
   }
   .news-hero::after {
@@ -101,7 +101,7 @@
     backdrop-filter: blur(5px);
   }
   .internship {
-    background: url(../../public/assets/images/internship.png) no-repeat;
+    background: url(../../public/images/internship.png) no-repeat;
   }
   .spacing {
     padding: var(--spacing);

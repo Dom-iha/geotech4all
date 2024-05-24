@@ -82,7 +82,7 @@ function TestimonialSlider() {
           </li>
         ))}
       </ul>
-      <div className='flex gap-6 items-center justify-center'>
+      {/* <div className='flex gap-6 items-center justify-center'>
         <button
           type='button'
           title='previous'
@@ -99,7 +99,7 @@ function TestimonialSlider() {
         >
           <ChevronRightIcon />
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }
