@@ -58,10 +58,9 @@ function FeaturedSection({ articles }: { articles: FeaturedSectionProps[] }) {
          className='rounded-md max-md:hidden lg:max-w-[420px] lg:max-h-[300px]'
          />
         <ul className='flex flex-col gap-8'>
-          {featuredArticles.slice(0, 2).map((featuredArticle, index) => (
+          {featuredArticles.map((featuredArticle, index) => (
             <li key={featuredArticle.id}>
               <Reveal>
-
               <div className='pl-4 relative'>
                 <Link
                   href={`/blog/${featuredArticles[index].slug}`}

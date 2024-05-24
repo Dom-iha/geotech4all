@@ -19,52 +19,85 @@ const getData = async () => {
 };
 
 async function Geohub() {
-  const articles = await getData();
-
-  const headline = await prisma.article.findFirst({
-    where: {
-      categoryName: 'Headlines',
-    },
-  });
+  const [news, articles, headlines] = await prisma.$transaction([
+    prisma.article.findFirst({
+      where: {
+        categoryName: 'news',
+      },
+      take: 1,
+      orderBy: {
+        createdAt: 'desc',
+      },
+    }),
+    prisma.article.findMany({
+      orderBy: {
+        createdAt: 'desc',
+      },
+      where: {
+        categoryName: {
+          notIn: ['headlines ', 'news'],
+        },
+      },
+      include: {
+        author: true,
+      },
+      take: 3,
+    }),
+    prisma.article.findMany({
+      orderBy: {
+        createdAt: 'desc',
+      },
+      where: {
+        categoryName: 'headlines ', // space is intentional mistake from schema i forgot to trim trailing whitespace when user submits a form
+      },
+      take: 2,
+    }),
+  ]);
   const shorten = (text: string, maxLength: number) => {
     if (text.length <= maxLength) return text;
-    return text.slice(0, maxLength) + "...";
+    return text.slice(0, maxLength) + '...';
   };
-  
+
   return (
     <>
-      <section className='px-6 md:px-8 lg:px-24 py-2'>
-        <div className='news-hero flex flex-col justify-between relative rounded-md after:absolute after:top-0 after:-z-10 after:w-full after:h-full after:rounded-md after:bg-accent/90 lg:min-h-[88vh]'>
-          <p className='pt-6 ml-8 lg:ml-10 font-medium text-lg text-main'>
-            Headline
+      <section className='px-6 md:px-8 lg:px-20 py-2'>
+        <div
+          className='overflow-hidden news-hero bg-cover bg-no-repeat bg-fixed flex flex-col justify-between relative rounded-md lg:min-h-[calc(100vh-76px)] after:backdrop-blur-sm'
+          style={{ backgroundImage: `url(${news?.image})` }}
+        >
+          <p className='z-10 relative pt-6 ml-8 lg:ml-10 font-medium text-lg text-main'>
+            News Flash
           </p>
-          <div className='flex flex-col justify-end max-w-[609px] max-lg:p-8 lg:ml-[50px] lg:pb-8'>
-            <h1 className='text-main text-2xl lg:text-5xl font-bold mb-3'>
-              {headline?.title}
-            </h1>
-            <p className='max-w-[575px] max-sm:hidden text-main text-lg lg:text-2xl mb-6'>
-              {shorten(headline?.excerpt!, 50)}
-            </p>
-            <Link
-              href={`/blog/${headline?.slug}`}
-              className='mx-auto w-fit px-2 py-4 flex items-center justify-center font-semibold rounded-md gap-2 bg-main text-accent min-w-[8rem] hover:gap-4 focus-visible:gap-4 focus-visible:outline-main outline-offset-1 outline-1 focus-visible:outline-dashed transition-all duration-300'
-            >
-              Read
-              <ArrowRightIcon aria-hidden='true' />
-            </Link>
-          </div>
+          <article className='relative z-10'>
+            <div className='flex flex-col justify-end max-w-[609px] max-lg:p-8 lg:ml-[50px] lg:pb-8'>
+              <h1 className='text-main text-xl md:text-2xl lg:text-4xl font-bold mb-3'>
+                {news?.title}
+              </h1>
+              <p className='max-w-[575px] max-sm:hidden text-main md:text-lg lg:text-2xl mb-6'>
+                {shorten(news?.excerpt!, 60)}
+              </p>
+              <Link
+                href={`/blog/${news?.slug}`}
+                className='w-fit px-2 py-3 flex items-center justify-center font-semibold rounded-md gap-2 bg-main text-accent min-w-[8rem] hover:gap-4 focus-visible:gap-4 focus-visible:outline-main outline-offset-1 outline-1 focus-visible:outline-dashed transition-all duration-300'
+              >
+                Read
+                <ArrowRightIcon aria-hidden='true' />
+              </Link>
+            </div>
+          </article>
         </div>
       </section>
       {/* Headlines section */}
       <section className='px-6 md:px-8 lg:px-24 py-14'>
         <h2 className='font-bold text-xl lg:text-3xl mb-5'>Headlines</h2>
         <ul className='grid grid-cols-[repeat(auto-fit,_minmax(300px,_1fr))] gap-8'>
-          {data.headlines.map((headline, index) => (
+          {headlines.map((headline, index) => (
             <Headline
               key={index}
               title={headline.title}
-              cover={headline.cover}
-              content={headline.content}
+              cover={headline.image}
+              content={headline.excerpt}
+              slug={headline.slug}
             />
           ))}
         </ul>
