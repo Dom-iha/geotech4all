@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { DoubleArrowDownIcon } from '@radix-ui/react-icons';
 import data from '@/data/data.json';
 import Member from '@/components/cards/member';
-import mission from '../../../public/assets/images/mission.jpg';
+import mission from '../../../public/images/mission.jpg';
 
 export const metadata: Metadata = {
   title: 'About',
@@ -14,18 +14,18 @@ function About() {
   return (
     <>
       <section className='px-6 md:px-8 min-h-[calc(100vh-60px)] grid place-content-center'>
-        <div className='flex flex-col gap-6 lg:gap-10 justify-center items-center h-full'>
+        <div className='flex flex-col gap-4 md:gap-6 lg:gap-10 justify-center items-center h-full'>
           <h1 className='text-2xl md:text-4xl lg:text-6xl text-center font-bold'>
             Everything Geoscience
           </h1>
-          <p className='text-center mt-4 text-xl lg:text-2xl max-w-[900px]'>
+          <p className='text-center lg:mt-4 text-xl lg:text-2xl max-w-[900px]'>
             Your go-to resource center for everything geoscience. We are a team
             of geoscientists committed to making geoscience knowledge and tools
             accessible to everyone.
           </p>
           <Link
             href='#info'
-            className='w-10 h-10 md:h-16 md:w-16 lg:w-20 lg:h-20 grid place-items-center border-accent border-dashed border rounded-full'
+            className='h-16 w-16 lg:w-20 lg:h-20 grid place-items-center border-accent border-dashed border rounded-full'
           >
             <DoubleArrowDownIcon className='down-arrow' />
           </Link>

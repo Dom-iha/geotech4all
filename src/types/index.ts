@@ -17,9 +17,7 @@ interface MenuProps {
 export interface ArticleProps {
   id: string;
   title: string;
-  excerpt: string;
   slug: string;
-  content: string;
   image: string;
   category: string;
   createdAt: Date;

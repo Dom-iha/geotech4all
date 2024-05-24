@@ -12,16 +12,14 @@ function BlogList({ articles }: { articles: ArticleResponseType[] }) {
       <AnimatePresence>
         {articles.map((article) => (
           <Article
-            key={article.id}
             id={article.id}
+            key={article.id}
+            slug={article.slug}
             title={article.title}
             image={article.image}
             author={article.author}
-            category={article.categoryName}
-            excerpt={article.excerpt}
-            content={article.content}
-            slug={article.slug}
             createdAt={article.createdAt}
+            category={article.categoryName}
           />
         ))}
       </AnimatePresence>

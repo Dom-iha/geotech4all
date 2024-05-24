@@ -4,6 +4,7 @@ import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import {motion} from 'framer-motion';
 import Reveal from '../shared/reveal';
+import Fade from '../shared/fade';
 
 interface FeaturedSectionProps {
   id: string;
@@ -50,13 +51,15 @@ function FeaturedSection({ articles }: { articles: FeaturedSectionProps[] }) {
         Featured posts
       </h2>
       <div className='flex items-c flex-col gap-8 lg:flex-row lg:gap-24'>
-         <Image
-         src={featuredArticles[indexToShow].image}
-         alt={featuredArticles[indexToShow].excerpt}
-         width={500}
-         height={420}
-         className='rounded-md max-md:hidden lg:max-w-[420px] lg:max-h-[300px]'
-         />
+        <Fade>
+          <Image
+          src={featuredArticles[indexToShow].image}
+          alt={featuredArticles[indexToShow].excerpt}
+          width={500}
+          height={420}
+          className='rounded-md max-md:hidden lg:max-w-[420px] lg:max-h-[300px]'
+          />
+        </Fade>
         <ul className='flex flex-col gap-8'>
           {featuredArticles.map((featuredArticle, index) => (
             <li key={featuredArticle.id}>

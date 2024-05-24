@@ -32,7 +32,7 @@ function Newsletter() {
 
   return (
     <div className='flex flex-col gap-8 pb-20 max-w-2xl mx-auto'>
-      <p className='text-main text-center text-lg lg:text-xl font-medium'>
+      <p className='text-main text-center md:text-lg lg:text-xl font-medium'>
         Subscribe to our newsletter for blog post and service updates
       </p>
       <form
@@ -54,7 +54,7 @@ function Newsletter() {
         />
         <button
           type='submit'
-          className='rounded-md py-2.5 px-4 bg-main text-accent border-2 hover:border-main hover:bg-accent hover:text-main transition duration-300 outline-main outline-offset-2 outline-2 focus:outline-dashed'
+          className='rounded-md w-fit py-2.5 px-4 bg-main text-accent border-2 hover:border-main hover:bg-accent hover:text-main transition duration-300 outline-main outline-offset-2 outline-2 focus:outline-dashed'
         >
           Subscribe
         </button>

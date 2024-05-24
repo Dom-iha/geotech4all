@@ -62,7 +62,7 @@ async function Geohub() {
     <>
       <section className='px-6 md:px-8 lg:px-20 py-2'>
         <div
-          className='overflow-hidden news-hero bg-cover bg-no-repeat bg-fixed flex flex-col justify-between relative rounded-md lg:min-h-[calc(100vh-76px)] after:backdrop-blur-sm'
+          className='overflow-hidden news-hero bg-cover bg-no-repeat bg-fixed flex flex-col justify-between relative rounded-md lg:min-h-[calc(100vh-76px)] after:backdrop-blur-[5px]'
           style={{ backgroundImage: `url(${news?.image})` }}
         >
           <p className='z-10 relative pt-6 ml-8 lg:ml-10 font-medium text-lg text-main'>
@@ -123,8 +123,6 @@ async function Geohub() {
                 title={article.title}
                 image={article.image}
                 author={article.author}
-                excerpt={article.excerpt}
-                content={article.content}
                 createdAt={article.createdAt}
                 category={article.categoryName}
               />

@@ -2,7 +2,7 @@
 import { motion, useInView, useAnimate } from 'framer-motion';
 import { useEffect, useState, useRef } from 'react';
 
-function Reveal({ children }: { children: React.ReactNode }) {
+function Fade({ children }: { children: React.ReactNode }) {
   const ref = useRef<HTMLDivElement | null>(null);
   const isInView = useInView(ref, { once: true });
 
@@ -10,12 +10,12 @@ function Reveal({ children }: { children: React.ReactNode }) {
     <div ref={ref} className='relative overflow-hidden w-full'>
       <motion.div
         variants={{
-          hidden: { opacity: 0, translateY: 75 },
-          visible: { opacity: 1, translateY: 0 },
+          hidden: { opacity: 0, scale: 0.9 },
+          visible: { opacity: 1, scale: 1 },
         }}
         initial='hidden'
         animate={isInView ? 'visible' : 'hidden'}
-        transition={{ duration: 0.6, delay: 0.25 }}
+        transition={{ duration: 1, delay: 0.3 }}
       >
         {children}
       </motion.div>
@@ -23,4 +23,4 @@ function Reveal({ children }: { children: React.ReactNode }) {
   );
 }
 
-export default Reveal;
+export default Fade;
