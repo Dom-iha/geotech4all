@@ -20,20 +20,20 @@ function Article(props: ArticleProps) {
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.6 }}
-      className='border border-dashed w-fit rounded-lg'
+      className='w-fit rounded-lg'
     >
       <div className='flex flex-col gap-2 h-full'>
         <Image
           src={props.image}
           alt={props.title}
-          className='rounded-t-lg h-auto w-auto object-cover aspect-video'
+          className='rounded-lg h-auto w-auto object-cover aspect-video'
           width={300}
           height={250}
         />
-        <div className='flex flex-col gap-4 justify-between max-w-[400px] p-4 h-full'>
+        <div className='flex flex-col gap-4 justify-between max-w-[400px] px-2 py-4 h-full'>
           <div className='flex flex-col gap-4'>
             <div className='flex justify-between items-center text-sm font-medium'>
-              <p className='bg-purple-200 text-purple-600 rounded-xl px-2.5 py-1'>
+              <p className='bg-red-200 text-red-600 rounded-full px-3 py-1'>
                 {props.category}
               </p>
               <p>

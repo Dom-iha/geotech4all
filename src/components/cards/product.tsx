@@ -10,7 +10,7 @@ interface ProductProps {
 
 function Product(props: ProductProps) {
   return (
-    <li className='grid gap-4 max-w-[350px] rounded-xl shadow-md p-4 bg-alt'>
+    <li className='grid gap-4 max-w-[350px] rounded-xl border border-dashed border-input p-4'>
       <Image
         src={props.cover}
         alt={props.name}
@@ -19,8 +19,7 @@ function Product(props: ProductProps) {
         className='rounded-t-lg min-h-[200px] max-h-[250px]'
       />
       <div className='flex gap-4'>
-        <p className='bg-green-400/20 text-green-500 font-semibold rounded-md p-1.5'>{props.availability}</p>
-        <p></p>
+        <p className='bg-green-200 text-sm text-green-500 font-semibold rounded-md p-1.5'>{props.availability}</p>
       </div>
       <h3 className='text-lg lg:text-xl font-semibold'>{props.name}</h3>
       <button

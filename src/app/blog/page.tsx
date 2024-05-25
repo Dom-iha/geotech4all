@@ -19,7 +19,8 @@ const getData = async (query: Query) => {
     include: { author: true },
     orderBy:{
       createdAt: 'desc'
-    }
+    },
+    take:9
   });
   return articles;
 };
@@ -39,12 +40,12 @@ async function page({
 
   return (
     <>
-      <section className='sticky top-0 px-6 md:px-8 lg:px-20 pt-10 pb-4 lg:py-14 flex max-lg:items-center flex-col-reverse lg:flex-row gap-8 justify-between'>
+      <section className='sticky top-0 px-6 md:px-8 lg:px-20 pt-10 pb-4 lg:py-14 flex max-lg:items-center flex-col-reverse lg:flex-row gap-8 md:gap-10 justify-between'>
         <div className='z-10 grid place-content-center gap-4 lg:gap-6 max-w-prose'>
-          <h1 className='text-2xl md:text-4xl lg:text-6xl font-bold text-accent capitalize'>
-            our article library
+          <h1 className='text-2xl md:text-4xl lg:text-6xl font-bold text-accent'>
+            Our article library
           </h1>
-          <p className='font-medium text-lg md:text-xl lg:text-2xl text-accent'>
+          <p className='text-lg md:text-xl lg:text-2xl text-accent lg:pr-12'>
             Read and learn about the latest and greatest innovations, news, and
             events in geosciences.
           </p>
@@ -59,12 +60,12 @@ async function page({
           />
           <div
             aria-hidden='true'
-            className='absolute top-3 -left-2.5 rounded-lg border-dashed border-2 border-input w-full h-full'
+            className='absolute top-2 -left-2 rounded-lg border-dashed border border-focus w-full h-full'
           ></div>
         </div>
       </section>
       <section className='relative z-20 bg-main min-h-screen px-6 md:px-8 lg:px-20 py-10 lg:py-14 flex flex-col gap-10 lg:gap-16'>
-        <h2 className='font-bold text-xl lg:text-4xl capitalize'>{`# ${searchParams.category? searchParams.category : 'all posts'}`}</h2>
+        <h2 className='font-bold text-xl lg:text-4xl capitalize'><span className='text-red-400'># </span>{`${searchParams.category ? searchParams.category : 'all'}`}</h2>
         <Filter />
         {!articles.length ? (
           <div className='grid place-content-center w-full min-h-[400px] max-w-screen-md mx-auto'>

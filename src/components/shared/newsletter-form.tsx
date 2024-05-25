@@ -31,9 +31,12 @@ function Newsletter() {
   };
 
   return (
-    <div className='flex flex-col gap-8 pb-20 max-w-2xl mx-auto'>
-      <p className='text-main text-center md:text-lg lg:text-xl font-medium'>
-        Subscribe to our newsletter for blog post and service updates
+    <div className='flex flex-col gap-8 pb-20 max-w-lg max-md:mx-auto'>
+      <p className='flex flex-col gap-2'>
+        <span className='text-xl lg:text-2xl font-bold'>Stay up to date</span>
+        <span className='text-main lg:text-lg font-medium max-w-96'>
+          Subscribe to our newsletter for blog posts, and service updates.
+        </span>
       </p>
       <form
         className='flex flex-col lg:flex-row gap-4 justify-center'
@@ -54,7 +57,7 @@ function Newsletter() {
         />
         <button
           type='submit'
-          className='rounded-md w-fit py-2.5 px-4 bg-main text-accent border-2 hover:border-main hover:bg-accent hover:text-main transition duration-300 outline-main outline-offset-2 outline-2 focus:outline-dashed'
+          className='rounded-md w-fit py-2.5 px-4 bg-main text-accent border hover:border-main hover:bg-accent hover:text-main transition duration-300 outline-main outline-offset-2 outline-1 focus-visible:border-0 focus-visible:outline-dashed'
         >
           Subscribe
         </button>

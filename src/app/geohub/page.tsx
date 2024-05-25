@@ -104,7 +104,7 @@ async function Geohub() {
       </section>
       {/* Articles section */}
       <section className='px-6 md:px-8 lg:px-24 py-14 flex flex-col gap-10'>
-        <h2 className='font-bold text-xl lg:text-3xl lg:mb-5'>Articles</h2>
+        <h2 className='font-bold text-xl lg:text-3xl lg:mb-4'>Learn</h2>
         {!articles ? (
           <div className='grid place-content-center w-full min-h-[400px] rounded-lg border-dashed border-2 border-white/40'>
             <div className='flex flex-col gap-4 items-center'>
@@ -114,7 +114,7 @@ async function Geohub() {
             </div>
           </div>
         ) : (
-          <ul className='grid grid-cols-[repeat(auto-fill,_minmax(20rem,_1fr))] gap-8 justify-center'>
+          <ul className='grid grid-cols-[repeat(auto-fill,_minmax(18rem,_1fr))] gap-8 md:gap-12 lg:gap-16 justify-center'>
             {articles.map((article) => (
               <Article
                 id={article.id}
@@ -138,12 +138,12 @@ async function Geohub() {
         </Link>
       </section>
       {/* Events slider section */}
-      <section id='events' className='px-6 md:px-8 lg:px-24 py-14'>
+      <section className='px-6 md:px-8 lg:px-24 py-14 flex flex-col gap-10'>
         <h2 className='font-bold text-center text-xl lg:text-3xl mb-5'>
-          Events
+          Upcoming Events
         </h2>
         <div>
-          <ul className='flex gap-8 max-lg:flex-wrap justify-center'>
+          <ul className='flex gap-8 md:gap-12 lg:gap-16 max-lg:flex-wrap'>
             {data.events.map((event) => (
               <Event
                 key={event.title}
