@@ -50,7 +50,7 @@ function FeaturedSection({ articles }: { articles: FeaturedSectionProps[] }) {
       <h2 className='font-bold text-2xl lg:text-4xl mb-6 md:mb-12'>
         Featured posts
       </h2>
-      <div className='flex items-c flex-col gap-8 lg:flex-row lg:gap-24'>
+      <div className='flex items-c flex-col gap-8 lg:flex-row lg:gap-20'>
         <Fade>
           <Image
           src={featuredArticles[indexToShow].image}

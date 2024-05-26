@@ -1,5 +1,5 @@
-import TestimonialSlider from './testimonial-slider';
-import TestimonialSliderMobile from './testimonial-slider-mobile';
+import TestimonialSlider from '../ui/testimonial-slider';
+import TestimonialSliderMobile from '../ui/testimonial-slider-mobile';
 
 function TestimonialSection() {
   return (

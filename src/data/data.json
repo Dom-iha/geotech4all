@@ -1,78 +1,4 @@
 {
-  "articles": [
-    {
-      "id": "whcgduaurhhcjbzmngf2840r9",
-      "title": "Evolution: What if Darwin was wrong?",
-      "excerpt": "Evolution What if Darwin was wrong?",
-      "category": "General",
-      "author": "Geotech4all",
-      "createdAt": "July 2, 2024",
-      "cover": "/assets/images/darwin.png",
-      "content": "The difference between right and wrong is a function of perspective. Now, what do you think an agnostic would tell you about God and the exact origin of life?"
-    },
-    {
-      "id": "y4368r87fgu3946280fygyucg4",
-      "title": "CATASTROPHISM: Plant, Animal, and Human",
-      "excerpt": "Catastrophism Plant Animal and Human",
-      "category": "Geophysics",
-      "author": "Geotech4all",
-      "createdAt": "July 2, 2024",
-      "cover": "/assets/images/catastrophism.png",
-      "content": "At the onset of the quest of humans to know more about the earth. Many ideas, theories, and philosophies have sprung up to explain the origin of the earth..."
-    },
-    {
-      "id": "g2735082rdydyt9286edcsv286weW",
-      "title": "Beyond Faunal succession: What's life Morphing to?",
-      "excerpt": "Beyond Faunal succession What's life Morphing to?",
-      "category": "Biology",
-      "author": "Geotech4all",
-      "createdAt": "July 2, 2024",
-      "cover": "/assets/images/fauna.png",
-      "content": "As species become complex up the strata, so does generation become more complex with increasing knowledge and technological advancement..."
-    },
-    {
-      "id": "GSUS675s63egdwye9dhGDIGU323D67",
-      "title": "The Present is the Key to the Past. What is the Key to the future?",
-      "excerpt": "The Present is the Key to the Past What is the Key to the future?",
-      "category": "Engineering",
-      "author": "Geotech4all",
-      "createdAt": "July 2, 2024",
-      "cover": "/assets/images/keytopast.png",
-      "content": "The past was the present. The present was the future. And the future is the present. Let's view Charles Lyell and James Hutton Earth principle through..."
-    },
-    {
-      "id": "si8yq73d6dguehss978f6dssgd7s8d",
-      "title": "AFRICA VS THE WORLD: The battle for power and influence",
-      "excerpt": "Africa vs The World The battle for power and influence",
-      "category": "Geochemistry",
-      "author": "Geotech4all",
-      "createdAt": "July 2, 2024",
-      "cover": "/assets/images/africa.png",
-      "content": "Africa is the world's second-largest continent, covering approximately 30 million square kilometers and comprising 54 countries. Africa is..."
-    },
-    {
-      "id": "fbeo7r820ydu39ddg9t9236td97d9w67",
-      "title": "Importance of geotextile in geotechnical industry",
-      "excerpt": "Importance of geotextile in geotechnical industry",
-      "category": "Paleontology",
-      "author": "Geotech4all",
-      "createdAt": "July 2, 2024",
-      "cover": "/assets/images/geotextile.png",
-      "content": "Geotextile is a synthetic fabric made of polypropylene, polyethylene or a combination of both that is used in various geotechnical applications. The..."
-    }
-  ],
-  "headlines": [
-    {
-      "title": "Geotech4All: The Future of Geosciences",
-      "content": "Geotech4All is a platform that provides resources and training for students and professionals in the geosciences field. Our mission is to empower individuals with the knowledge and skills they need to succeed in their careers. Whether you're a student looking to learn more about geology, geophysics, or geotechnical engineering, or a professional seeking to expand your expertise, Geotech4All has something for you. Join us today and take the first step towards a brighter future in the geosciences.",
-      "cover": "/assets/images/logo.jpg"
-    },
-    {
-      "title": "Geohub: The future Geo training",
-      "content": "Geotech4All is a platform that provides resources and training for students and professionals in the geosciences field. Our mission is to empower individuals with the knowledge and skills they need to succeed in their careers. Whether you're a student looking to learn more about geology, geophysics, or geotechnical engineering, or a professional seeking to expand your expertise, Geotech4All has something for you. Join us today and take the first step towards a brighter future in the geosciences.",
-      "cover": "/assets/images/geohub-logo.jpg"
-    }
-  ],
   "testimonials": [
     {
       "name": "Hussaini Ahmed",
@@ -132,7 +58,7 @@
       "price": "$199.99",
       "cover": "/assets/images/dcpt.jpg",
       "description": "The Dutch cone penetrometer is a versatile tool used in geotechnical engineering to measure the strength and compressibility of soil. With a sleek design and durable construction, this cone penetrometer is perfect for fieldwork and laboratory testing. Whether you're a student or a professional, this cone penetrometer is a valuable addition to your geotechnical toolkit.",
-      "availability": "In stock"
+      "availability": "available"
       
     },
     {
@@ -140,7 +66,7 @@
       "price": "$49.99",
       "cover": "/assets/images/stereonet.jpeg",
       "description": "Stereonet is a powerful software tool used by geologists and geophysicists to analyze and visualize structural data. With a user-friendly interface and advanced features, Stereonet makes it easy to create and interpret stereonets, rose diagrams, and other structural geology plots. Whether you're a student or a professional, Stereonet is a valuable tool for understanding the geometry and kinematics of geological structures.",
-      "availability": "In stock"
+      "availability": "available"
       
     },
     {
@@ -148,7 +74,7 @@
       "price": "$99.99",
       "cover": "/assets/images/field-kit.jpg",
       "description": "The fieldwork kit is a comprehensive set of tools and equipment designed for geologists, geophysicists, and other professionals working in the field. With a range of instruments, including a compass, hand lens, and rock hammer, this kit has everything you need to conduct geological surveys, map outcrops, and collect samples. Whether you're a student or a professional, the fieldwork kit is an essential companion for your next fieldwork expedition.",
-      "availability": "In stock"
+      "availability": "available"
       
     },
     {
@@ -156,7 +82,7 @@
       "price": "$19.99",
       "cover": "/assets/images/tshirt.png",
       "description": "Show your support for Geotech4All with this stylish t-shirt. Made from 100% cotton, this t-shirt is perfect for everyday wear. Available in a range of sizes and colors, this t-shirt is a great way to show your love for geosciences.",
-      "availability": "In stock"
+      "availability": "available"
       
     }
   ],
@@ -190,19 +116,19 @@
     {
       "name": "Jeremiah Oladipupo",
       "role": "CEO & Founder",
-      "image": "/assets/images/jerry.png",
+      "image": "/images/jerry.png",
       "bio": "A visionary geologist and enterpreneur, Jeremiah’s passion for geoscience and community development led him found Geotech4All. With his extensive experience in research, exploration and project management, Jeremiah provides strategic direction and unwavering leadership to the company."
     },
     {
       "name": "Edna Osagehle",
       "role": "Co Founder",
-      "image": "/assets/images/edna.png",
+      "image": "/images/edna.png",
       "bio": "Co-founder of Geotech4All, is a skilled professional specializing in engineering geology. With expertise in data acquisition, processing and report writing, Edna brings valuable insight into the team.. Her commitment to advancing geospatial solutions is pivotal in Geotech4All’s mission of making geospatial technology available to everyone."
     },
     {
       "name": "Gabriel Bahago",
       "role": "Co Founder",
-      "image": "/assets/images/gabriel.png",
+      "image": "/images/gabriel.png",
       "bio": "Co-founder of Geotech4All, is a visionary leader with deep understanding of geospatial technologies. His expertise spans GIS, remote sensing and environmental modeling. Committed to making geospatial knowledge available, Gabriel plays a key role in empowering diverse communities through Geotech4All."
     }
   ]

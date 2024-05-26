@@ -27,6 +27,16 @@ function Filter() {
     router.push(pathname + '?' + params.toString(), { scroll: false });
   };
 
+  const resetFilter = () => {
+    setActiveCategory(null);
+    setExpanded(false);
+    const params = new URLSearchParams(searchParams.toString());
+    params.delete('category');
+
+    router.push(pathname + '?' + params.toString(), { scroll: false });
+    // router.push(pathname, { scroll: false });
+  }
+
   useEffect(() => {
     const handleClickOutside = (e: any) => {
       if (e.target.closest('.select') === null) {
@@ -115,7 +125,7 @@ function Filter() {
               type='button'
               className='w-full capitalize text-left rounded-md py-1 px-4 hover:bg-hover outline-focus outline-offset-1 outline-1 focus-visible:outline-dashed transition duration-300'
               tabIndex={!expanded ? -1 : undefined}
-              onClick={() => router.push(pathname, { scroll: false })}
+              onClick={resetFilter}
             >
               all
             </button>

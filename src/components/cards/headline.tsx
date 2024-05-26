@@ -1,3 +1,4 @@
+import { ArrowRightIcon } from '@radix-ui/react-icons';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -31,9 +32,10 @@ function Headline(props: HeadlineProps) {
         </p>
         <Link
           href={`/blog/${props.slug}`}
-          className='self-start mt-auto relative text-main hover:text-accent transition-colors duration-200 border-2 px-8 py-2 border-accent rounded-md after:absolute after:w-full after:h-full after:left-0 after:top-0 after:bg-accent after:scale-x-100 after:origin-right hover:after:scale-x-0 hover:after:origin-left after:transition after:duration-300'
+          className='w-fit p-2 flex items-center justify-center font-semibold rounded-md gap-2 bg-accent text-main min-w-[8rem] focus-visible:gap-4 focus-visible:outline-accent outline-offset-1 outline-1 focus-visible:outline-dashed transition-all duration-300'
         >
-          <span className='relative z-10'>Full Story</span>
+          Full Story
+          <ArrowRightIcon aria-hidden='true' />
         </Link>
       </div>
     </li>

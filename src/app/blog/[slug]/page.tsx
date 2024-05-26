@@ -6,6 +6,9 @@ import { cache } from 'react';
 import { siteConfig } from '@/app/config/site';
 import { notFound } from 'next/navigation';
 import Progressbar from '../progressbar';
+import Share from '@/components/cards/share';
+import Link from 'next/link';
+import { ArrowUpRightFromSquareIcon } from 'lucide-react';
 
 const getArticle = cache(async (slug: string) => {
   const article = await prisma.article.update({
@@ -86,15 +89,10 @@ async function page({ params }: { params: { slug: string } }) {
     <>
       <Progressbar /> {/*currently tracking entire page scroll*/}
       <article className='py-10 lg:py-16 px-4 flex flex-col gap-5 max-w-screen-md mx-auto'>
-        <Image
-          src={article.image}
-          alt={article.title}
-          width={768}
-          height={400}
-          className='w-auto h-auto aspect-video rounded-lg'
-        />
-        <h1 className='font-bold text-xl md:text-2xl lg:text-4xl mt-4'>{article.title}</h1>
-        <div className='rounded-full w-fit flex justify-center bg-purple-200 text-purple-600 px-4 py-1'>
+        <h1 className='font-bold text-xl md:text-2xl lg:text-4xl'>
+          {article.title}
+        </h1>
+        <div className='rounded-full w-fit flex justify-center bg-red-200 text-red-600 px-4 py-1'>
           <p>{article.categoryName}</p>
         </div>
         <section className='flex items-center gap-3 py-2'>
@@ -117,6 +115,13 @@ async function page({ params }: { params: { slug: string } }) {
             </p>
           </div>
         </section>
+        <Image
+          src={article.image}
+          alt={article.title}
+          width={768}
+          height={400}
+          className='w-auto h-auto aspect-video rounded-lg'
+        />
         <section
           className='prose prose-base lg:prose-lg xl:prose-xl mt-2 lg:mt-4'
           dangerouslySetInnerHTML={{
@@ -124,12 +129,33 @@ async function page({ params }: { params: { slug: string } }) {
           }}
         />
       </article>
-
+      <Share title={article.title} />
       <Related
         authorName={article.author.name}
         authorId={article.authorId}
         currentArticle={article.id}
       />
+      <section className='px-6 md:px-8 lg:px-24 mb-14'>
+        <div className='p-6 lg:p-10 flex flex-col items-center border border-input border-dashed rounded-xl max-w-screen-md mx-auto'>
+          <div className='flex flex-col gap-6 lg:gap-8 text-center items-center'>
+            <h3 className=' text-2xl lg:text-4xl font-bold'>
+              Join us
+            </h3>
+            <p className=' max-w-prose md:text-lg lg:text-xl'>
+              Join our community of geoscience enthusiasts and professionals to
+              share ideas, and learn from each other.
+            </p>
+            <Link
+              href='https://chat.whatsapp.com/J7SblOAgAan7IrAsWAL3MC'
+              target='_blank'
+              className='w-fit flex gap-2 items-center rounded-md px-8 py-2.5 text-main bg-accent text-acceent transition duration-300 max-md:self-center'
+            >
+              Join
+              <ArrowUpRightFromSquareIcon />
+            </Link>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
