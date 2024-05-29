@@ -6,9 +6,22 @@ import Article from '@/components/cards/article';
 import Event from '@/components/cards/event';
 import { ArrowRightIcon } from '@radix-ui/react-icons';
 import prisma from '@/lib/db';
+import { siteConfig } from '@/app/config/site';
 
 export const metadata: Metadata = {
   title: 'Geosciencehub',
+  openGraph: {
+    description:
+      'Get the latest news, articles, and events in the geoscience community.',
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: '1200',
+        height: '630',
+        // alt: ''
+      },
+    ],
+  },
 };
 
 const getData = async () => {

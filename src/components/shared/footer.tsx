@@ -26,7 +26,7 @@ function footer() {
             </li>
             <li>
               <Link
-                href='https://youtube.com/geotech4all'
+                href='https://youtube.com/@geotech4all'
                 className='hover:underline'
               >
                 Tutorials
@@ -127,7 +127,7 @@ function footer() {
             <li>
               <Link
                 aria-label='Subscribe to our youtube channel'
-                href='https://youtube.com/geotech4all'
+                href='https://youtube.com/@geotech4all'
                 target='blank'
               >
                 <Youtube aria-hidden='true' />

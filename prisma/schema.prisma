@@ -21,7 +21,7 @@ model User {
   events        Event[]
   articles      Article[]
   opportunities Opportunity[]
-  Testimonial Testimonial[]
+  Testimonial   Testimonial[]
 
   @@map("users")
 }
@@ -69,15 +69,18 @@ model Event {
 }
 
 model Opportunity {
-  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  slug        String   @unique
   title       String
   description String
   image       String
-  closed      Boolean @default(false)
+  closed      Boolean  @default(false)
   position    String
   company     String
-  authorId    String @db.ObjectId
-  author      User   @relation(fields: [authorId], references: [id])
+  authorId    String   @db.ObjectId
+  author      User     @relation(fields: [authorId], references: [id])
 
   @@map("opportunities")
 }
@@ -92,5 +95,3 @@ model Testimonial {
 
   @@map("testimonials")
 }
-
-

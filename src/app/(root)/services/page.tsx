@@ -1,14 +1,26 @@
 import Image from 'next/image';
-import geohub from '../../../public/icons/geohub.jpg';
+import geohub from '../../../../public/icons/geohub.jpg';
 import Link from 'next/link';
 import { Metadata } from 'next';
 import { DoubleArrowDownIcon } from '@radix-ui/react-icons';
 import data from '@/data/data.json';
 import Product from '@/components/cards/product';
 import ServiceList from './service-list';
+import { siteConfig } from '@/app/config/site';
 
 export const metadata: Metadata = {
   title: 'Services',
+  openGraph: {
+    description: 'Tailor-made solutions for your geoscience needs.',
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: '1200',
+        height: '630',
+        // alt: ''
+      },
+    ],
+  },
 };
 const Services: React.FC = () => {
   return (
@@ -30,7 +42,7 @@ const Services: React.FC = () => {
           </Link>
         </div>
       </section>
-      
+
       <ServiceList />
 
       <section className='px-6 md:px-8 lg:px-24 py-14'>

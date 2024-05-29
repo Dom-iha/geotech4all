@@ -37,7 +37,8 @@ function ServiceList() {
               <p className='lg:text-xl'>{service.description}</p>
             </Reveal>
             <Link
-              href={`/services/${service.route}`}
+              href={`https://api.whatsapp.com/message/IIWFYETB6S2NI1?autoload=1&app_absent=0`}
+              target='_blank'
               className='w-fit p-2 flex items-center justify-center font-semibold rounded-md gap-2 bg-accent text-main min-w-[8rem] hover:gap-4 focus-visible:gap-4 focus-visible:outline-accent outline-offset-1 outline-1 focus-visible:outline-dashed transition-all duration-300'
             >
               Details
