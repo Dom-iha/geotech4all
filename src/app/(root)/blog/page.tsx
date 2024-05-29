@@ -1,12 +1,24 @@
-import { Metadata } from 'next';
-import Filter from '@/components/ui/filter';
-import Image from 'next/image';
-import placeholder from '../../../public/images/placeholder.jpg';
 import prisma from '@/lib/db';
+import Image from 'next/image';
+import { Metadata } from 'next';
 import BlogList from './blog-list';
+import Filter from '@/components/ui/filter';
+import { siteConfig } from '@/app/config/site';
 
 export const metadata: Metadata = {
   title: 'Blog',
+  openGraph: {
+    description:
+      'Read and learn about the latest and greatest innovations, news, and events in geosciences.',
+      images: [
+        {
+          url: siteConfig.ogImage,
+          width: '1200',
+          height: '630',
+          alt: 'geotech4alls logo with a globe'
+        },
+      ],
+  },
 };
 
 interface Query {
@@ -17,10 +29,10 @@ const getData = async (query: Query) => {
   const articles = await prisma.article.findMany({
     where: query?.category ? { categoryName: query.category } : {},
     include: { author: true },
-    orderBy:{
-      createdAt: 'desc'
+    orderBy: {
+      createdAt: 'desc',
     },
-    take:9
+    take: 9,
   });
   return articles;
 };
@@ -52,7 +64,7 @@ async function page({
         </div>
         <div className='relative max-h-[500px]'>
           <Image
-            src={placeholder}
+            src='/images/placeholder.jpg'
             alt='hero image'
             width={500}
             height={500}
@@ -65,7 +77,10 @@ async function page({
         </div>
       </section>
       <section className='relative z-20 bg-main min-h-screen px-6 md:px-8 lg:px-20 py-10 lg:py-14 flex flex-col gap-10 lg:gap-16'>
-        <h2 className='font-bold text-xl lg:text-4xl capitalize'><span className='text-red-400'># </span>{`${searchParams.category ? searchParams.category : 'all'}`}</h2>
+        <h2 className='font-bold text-xl lg:text-4xl capitalize'>
+          <span className='text-red-400'># </span>
+          {`${searchParams.category ? searchParams.category : 'all'}`}
+        </h2>
         <Filter />
         {!articles.length ? (
           <div className='grid place-content-center w-full min-h-[400px] max-w-screen-md mx-auto'>
@@ -76,7 +91,7 @@ async function page({
             </div>
           </div>
         ) : (
-          <BlogList articles={articles}/>
+          <BlogList articles={articles} />
         )}
       </section>
     </>

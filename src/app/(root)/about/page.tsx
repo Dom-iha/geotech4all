@@ -4,9 +4,21 @@ import Link from 'next/link';
 import { DoubleArrowDownIcon } from '@radix-ui/react-icons';
 import data from '@/data/data.json';
 import Member from '@/components/cards/member';
+import { siteConfig } from '@/app/config/site';
 
 export const metadata: Metadata = {
   title: 'About',
+  openGraph:{
+    description: 'Everything Geoscience',
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: '1200',
+        height: '630',
+        // alt: ''
+      },
+    ],
+  }
 };
 
 function About() {
@@ -56,7 +68,7 @@ function About() {
         <div className='grid lg:grid-cols-2 gap-8 lg:gap-16 lg:mt-8'>
           <div className='relative w-fit mx-auto'>
             <Image
-              src={'/images/mission-2.jpg'}
+              src={'/images/mission.jpg'}
               width={500}
               height={300}
               alt='image by rawpixel.ccom on freepik'
@@ -78,7 +90,7 @@ function About() {
         {/* vision */}
         <div className='grid lg:grid-cols-2 gap-8 lg:gap-16 lg:mt-8'>
           <div className='flex flex-col justify-center text-center lg:text-left'>
-            <p className='font-bold text-2xl lg:text-4xl mb-5 text-red-500'>
+            <p className='font-bold text-2xl lg:text-4xl mb-5'>
               Our Vision
             </p>
             <p className='max-w-screen-md mx-auto lg:text-xl'>

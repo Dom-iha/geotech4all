@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL(siteConfig.url),
   description: siteConfig.description,
-  keywords: ['Next.js', 'Geology', 'Geophysics', 'University', 'blog'],
+  keywords: ['Geology', 'Geophysics', 'University', 'blog', 'geoscience', 'oppotunities'],
   openGraph: {
     type: 'website',
     locale: 'en_US',

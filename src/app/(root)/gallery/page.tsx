@@ -2,18 +2,21 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 import { ArrowRightIcon } from '@radix-ui/react-icons';
 import ImageSlider from '@/components/ui/image-slider';
-import training_1 from '../../../public/images/training-1.jpg';
-import training_2 from '../../../public/images/training-2.jpg';
-import training_3 from '../../../public/images/training-3.jpg';
-import training_4 from '../../../public/images/training-4.jpg';
-import meetup_1 from '../../../public/images/meetup-1.jpg';
-import meetup_2 from '../../../public/images/meetup-2.jpg';
-import meetup_3 from '../../../public/images/meetup-3.jpg';
-import meetup_4 from '../../../public/images/meetup-4.jpg';
+import training_1 from '../../../../public/images/training-1.jpg';
+import training_2 from '../../../../public/images/training-2.jpg';
+import training_3 from '../../../../public/images/training-3.jpg';
+import training_4 from '../../../../public/images/training-4.jpg';
+import meetup_1 from '../../../../public/images/meetup-1.jpg';
+import meetup_2 from '../../../../public/images/meetup-2.jpg';
+import meetup_3 from '../../../../public/images/meetup-3.jpg';
+import meetup_4 from '../../../../public/images/meetup-4.jpg';
 import ScrollLink from '@/components/ui/scroll-link';
 
 export const metadata: Metadata = {
   title: 'Gallery',
+  openGraph: {
+    description: 'Explore moments from our journey so far',
+  },
 };
 
 const Gallery: React.FC = () => {
