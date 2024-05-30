@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { toast } from 'sonner';
 
-function Share({ title }: { title: string }) {
+function ShareDesktop({ title }: { title: string }) {
   const baseUrl = 'https://www.geotech4all.com';
   const pathname = usePathname();
 
@@ -18,14 +18,14 @@ function Share({ title }: { title: string }) {
   const pageUrl = encodeURIComponent(`${baseUrl}${pathname}`);
 
   return (
-    <div className='flex flex-col gap-4 border-focus border-dashed rounded-lg py-4'>
-      <p className='font-semibold lg:textlg'>Share this</p>
-      <ul className='flex gap-6'>
+    <div className=' w-fit sticky top-6 max-lg:hidden lg:-translate-x-20 xl:-translate-x-40 flex flex-col gap-4 border-focus border-dashed rounded-lg py-4'>
+      <p className='font-semibold lg:textlg'>Share</p>
+      <ul className='flex gap-6 flex-col'>
         <li>
           <Link
             href={`https://twitter.com/intent/tweet?text=${tweetText}&url=${pageUrl}`}
             target='_blank'
-            className='border border-input rounded-md p-2 grid place-content-center hover:text-red-400 hover:border-red-400 transition-all duration-300'
+            className='w-fit border border-input rounded-md p-2 grid place-content-center hover:text-red-400 hover:border-red-400 transition-all duration-300'
           >
             <TwitterLogoIcon className='w-6 h-6' />
           </Link>
@@ -34,7 +34,7 @@ function Share({ title }: { title: string }) {
           <Link
             href={`https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`}
             target='_blank'
-            className='border border-input rounded-md p-2 grid place-content-center hover:text-red-400 hover:border-red-400 transition-all duration-300'
+            className='w-fit border border-input rounded-md p-2 grid place-content-center hover:text-red-400 hover:border-red-400 transition-all duration-300'
           >
             <Facebook className='w-6 h-6' />
           </Link>
@@ -43,7 +43,7 @@ function Share({ title }: { title: string }) {
           <Link
             href={`https://www.linkedin.com/sharing/share-offsite/?url=${pageUrl}`}
             target='_blank'
-            className='border border-input rounded-md p-2 grid place-content-center hover:text-red-400 hover:border-red-400 transition-all duration-300'
+            className='w-fit border border-input rounded-md p-2 grid place-content-center hover:text-red-400 hover:border-red-400 transition-all duration-300'
           >
             <LinkedInLogoIcon className='w-6 h-6' />
           </Link>
@@ -63,4 +63,4 @@ function Share({ title }: { title: string }) {
   );
 }
 
-export default Share;
+export default ShareDesktop;

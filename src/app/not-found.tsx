@@ -14,7 +14,7 @@ export default function Notfound(): any {
         </p>
         <Link
           href='/'
-          className='mx-auto w-fit p-2 flex items-center justify-center font-semibold rounded-md gap-2 border-2 border-accent hover:bg-accent/10 outline-none min-w-[8rem] hover:gap-4 focus-visible:gap-4 focus-visible:bg-accent/10 transition-all duration-300'
+          className='mx-auto w-fit p-2 flex items-center justify-center font-semibold rounded-md gap-2 border-2 border-accent hover:bg-hover outline-none min-w-[8rem] hover:gap-4 focus-visible:gap-4 focus-visible:bg-hover transition-all duration-300'
         >
           <ArrowLeft aria-hidden='true' />
           Home

@@ -1,6 +1,6 @@
-import type { MetadataRoute } from 'next';
-import { siteConfig } from './config/site';
 import prisma from '@/lib/db';
+import type { MetadataRoute } from 'next';
+import { siteConfig } from '@/config/site';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // fetch all blog posts to index their urls

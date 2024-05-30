@@ -1,12 +1,15 @@
 import React from 'react';
 import Link from 'next/link';
 import Reveal from '../shared/reveal';
+import MaxWidthWrapper from '../shared/max-width-wrapper';
 
 function HeroSection() {
   return (
     <section className='hero relative flex items-center min-h-[calc(100vh-60px)] text-main'>
-      <div className='fade absolute w-full h-full'></div>
-      <div className='z-10 grid gap-4 lg:gap-8 p-6 md:p-8 lg:pl-24 lg:pr-0 max-w-prose'>
+      <div className='fade absolute w-full h-full' />
+      <MaxWidthWrapper>
+
+      <div className='z-10 grid gap-4 lg:gap-8 lg:pr-0 max-w-prose'>
         <Reveal>
           <h1 className='text-3xl lg:text-6xl font-bold text-accent'>
             Geoscience For All
@@ -29,6 +32,7 @@ function HeroSection() {
           </Link>
         </Reveal>
       </div>
+      </MaxWidthWrapper>
     </section>
   );
 }

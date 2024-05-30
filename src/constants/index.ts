@@ -39,11 +39,6 @@ export const Services = [
     route:'project-writing'
   },
   {
-    name: 'Field Mapping',
-    description: 'Our field mapping services combine fieldwork expertise with advanced mapping technologies to facilitate accurate geological surveys.',
-    route:'field-mapping'
-  },
-  {
     name: 'Software Training',
     description: 'Our software training programs provide hands-on instruction in popular geological software incliding ArcGis, Petrel and Surfer.',
     route:'software-training'
@@ -57,5 +52,10 @@ export const Services = [
     name: 'Geopysical survey',
     description: 'Our geophysical survey services utilize state-of-the-art equipment to conduct non-invasive subsurface investigations.',
     route:'geophysical-survey'
+  },
+  {
+    name: 'Other Services',
+    description: 'Our services via our partners include; groundwater geophysical survey, subsoil investigation, non destructive test such as Ultrasonic, pile integrity etc.',
+    route:'field-mapping'
   },
 ];

@@ -1,14 +1,14 @@
-import Image from 'next/image';
-import Related from '@/components/cards/related';
+import Link from 'next/link';
 import prisma from '@/lib/db';
-import { Metadata } from 'next';
 import { cache } from 'react';
-import { siteConfig } from '@/app/config/site';
-import { notFound } from 'next/navigation';
+import Image from 'next/image';
+import { Metadata } from 'next';
 import Progressbar from '../progressbar';
 import Share from '@/components/cards/share';
-import Link from 'next/link';
+import Related from '@/components/cards/related';
 import { ArrowUpRightFromSquareIcon } from 'lucide-react';
+import MaxWidthWrapper from '@/components/shared/max-width-wrapper';
+import ShareDesktop from '@/components/cards/share-desktop';
 
 const getArticle = cache(async (slug: string) => {
   const article = await prisma.article.update({
@@ -85,33 +85,40 @@ async function page({ params }: { params: { slug: string } }) {
 
   // need to handle error cases when user loses connection and display fallback ui
 
+  const formattedDate = new Intl.DateTimeFormat('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  }).format(new Date(article.createdAt));
+
   return (
     <>
       <Progressbar /> {/*currently tracking entire page scroll*/}
-      <article className='py-10 lg:py-16 px-4 flex flex-col gap-5 max-w-screen-md mx-auto'>
-        <h1 className='font-bold text-xl md:text-2xl lg:text-4xl'>
-          {article.title}
-        </h1>
-        <div className='rounded-full w-fit flex justify-center bg-red-200 text-red-600 px-4 py-1'>
-          <p>{article.categoryName}</p>
-        </div>
-        <section className='flex items-center gap-3 py-2'>
-          <Image
-            src={article.author.image || '/profile.svg'}
-            alt={''}
-            width={40}
-            height={40}
-            className='w-[40px] h-[40px] rounded-full'
-          />
-          <div className='flex items-center gap-4 leading-4 font-medium text-sm'>
-            <p className='lg:text-lg'>{article.author.name}</p>
-            <span className='font-bold'>-</span>
-            <p className='lg:text-lg'>
-              {new Date(article.createdAt)
-                .toDateString()
-                .split(' ')
-                .slice(1)
-                .join(' ')}
+      <article className='py-6 lg:py-10 px-6 md:px-10 flex flex-col gap-5 max-w-screen-md mx-auto'>
+      {/* <ShareDesktop title={article.title} /> */}
+        <section className='space-y-4'>
+          <time
+            className='text-zinc-600 text-sm tracking-tight'
+            dateTime={new Date(article.createdAt).toISOString()}
+          >
+            Published on {formattedDate}
+          </time>
+          <h1 className='font-bold text-2xl md:text-3xl lg:text-5xl leading-tight'>
+            {article.title}
+          </h1>
+          <div className='rounded-full w-fit flex justify-center bg-red-200 text-red-600 px-4 py-1'>
+            <p>{article.categoryName}</p>
+          </div>
+          <div className='flex items-center gap-3 py-2'>
+            <Image
+              src={article.author.image || '/profile.svg'}
+              alt={''}
+              width={42}
+              height={42}
+              className='w-11 h-11 rounded-full border'
+            />
+            <p className='text-sm lg:text-base font-medium'>
+              {article.author.name}
             </p>
           </div>
         </section>
@@ -123,24 +130,24 @@ async function page({ params }: { params: { slug: string } }) {
           className='w-auto h-auto aspect-video rounded-lg'
         />
         <section
-          className='prose prose-base lg:prose-lg xl:prose-xl mt-2 lg:mt-4'
+          className='prose prose-zinc prose-base lg:prose-lg xl:prose-xl mt-2 lg:mt-4'
           dangerouslySetInnerHTML={{
             __html: article.content ? article.content : '',
           }}
         />
       </article>
-      <Share title={article.title} />
-      <Related
-        authorName={article.author.name}
-        authorId={article.authorId}
-        currentArticle={article.id}
-      />
-      <section className='px-6 md:px-8 lg:px-24 mb-14'>
+      <section className='py-6 lg:py-10 px-6 md:px-10 max-w-screen-md mx-auto space-y-6'>
+        <Share title={article.title} />
+
+        <Related
+          authorName={article.author.name}
+          authorId={article.authorId}
+          currentArticle={article.id}
+        />
+
         <div className='p-6 lg:p-10 flex flex-col items-center border border-input border-dashed rounded-xl max-w-screen-md mx-auto'>
           <div className='flex flex-col gap-6 lg:gap-8 text-center items-center'>
-            <h3 className=' text-2xl lg:text-4xl font-bold'>
-              Join us
-            </h3>
+            <h3 className=' text-2xl lg:text-4xl font-bold'>Join us</h3>
             <p className=' max-w-prose md:text-lg lg:text-xl'>
               Join our community of geoscience enthusiasts and professionals to
               share ideas, and learn from each other.

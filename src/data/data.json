@@ -25,38 +25,11 @@
       "image": "optional"
     }
   ],
-  "services": [
-    {
-      "name": "Gelogical Services",
-      "brief": "Geotechnical engineering is a branch of civil engineering that focuses on the behavior of earth materials. Geotechnical engineers use soil and rock mechanics to design foundations, slopes, and other structures that interact with the ground.",
-      "details": "Geotechnical engineering is a branch of civil engineering that focuses on the behavior of earth materials. Geotechnical engineers use soil and rock mechanics to design foundations, slopes, and other structures that interact with the ground. Geotechnical engineering is an important field of study because it helps ensure the safety and stability of structures built on or in the ground. Geotechnical engineers work on a wide range of projects, including buildings, bridges, dams, tunnels, and highways. They use a variety of tools and techniques to analyze soil and rock properties, such as laboratory testing, field testing, and computer modeling. Geotechnical engineering is a challenging and rewarding field that offers many opportunities for professional growth and development."
-    },
-    {
-      "name": "Software Training",
-      "brief": "Geological engineering is a branch of geology that focuses on the study of the earth's materials and processes. Geological engineers use their knowledge of geology to design and construct structures that interact with the earth, such as tunnels, dams, and mines",
-      "details": "Geological engineering is a branch of geology that focuses on the study of the earth's materials and processes. Geological engineers use their knowledge of geology to design and construct structures that interact with the earth, such as tunnels, dams, and mines. Geological engineering is an important field of study because it helps us understand the earth's history and how it has shaped the landscape we see today. Geological engineers work on a wide range of projects, including environmental remediation, natural hazard assessment, and resource exploration. They use a variety of tools and techniques to collect and analyze data, such as geological maps, borehole logs, and remote sensing imagery. Geological engineering is a challenging and rewarding field that offers many opportunities for professional growth and development."
-    },
-    {
-      "name": "Research Assistance",
-      "brief": "Geotechnical engineering is a branch of civil engineering that focuses on the behavior of earth materials. Geotechnical engineers use soil and rock mechanics to design foundations, slopes, and other structures that interact with the ground.",
-      "details": "Geotechnical engineering is a branch of civil engineering that focuses on the behavior of earth materials. Geotechnical engineers use soil and rock mechanics to design foundations, slopes, and other structures that interact with the ground. Geotechnical engineering is an important field of study because it helps ensure the safety and stability of structures built on or in the ground. Geotechnical engineers work on a wide range of projects, including buildings, bridges, dams, tunnels, and highways. They use a variety of tools and techniques to analyze soil and rock properties, such as laboratory testing, field testing, and computer modeling. Geotechnical engineering is a challenging and rewarding field that offers many opportunities for professional growth and development."
-    },
-    {
-      "name": "Consultancy Services",
-      "brief": "Geological engineering is a branch of geology that focuses on the study of the earth's materials and processes. Geological engineers use their knowledge of geology to design and construct structures that interact with the earth, such as tunnels, dams, and mines",
-      "details": "Geological engineering is a branch of geology that focuses on the study of the earth's materials and processes. Geological engineers use their knowledge of geology to design and construct structures that interact with the earth, such as tunnels, dams, and mines. Geological engineering is an important field of study because it helps us understand the earth's history and how it has shaped the landscape we see today. Geological engineers work on a wide range of projects, including environmental remediation, natural hazard assessment, and resource exploration. They use a variety of tools and techniques to collect and analyze data, such as geological maps, borehole logs, and remote sensing imagery. Geological engineering is a challenging and rewarding field that offers many opportunities for professional growth and development."
-    },
-    {
-      "name": "Training and Workshops",
-      "brief": "Geotechnical engineering is a branch of civil engineering that focuses on the behavior of earth materials. Geotechnical engineers use soil and rock mechanics to design foundations, slopes, and other structures that interact with the ground.",
-      "details": "Geotechnical engineering is a branch of civil engineering that focuses on the behavior of earth materials. Geotechnical engineers use soil and rock mechanics to design foundations, slopes, and other structures that interact with the ground. Geotechnical engineering is an important field of study because it helps ensure the safety and stability of structures built on or in the ground. Geotechnical engineers work on a wide range of projects, including buildings, bridges, dams, tunnels, and highways. They use a variety of tools and techniques to analyze soil and rock properties, such as laboratory testing, field testing, and computer modeling. Geotechnical engineering is a challenging and rewarding field that offers many opportunities for professional growth and development."
-    }
-  ],
   "products": [
     {
       "name": "Dutch cone penetrometer",
       "price": "$199.99",
-      "cover": "/assets/images/dcpt.jpg",
+      "cover": "/images/dcpt.jpg",
       "description": "The Dutch cone penetrometer is a versatile tool used in geotechnical engineering to measure the strength and compressibility of soil. With a sleek design and durable construction, this cone penetrometer is perfect for fieldwork and laboratory testing. Whether you're a student or a professional, this cone penetrometer is a valuable addition to your geotechnical toolkit.",
       "availability": "available"
       
@@ -64,7 +37,7 @@
     {
       "name": "Stereonet (software)",
       "price": "$49.99",
-      "cover": "/assets/images/stereonet.jpeg",
+      "cover": "/images/stereonet.jpeg",
       "description": "Stereonet is a powerful software tool used by geologists and geophysicists to analyze and visualize structural data. With a user-friendly interface and advanced features, Stereonet makes it easy to create and interpret stereonets, rose diagrams, and other structural geology plots. Whether you're a student or a professional, Stereonet is a valuable tool for understanding the geometry and kinematics of geological structures.",
       "availability": "available"
       
@@ -72,7 +45,7 @@
     {
       "name": "Fieldwork kit",
       "price": "$99.99",
-      "cover": "/assets/images/field-kit.jpg",
+      "cover": "/images/field-kit.jpg",
       "description": "The fieldwork kit is a comprehensive set of tools and equipment designed for geologists, geophysicists, and other professionals working in the field. With a range of instruments, including a compass, hand lens, and rock hammer, this kit has everything you need to conduct geological surveys, map outcrops, and collect samples. Whether you're a student or a professional, the fieldwork kit is an essential companion for your next fieldwork expedition.",
       "availability": "available"
       
@@ -80,7 +53,7 @@
     {
       "name": "Geotech4All T-Shirt",
       "price": "$19.99",
-      "cover": "/assets/images/tshirt.png",
+      "cover": "/images/tshirt.png",
       "description": "Show your support for Geotech4All with this stylish t-shirt. Made from 100% cotton, this t-shirt is perfect for everyday wear. Available in a range of sizes and colors, this t-shirt is a great way to show your love for geosciences.",
       "availability": "available"
       
@@ -92,7 +65,7 @@
       "date": "July 2nd, 2024",
       "time": "9:00 AM - 5:00 PM",
       "location": "Abuja, Nigeria",
-      "cover": "/assets/images/events.png",
+      "cover": "/images/events.png",
       "details": "Gathering of geologists, geophysicists, geotechnical engineers, and other professionals in the geosciences field. The conference will feature talks, workshops, and networking opportunities for attendees."
     },
     {
@@ -100,7 +73,7 @@
       "date": "July 2nd, 2024",
       "time": "9:00 AM - 5:00 PM",
       "location": "Lagos, Nigeria",
-      "cover": "/assets/images/events.png",
+      "cover": "/images/events.png",
       "details": "Hands-on event where participants will learn about the latest tools and techniques in geotechnical engineering. The workshop will cover topics such as soil testing, foundation design, and slope stability analysis."
     },
     {
@@ -108,7 +81,7 @@
       "date": "July 2nd, 2024",
       "time": "9:00 AM - 5:00 PM",
       "location": "Online",
-      "cover": "/assets/images/events.png",
+      "cover": "/images/events.png",
       "details": "Online event that will feature talks and presentations from experts in the geosciences field. Participants will have the opportunity to ask questions and interact with the speakers in real-time."
     }
   ],
