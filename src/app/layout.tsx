@@ -4,7 +4,7 @@ import { Montserrat } from 'next/font/google';
 import { Toaster } from 'sonner';
 import Footer from '@/components/shared/footer';
 import { Analytics } from '@vercel/analytics/react';
-import { siteConfig } from './config/site';
+import { siteConfig } from '../config/site';
 import BackToTop from '@/components/shared/back-to-top';
 import Navbar from '@/components/shared/navigation';
 
@@ -54,7 +54,7 @@ export default function RootLayout({
       <body className={montserrat.className}>
         <Toaster />
         <Navbar />
-        <main id='content' className='max-w-[90rem] mx-auto'>
+        <main id='content'>
           {children}
         </main>
         <BackToTop />

@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { Metadata } from 'next';
 import BlogList from './blog-list';
 import Filter from '@/components/ui/filter';
-import { siteConfig } from '@/app/config/site';
+import { siteConfig } from "@/config/site"
 
 export const metadata: Metadata = {
   title: 'Blog',

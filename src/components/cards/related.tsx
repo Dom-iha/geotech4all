@@ -15,6 +15,9 @@ async function Related({
     where: {
       authorId: authorId,
     },
+    orderBy:{
+      createdAt: 'desc',
+    }
   });
 
   const otherArticlesExcludingCurrent = relatedArticles.filter(

@@ -8,7 +8,7 @@ function MaxWidthWrapper({
 }) {
   return (
     <div
-      className={`h-full mx-auto w-full max-w-screen-xl px-2.5 md:px-20 ${className}`}
+      className={`h-full mx-auto w-full max-w-screen-2xl px-6 md:px-12 lg:px-24 ${className}`}
     >
       {children}
     </div>

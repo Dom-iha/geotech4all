@@ -1,10 +1,10 @@
 'use client';
-import Image from 'next/image';
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
-import {motion} from 'framer-motion';
-import Reveal from '../shared/reveal';
+import Image from 'next/image';
 import Fade from '../shared/fade';
+import Reveal from '../shared/reveal';
+import React, { useEffect, useState } from 'react';
+import MaxWidthWrapper from '../shared/max-width-wrapper';
 
 interface FeaturedSectionProps {
   id: string;
@@ -43,45 +43,51 @@ function FeaturedSection({ articles }: { articles: FeaturedSectionProps[] }) {
     }
   };
 
-  if(!featuredArticles.length) return null;
+  if (!featuredArticles.length) return null;
 
   return (
-    <section className='px-6 md:px-8 lg:px-24 py-14'>
-      <h2 className='font-bold text-2xl lg:text-4xl mb-6 md:mb-12'>
-        Featured posts
-      </h2>
-      <div className='flex items-c flex-col gap-8 lg:flex-row lg:gap-20'>
-        <Fade>
-          <Image
-          src={featuredArticles[indexToShow].image}
-          alt={featuredArticles[indexToShow].excerpt}
-          width={500}
-          height={420}
-          className='rounded-md max-md:hidden lg:max-w-[420px] lg:max-h-[300px]'
-          />
-        </Fade>
-        <ul className='flex flex-col gap-8'>
-          {featuredArticles.map((featuredArticle, index) => (
-            <li key={featuredArticle.id}>
-              <Reveal>
-              <div className='pl-4 relative'>
-                <Link
-                  href={`/blog/${featuredArticles[index].slug}`}
-                  className={`hover:underline text-lg lg:text-3xl font-semibold mb-2.5 before:absolute before:bg-accent/70 before:h-full before:w-1.5 before:top-0 before:left-0 before:transition before:duration-500 before:hover:origin-bottom before:hover:scale-y-0 ${indexToShow === index ? 'before:scale-y-100 before:origin-bottom' : 'before:scale-y-0 before:origin-top'}`}
-                >
-                  {featuredArticles[index].title}
-                </Link>
-              </div>
-              </Reveal>
-              <Reveal>
-                <p className='lg:mt-2 pl-4 lg:text-xl'>
-                  {shorten(featuredArticles[index].excerpt)}
-                </p>
-              </Reveal>
-            </li>
-          ))}
-        </ul>
-      </div>
+    <section className='py-14'>
+      <MaxWidthWrapper>
+        <h2 className='font-bold text-2xl lg:text-4xl mb-6 md:mb-12'>
+          Featured posts
+        </h2>
+        <div className='flex items-center flex-col gap-8 xl:flex-row lg:gap-20'>
+          <Fade>
+            <Image
+              src={featuredArticles[indexToShow].image}
+              alt={featuredArticles[indexToShow].excerpt}
+              width={500}
+              height={420}
+              className='rounded-md hidden xl:block lg:max-w-[420px] lg:max-h-[300px]'
+            />
+          </Fade>
+          <ul className='flex flex-col gap-8'>
+            {featuredArticles.map((featuredArticle, index) => (
+              <li key={featuredArticle.id}>
+                <Reveal>
+                  <div className='pl-4 relative'>
+                    <Link
+                      href={`/blog/${featuredArticles[index].slug}`}
+                      className={`hover:underline text-lg lg:text-3xl font-semibold mb-2.5 before:absolute before:bg-accent/70 before:h-full before:w-1.5 before:top-0 before:left-0 before:transition before:duration-500 before:hover:origin-bottom before:hover:scale-y-0 ${
+                        indexToShow === index
+                          ? 'before:scale-y-100 before:origin-bottom'
+                          : 'before:scale-y-0 before:origin-top'
+                      }`}
+                    >
+                      {featuredArticles[index].title}
+                    </Link>
+                  </div>
+                </Reveal>
+                <Reveal>
+                  <p className='lg:mt-2 pl-4 lg:text-xl'>
+                    {shorten(featuredArticles[index].excerpt)}
+                  </p>
+                </Reveal>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </MaxWidthWrapper>
     </section>
   );
 }

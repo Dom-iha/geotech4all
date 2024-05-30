@@ -1,6 +1,7 @@
 import { ArrowRightIcon } from '@radix-ui/react-icons';
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { siteConfig } from "@/config/site"
 
 export const metadata: Metadata = {
   title: 'Opportunities',
