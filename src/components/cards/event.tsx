@@ -11,7 +11,7 @@ import Link from 'next/link';
 import formatTime from '@/utils/formatTime';
 
 interface EventCardProps {
-  id: string;
+  slug: string;
   name: string;
   image: string;
   date: string;
@@ -28,7 +28,7 @@ function EventCard({
   venue,
   link,
   image,
-  id,
+  slug,
 }: EventCardProps) {
   return (
     <li className='flex flex-col lg:flex-row gap-4 rounded-lg bg-slate-50 p-4 shadow-md'>
@@ -81,7 +81,7 @@ function EventCard({
         </div>
 
         <Link
-          href={`/geohub/events/${id}`}
+          href={`/geohub/events/${slug}`}
           className='mt-auto text-sm w-fit p-2 flex items-center justify-center font-semibold rounded-md gap-2 bg-accent text-main min-w-[8rem] focus-visible:gap-4 focus-visible:outline-accent outline-offset-1 outline-1 focus-visible:outline-dashed transition-all duration-300'
         >
           Details

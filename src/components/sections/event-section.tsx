@@ -13,7 +13,7 @@ function EventSection({ events }: { events: Event[] }) {
         {events.map((event) => (
           <EventCard
             key={event.id}
-            id={event.id}
+            slug={event.slug}
             name={event.name}
             time={event.time}
             venue={event.venue}
