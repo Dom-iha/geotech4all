@@ -21,9 +21,9 @@ function ShowcaseSection() {
               />
             </Fade>
           </div>
-          <div className='flex flex-col gap-8'>
+          <div className='flex flex-col gap-4 lg:gap-8'>
             <h2 className='text-2xl lg:text-4xl font-bold'>
-              <span className='text-red-400'># </span>What we do
+              What we do
             </h2>
             <div className='grid gap-2'>
               <Reveal>
@@ -38,7 +38,7 @@ function ShowcaseSection() {
             </div>
             <Link
               href='/services'
-              className='block relative w-fit border-2 px-8 py-3 border-accent hover:border-dashed rounded-md transition duration-300'
+              className='block text-main relative w-fit px-6 py-2 bg-gray-900 hover:bg-gray-900/90 rounded-md transition duration-300'
             >
               learn more
             </Link>

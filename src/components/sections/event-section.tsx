@@ -9,7 +9,7 @@ function EventSection({ events }: { events: Event[] }) {
   return (
     <MaxWidthWrapper>
       <h2 className='font-bold text-2xl lg:text-4xl mb-6 md:mb-12'>Upcoming Events</h2>
-      <ul className='grid lg:grid-cols-2'>
+      <ul className='grid grid-cols-[repeat(auto-fill,_minmax(18rem,_1fr))] gap-8 md:gap-12 lg:gap-16 justify-center'>
         {events.map((event) => (
           <EventCard
             key={event.id}

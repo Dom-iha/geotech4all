@@ -9,6 +9,8 @@ import Related from '@/components/cards/related';
 import { ArrowUpRightFromSquareIcon } from 'lucide-react';
 import MaxWidthWrapper from '@/components/shared/max-width-wrapper';
 import ShareDesktop from '@/components/cards/share-desktop';
+import { revalidatePath } from 'next/cache';
+import { notFound } from 'next/navigation';
 
 const getArticle = cache(async (slug: string) => {
   const article = await prisma.article.update({
@@ -72,18 +74,12 @@ async function page({ params }: { params: { slug: string } }) {
   const { slug } = params;
   const article = await getArticle(slug);
 
-  if (!article) {
-    return (
-      <div className='grid min-h-[calc(100vh-60px)] place-content-center'>
-        <h1 className='text-purple-500 text-lg font-semibold'>
-          Ooops! We couldn&apos;t find that post.
-        </h1>
-      </div>
-      // notFound()
-    );
-  }
+  // purge cache incase article was updated.
+  revalidatePath('/blog/[slug]');
 
-  // need to handle error cases when user loses connection and display fallback ui
+  if (!article) {
+    return notFound();
+  }
 
   const formattedDate = new Intl.DateTimeFormat('en-US', {
     year: 'numeric',
@@ -95,7 +91,7 @@ async function page({ params }: { params: { slug: string } }) {
     <>
       <Progressbar /> {/*currently tracking entire page scroll*/}
       <article className='py-6 lg:py-10 px-6 md:px-10 flex flex-col gap-5 max-w-screen-md mx-auto'>
-      {/* <ShareDesktop title={article.title} /> */}
+        {/* <ShareDesktop title={article.title} /> */}
         <section className='space-y-4'>
           <time
             className='text-zinc-600 text-sm tracking-tight'
@@ -109,19 +105,39 @@ async function page({ params }: { params: { slug: string } }) {
           <div className='rounded-full w-fit flex justify-center bg-red-200 text-red-600 px-4 py-1'>
             <p>{article.categoryName}</p>
           </div>
-          <Link href={article.author.linkedin ?? '#'} target='_blank' className='flex items-center gap-3 py-2'>
-            <Image
-              src={article.author.image || '/profile.svg'}
-              alt={''}
-              width={42}
-              height={42}
-              className='w-11 h-11 rounded-full border'
-            />
-            <p className='text-sm lg:text-base font-medium'>
-              {article.author.name}
-            </p>
-          </Link>
+          {article.author.linkedin ? (
+            <Link
+              href={article.author.linkedin}
+              target='_blank'
+              className='flex items-center gap-3 py-2'
+            >
+              <Image
+                src={article.author.image ?? '/profile.svg'}
+                alt={''}
+                width={42}
+                height={42}
+                className='w-6 h-6 lg:w-10 lg:h-10 rounded-full border'
+              />
+              <p className='text-sm lg:text-base font-medium'>
+                {article.author.name}
+              </p>
+            </Link>
+          ) : (
+            <div className='flex items-center gap-3 py-2'>
+              <Image
+                src={article.author.image ?? '/profile.svg'}
+                alt={''}
+                width={42}
+                height={42}
+                className='w-6 h-6 lg:w-10 lg:h-10 rounded-full border'
+              />
+              <p className='text-sm lg:text-base font-medium'>
+                {article.author.name}
+              </p>
+            </div>
+          )}
         </section>
+
         <Image
           src={article.image}
           alt={article.title}

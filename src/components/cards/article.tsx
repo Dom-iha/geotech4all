@@ -4,15 +4,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRightIcon } from '@radix-ui/react-icons';
 import { ArticleProps } from '../../types';
+import shorten from '@/utils/shorten';
 
 function Article(props: ArticleProps) {
-  const shorten = (sentence: string) => {
-    if (sentence.length > 70) {
-      return sentence.slice(0, 60) + '...';
-    } else {
-      return sentence;
-    }
-  };
 
   return (
     <motion.li
@@ -23,13 +17,15 @@ function Article(props: ArticleProps) {
       className='w-fit rounded-lg'
     >
       <div className='flex flex-col gap-2 h-full'>
-        <Image
-          src={props.image}
-          alt={props.title}
-          className='rounded-lg h-auto w-auto object-cover aspect-video'
-          width={300}
-          height={250}
-        />
+        <div className='group relative overflow-hidden rounded-md h-full'>
+          <Image
+            src={props.image}
+            alt={props.title}
+            className='rounded-lg h-auto w-auto object-cover aspect-video group-hover:scale-105 transition-all duration-300'
+            width={300}
+            height={250}
+          />
+        </div>
         <div className='flex flex-col gap-4 justify-between max-w-[400px] px-2 py-4 h-full'>
           <div className='flex flex-col gap-4'>
             <div className='flex justify-between items-center text-sm font-medium'>
@@ -37,17 +33,14 @@ function Article(props: ArticleProps) {
                 {props.category}
               </p>
               <p>
-                {new Date(props.createdAt)
-                  .toDateString()
-                  .split(' ')
-                  .slice(1)
-                  .join(' ')}
+                {new Date(props.createdAt).toLocaleDateString('en-US', {
+                  day: 'numeric',
+                  month: 'short',
+                  year: 'numeric',
+                })}
               </p>
             </div>
-            <p className='font-bold lg:text-lg'>{props.title}</p>
-            {/* <p className='text-sm lg:text-base'>
-              {shorten(props.excerpt)}
-            </p> */}
+            <p className='font-bold lg:text-lg'>{shorten(props.title, 90)}</p>
           </div>
           <div className='flex justify-between'>
             <div className='flex gap-3 items-center font-medium text-sm'>

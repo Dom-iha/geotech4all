@@ -48,17 +48,17 @@ function FeaturedSection({ articles }: { articles: FeaturedSectionProps[] }) {
   return (
     <section className='py-14'>
       <MaxWidthWrapper>
-        <h2 className='font-bold text-2xl lg:text-4xl mb-6 md:mb-12'>
+        <h2 className='font-bold text-2xl lg:text-4xl xl:mb-12'>
           Featured posts
         </h2>
-        <div className='flex items-center flex-col gap-8 xl:flex-row lg:gap-20'>
+        <div className='flex flex-col gap-8 xl:flex-row lg:gap-20'>
           <Fade>
             <Image
               src={featuredArticles[indexToShow].image}
               alt={featuredArticles[indexToShow].excerpt}
               width={500}
               height={420}
-              className='rounded-md hidden xl:block lg:max-w-[420px] lg:max-h-[300px]'
+              className='rounded-md hidden xl:block aspect-video'
             />
           </Fade>
           <ul className='flex flex-col gap-8'>

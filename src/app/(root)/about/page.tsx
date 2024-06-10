@@ -1,12 +1,10 @@
-import type { Metadata } from 'next';
-import Image from 'next/image';
-import Link from 'next/link';
-import { DoubleArrowDownIcon } from '@radix-ui/react-icons';
-import data from '@/data/data.json';
 import Member from '@/components/cards/member';
-import { siteConfig } from '@/config/site';
 import MaxWidthWrapper from '@/components/shared/max-width-wrapper';
 import ScrollLink from '@/components/ui/scroll-link';
+import { siteConfig } from '@/config/site';
+import data from '@/data/data.json';
+import type { Metadata } from 'next';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'About',
@@ -26,7 +24,7 @@ export const metadata: Metadata = {
 function About() {
   return (
     <>
-      <section className='min-h-[calc(100vh-60px)] grid place-content-center'>
+      <section className='py-28 md:py-32 lg:py-40'>
         <MaxWidthWrapper>
           <div className='flex flex-col gap-4 md:gap-6 lg:gap-10 justify-center items-center h-full'>
             <h1 className='text-2xl md:text-4xl lg:text-6xl text-center font-bold'>
@@ -49,16 +47,6 @@ function About() {
       {/* Info section */}
       <section id='info'>
         <MaxWidthWrapper className=''>
-          <div className='flex py-16 flex-col max-w-prose'>
-            <h2 className='text-lg lg:text-2xl font-bold mt-4'>
-              Geotech4all is Your go-to resource center for everything
-              geoscience.
-            </h2>
-            <p className='lg:mt-4 text-lg lg:text-2xl max-w-prose font-bold'>
-              We are a team of geoscientists and tech enthusiasts committed to
-              making geoscience knowledge and tools accessible to everyone
-            </p>
-          </div>
           <div className='flex flex-col md:flex-row gap-6 justify-between py-14'>
             <div className='flex flex-col gap-4 lg:gap-6 h-full max-w-[500px]'>
               <h2 className='text-lg lg:text-2xl font-bold mt-4'>
@@ -139,8 +127,10 @@ function About() {
 
       {/* People section */}
       <section className='py-14'>
-        <MaxWidthWrapper>
-          <h2 className='font-bold text-2xl lg:text-4xl mb-5'>Meet the team</h2>
+        <MaxWidthWrapper className='pb-14'>
+          <h2 className='font-bold text-2xl lg:text-4xl mb-5 lg:mb-8'>
+            Meet the team
+          </h2>
           <article className='flex flex-col gap-8'>
             {data.team.map((member) => (
               <Member

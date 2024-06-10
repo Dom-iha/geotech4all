@@ -32,7 +32,6 @@
       "cover": "/images/dcpt.jpg",
       "description": "The Dutch cone penetrometer is a versatile tool used in geotechnical engineering to measure the strength and compressibility of soil. With a sleek design and durable construction, this cone penetrometer is perfect for fieldwork and laboratory testing. Whether you're a student or a professional, this cone penetrometer is a valuable addition to your geotechnical toolkit.",
       "availability": "available"
-      
     },
     {
       "name": "Stereonet (software)",
@@ -40,7 +39,6 @@
       "cover": "/images/stereonet.jpeg",
       "description": "Stereonet is a powerful software tool used by geologists and geophysicists to analyze and visualize structural data. With a user-friendly interface and advanced features, Stereonet makes it easy to create and interpret stereonets, rose diagrams, and other structural geology plots. Whether you're a student or a professional, Stereonet is a valuable tool for understanding the geometry and kinematics of geological structures.",
       "availability": "available"
-      
     },
     {
       "name": "Fieldwork kit",
@@ -48,7 +46,6 @@
       "cover": "/images/field-kit.jpg",
       "description": "The fieldwork kit is a comprehensive set of tools and equipment designed for geologists, geophysicists, and other professionals working in the field. With a range of instruments, including a compass, hand lens, and rock hammer, this kit has everything you need to conduct geological surveys, map outcrops, and collect samples. Whether you're a student or a professional, the fieldwork kit is an essential companion for your next fieldwork expedition.",
       "availability": "available"
-      
     },
     {
       "name": "Geotech4All T-Shirt",
@@ -56,33 +53,6 @@
       "cover": "/images/tshirt.png",
       "description": "Show your support for Geotech4All with this stylish t-shirt. Made from 100% cotton, this t-shirt is perfect for everyday wear. Available in a range of sizes and colors, this t-shirt is a great way to show your love for geosciences.",
       "availability": "available"
-      
-    }
-  ],
-  "events": [
-    {
-      "title": "Geotech4All Conference",
-      "date": "July 2nd, 2024",
-      "time": "9:00 AM - 5:00 PM",
-      "location": "Abuja, Nigeria",
-      "cover": "/images/events.png",
-      "details": "Gathering of geologists, geophysicists, geotechnical engineers, and other professionals in the geosciences field. The conference will feature talks, workshops, and networking opportunities for attendees."
-    },
-    {
-      "title": "Geotech4All Workshop",
-      "date": "July 2nd, 2024",
-      "time": "9:00 AM - 5:00 PM",
-      "location": "Lagos, Nigeria",
-      "cover": "/images/events.png",
-      "details": "Hands-on event where participants will learn about the latest tools and techniques in geotechnical engineering. The workshop will cover topics such as soil testing, foundation design, and slope stability analysis."
-    },
-    {
-      "title": "Geotech4All Webinar",
-      "date": "July 2nd, 2024",
-      "time": "9:00 AM - 5:00 PM",
-      "location": "Online",
-      "cover": "/images/events.png",
-      "details": "Online event that will feature talks and presentations from experts in the geosciences field. Participants will have the opportunity to ask questions and interact with the speakers in real-time."
     }
   ],
   "team": [
@@ -91,12 +61,6 @@
       "role": "CEO & Founder",
       "image": "/images/jerry.png",
       "bio": "A visionary geologist and enterpreneur, Jeremiah’s passion for geoscience and community development led him found Geotech4All. With his extensive experience in research, exploration and project management, Jeremiah provides strategic direction and unwavering leadership to the company."
-    },
-    {
-      "name": "Edna Osagehle",
-      "role": "Co Founder",
-      "image": "/images/edna.png",
-      "bio": "Co-founder of Geotech4All, is a skilled professional specializing in engineering geology. With expertise in data acquisition, processing and report writing, Edna brings valuable insight into the team.. Her commitment to advancing geospatial solutions is pivotal in Geotech4All’s mission of making geospatial technology available to everyone."
     },
     {
       "name": "Gabriel Bahago",

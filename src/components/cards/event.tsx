@@ -31,53 +31,55 @@ function EventCard({
   slug,
 }: EventCardProps) {
   return (
-    <li className='flex flex-col lg:flex-row gap-4 rounded-lg bg-slate-50 p-4 shadow-md'>
+    <li className='flex flex-col gap-4 overflow-hidden border rounded-md'>
       <Image
         src={image}
         alt={name}
         width={200}
         height={150}
-        className='rounded-lg h-auto w-auto object-cover aspect-video lg:aspect-auto object-center'
+        className=' max-h-[200px] object-cover h-auto w-auto object-center'
       />
-      <div className='flex flex-col gap-4'>
-        <p className='font-semibold text-lg'>{name}</p>
-        <div className='flex justify-between gap-8 lg:justify-start'>
-          <time
-            className='flex items-center gap-2 tracking-tight text-zinc-600'
-            dateTime={new Date(date).toISOString()}
-          >
-            <CalendarDays size={20} />{' '}
-            <span>
-              {new Date(date).toLocaleDateString('en-Us', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-              })}
-            </span>
-          </time>
-          <time
-            className='flex items-center gap-2 tracking-tight text-zinc-600'
-            dateTime={new Date(date).toISOString()}
-          >
-            <Clock size={20} /> <span>{formatTime(time)}</span>
-          </time>
-        </div>
-        <div className='flex justify-between gap-4 lg:justify-start flex-wrap'>
-          <span className='flex items-center gap-2 tracking-tight text-zinc-600 min-w-fit'>
-            <MapPin size={20} /> <span>{venue}</span>
-          </span>
-          {link && link.trim() !== '' && (
+      <div className='flex flex-col gap-4 px-4 pb-4 2xl:py-4'>
+        <p className='font-semibold lg:text-lg'>{name}</p>
+        <div className='flex gap-2 flex-col'>
+          <div className='flex justify-between gap-8 lg:justify-start text-sm'>
+            <time
+              className='flex items-center gap-2 tracking-tight text-zinc-600'
+              dateTime={new Date(date).toISOString()}
+            >
+              <CalendarDays size={20} />{' '}
+              <span>
+                {new Date(date).toLocaleDateString('en-Us', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })}
+              </span>
+            </time>
+            <time
+              className='flex items-center gap-2 tracking-tight text-zinc-600'
+              dateTime={new Date(date).toISOString()}
+            >
+              <Clock size={20} /> <span>{formatTime(time)}</span>
+            </time>
+          </div>
+          <div className='text-sm flex justify-between gap-4 lg:justify-start flex-wrap'>
             <span className='flex items-center gap-2 tracking-tight text-zinc-600 min-w-fit'>
-              <LinkIcon size={20} />{' '}
-              <Link
-                href={link}
-                target='_blank'
-                className='font-medium text-blue-600'
-              >
-                Event Link
-              </Link>
+              <MapPin size={20} /> <span>{venue}</span>
             </span>
-          )}
+            {link && link.trim() !== '' && (
+              <span className='flex items-center gap-2 tracking-tight text-zinc-600 min-w-fit'>
+                <LinkIcon size={20} />{' '}
+                <Link
+                  href={link}
+                  target='_blank'
+                  className='font-medium text-blue-600'
+                >
+                  Event Link
+                </Link>
+              </span>
+            )}
+          </div>
         </div>
 
         <Link
