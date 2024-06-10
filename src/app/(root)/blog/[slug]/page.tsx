@@ -70,12 +70,12 @@ export const generateStaticParams = async () => {
   return articles.map((article) => article.slug);
 };
 
+export const revalidate = 3600 * 12;
+
 async function page({ params }: { params: { slug: string } }) {
   const { slug } = params;
   const article = await getArticle(slug);
 
-  // purge cache incase article was updated.
-  revalidatePath('/blog/[slug]');
 
   if (!article) {
     return notFound();
