@@ -109,7 +109,7 @@ async function page({ params }: { params: { slug: string } }) {
           <div className='rounded-full w-fit flex justify-center bg-red-200 text-red-600 px-4 py-1'>
             <p>{article.categoryName}</p>
           </div>
-          <div className='flex items-center gap-3 py-2'>
+          <Link href={article.author.linkedin ?? '#'} target='_blank' className='flex items-center gap-3 py-2'>
             <Image
               src={article.author.image || '/profile.svg'}
               alt={''}
@@ -120,7 +120,7 @@ async function page({ params }: { params: { slug: string } }) {
             <p className='text-sm lg:text-base font-medium'>
               {article.author.name}
             </p>
-          </div>
+          </Link>
         </section>
         <Image
           src={article.image}
@@ -158,7 +158,7 @@ async function page({ params }: { params: { slug: string } }) {
               className='w-fit flex gap-2 items-center rounded-md px-8 py-2.5 text-main bg-accent text-acceent transition duration-300 max-md:self-center'
             >
               Join
-              <ArrowUpRightFromSquareIcon />
+              <ArrowUpRightFromSquareIcon className='w-4 h-4' />
             </Link>
           </div>
         </div>

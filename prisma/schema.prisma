@@ -13,15 +13,23 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum EventType {
+  online
+  physical
+}
+
 model User {
   id            String        @id @default(auto()) @map("_id") @db.ObjectId
   name          String?
   email         String        @unique
   image         String?
+  linkedin      String?
+  bio           String?
+  username      String?
   events        Event[]
   articles      Article[]
   opportunities Opportunity[]
-  Testimonial   Testimonial[]
+  Testimonials  Testimonial[]
 
   @@map("users")
 }
@@ -55,15 +63,19 @@ model Article {
 }
 
 model Event {
-  id       String @id @default(auto()) @map("_id") @db.ObjectId
-  title    String
-  details  String
-  date     String
-  image    String
-  time     String
-  location String
-  authorId String @db.ObjectId
-  author   User   @relation(fields: [authorId], references: [id])
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  createdAt DateTime  @default(now())
+  name      String
+  image     String
+  date      String
+  time      String
+  details   String
+  venue     String
+  link      String?
+  location  String?
+  authorId  String    @db.ObjectId
+  type      EventType @default(online)
+  author    User      @relation(fields: [authorId], references: [id])
 
   @@map("events")
 }
@@ -71,12 +83,14 @@ model Event {
 model Opportunity {
   id          String   @id @default(auto()) @map("_id") @db.ObjectId
   createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
   slug        String   @unique
   title       String
-  description String
   image       String
+  description String
+  views       Int      @default(0)
+  body        String
   closed      Boolean  @default(false)
+  featured    Boolean  @default(false)
   position    String
   company     String
   authorId    String   @db.ObjectId

@@ -39,7 +39,7 @@ function Filter() {
 
   useEffect(() => {
     const handleClickOutside = (e: any) => {
-      if (e.target.closest('.select') === null) {
+      if (e.target.closest('#filter') === null) {
         setExpanded(false);
       }
     };
@@ -98,7 +98,7 @@ function Filter() {
           </button>
         )}
       </label>
-      <div className='select relative w-fit'>
+      <div id='filter' className='relative w-fit'>
         <button
           type='button'
           className='whitespace-nowrap w-52 justify-between flex items-center h-fit py-4 px-6 border border-input rounded-md focus-visible:border-transparent focus-visible:outline-focus focus-visible:outline-dashed focus-visible:outline-1 transition duration-300'
