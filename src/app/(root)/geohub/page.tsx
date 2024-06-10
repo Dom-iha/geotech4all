@@ -8,6 +8,7 @@ import Article from '@/components/cards/article';
 import Headline from '@/components/cards/headline';
 import { ArrowRightIcon } from '@radix-ui/react-icons';
 import MaxWidthWrapper from '@/components/shared/max-width-wrapper';
+import EventCard from '@/components/cards/event';
 
 export const metadata: Metadata = {
   title: 'Geosciencehub',
@@ -27,9 +28,8 @@ export const metadata: Metadata = {
   },
 };
 
-
 async function Geohub() {
-  const [news, articles, headlines] = await prisma.$transaction([
+  const [news, articles, headlines, events] = await prisma.$transaction([
     prisma.article.findFirst({
       where: {
         categoryName: 'news',
@@ -59,6 +59,12 @@ async function Geohub() {
       },
       where: {
         categoryName: 'headlines',
+      },
+      take: 2,
+    }),
+    prisma.event.findMany({
+      orderBy: {
+        createdAt: 'desc',
       },
       take: 2,
     }),
@@ -164,16 +170,18 @@ async function Geohub() {
             Upcoming Events
           </h2>
           <div>
-            <ul className='flex gap-8 md:gap-12 lg:gap-16 max-lg:flex-wrap'>
-              {data.events.map((event) => (
-                <Event
-                  key={event.title}
-                  date={event.date}
+            <ul className='grid lg:grid-cols-2'>
+              {events.map((event) => (
+                <EventCard
+                  key={event.id}
+                  id={event.id}
+                  name={event.name}
                   time={event.time}
-                  title={event.title}
-                  cover={event.cover}
-                  details={event.details}
+                  venue={event.venue}
                   location={event.location}
+                  link={event.link}
+                  image={event.image}
+                  date={event.date}
                 />
               ))}
             </ul>
