@@ -20,7 +20,7 @@ function page() {
           we do. for now you can check out our blog using the link below.
         </p>
         <Link
-          href={`/geohub/blog`}
+          href={`/blog`}
           className='w-fit p-2 flex items-center justify-center font-semibold rounded-md gap-2 bg-accent text-main min-w-[8rem] hover:gap-4 focus-visible:gap-4 focus-visible:outline-accent outline-offset-1 outline-1 focus-visible:outline-dashed transition-all duration-300'
         >
           Blog

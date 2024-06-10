@@ -1,25 +1,22 @@
-import Link from 'next/link';
-import prisma from '@/lib/db';
-import { cache } from 'react';
-import Image from 'next/image';
-import { Metadata } from 'next';
 import Share from '@/components/cards/share';
-import Progressbar from '@/app/(root)/blog/progressbar';
-import { ArrowRightIcon } from '@radix-ui/react-icons';
+import prisma from '@/lib/db';
+import formatTime from '@/utils/formatTime';
 import {
-   ArrowUpRightFromSquare,
-  CalendarCheck,
+  ArrowUpRightFromSquare,
   CalendarDays,
   Clock,
   LinkIcon,
-  MapPin,
+  MapPin
 } from 'lucide-react';
-import formatTime from '@/utils/formatTime';
+import { Metadata } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
+import { cache } from 'react';
 
-const getEvent = cache(async (id: string) => {
+const getEvent = cache(async (slug: string) => {
   const event = await prisma.event.findUnique({
     where: {
-      id: id,
+      slug: slug,
     },
     include: { author: true },
   });
@@ -29,10 +26,10 @@ const getEvent = cache(async (id: string) => {
 export async function generateMetadata({
   params,
 }: {
-  params: { id: string };
+  params: { slug: string };
 }): Promise<Metadata> {
-  const { id } = params;
-  const event = await getEvent(id);
+  const { slug } = params;
+  const event = await getEvent(slug);
 
   if (!event) return {};
 
@@ -42,9 +39,9 @@ export async function generateMetadata({
     // keywords: '',
     openGraph: {
       type: 'article',
-      url: `https://www.geotech4all.com/geohub/events/${id}`,
+      url: `https://www.geotech4all.com/geohub/events/${slug}`,
       title: event.name,
-      description: 'upcoming event!!',
+      description: event.description,
       siteName: 'Geotech4All',
       publishedTime: new Date(event.createdAt).toISOString(),
       authors: [event.author.name || 'Geotech4All'],
@@ -61,15 +58,15 @@ export async function generateMetadata({
 }
 
 export const generateStaticParams = async () => {
-  const opportunities = await prisma.opportunity.findMany({
+  const events = await prisma.event.findMany({
     include: { author: true },
   });
-  return opportunities.map((opportunity) => opportunity.slug);
+  return events.map((event) => event.slug);
 };
 
-async function Page({ params }: { params: { id: string } }) {
-  const { id } = params;
-  const event = await getEvent(id);
+async function Page({ params }: { params: { slug: string } }) {
+  const { slug } = params;
+  const event = await getEvent(slug);
   if (!event) return null;
 
   return (

@@ -63,19 +63,21 @@ model Article {
 }
 
 model Event {
-  id        String    @id @default(auto()) @map("_id") @db.ObjectId
-  createdAt DateTime  @default(now())
-  name      String
-  image     String
-  date      String
-  time      String
-  details   String
-  venue     String
-  link      String?
-  location  String?
-  authorId  String    @db.ObjectId
-  type      EventType @default(online)
-  author    User      @relation(fields: [authorId], references: [id])
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  createdAt   DateTime  @default(now())
+  name        String
+  image       String
+  date        String
+  slug        String    @unique
+  description String
+  time        String
+  details     String
+  venue       String
+  link        String?
+  location    String?
+  authorId    String    @db.ObjectId
+  type        EventType @default(online)
+  author      User      @relation(fields: [authorId], references: [id])
 
   @@map("events")
 }
