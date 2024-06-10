@@ -119,8 +119,8 @@ function footer() {
               </li>
               <li>
                 <Link
-                  aria-label='Visit our LinkedIn page'
-                  href='mailto:geotech4all@gmail.com'
+                  aria-label='Follow us on instagram'
+                  href='https://www.instagram.com/geotech4all'
                   target='blank'
                 >
                   <Instagram aria-hidden='true' />

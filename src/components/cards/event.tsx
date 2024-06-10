@@ -1,49 +1,95 @@
-import { LocateFixedIcon } from 'lucide-react';
+import { ArrowRightIcon } from '@radix-ui/react-icons';
+import {
+  ArrowRight,
+  CalendarDays,
+  Clock,
+  LinkIcon,
+  MapPin,
+} from 'lucide-react';
 import Image from 'next/image';
-import React from 'react';
+import Link from 'next/link';
+import formatTime from '@/utils/formatTime';
 
-interface EventProps {
-  title: string;
+interface EventCardProps {
+  id: string;
+  name: string;
+  image: string;
   date: string;
   time: string;
-  details: string;
-  location: string;
-  cover: string;
+  venue: string;
+  link: string | null;
+  location: string | null;
 }
 
-function Event(props: EventProps) {
+function EventCard({
+  name,
+  time,
+  date,
+  venue,
+  link,
+  image,
+  id,
+}: EventCardProps) {
   return (
-    <li className='relative flex flex-col lg:flex-row gap-4 rounded-3xl h-[400px] overflow-hidden bg-accent'>
+    <li className='flex flex-col lg:flex-row gap-4 rounded-lg bg-slate-50 p-4 shadow-md'>
       <Image
-        src={`https://images.unsplash.com/photo-1554629947-334ff61d85dc?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`}
-        alt={props.title}
-        width={300}
-        height={400}
-        className='object-cover'
+        src={image}
+        alt={name}
+        width={200}
+        height={150}
+        className='rounded-lg h-auto w-auto object-cover aspect-video lg:aspect-auto object-center'
       />
-      <div className='absolute bottom-2 left-2 pt-10 p-4 h-fit w-full bg-main rounded-2xl flex flex-col gap-2 max-w-[95%]'>
-        <div className='absolute py-2 px-4 bg-main -top-7 left-4 flex flex-col text-center rounded-xl shadow-md'>
-          <small className='text-accent font-medium'>{props.date.split(' ')[0]}</small>
-          <p className='text-red-500 font-bold'>{props.date.split(' ')[1].replace(',', ' ')}</p>
+      <div className='flex flex-col gap-4'>
+        <p className='font-semibold text-lg'>{name}</p>
+        <div className='flex justify-between gap-8 lg:justify-start'>
+          <time
+            className='flex items-center gap-2 tracking-tight text-zinc-600'
+            dateTime={new Date(date).toISOString()}
+          >
+            <CalendarDays size={20} />{' '}
+            <span>
+              {new Date(date).toLocaleDateString('en-Us', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              })}
+            </span>
+          </time>
+          <time
+            className='flex items-center gap-2 tracking-tight text-zinc-600'
+            dateTime={new Date(date).toISOString()}
+          >
+            <Clock size={20} /> <span>{formatTime(time)}</span>
+          </time>
         </div>
-        <p className='font-semibold text-lg'>{props.title}</p>
-        {/* <p className='text-sm'>{props.details.slice(0, 50)}...</p> */}
-        <p className='text-sm'>
-          {props.time}
-        </p>
-        <p className='text-sm flex gap-2'>
-          <LocateFixedIcon strokeWidth={1}/>
-          {props.location}
-        </p>
-        <button
-          type='button'
-          className=' w-full rounded-2xl p-2.5 bg-accent text-main border-2 hover:border-accent hover:bg-main hover:text-accent transition duration-300'
+        <div className='flex justify-between gap-4 lg:justify-start flex-wrap'>
+          <span className='flex items-center gap-2 tracking-tight text-zinc-600 min-w-fit'>
+            <MapPin size={20} /> <span>{venue}</span>
+          </span>
+          {link && link.trim() !== '' && (
+            <span className='flex items-center gap-2 tracking-tight text-zinc-600 min-w-fit'>
+              <LinkIcon size={20} />{' '}
+              <Link
+                href={link}
+                target='_blank'
+                className='font-medium text-blue-600'
+              >
+                Event Link
+              </Link>
+            </span>
+          )}
+        </div>
+
+        <Link
+          href={`/geohub/events/${id}`}
+          className='mt-auto text-sm w-fit p-2 flex items-center justify-center font-semibold rounded-md gap-2 bg-accent text-main min-w-[8rem] focus-visible:gap-4 focus-visible:outline-accent outline-offset-1 outline-1 focus-visible:outline-dashed transition-all duration-300'
         >
-          Register
-        </button>
+          Details
+          <ArrowRightIcon />
+        </Link>
       </div>
     </li>
   );
 }
 
-export default Event;
+export default EventCard;
