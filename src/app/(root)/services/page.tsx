@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 const Services = () => {
   return (
     <>
-      <section className='py-10 min-h-[calc(100vh-60px)] grid place-content-center'>
+      <section className='py-28 md:py-32 lg:py-40'>
         <MaxWidthWrapper>
           <div className='flex flex-col gap-4 md:gap-6 lg:gap-10 justify-center items-center'>
             <h1 className='text-2xl md:text-4xl lg:text-6xl text-center font-bold'>
@@ -46,8 +46,10 @@ const Services = () => {
           </div>
         </MaxWidthWrapper>
       </section>
-
-      <ServiceList />
+      
+      <MaxWidthWrapper>
+        <ServiceList />
+      </MaxWidthWrapper>
 
       <section className='py-14'>
         <MaxWidthWrapper>

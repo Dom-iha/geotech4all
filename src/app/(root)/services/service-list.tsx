@@ -11,8 +11,8 @@ function ServiceList() {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <section id='services' className='px-6 md:px-8 lg:px-24 py-14'>
-      <h2 className='text-2xl lg:text-4xl font-bold mb-16'>Our Services</h2>
+    <section id='services'>
+      <h2 className='text-2xl lg:text-4xl font-bold mb-6 md:mb-10 xl:mb-16'>Our Services</h2>
 
       <motion.ul
         layout

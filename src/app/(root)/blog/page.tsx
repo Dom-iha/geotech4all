@@ -3,21 +3,23 @@ import Image from 'next/image';
 import { Metadata } from 'next';
 import BlogList from './blog-list';
 import Filter from '@/components/ui/filter';
-import { siteConfig } from "@/config/site"
+import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
   title: 'Blog',
+  description:
+    'Read and learn about the latest and greatest innovations, news, and events in geosciences.',
   openGraph: {
     description:
       'Read and learn about the latest and greatest innovations, news, and events in geosciences.',
-      images: [
-        {
-          url: siteConfig.ogImage,
-          width: '1200',
-          height: '630',
-          alt: 'geotech4alls logo with a globe'
-        },
-      ],
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: '1200',
+        height: '630',
+        alt: 'geotech4all\'s logo with a globe',
+      },
+    ],
   },
 };
 
@@ -38,10 +40,6 @@ const getData = async (query: Query) => {
 };
 
 export const dynamic = 'force-dynamic'; // opt out of cache for this route
-// should probably revalidate after some time instead -TODO
-interface SearchParams {
-  [key: string]: string | string[] | undefined; // https://nextjs.org/docs/app/api-reference/file-conventions/page#searchparams-optional
-}
 
 async function page({
   searchParams,

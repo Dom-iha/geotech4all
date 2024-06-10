@@ -28,6 +28,8 @@ export const metadata: Metadata = {
   },
 };
 
+export const revalidate = 3600 * 24; // 24 hours
+
 async function Geohub() {
   const [news, articles, headlines, events] = await prisma.$transaction([
     prisma.article.findFirst({
@@ -80,13 +82,13 @@ async function Geohub() {
       <section className='py-2'>
         <MaxWidthWrapper>
           <div
-            className='overflow-hidden news-hero bg-cover bg-no-repeat bg-fixed flex flex-col justify-between relative rounded-md lg:min-h-[calc(100vh-76px)] after:backdrop-blur-[5px]'
+            className='overflow-hidden news-hero bg-cover bg-no-repeat bg-fixed flex flex-col justify-between relative rounded-md after:backdrop-blur-md'
             style={{ backgroundImage: `url(${news?.image})` }}
           >
             <p className='z-10 relative pt-6 ml-8 lg:ml-10 font-medium text-lg text-main'>
               News Flash
             </p>
-            <article className='relative z-10'>
+            <article className='relative z-10 pt-24 lg:pt-32 xl:pt-60'>
               <div className='flex flex-col justify-end max-w-[609px] max-lg:p-8 lg:ml-[50px] lg:pb-8'>
                 <h1 className='text-main text-xl md:text-2xl lg:text-4xl font-bold mb-3'>
                   {news?.title}
@@ -165,12 +167,12 @@ async function Geohub() {
 
       {/* Events slider section */}
       <section className='py-14'>
-        <MaxWidthWrapper className='flex flex-col gap-10'>
-          <h2 className='font-bold text-center text-xl lg:text-3xl mb-5'>
-            Upcoming Events
+        <MaxWidthWrapper className='flex flex-col gap-4'>
+          <h2 className='font-bold text-center lg:text-left text-xl md:text-2xl lg:text-4xl mb-5 lg:mb-10'>
+            Events
           </h2>
           <div>
-            <ul className='grid lg:grid-cols-2'>
+            <ul className='grid grid-cols-[repeat(auto-fill,_minmax(18rem,_1fr))] gap-8 md:gap-12 lg:gap-16 justify-center'>
               {events.map((event) => (
                 <EventCard
                   key={event.id}
@@ -193,7 +195,7 @@ async function Geohub() {
       <section className='py-14'>
         <MaxWidthWrapper>
           <h1 className='text-4xl font-bold mb-8'>Opportunities</h1>
-          <div className='internship h-[25rem] relative rounded-md after:absolute after:top-0 after:-z-10 after:w-full after:h-full after:rounded-md after:bg-accent/90 '>
+          <div className='bg-[url(/images/internship.png)] bg-no-repeat h-[25rem] relative rounded-md after:absolute after:top-0 after:-z-10 after:w-full after:h-full after:rounded-md after:bg-accent/90 '>
             <div className='grid place-items-center content-center h-full'>
               <p className='max-w-[575px] text-main text-center lg:text-2xl mb-6'>
                 Looking for an internship position in a geoscience firm? Check
