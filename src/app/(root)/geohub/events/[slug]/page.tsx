@@ -12,6 +12,7 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { cache } from 'react';
+import { notFound } from 'next/navigation';
 
 const getEvent = cache(async (slug: string) => {
   const event = await prisma.event.findUnique({
@@ -67,7 +68,8 @@ export const generateStaticParams = async () => {
 async function Page({ params }: { params: { slug: string } }) {
   const { slug } = params;
   const event = await getEvent(slug);
-  if (!event) return null;
+
+  if (!event) return notFound();
 
   return (
     <>
@@ -96,12 +98,19 @@ async function Page({ params }: { params: { slug: string } }) {
                 })}
               </span>
             </time>
-            <time
-              className='flex items-center gap-2 tracking-tight text-zinc-600'
-              dateTime={new Date(event.date).toISOString()}
-            >
-              <Clock size={20} /> <span>{formatTime(event.time)}</span>
-            </time>
+            {
+              event.time ?(
+                <time
+                  className='flex items-center gap-2 tracking-tight text-zinc-600'
+                  dateTime={new Date(event.date).toISOString()}
+                >
+                  <Clock size={20} /> <span>{formatTime(event.time)}</span>
+                </time>
+
+              ) : (
+                null
+              )
+            }
           </div>
           <div className='flex items-center gap-2 tracking-tight text-zinc-600'>
             <MapPin size={20} /> <span>{event.venue}</span>

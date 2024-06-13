@@ -68,7 +68,7 @@ async function Geohub() {
       orderBy: {
         createdAt: 'desc',
       },
-      take: 2,
+      take: 3,
     }),
   ]);
 

@@ -22,7 +22,7 @@ export default async function Home() {
     orderBy: {
       createdAt: 'desc',
     },
-    take: 2,
+    take: 3,
   });
 
   return (
