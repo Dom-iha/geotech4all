@@ -83,7 +83,7 @@ function EventCard({
         </div>
 
         <Link
-          href={`/geohub/events/${slug}`}
+          href={`/events/${slug}`}
           className='mt-auto text-sm w-fit p-2 flex items-center justify-center font-semibold rounded-md gap-2 bg-accent text-main min-w-[8rem] focus-visible:gap-4 focus-visible:outline-accent outline-offset-1 outline-1 focus-visible:outline-dashed transition-all duration-300'
         >
           Details

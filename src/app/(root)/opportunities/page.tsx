@@ -40,7 +40,7 @@ async function page() {
             <Reveal>
               <div className='pl-4 relative'>
                 <Link
-                  href={`/geohub/opportunities/${opportunity.slug}`}
+                  href={`/opportunities/${opportunity.slug}`}
                   className={`hover:underline text-lg lg:text-3xl font-semibold mb-2.5 before:absolute before:bg-accent/70 before:h-full before:w-1.5 before:top-0 before:left-0 before:transition before:duration-500 before:origin-top before:hover:origin-bottom before:hover:scale-y-0`}
                 >
                   {opportunity.title}

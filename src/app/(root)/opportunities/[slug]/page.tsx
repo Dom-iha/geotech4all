@@ -6,6 +6,7 @@ import { Metadata } from 'next';
 import Share from '@/components/cards/share';
 import Progressbar from '@/app/(root)/blog/progressbar';
 import { ArrowRightIcon } from '@radix-ui/react-icons';
+import { ExternalLink } from 'lucide-react';
 
 const getOpportunity = cache(async (slug: string) => {
   const opportunity = await prisma.opportunity.findUnique({
@@ -33,7 +34,7 @@ export async function generateMetadata({
     // keywords: '',
     openGraph: {
       type: 'article',
-      url: `https://www.geotech4all.com/blog/${slug}`,
+      url: `https://www.geotech4all.com/opportunities/${slug}`,
       title: opportunity.title,
       description: opportunity.description,
       siteName: 'Geotech4All',
@@ -78,17 +79,13 @@ async function Page({ params }: { params: { slug: string } }) {
             height={40}
             className='w-[40px] h-[40px] rounded-full'
           />
-          <div className='flex items-center gap-4 leading-4 font-medium text-sm'>
-            <p className='lg:text-lg'>{opportunity.author.name}</p>
-            <span className='font-bold'>-</span>
-            <p className='lg:text-lg'>
-              {new Date(opportunity.createdAt)
-                .toDateString()
-                .split(' ')
-                .slice(1)
-                .join(' ')}
-            </p>
-          </div>
+          <p className='lg:text-lg'>
+            {new Date(opportunity.createdAt)
+              .toDateString()
+              .split(' ')
+              .slice(1)
+              .join(' ')}
+          </p>
         </section>
         <Image
           src={opportunity.image}
@@ -104,8 +101,9 @@ async function Page({ params }: { params: { slug: string } }) {
           }}
         />
       </article>
-      <Share title={opportunity.title} />
-      <section className='px-6 md:px-8 lg:px-24 mb-14'>
+      <section className='py-6 lg:py-10 px-6 md:px-10 max-w-screen-md mx-auto space-y-6'>
+        <Share title={opportunity.title} />
+
         <div className='p-6 lg:p-10 flex flex-col items-center border border-input border-dashed rounded-xl max-w-screen-md mx-auto'>
           <div className='flex flex-col gap-6 lg:gap-8 text-center items-center'>
             <h3 className=' text-2xl lg:text-4xl font-bold'>Join us</h3>
@@ -119,7 +117,7 @@ async function Page({ params }: { params: { slug: string } }) {
               className='w-fit flex gap-2 items-center rounded-md px-8 py-2.5 text-main bg-accent text-acceent transition duration-300 max-md:self-center'
             >
               Join
-              <ArrowRightIcon />
+              <ExternalLink size={16} />
             </Link>
           </div>
         </div>
