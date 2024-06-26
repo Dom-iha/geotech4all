@@ -36,7 +36,7 @@ export async function generateMetadata({
       type: 'article',
       url: `https://www.geotech4all.com/opportunities/${slug}`,
       title: opportunity.title,
-      description: opportunity.description,
+      description:  `Open opportunity: ${opportunity.title}`,
       siteName: 'Geotech4All',
       publishedTime: new Date(opportunity.createdAt).toISOString(),
       authors: [opportunity.author.name || 'Geotech4All'],
