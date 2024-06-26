@@ -36,7 +36,7 @@ export async function generateMetadata({
       type: 'article',
       url: `https://www.geotech4all.com/opportunities/${slug}`,
       title: opportunity.title,
-      description: opportunity.description,
+      description:  `Open opportunity: ${opportunity.title}`,
       siteName: 'Geotech4All',
       publishedTime: new Date(opportunity.createdAt).toISOString(),
       authors: [opportunity.author.name || 'Geotech4All'],
@@ -71,22 +71,13 @@ async function Page({ params }: { params: { slug: string } }) {
         <h1 className='font-bold text-xl md:text-2xl lg:text-4xl'>
           {opportunity.title}
         </h1>
-        <section className='flex items-center gap-3 py-2'>
-          <Image
-            src={opportunity.author.image || '/profile.svg'}
-            alt={''}
-            width={40}
-            height={40}
-            className='w-[40px] h-[40px] rounded-full'
-          />
-          <p className='lg:text-lg'>
-            {new Date(opportunity.createdAt)
-              .toDateString()
-              .split(' ')
-              .slice(1)
-              .join(' ')}
-          </p>
-        </section>
+        <p className='lg:text-lg'>
+          {new Date(opportunity.createdAt)
+            .toDateString()
+            .split(' ')
+            .slice(1)
+            .join(' ')}
+        </p>
         <Image
           src={opportunity.image}
           alt={opportunity.title}
