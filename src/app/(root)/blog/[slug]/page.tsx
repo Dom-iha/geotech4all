@@ -6,7 +6,7 @@ import { Metadata } from 'next';
 import Progressbar from '../progressbar';
 import Share from '@/components/cards/share';
 import Related from '@/components/cards/related';
-import { ArrowUpRightFromSquareIcon } from 'lucide-react';
+import { ArrowUpRightFromSquareIcon, ExternalLink } from 'lucide-react';
 import MaxWidthWrapper from '@/components/shared/max-width-wrapper';
 import ShareDesktop from '@/components/cards/share-desktop';
 import { revalidatePath } from 'next/cache';
@@ -174,7 +174,7 @@ async function page({ params }: { params: { slug: string } }) {
               className='w-fit flex gap-2 items-center rounded-md px-8 py-2.5 text-main bg-accent text-acceent transition duration-300 max-md:self-center'
             >
               Join
-              <ArrowUpRightFromSquareIcon className='w-4 h-4' />
+              <ExternalLink size={16} />
             </Link>
           </div>
         </div>

@@ -34,7 +34,7 @@ const getData = async (query: Query) => {
     orderBy: {
       createdAt: 'desc',
     },
-    take: 9,
+    // take: 9,
   });
   return articles;
 };
@@ -50,7 +50,7 @@ async function page({
 
   return (
     <>
-      <section className='sticky top-0 px-6 md:px-8 lg:px-20 pt-10 pb-4 lg:py-14 flex max-lg:items-center flex-col-reverse lg:flex-row gap-8 md:gap-10 justify-between'>
+      <section className=' px-6 md:px-8 lg:px-20 pt-10 pb-4 lg:py-14 flex max-lg:items-center flex-col-reverse lg:flex-row gap-8 md:gap-10 justify-between'>
         <div className='z-10 grid place-content-center gap-4 lg:gap-6 max-w-prose'>
           <h1 className='text-2xl md:text-4xl lg:text-6xl font-bold text-accent'>
             Our article library
@@ -74,7 +74,7 @@ async function page({
           ></div>
         </div>
       </section>
-      <section className='relative z-20 bg-main min-h-screen px-6 md:px-8 lg:px-20 py-10 lg:py-14 flex flex-col gap-10 lg:gap-16'>
+      <section className=' z-20 bg-main min-h-screen px-6 md:px-8 lg:px-20 py-10 lg:py-14 flex flex-col gap-10 lg:gap-16'>
         <h2 className='font-bold text-xl lg:text-4xl capitalize'>
           <span className='text-red-400'># </span>
           {`${searchParams.category ? searchParams.category : 'all'}`}

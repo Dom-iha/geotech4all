@@ -142,16 +142,7 @@ async function Geohub() {
           ) : (
             <ul className='grid grid-cols-[repeat(auto-fill,_minmax(18rem,_1fr))] gap-8 md:gap-12 lg:gap-16 justify-center'>
               {articles.map((article) => (
-                <Article
-                  id={article.id}
-                  key={article.id}
-                  slug={article.slug}
-                  title={article.title}
-                  image={article.image}
-                  author={article.author}
-                  createdAt={article.createdAt}
-                  category={article.categoryName}
-                />
+                <Article key={article.id} {...article} />
               ))}
             </ul>
           )}
@@ -174,17 +165,7 @@ async function Geohub() {
           <div>
             <ul className='grid grid-cols-[repeat(auto-fill,_minmax(18rem,_1fr))] gap-8 md:gap-12 lg:gap-16 justify-center'>
               {events.map((event) => (
-                <EventCard
-                  key={event.id}
-                  slug={event.slug}
-                  name={event.name}
-                  time={event.time}
-                  venue={event.venue}
-                  location={event.location}
-                  link={event.link}
-                  image={event.image}
-                  date={event.date}
-                />
+                <EventCard key={event.id} {...event} />
               ))}
             </ul>
           </div>
@@ -202,7 +183,7 @@ async function Geohub() {
                 firms you can apply to as a prospective intern
               </p>
               <Link
-                href={`/geohub/opportunities`}
+                href={`/opportunities`}
                 className=' w-fit p-2 flex items-center justify-center font-semibold rounded-md gap-2 bg-main text-accent min-w-[8rem] hover:gap-4 focus-visible:gap-4 focus-visible:outline-accent outline-offset-1 outline-1 focus-visible:outline-dashed transition-all duration-300'
               >
                 View

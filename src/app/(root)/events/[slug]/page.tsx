@@ -5,6 +5,7 @@ import {
   ArrowUpRightFromSquare,
   CalendarDays,
   Clock,
+  ExternalLink,
   LinkIcon,
   MapPin
 } from 'lucide-react';
@@ -40,7 +41,7 @@ export async function generateMetadata({
     // keywords: '',
     openGraph: {
       type: 'article',
-      url: `https://www.geotech4all.com/geohub/events/${slug}`,
+      url: `https://www.geotech4all.com/events/${slug}`,
       title: event.name,
       description: event.description,
       siteName: 'Geotech4All',
@@ -154,7 +155,7 @@ async function Page({ params }: { params: { slug: string } }) {
               className='w-fit flex gap-2 items-center rounded-md px-8 py-2.5 text-main bg-accent text-acceent transition duration-300 max-md:self-center'
             >
               Join
-              <ArrowUpRightFromSquare className='w-4 h-4' />
+              <ExternalLink size={16} />
             </Link>
           </div>
         </div>
