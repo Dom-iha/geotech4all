@@ -33,7 +33,7 @@ async function page() {
   if (!opportunities.length) return noResults;
 
   return (
-    <MaxWidthWrapper className='py-14 lg:py20 xl:py28'>
+    <MaxWidthWrapper className='py-14 min-h-[calc(100vh-60px)]'>
       <ul className='flex flex-col gap-8 lg:gap-12 max-w-screen-md mx-auto'>
         {opportunities.map((opportunity, _) => (
           <li key={opportunity.id}>
@@ -46,11 +46,6 @@ async function page() {
                   {opportunity.title}
                 </Link>
               </div>
-            </Reveal>
-            <Reveal>
-              <p className='lg:mt-2 pl-4 lg:text-xl'>
-                {shorten(opportunity.description, 120)}
-              </p>
             </Reveal>
           </li>
         ))}
