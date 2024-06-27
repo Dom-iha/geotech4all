@@ -71,7 +71,6 @@ model Event {
   slug        String    @unique
   description String
   time        String
-  details     String
   venue       String
   link        String?
   location    String?
@@ -90,7 +89,6 @@ model Opportunity {
   image       String
   description String
   views       Int      @default(0)
-  body        String
   closed      Boolean  @default(false)
   featured    Boolean  @default(false)
   position    String

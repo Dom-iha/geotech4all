@@ -2,7 +2,6 @@ import Share from '@/components/cards/share';
 import prisma from '@/lib/db';
 import formatTime from '@/utils/formatTime';
 import {
-  ArrowUpRightFromSquare,
   CalendarDays,
   Clock,
   ExternalLink,
@@ -43,7 +42,7 @@ export async function generateMetadata({
       type: 'article',
       url: `https://www.geotech4all.com/events/${slug}`,
       title: event.name,
-      description: event.description,
+      description:  `Upcoming event!`,
       siteName: 'Geotech4All',
       publishedTime: new Date(event.createdAt).toISOString(),
       authors: [event.author.name || 'Geotech4All'],
@@ -135,7 +134,7 @@ async function Page({ params }: { params: { slug: string } }) {
         <section
           className='prose prose-base lg:prose-lg xl:prose-xl mt-2 lg:mt-4'
           dangerouslySetInnerHTML={{
-            __html: event.details ? event.details : '',
+            __html: event.description ? event.description : '',
           }}
         />
       </article>
