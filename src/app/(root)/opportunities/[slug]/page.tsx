@@ -1,12 +1,11 @@
-import Link from 'next/link';
-import prisma from '@/lib/db';
-import { cache } from 'react';
-import Image from 'next/image';
-import { Metadata } from 'next';
-import Share from '@/components/cards/share';
 import Progressbar from '@/app/(root)/blog/progressbar';
-import { ArrowRightIcon } from '@radix-ui/react-icons';
+import Share from '@/components/cards/share';
+import prisma from '@/lib/db';
 import { ExternalLink } from 'lucide-react';
+import { Metadata } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
+import { cache } from 'react';
 
 const getOpportunity = cache(async (slug: string) => {
   const opportunity = await prisma.opportunity.findUnique({
@@ -36,7 +35,7 @@ export async function generateMetadata({
       type: 'article',
       url: `https://www.geotech4all.com/opportunities/${slug}`,
       title: opportunity.title,
-      description:  `Open opportunity: ${opportunity.title}`,
+      description:  `Open opportunity at ${opportunity.company}`,
       siteName: 'Geotech4All',
       publishedTime: new Date(opportunity.createdAt).toISOString(),
       authors: [opportunity.author.name || 'Geotech4All'],
@@ -88,7 +87,7 @@ async function Page({ params }: { params: { slug: string } }) {
         <section
           className='prose prose-base lg:prose-lg xl:prose-xl mt-2 lg:mt-4'
           dangerouslySetInnerHTML={{
-            __html: opportunity.description ? opportunity.description : '',
+            __html: opportunity.description,
           }}
         />
       </article>
