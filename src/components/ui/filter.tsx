@@ -34,7 +34,6 @@ function Filter() {
     params.delete('category');
 
     router.push(pathname + '?' + params.toString(), { scroll: false });
-    // router.push(pathname, { scroll: false });
   }
 
   useEffect(() => {

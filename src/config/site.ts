@@ -1,5 +1,5 @@
 export const siteConfig = {
-  title: 'Geotech4All - Everything Geoscience.',
+  title: 'Geotech4All',
   description:
     'We are a community that specializes in everything geoscience. Geological services, news, articles, webinars, conferences, podcasts.',
   url: 'https://www.geotech4all.com',

@@ -76,7 +76,6 @@ async function page({ params }: { params: { slug: string } }) {
   const { slug } = params;
   const article = await getArticle(slug);
 
-
   if (!article) {
     return notFound();
   }
@@ -90,68 +89,72 @@ async function page({ params }: { params: { slug: string } }) {
   return (
     <>
       <Progressbar /> {/*currently tracking entire page scroll*/}
-      <article className='py-6 lg:py-10 px-6 md:px-10 flex flex-col gap-5 max-w-screen-md mx-auto'>
-        {/* <ShareDesktop title={article.title} /> */}
-        <section className='space-y-4'>
-          <time
-            className='text-zinc-600 text-sm tracking-tight'
-            dateTime={new Date(article.createdAt).toISOString()}
-          >
-            Published on {formattedDate}
-          </time>
-          <h1 className='font-bold text-2xl md:text-3xl lg:text-5xl leading-tight'>
-            {article.title}
-          </h1>
-          <div className='rounded-full w-fit flex justify-center bg-red-200 text-red-600 px-4 py-1'>
-            <p>{article.categoryName}</p>
-          </div>
-          {article.author.linkedin ? (
-            <Link
-              href={article.author.linkedin}
-              target='_blank'
-              className='flex items-center gap-3 py-2'
+      <div className='relative w-fit mx-auto gap-x-8 lg:grid lg:grid-cols-[auto_1fr]'>
+        <div className=' relative py-6 lg:py-10'>
+          <ShareDesktop title={article.title} />
+        </div>
+        <article className='py-6 lg:py-10 px-6 md:px-10 flex flex-col gap-5 max-w-screen-md'>
+          <section className='space-y-4'>
+            <time
+              className='text-zinc-600 text-sm tracking-tight'
+              dateTime={new Date(article.createdAt).toISOString()}
             >
-              <Image
-                src={article.author.image ?? '/profile.svg'}
-                alt={''}
-                width={42}
-                height={42}
-                className='w-6 h-6 lg:w-10 lg:h-10 rounded-full border'
-              />
-              <p className='text-sm lg:text-base font-medium'>
-                {article.author.name}
-              </p>
-            </Link>
-          ) : (
-            <div className='flex items-center gap-3 py-2'>
-              <Image
-                src={article.author.image ?? '/profile.svg'}
-                alt={''}
-                width={42}
-                height={42}
-                className='w-6 h-6 lg:w-10 lg:h-10 rounded-full border'
-              />
-              <p className='text-sm lg:text-base font-medium'>
-                {article.author.name}
-              </p>
+              Published on {formattedDate}
+            </time>
+            <h1 className='font-bold text-2xl md:text-3xl lg:text-5xl leading-tight'>
+              {article.title}
+            </h1>
+            <div className='rounded-full w-fit flex justify-center bg-red-200 text-red-600 px-4 py-1'>
+              <p>{article.categoryName}</p>
             </div>
-          )}
-        </section>
+            {article.author.linkedin ? (
+              <Link
+                href={article.author.linkedin}
+                target='_blank'
+                className='flex items-center gap-3 py-2 w-fit'
+              >
+                <Image
+                  src={article.author.image ?? '/profile.svg'}
+                  alt={''}
+                  width={42}
+                  height={42}
+                  className='w-6 h-6 lg:w-10 lg:h-10 rounded-full border'
+                />
+                <p className='text-sm lg:text-base font-medium'>
+                  {article.author.name}
+                </p>
+              </Link>
+            ) : (
+              <div className='flex items-center gap-3 py-2'>
+                <Image
+                  src={article.author.image ?? '/profile.svg'}
+                  alt={''}
+                  width={42}
+                  height={42}
+                  className='w-6 h-6 lg:w-10 lg:h-10 rounded-full border'
+                />
+                <p className='text-sm lg:text-base font-medium'>
+                  {article.author.name}
+                </p>
+              </div>
+            )}
+          </section>
 
-        <Image
-          src={article.image}
-          alt={article.title}
-          width={768}
-          height={400}
-          className='w-auto h-auto aspect-video rounded-lg'
-        />
-        <section
-          className='prose prose-zinc prose-base lg:prose-lg xl:prose-xl mt-2 lg:mt-4'
-          dangerouslySetInnerHTML={{
-            __html: article.content ? article.content : '',
-          }}
-        />
-      </article>
+          <Image
+            src={article.image}
+            alt={article.title}
+            width={768}
+            height={400}
+            className='w-auto h-auto aspect-video rounded-lg'
+          />
+          <section
+            className='prose prose-zinc prose-base lg:prose-lg xl:prose-xl mt-2 lg:mt-4'
+            dangerouslySetInnerHTML={{
+              __html: article.content ? article.content : '',
+            }}
+          />
+        </article>
+      </div>
       <section className='py-6 lg:py-10 px-6 md:px-10 max-w-screen-md mx-auto space-y-6'>
         <Share title={article.title} />
 
