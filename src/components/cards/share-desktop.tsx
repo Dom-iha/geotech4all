@@ -18,8 +18,8 @@ function ShareDesktop({ title }: { title: string }) {
   const pageUrl = encodeURIComponent(`${baseUrl}${pathname}`);
 
   return (
-    <div className=' w-fit sticky top-6 max-lg:hidden lg:-translate-x-20 xl:-translate-x-40 flex flex-col gap-4 border-focus border-dashed rounded-lg py-4'>
-      <p className='font-semibold lg:textlg'>Share</p>
+    <div className='w-fit lg:sticky top-0 hidden lg:flex flex-col gap-4 rounded-lg py-4'>
+      {/* <p className='font-semibold lg:textlg'>Share</p> */}
       <ul className='flex gap-6 flex-col'>
         <li>
           <Link

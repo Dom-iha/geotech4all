@@ -18,7 +18,7 @@ function Share({ title }: { title: string }) {
   const pageUrl = encodeURIComponent(`${baseUrl}${pathname}`);
 
   return (
-    <div className='flex flex-col gap-4 border-focus border-dashed rounded-lg py-4'>
+    <div className='flex lg:hidden flex-col gap-4 border-focus border-dashed rounded-lg py-4'>
       <p className='font-semibold lg:textlg'>Share this</p>
       <ul className='flex gap-6'>
         <li>
