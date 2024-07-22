@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRightIcon } from '@radix-ui/react-icons';
 import MaxWidthWrapper from '../shared/max-width-wrapper';
+import { ExternalLink } from 'lucide-react';
 
 function CommunitySection() {
   return (
@@ -20,7 +20,7 @@ function CommunitySection() {
               className='w-fit flex gap-2 items-center rounded-md px-8 py-2.5 text-main bg-accent text-acceent transition duration-300 self-center xl:self-start'
             >
               Join us
-              <ArrowRightIcon />
+              <ExternalLink size={16} />
             </Link>
           </div>
           <Image
