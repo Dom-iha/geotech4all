@@ -34,7 +34,7 @@ export default async function Home() {
       <TestimonialSection />
       <FeaturedSection articles={articles} />
       <EventSection events={events}/>
-      <CommunitySection/>
+      <CommunitySection />
     </>
   );
 }

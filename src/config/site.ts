@@ -1,7 +1,7 @@
 export const siteConfig = {
   title: 'Geotech4All',
   description:
-    'We are a community that specializes in everything geoscience. Geological services, news, articles, webinars, conferences, podcasts.',
+    'Geotech4all is a community that specializes in everything geoscience, from geological services to news, articles, webinars, conferences, and podcasts.',
   url: 'https://www.geotech4all.com',
   ogImage: 'https://geotech4all.com/opengraph-image.png',
   links: {
