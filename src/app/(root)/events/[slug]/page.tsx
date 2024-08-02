@@ -13,6 +13,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { cache } from 'react';
 import { notFound } from 'next/navigation';
+import { siteConfig } from '@/config/site';
 
 const getEvent = cache(async (slug: string) => {
   const event = await prisma.event.findUnique({
@@ -35,9 +36,8 @@ export async function generateMetadata({
   if (!event) return {};
 
   return {
-    metadataBase: new URL('https://www.geotech4all.com'),
+    metadataBase: new URL(siteConfig.url),
     title: event?.name,
-    // keywords: '',
     openGraph: {
       type: 'article',
       url: `https://www.geotech4all.com/events/${slug}`,
@@ -51,7 +51,6 @@ export async function generateMetadata({
           url: event.image,
           width: '1200',
           height: '630',
-          // alt: ''
         },
       ],
     },

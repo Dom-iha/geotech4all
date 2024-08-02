@@ -1,10 +1,9 @@
 'use client';
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import Image from 'next/image';
-import { ArrowRightIcon } from '@radix-ui/react-icons';
-import shorten from '@/utils/shorten';
 import { User } from '@prisma/client';
+import { ArrowRightIcon } from '@radix-ui/react-icons';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import Link from 'next/link';
 
 interface ArticleProps {
   title: string;
@@ -49,7 +48,7 @@ function Article({title, image, categoryName, createdAt, author, slug}: ArticleP
                 })}
               </p>
             </div>
-            <p className='font-bold lg:text-lg'>{shorten(title, 90)}</p>
+            <p className='font-bold lg:text-lg line-clamp-2'>{title}</p>
           </div>
           <div className='flex justify-between'>
             <div className='flex gap-3 items-center font-medium text-sm'>

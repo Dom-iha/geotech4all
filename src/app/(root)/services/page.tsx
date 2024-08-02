@@ -1,26 +1,17 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { Metadata } from 'next';
-import data from '@/data/data.json';
-import ServiceList from './service-list';
-import { siteConfig } from '@/config/site';
 import Product from '@/components/cards/product';
-import geohub from '../../../../public/icons/geohub.jpg';
-import { DoubleArrowDownIcon } from '@radix-ui/react-icons';
 import MaxWidthWrapper from '@/components/shared/max-width-wrapper';
+import data from '@/data/data.json';
+import { DoubleArrowDownIcon } from '@radix-ui/react-icons';
+import { Metadata } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
+import geohub from '../../../../public/icons/geohub.jpg';
+import ServiceList from './service-list';
 
 export const metadata: Metadata = {
   title: 'Services',
   openGraph: {
     description: 'Tailor-made solutions for your geoscience needs.',
-    images: [
-      {
-        url: siteConfig.ogImage,
-        width: '1200',
-        height: '630',
-        // alt: ''
-      },
-    ],
   },
 };
 
@@ -46,7 +37,7 @@ const Services = () => {
           </div>
         </MaxWidthWrapper>
       </section>
-      
+
       <MaxWidthWrapper>
         <ServiceList />
       </MaxWidthWrapper>

@@ -26,16 +26,16 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     images: [
       {
-        url: siteConfig.ogImage,
+        url: `${siteConfig.url}/og.jpg`,
         width: 1200,
         height: 630,
         alt: siteConfig.title,
       },
     ],
   },
-  // twitter: {
-  //   images:[siteConfig.ogImage]
-  // },
+  twitter: {
+    images:[`${siteConfig.url}/og.jpg`]
+  },
   icons: {
     icon: '/favicon.ico',
     // shortcut: '/favicon-16x16.png',

@@ -1,25 +1,15 @@
+import MaxWidthWrapper from '@/components/shared/max-width-wrapper';
+import Reveal from '@/components/shared/reveal';
+import prisma from '@/lib/db';
 import { ArrowRightIcon } from '@radix-ui/react-icons';
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { siteConfig } from '@/config/site';
-import MaxWidthWrapper from '@/components/shared/max-width-wrapper';
-import prisma from '@/lib/db';
-import Reveal from '@/components/shared/reveal';
-import shorten from '@/utils/shorten';
 
 export const metadata: Metadata = {
   title: 'Opportunities',
   description: 'Find the latest opportunities for geoscientists in nigeria.',
   openGraph: {
-    title: 'Opportunities',
     description: 'Find the latest opportunities for geoscientists in nigeria.',
-    images: [
-      {
-        url: siteConfig.ogImage,
-        width: '1200',
-        height: '630',
-      },
-    ],
   },
 };
 

@@ -1,6 +1,6 @@
 'use client';
 import { LinkedInLogoIcon, TwitterLogoIcon } from '@radix-ui/react-icons';
-import { Facebook, Link2 } from 'lucide-react';
+import { Facebook, LinkIcon } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { toast } from 'sonner';
@@ -55,7 +55,7 @@ function ShareDesktop({ title }: { title: string }) {
             onClick={copyLink}
             className='border border-input rounded-md p-2 grid place-content-center hover:text-red-400 hover:border-red-400 transition-all duration-300'
           >
-            <Link2 className='w-6 h-6' />
+            <LinkIcon className='w-6 h-6' />
           </button>
         </li>
       </ul>

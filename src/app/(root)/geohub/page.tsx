@@ -1,9 +1,6 @@
 import Link from 'next/link';
 import prisma from '@/lib/db';
 import { Metadata } from 'next';
-import data from '@/data/data.json';
-import { siteConfig } from '@/config/site';
-import Event from '@/components/cards/event';
 import Article from '@/components/cards/article';
 import Headline from '@/components/cards/headline';
 import { ArrowRightIcon } from '@radix-ui/react-icons';
@@ -17,14 +14,6 @@ export const metadata: Metadata = {
   openGraph: {
     description:
       'Get the latest news, articles, and events in the geoscience community.',
-    images: [
-      {
-        url: siteConfig.ogImage,
-        width: '1200',
-        height: '630',
-        // alt: ''
-      },
-    ],
   },
 };
 

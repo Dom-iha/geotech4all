@@ -1,7 +1,6 @@
 import Member from '@/components/cards/member';
 import MaxWidthWrapper from '@/components/shared/max-width-wrapper';
 import ScrollLink from '@/components/ui/scroll-link';
-import { siteConfig } from '@/config/site';
 import data from '@/data/data.json';
 import type { Metadata } from 'next';
 import Image from 'next/image';
@@ -10,14 +9,6 @@ export const metadata: Metadata = {
   title: 'About',
   openGraph: {
     description: 'Everything Geoscience',
-    images: [
-      {
-        url: siteConfig.ogImage,
-        width: '1200',
-        height: '630',
-        // alt: ''
-      },
-    ],
   },
 };
 
@@ -30,11 +21,6 @@ function About() {
             <h1 className='text-2xl md:text-4xl lg:text-6xl text-center font-bold'>
               Everything Geoscience
             </h1>
-            {/* <p className='text-center lg:mt-4 text-xl lg:text-2xl max-w-[900px]'>
-              Your go-to resource center for everything geoscience. We are a
-              team of geoscientists committed to making geoscience knowledge and
-              tools accessible to everyone.
-            </p> */}
             <p className='text-center lg:mt-4 md:text-lg lg:text-2xl max-w-prose'>
               Geotech4All is a budding geoscience conglomerate that offers
               tailor-made services and intuitive solutions to both industry and
