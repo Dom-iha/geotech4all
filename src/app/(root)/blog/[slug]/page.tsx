@@ -1,16 +1,15 @@
-import Link from 'next/link';
-import prisma from '@/lib/db';
-import { cache } from 'react';
-import Image from 'next/image';
-import { Metadata } from 'next';
-import Progressbar from '../progressbar';
-import Share from '@/components/cards/share';
 import Related from '@/components/cards/related';
-import { ArrowUpRightFromSquareIcon, ExternalLink } from 'lucide-react';
-import MaxWidthWrapper from '@/components/shared/max-width-wrapper';
+import Share from '@/components/cards/share';
 import ShareDesktop from '@/components/cards/share-desktop';
-import { revalidatePath } from 'next/cache';
+import { siteConfig } from '@/config/site';
+import prisma from '@/lib/db';
+import { ExternalLink } from 'lucide-react';
+import { Metadata } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { cache } from 'react';
+import Progressbar from '../progressbar';
 
 const getArticle = cache(async (slug: string) => {
   const article = await prisma.article.update({
@@ -39,7 +38,7 @@ export async function generateMetadata({
   if (!article) return {};
 
   return {
-    metadataBase: new URL('https://www.geotech4all.com'),
+    metadataBase: new URL(siteConfig.url),
     title: article?.title,
     // keywords: '',
     openGraph: {

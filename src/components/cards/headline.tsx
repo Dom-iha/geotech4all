@@ -27,8 +27,8 @@ function Headline(props: HeadlineProps) {
       />
       <div className='flex flex-col gap-2'>
         <p className='font-semibold text-lg'>{props.title}</p>
-        <p>
-          {shorten(props.content, 40)} <br />
+        <p className='line-clamp-1'>
+          {props.content} <br />
         </p>
         <Link
           href={`/blog/${props.slug}`}

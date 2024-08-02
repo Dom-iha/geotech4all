@@ -1,9 +1,8 @@
-import prisma from '@/lib/db';
-import Image from 'next/image';
-import { Metadata } from 'next';
-import BlogList from './blog-list';
 import Filter from '@/components/ui/filter';
-import { siteConfig } from '@/config/site';
+import prisma from '@/lib/db';
+import { Metadata } from 'next';
+import Image from 'next/image';
+import BlogList from './blog-list';
 
 export const metadata: Metadata = {
   title: 'Blog',
@@ -12,14 +11,6 @@ export const metadata: Metadata = {
   openGraph: {
     description:
       'Read and learn about the latest and greatest innovations, news, and events in geosciences.',
-    images: [
-      {
-        url: siteConfig.ogImage,
-        width: '1200',
-        height: '630',
-        alt: 'geotech4all\'s logo with a globe',
-      },
-    ],
   },
 };
 

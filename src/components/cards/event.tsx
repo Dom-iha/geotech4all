@@ -40,7 +40,7 @@ function EventCard({
         className=' max-h-[200px] object-cover h-auto w-auto object-center'
       />
       <div className='flex flex-col gap-4 px-4 pb-4 2xl:py-4'>
-        <p className='font-semibold lg:text-lg'>{name}</p>
+        <p className='font-semibold lg:text-lg line-clamp-2'>{name}</p>
         <div className='flex gap-2 flex-col'>
           <div className='flex justify-between gap-8 lg:justify-start text-sm'>
             <time
